@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Clash of Cultures",
+    "url": "Clash-of-Cultures-Rulebook-2021-02-05-compressed.pdf",
+    "image": "clash-of-cultures.webp"
+  },
+  {
+    "id": "3",
+    "name": "Ark Nova",
+    "url": "Ark-Nova-Rulebook.pdf",
+    "image": "ark-nova.webp"
+  },
+  {
+    "id": "2",
+    "name": "Massive Darkness 2",
+    "url": "MD2-Hellscape-Rulebook-Web2.pdf",
+    "image": "massive-darkness-2.jpg"
+  }
+]
