@@ -6,4 +6,4 @@ services:
     container_name: bgtags_cklein_us_container
     image: registry.cklein.us/cklein.us/bgtags.cklein.us:latest
     ports:
-      - "80:8081"
+      - "8081:80"
