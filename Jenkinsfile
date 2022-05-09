@@ -152,25 +152,19 @@ pipeline {
                 /* groovylint-disable-next-line DuplicateStringLiteral */
                 sh 'docker images'
             }
-                }
-        // stage('Deploy new container using Ansible') {
-        //     environment {
-        //         ENV_FILE_ID = credentials('API_CKLEIN_US_ENV')
-        //     }
-        //     steps {
-        //         echo ".env property file: ${ENV_FILE_ID}"
-        //         echo '#####Copying .env property file to src\\main\\resources#####'
-        //         sh "mv ${ENV_FILE_ID} .env"
-        //         echo "$NOTICE_START Deploy new container using Ansible $NOTICE_END"
-        //         ansiblePlaybook(
-        //             playbook: 'prd/playbook/api.cklein.us.yml',
-        //             inventory: 'prd/playbook/inventory',
-        //             credentialsId: 'ansible',
-        //             hostKeyChecking: 'false',
-        //             colorized: true
-        //         )
-        //     }
-        // }
+        }
+        stage('Deploy new container using Ansible') {
+            steps {
+                echo "$NOTICE_START Deploy new container using Ansible $NOTICE_END"
+                ansiblePlaybook(
+                    playbook: 'prd/playbook/bgtags.cklein.us.yml',
+                    inventory: 'prd/playbook/inventory',
+                    credentialsId: 'ansible',
+                    hostKeyChecking: 'false',
+                    colorized: true
+                )
+            }
+        }
     }
 // post {
 //     always {

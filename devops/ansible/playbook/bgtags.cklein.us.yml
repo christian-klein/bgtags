@@ -1,0 +1,26 @@
+---
+# tasks file for docker deployment
+- name: bgtags.cklein.us | deploy docker server
+  hosts: docker
+  become: true
+  tasks:
+    - name: Create docker bgtags.cklein.us directory
+      file:
+        path: /usr/src/docker/bgtags.cklein.us
+        state: directory
+        mode: 0775
+        recurse: yes
+    - name: copy docker-compose.yml
+      copy:
+        src: ../../compose/docker-compose.yml
+        dest: /usr/src/docker/bgtags.cklein.us/docker-compose.yml
+    - name: Remove services
+      community.docker.docker_compose:
+        project_src: /usr/src/docker/bgtags.cklein.us
+        state: absent
+    - name: Create and start services
+      community.docker.docker_compose:
+        project_src: /usr/src/docker/bgtags.cklein.us
+      register: output
+    - ansible.builtin.debug:
+        var: output

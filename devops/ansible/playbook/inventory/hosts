@@ -1,0 +1,7 @@
+---
+all:
+  hosts:
+    docker:
+      ansible_ssh_host: docker.cklein.us
+      ansible_user: ansible
+      ansible_python_interpreter: /usr/bin/python3
