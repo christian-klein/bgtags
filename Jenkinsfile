@@ -2,8 +2,10 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
-    
-    tools { nodejs "node16"}
+
+    tools {
+        nodejs 'node16'
+    }
 
     environment {
 
@@ -171,12 +173,12 @@ pipeline {
             }
         }
     }
-    // post {
-    //     always {
-    //     }
-    //     success {
-    //     }
-    //     failure {
-    //     }
-    // }
+// post {
+//     always {
+//     }
+//     success {
+//     }
+//     failure {
+//     }
+// }
 }
