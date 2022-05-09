@@ -12,7 +12,7 @@
         recurse: yes
     - name: copy docker-compose.yml
       copy:
-        src: ../../compose/docker-compose.yml
+        src: ../../docker-compose/docker-compose.yml
         dest: /usr/src/docker/bgtags.cklein.us/docker-compose.yml
     - name: Remove services
       community.docker.docker_compose:
