@@ -9,11 +9,10 @@ pipeline {
 
     environment {
 
-        // DOT_ENV = credentials('API_CKLEIN_US_ENV')
-
         REGISTRY_CREDENTIALS = 'registry.cklein.us'
         /* groovylint-disable-next-line DuplicateStringLiteral */
         REGISTRY_DNS = 'registry.cklein.us'
+
         IMAGE_NAME = 'bgtags.cklein.us'
         IMAGE_PATH = "cklein.us/$IMAGE_NAME"
         REGISTRY_URL = "https://$REGISTRY_DNS/"
@@ -83,7 +82,7 @@ pipeline {
             steps {
                 echo "$NOTICE_START Deploy to Registry $NOTICE_END"
                 script {
-                    docker.withRegistry("$REGISTRY_URL", REGISTRY_CREDENTIALS) {
+                    docker.withRegistry(REGISTRY_URL, REGISTRY_CREDENTIALS) {
                         echo "$NOTICE_SEP"
                         app.push("${env.BUILD_NUMBER}")
                         echo "$NOTICE_SEP"
@@ -92,7 +91,7 @@ pipeline {
                 }
             }
         }
-                stage('Remove Unused docker image') {
+        stage('Remove Unused docker image') {
             steps {
                 sh 'docker images'
                 echo "$NOTICE_START Remove Unused docker image $NOTICE_END"
@@ -123,7 +122,7 @@ pipeline {
                     try {
                         echo "$NOTICE_SEP"
                         sh 'docker images |' +
-                        'grep "api.cklein.us"|' +
+                        'grep "' + $IMAGE_NAME + '"|' +
                         'awk \'!id[$3]++ {print $3}\'|' +
                         'xargs -t -I {} docker container ls --all --filter ancestor={} --format \'{{.ID}}\'|' +
                         'xargs docker stop|xargs docker rm'
@@ -154,24 +153,24 @@ pipeline {
                 sh 'docker images'
             }
                 }
-        stage('Deploy new container using Ansible') {
-            environment {
-                ENV_FILE_ID = credentials('API_CKLEIN_US_ENV')
-            }
-            steps {
-                echo ".env property file: ${ENV_FILE_ID}"
-                echo '#####Copying .env property file to src\\main\\resources#####'
-                sh "mv ${ENV_FILE_ID} .env"
-                echo "$NOTICE_START Deploy new container using Ansible $NOTICE_END"
-                ansiblePlaybook(
-                    playbook: 'prd/playbook/api.cklein.us.yml',
-                    inventory: 'prd/playbook/inventory',
-                    credentialsId: 'ansible',
-                    hostKeyChecking: 'false',
-                    colorized: true
-                )
-            }
-        }
+        // stage('Deploy new container using Ansible') {
+        //     environment {
+        //         ENV_FILE_ID = credentials('API_CKLEIN_US_ENV')
+        //     }
+        //     steps {
+        //         echo ".env property file: ${ENV_FILE_ID}"
+        //         echo '#####Copying .env property file to src\\main\\resources#####'
+        //         sh "mv ${ENV_FILE_ID} .env"
+        //         echo "$NOTICE_START Deploy new container using Ansible $NOTICE_END"
+        //         ansiblePlaybook(
+        //             playbook: 'prd/playbook/api.cklein.us.yml',
+        //             inventory: 'prd/playbook/inventory',
+        //             credentialsId: 'ansible',
+        //             hostKeyChecking: 'false',
+        //             colorized: true
+        //         )
+        //     }
+        // }
     }
 // post {
 //     always {
