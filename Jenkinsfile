@@ -157,8 +157,8 @@ pipeline {
             steps {
                 echo "$NOTICE_START Deploy new container using Ansible $NOTICE_END"
                 ansiblePlaybook(
-                    playbook: 'prd/playbook/bgtags.cklein.us.yml',
-                    inventory: 'prd/playbook/inventory',
+                    playbook: 'devops/ansible/playbook/bgtags.cklein.us.yml',
+                    inventory: 'devops/ansible/playbook/inventory',
                     credentialsId: 'ansible',
                     hostKeyChecking: 'false',
                     colorized: true
