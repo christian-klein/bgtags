@@ -838,7 +838,7 @@ body {
 .sticker-checks {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
 }
 
 .checks-label {
@@ -846,20 +846,24 @@ body {
     font-weight: 700;
     color: #64748b;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .check-boxes {
-    display: flex;
-    gap: 3px;
+    display: grid;
+    grid-template-columns: repeat(5, 11px);
+    grid-template-rows: repeat(2, 11px);
+    gap: 2.5px 3px;
 }
 
 .chk {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     border: 1px solid #94a3b8;
     border-radius: 2px;
     background: #ffffff;
+    box-sizing: border-box;
 }
 
 @media print {
