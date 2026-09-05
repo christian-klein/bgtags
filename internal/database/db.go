@@ -31,7 +31,7 @@ func Open(dbPath string, seedJSONPath string) (*DB, error) {
 	db.SetMaxOpenConns(1)
 
 	pragmas := []string{
-		"PRAGMA journal_mode = WAL;",
+		"PRAGMA journal_mode = DELETE;",
 		"PRAGMA busy_timeout = 5000;",
 		"PRAGMA synchronous = NORMAL;",
 		"PRAGMA foreign_keys = ON;",

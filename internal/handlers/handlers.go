@@ -15,9 +15,10 @@ import (
 )
 
 type Handler struct {
-	db        *database.DB
-	cfg       *config.Config
-	templates *template.Template
+	db       *database.DB
+	cfg      *config.Config
+	pages    map[string]*template.Template
+	partials *template.Template
 }
 
 type PageData struct {
@@ -50,23 +51,33 @@ func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) 
 		},
 	}
 
-	tmplPattern := filepath.Join(tmplDir, "*.html")
-	partialPattern := filepath.Join(tmplDir, "partials", "*.html")
-
-	tmpl, err := template.New("").Funcs(funcMap).ParseGlob(tmplPattern)
+	layoutPath := filepath.Join(tmplDir, "layout.html")
+	partialFiles, err := filepath.Glob(filepath.Join(tmplDir, "partials", "*.html"))
 	if err != nil {
-		return nil, fmt.Errorf("parsing templates: %w", err)
+		return nil, fmt.Errorf("listing partial templates: %w", err)
 	}
 
-	tmpl, err = tmpl.ParseGlob(partialPattern)
+	pages := make(map[string]*template.Template)
+	for _, pageName := range []string{"index.html", "stickers.html"} {
+		pagePath := filepath.Join(tmplDir, pageName)
+		files := append([]string{layoutPath, pagePath}, partialFiles...)
+		t, err := template.New("layout.html").Funcs(funcMap).ParseFiles(files...)
+		if err != nil {
+			return nil, fmt.Errorf("parsing page template %s: %w", pageName, err)
+		}
+		pages[pageName] = t
+	}
+
+	partialsTmpl, err := template.New("").Funcs(funcMap).ParseFiles(partialFiles...)
 	if err != nil {
 		return nil, fmt.Errorf("parsing partial templates: %w", err)
 	}
 
 	return &Handler{
-		db:        db,
-		cfg:       cfg,
-		templates: tmpl,
+		db:       db,
+		cfg:      cfg,
+		pages:    pages,
+		partials: partialsTmpl,
 	}, nil
 }
 
@@ -122,7 +133,7 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 		ActiveNav:   "catalog",
 	}
 
-	if err := h.templates.ExecuteTemplate(w, "layout.html", data); err != nil {
+	if err := h.pages["index.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
 		log.Printf("Template execution error: %v", err)
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 	}
@@ -148,7 +159,7 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 		BaseURL:     baseURL,
 	}
 
-	if err := h.templates.ExecuteTemplate(w, "game_grid.html", data); err != nil {
+	if err := h.partials.ExecuteTemplate(w, "game_grid.html", data); err != nil {
 		log.Printf("Partial template error: %v", err)
 		http.Error(w, "Render error", http.StatusInternalServerError)
 	}
@@ -176,7 +187,7 @@ func (h *Handler) HandleStickers(w http.ResponseWriter, r *http.Request) {
 		ActiveNav:   "stickers",
 	}
 
-	if err := h.templates.ExecuteTemplate(w, "stickers.html", data); err != nil {
+	if err := h.pages["stickers.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
 		log.Printf("Template execution error: %v", err)
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 	}
@@ -192,7 +203,7 @@ func (h *Handler) HandleBackupModal(w http.ResponseWriter, r *http.Request) {
 		Backups: backups,
 	}
 
-	if err := h.templates.ExecuteTemplate(w, "backup_modal.html", data); err != nil {
+	if err := h.partials.ExecuteTemplate(w, "backup_modal.html", data); err != nil {
 		log.Printf("Backup modal template error: %v", err)
 		http.Error(w, "Render error", http.StatusInternalServerError)
 	}
@@ -219,7 +230,7 @@ func (h *Handler) HandleCreateBackup(w http.ResponseWriter, r *http.Request) {
 		Message: fmt.Sprintf("Backup %s created successfully!", meta.FileName),
 	}
 
-	_ = h.templates.ExecuteTemplate(w, "backup_modal.html", data)
+	_ = h.partials.ExecuteTemplate(w, "backup_modal.html", data)
 }
 
 func (h *Handler) HandleRestoreBackup(w http.ResponseWriter, r *http.Request) {
