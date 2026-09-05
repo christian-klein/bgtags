@@ -1,0 +1,50 @@
+{{define "content"}}
+<section class="catalog-hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Board Game Rules & QR Tags</h1>
+        <p class="hero-subtitle">Instant rulebooks and scannable QR tags for your board game shelf.</p>
+    </div>
+
+    <div class="filters-bar">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="search" 
+                   name="q" 
+                   value="{{.SearchQuery}}"
+                   placeholder="Search games..." 
+                   class="search-input"
+                   hx-get="/games" 
+                   hx-trigger="keyup changed delay:250ms, search" 
+                   hx-target="#game-grid"
+                   hx-include="[name='players']">
+        </div>
+
+        <div class="filter-group">
+            <label for="player-select" class="filter-label">Players:</label>
+            <select id="player-select" 
+                    name="players" 
+                    class="filter-select"
+                    hx-get="/games" 
+                    hx-trigger="change" 
+                    hx-target="#game-grid"
+                    hx-include="[name='q']">
+                <option value="0" {{if eq .PlayerCount 0}}selected{{end}}>Any count</option>
+                <option value="1" {{if eq .PlayerCount 1}}selected{{end}}>1 Player (Solo)</option>
+                <option value="2" {{if eq .PlayerCount 2}}selected{{end}}>2 Players</option>
+                <option value="3" {{if eq .PlayerCount 3}}selected{{end}}>3 Players</option>
+                <option value="4" {{if eq .PlayerCount 4}}selected{{end}}>4 Players</option>
+                <option value="5" {{if eq .PlayerCount 5}}selected{{end}}>5 Players</option>
+                <option value="6" {{if eq .PlayerCount 6}}selected{{end}}>6+ Players</option>
+            </select>
+        </div>
+
+        <a href="/stickers" class="btn btn-secondary">
+            🏷️ Print Stickers
+        </a>
+    </div>
+</section>
+
+<div id="game-grid">
+    {{template "game_grid.html" .}}
+</div>
+{{end}}

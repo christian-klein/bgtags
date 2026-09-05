@@ -1,0 +1,60 @@
+{{define "content"}}
+<div class="stickers-page">
+    <div class="stickers-toolbar no-print">
+        <div class="toolbar-left">
+            <h1 class="toolbar-title">🏷️ Game Box Stickers</h1>
+            <p class="toolbar-desc">Print scannable sticker labels to attach to your board game boxes.</p>
+        </div>
+        <div class="toolbar-actions">
+            <div class="size-selector">
+                <label for="sticker-size">Label Size:</label>
+                <select id="sticker-size" onchange="changeStickerSize(this.value)">
+                    <option value="size-standard" selected>Standard (4" x 2.5")</option>
+                    <option value="size-compact">Compact (3" x 2")</option>
+                    <option value="size-large">Large (4" x 3.5")</option>
+                </select>
+            </div>
+            <button onclick="window.print()" class="btn btn-primary print-btn">
+                🖨️ Print Stickers Now
+            </button>
+            <a href="/" class="btn btn-outline">Back to Catalog</a>
+        </div>
+    </div>
+
+    <div class="print-instruction no-print">
+        💡 <strong>Tip:</strong> In your browser print dialog, set margins to <em>Minimum</em> or <em>None</em> and enable <em>Background Graphics</em> for best label alignment.
+    </div>
+
+    <div id="stickers-sheet" class="stickers-grid size-standard">
+        {{range .Games}}
+        <div class="sticker-item">
+            <div class="sticker-inner">
+                <div class="sticker-qr-col">
+                    <img src="{{.QRCodeURL}}&size=300" alt="QR Code" class="sticker-qr">
+                    <span class="sticker-scan-text">SCAN FOR RULES</span>
+                </div>
+                <div class="sticker-info-col">
+                    <div class="sticker-header">
+                        <h3 class="sticker-title">{{.Name}}</h3>
+                        <span class="sticker-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
+                    </div>
+                    <div class="sticker-art">
+                        <img src="/img/{{.Image}}" alt="{{.Name}}" class="sticker-thumb">
+                    </div>
+                    <div class="sticker-footer">
+                        <span class="sticker-brand">bgtags</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+
+<script>
+    function changeStickerSize(sizeClass) {
+        const sheet = document.getElementById('stickers-sheet');
+        sheet.className = 'stickers-grid ' + sizeClass;
+    }
+</script>
+{{end}}

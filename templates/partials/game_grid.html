@@ -1,0 +1,16 @@
+{{define "game_grid.html"}}
+<div class="grid-header">
+    <span class="results-count">{{.TotalCount}} games available</span>
+</div>
+<div class="games-grid">
+    {{range .Games}}
+        {{template "game_card.html" .}}
+    {{else}}
+        <div class="empty-state">
+            <span class="empty-icon">🎲</span>
+            <h3>No games found</h3>
+            <p>Try adjusting your search query or player count filter.</p>
+        </div>
+    {{end}}
+</div>
+{{end}}

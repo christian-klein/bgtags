@@ -127,3 +127,11 @@ dist
 .tern-port
 
 already_ran
+# Go binaries and database files
+bin/
+*.db
+*.db-wal
+*.db-shm
+*.tmp
+backups/
+.env

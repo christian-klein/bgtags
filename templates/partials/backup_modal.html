@@ -1,0 +1,70 @@
+{{define "backup_modal.html"}}
+<div class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <h2 class="modal-title">💾 Database Backups</h2>
+            <button type="button" class="modal-close" onclick="closeModal()">×</button>
+        </div>
+
+        <div class="modal-body">
+            {{if .Message}}
+            <div class="alert alert-success">{{.Message}}</div>
+            {{end}}
+            {{if .Error}}
+            <div class="alert alert-danger">{{.Error}}</div>
+            {{end}}
+
+            <div class="backup-actions-bar">
+                <p class="backup-info">Daily backups are exported as plain-text JSON files and preserved with rolling retention.</p>
+                <button class="btn btn-primary" 
+                        hx-post="/backups/create" 
+                        hx-target="#modal-container"
+                        hx-indicator="#backup-spinner">
+                    ⚡ Create Backup Now
+                </button>
+                <span id="backup-spinner" class="htmx-indicator">Creating...</span>
+            </div>
+
+            <div class="backup-list-container">
+                <table class="backup-table">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Date (UTC)</th>
+                            <th>Games</th>
+                            <th>Size</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .Backups}}
+                        <tr>
+                            <td class="code-cell">{{.FileName}}</td>
+                            <td>{{.CreatedAt.Format "Jan 02, 2006 15:04:05"}}</td>
+                            <td>{{.GameCount}}</td>
+                            <td>{{formatSize .SizeBytes}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning"
+                                        hx-post="/backups/restore"
+                                        hx-vals='{"filename": "{{.FileName}}"}'
+                                        hx-confirm="Are you sure you want to restore from {{.FileName}}? This will replace current game data.">
+                                    Restore
+                                </button>
+                            </td>
+                        </tr>
+                        {{else}}
+                        <tr>
+                            <td colspan="5" class="empty-cell">No backups found yet.</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+{{end}}

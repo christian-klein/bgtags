@@ -1,0 +1,27 @@
+{{define "game_card.html"}}
+<article class="game-card">
+    <div class="card-media">
+        <img src="/img/{{.Image}}" alt="{{.Name}}" class="game-cover" loading="lazy">
+        <div class="qr-overlay">
+            <img src="{{.QRCodeURL}}" alt="QR Code for {{.Name}}" class="qr-code">
+            <span class="qr-hint">Scan for Rules</span>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-header">
+            <h2 class="game-title">{{.Name}}</h2>
+            <span class="badge players-badge">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
+        </div>
+        <div class="card-actions">
+            <a href="{{.RulesURL}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                📖 View Rules PDF
+            </a>
+            {{if .BggURL}}
+            <a href="{{.BggURL}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Open on BoardGameGeek">
+                BGG
+            </a>
+            {{end}}
+        </div>
+    </div>
+</article>
+{{end}}

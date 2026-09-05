@@ -1,9 +1,8 @@
-.git
-.gitignore
-.dockerignore
-already_ran
-Dockerfile
-dist
-node_modules
-npm-debug.log
-README.md
+bin/
+node_modules/
+build/
+.git/
+.env
+*.tmp
+*.db
+backups/

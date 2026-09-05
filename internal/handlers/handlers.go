@@ -1,0 +1,254 @@
+package handlers
+
+import (
+	"fmt"
+	"html/template"
+	"log"
+	"net/http"
+	"path/filepath"
+	"strconv"
+	"strings"
+
+	"github.com/christian-klein/bgtags/internal/backup"
+	"github.com/christian-klein/bgtags/internal/config"
+	"github.com/christian-klein/bgtags/internal/database"
+)
+
+type Handler struct {
+	db        *database.DB
+	cfg       *config.Config
+	templates *template.Template
+}
+
+type PageData struct {
+	Title       string
+	Games       []GameView
+	TotalCount  int
+	SearchQuery string
+	PlayerCount int
+	BaseURL     string
+	ActiveNav   string
+	Backups     []*backup.BackupFileMeta
+	Message     string
+	Error       string
+}
+
+type GameView struct {
+	database.Game
+	RulesURL string
+	QRCodeURL string
+}
+
+func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) {
+	funcMap := template.FuncMap{
+		"formatSize": backup.FormatFileSize,
+		"formatDate": func(t interface{}) string {
+			if tm, ok := t.(database.Game); ok {
+				return tm.CreatedAt.Format("Jan 02, 2006")
+			}
+			return ""
+		},
+	}
+
+	tmplPattern := filepath.Join(tmplDir, "*.html")
+	partialPattern := filepath.Join(tmplDir, "partials", "*.html")
+
+	tmpl, err := template.New("").Funcs(funcMap).ParseGlob(tmplPattern)
+	if err != nil {
+		return nil, fmt.Errorf("parsing templates: %w", err)
+	}
+
+	tmpl, err = tmpl.ParseGlob(partialPattern)
+	if err != nil {
+		return nil, fmt.Errorf("parsing partial templates: %w", err)
+	}
+
+	return &Handler{
+		db:        db,
+		cfg:       cfg,
+		templates: tmpl,
+	}, nil
+}
+
+func (h *Handler) getBaseURL(r *http.Request) string {
+	if h.cfg.BaseURL != "" {
+		return strings.TrimRight(h.cfg.BaseURL, "/")
+	}
+	proto := "http"
+	if r.TLS != nil || r.Header.Get("X-Forwarded-Proto") == "https" {
+		proto = "https"
+	}
+	return fmt.Sprintf("%s://%s", proto, r.Host)
+}
+
+func (h *Handler) toGameViews(games []database.Game, baseURL string) []GameView {
+	views := make([]GameView, len(games))
+	for i, g := range games {
+		rulesURL := fmt.Sprintf("%s/rules/%s", baseURL, g.URL)
+		qrURL := fmt.Sprintf("/qr?url=%s", rulesURL)
+		views[i] = GameView{
+			Game:      g,
+			RulesURL:  rulesURL,
+			QRCodeURL: qrURL,
+		}
+	}
+	return views
+}
+
+func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.NotFound(w, r)
+		return
+	}
+
+	q := r.URL.Query().Get("q")
+	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
+
+	games, err := h.db.ListGames(q, players)
+	if err != nil {
+		log.Printf("Error listing games: %v", err)
+		http.Error(w, "Failed to load games", http.StatusInternalServerError)
+		return
+	}
+
+	baseURL := h.getBaseURL(r)
+	data := PageData{
+		Title:       "Board Game Rule Tags",
+		Games:       h.toGameViews(games, baseURL),
+		TotalCount:  len(games),
+		SearchQuery: q,
+		PlayerCount: players,
+		BaseURL:     baseURL,
+		ActiveNav:   "catalog",
+	}
+
+	if err := h.templates.ExecuteTemplate(w, "layout.html", data); err != nil {
+		log.Printf("Template execution error: %v", err)
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
+	q := r.URL.Query().Get("q")
+	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
+
+	games, err := h.db.ListGames(q, players)
+	if err != nil {
+		log.Printf("Error listing games: %v", err)
+		http.Error(w, "Failed to filter games", http.StatusInternalServerError)
+		return
+	}
+
+	baseURL := h.getBaseURL(r)
+	data := PageData{
+		Games:       h.toGameViews(games, baseURL),
+		TotalCount:  len(games),
+		SearchQuery: q,
+		PlayerCount: players,
+		BaseURL:     baseURL,
+	}
+
+	if err := h.templates.ExecuteTemplate(w, "game_grid.html", data); err != nil {
+		log.Printf("Partial template error: %v", err)
+		http.Error(w, "Render error", http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) HandleStickers(w http.ResponseWriter, r *http.Request) {
+	q := r.URL.Query().Get("q")
+	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
+
+	games, err := h.db.ListGames(q, players)
+	if err != nil {
+		log.Printf("Error listing games for stickers: %v", err)
+		http.Error(w, "Failed to load games", http.StatusInternalServerError)
+		return
+	}
+
+	baseURL := h.getBaseURL(r)
+	data := PageData{
+		Title:       "Print Game Box Stickers",
+		Games:       h.toGameViews(games, baseURL),
+		TotalCount:  len(games),
+		SearchQuery: q,
+		PlayerCount: players,
+		BaseURL:     baseURL,
+		ActiveNav:   "stickers",
+	}
+
+	if err := h.templates.ExecuteTemplate(w, "stickers.html", data); err != nil {
+		log.Printf("Template execution error: %v", err)
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) HandleBackupModal(w http.ResponseWriter, r *http.Request) {
+	backups, err := backup.ListBackups(h.cfg.BackupDir)
+	if err != nil {
+		log.Printf("Error listing backups: %v", err)
+	}
+
+	data := PageData{
+		Backups: backups,
+	}
+
+	if err := h.templates.ExecuteTemplate(w, "backup_modal.html", data); err != nil {
+		log.Printf("Backup modal template error: %v", err)
+		http.Error(w, "Render error", http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) HandleCreateBackup(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	meta, err := backup.CreateBackup(h.db, h.cfg.BackupDir, h.cfg.BackupRetention)
+	if err != nil {
+		log.Printf("Manual backup error: %v", err)
+		http.Error(w, "Backup creation failed: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	log.Printf("Manual backup created: %s (%d games)", meta.FileName, meta.GameCount)
+
+	backups, _ := backup.ListBackups(h.cfg.BackupDir)
+	data := PageData{
+		Backups: backups,
+		Message: fmt.Sprintf("Backup %s created successfully!", meta.FileName),
+	}
+
+	_ = h.templates.ExecuteTemplate(w, "backup_modal.html", data)
+}
+
+func (h *Handler) HandleRestoreBackup(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	filename := r.FormValue("filename")
+	if filename == "" || strings.Contains(filename, "/") || strings.Contains(filename, "..") {
+		http.Error(w, "Invalid backup filename", http.StatusBadRequest)
+		return
+	}
+
+	filePath := filepath.Join(h.cfg.BackupDir, filename)
+	if err := backup.RestoreBackup(h.db, filePath); err != nil {
+		log.Printf("Restore error: %v", err)
+		http.Error(w, "Restore failed: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	log.Printf("Restored database from %s", filename)
+
+	w.Header().Set("HX-Refresh", "true")
+	w.WriteHeader(http.StatusOK)
+}
+
+func (h *Handler) HandleHealth(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte(`{"status":"ok"}`))
+}
