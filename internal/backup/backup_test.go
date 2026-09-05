@@ -18,9 +18,9 @@ func TestBackupAndRestore(t *testing.T) {
 	}
 	defer db.Close()
 
-	// Insert test games
-	g1 := &database.Game{Name: "Game 1", URL: "g1.pdf", Image: "g1.webp", MinPlayers: 2, MaxPlayers: 4}
-	g2 := &database.Game{Name: "Game 2", URL: "g2.pdf", Image: "g2.webp", MinPlayers: 1, MaxPlayers: 6}
+	// Insert test games with BestPlayers and Complexity
+	g1 := &database.Game{Name: "Game 1", URL: "g1.pdf", Image: "g1.webp", MinPlayers: 2, MaxPlayers: 4, BestPlayers: "4", Complexity: 3.5}
+	g2 := &database.Game{Name: "Game 2", URL: "g2.pdf", Image: "g2.webp", MinPlayers: 1, MaxPlayers: 6, BestPlayers: "3", Complexity: 2.1}
 	if err := db.CreateGame(g1); err != nil {
 		t.Fatalf("failed to create g1: %v", err)
 	}
@@ -64,5 +64,8 @@ func TestBackupAndRestore(t *testing.T) {
 	}
 	if len(restored) != 2 {
 		t.Errorf("expected 2 games after restore, got %d", len(restored))
+	}
+	if restored[0].BestPlayers == "" || restored[0].Complexity == 0 {
+		t.Errorf("expected complexity and best_players restored, got %+v", restored[0])
 	}
 }

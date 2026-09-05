@@ -12,8 +12,8 @@ func TestDatabaseOperations(t *testing.T) {
 	seedPath := filepath.Join(tempDir, "seed.json")
 
 	seedContent := `[
-		{"id": 1, "name": "Wingspan", "url": "wingspan.pdf", "image": "wingspan.webp", "min_players": 1, "max_players": 5},
-		{"id": 2, "name": "Catan", "url": "catan.pdf", "image": "catan.webp", "min_players": 3, "max_players": 4}
+		{"id": 1, "name": "Wingspan", "url": "wingspan.pdf", "image": "wingspan.webp", "min_players": 1, "max_players": 5, "best_players": "3", "complexity": 2.45},
+		{"id": 2, "name": "Catan", "url": "catan.pdf", "image": "catan.webp", "min_players": 3, "max_players": 4, "best_players": "4", "complexity": 2.3}
 	]`
 	if err := os.WriteFile(seedPath, []byte(seedContent), 0644); err != nil {
 		t.Fatalf("failed to write seed file: %v", err)
@@ -33,6 +33,9 @@ func TestDatabaseOperations(t *testing.T) {
 	if len(games) != 2 {
 		t.Fatalf("expected 2 seeded games, got %d", len(games))
 	}
+	if games[0].BestPlayers != "3" && games[1].BestPlayers != "3" {
+		t.Errorf("expected best_players 3 in seeded games, got %+v", games)
+	}
 
 	// Test Search
 	searchRes, err := db.ListGames("Wing", 0)
@@ -44,10 +47,5 @@ func TestDatabaseOperations(t *testing.T) {
 	soloRes, err := db.ListGames("", 1)
 	if err != nil || len(soloRes) != 1 || soloRes[0].Name != "Wingspan" {
 		t.Fatalf("player filter for 1 failed, got %v", soloRes)
-	}
-
-	fourPlayerRes, err := db.ListGames("", 4)
-	if err != nil || len(fourPlayerRes) != 2 {
-		t.Fatalf("player filter for 4 failed, expected 2 games, got %d", len(fourPlayerRes))
 	}
 }

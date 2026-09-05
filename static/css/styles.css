@@ -795,3 +795,80 @@ body {
         color: #333333 !important;
     }
 }
+
+/* Additional badge and sticker styles */
+.card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.35rem;
+}
+
+.complexity-badge {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.sticker-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.sticker-complexity {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.sticker-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 4px 0;
+}
+
+.sticker-checks {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.checks-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.check-boxes {
+    display: flex;
+    gap: 3px;
+}
+
+.chk {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 2px;
+    background: #ffffff;
+}
+
+@media print {
+    .sticker-complexity {
+        background-color: #f1f5f9 !important;
+        color: #000000 !important;
+        border: 1px solid #cbd5e1 !important;
+    }
+    .chk {
+        border-color: #000000 !important;
+    }
+}

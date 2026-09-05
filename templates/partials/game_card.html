@@ -10,7 +10,12 @@
     <div class="card-body">
         <div class="card-header">
             <h2 class="game-title">{{.Name}}</h2>
-            <span class="badge players-badge">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
+            <div class="card-badges">
+                <span class="badge players-badge">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players{{if .BestPlayers}} (Best: {{.BestPlayers}}){{end}}</span>
+                {{if gt .Complexity 0.0}}
+                <span class="badge complexity-badge">🧠 {{printf "%.1f" .Complexity}} / 5</span>
+                {{end}}
+            </div>
         </div>
         <div class="card-actions">
             <a href="{{.RulesURL}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">

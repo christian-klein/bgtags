@@ -6,6 +6,8 @@
     "image": "clash-of-cultures.webp",
     "min_players": 2,
     "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.8,
     "bgg_url": "https://boardgamegeek.com/boardgame/40765/clash-cultures"
   },
   {
@@ -15,6 +17,8 @@
     "image": "massive-darkness-2.jpg",
     "min_players": 1,
     "max_players": 6,
+    "best_players": "3-4",
+    "complexity": 2.7,
     "bgg_url": "https://boardgamegeek.com/boardgame/315610/massive-darkness-2-hellscape"
   },
   {
@@ -24,6 +28,8 @@
     "image": "ark-nova.webp",
     "min_players": 1,
     "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.7,
     "bgg_url": "https://boardgamegeek.com/boardgame/342942/ark-nova"
   }
 ]

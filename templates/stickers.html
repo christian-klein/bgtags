@@ -3,7 +3,7 @@
     <div class="stickers-toolbar no-print">
         <div class="toolbar-left">
             <h1 class="toolbar-title">🏷️ Game Box Stickers</h1>
-            <p class="toolbar-desc">Print scannable sticker labels to attach to your board game boxes.</p>
+            <p class="toolbar-desc">Print scannable sticker labels with rules QR codes, player counts, and complexity for game boxes.</p>
         </div>
         <div class="toolbar-actions">
             <div class="size-selector">
@@ -36,10 +36,21 @@
                 <div class="sticker-info-col">
                     <div class="sticker-header">
                         <h3 class="sticker-title">{{.Name}}</h3>
-                        <span class="sticker-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
+                        <div class="sticker-meta">
+                            <span class="sticker-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players{{if .BestPlayers}} (Best: {{.BestPlayers}}){{end}}</span>
+                            {{if gt .Complexity 0.0}}
+                            <span class="sticker-complexity">🧠 Weight: {{printf "%.1f" .Complexity}} / 5</span>
+                            {{end}}
+                        </div>
                     </div>
-                    <div class="sticker-art">
+                    <div class="sticker-middle">
                         <img src="/img/{{.Image}}" alt="{{.Name}}" class="sticker-thumb">
+                        <div class="sticker-checks">
+                            <span class="checks-label">Plays:</span>
+                            <div class="check-boxes">
+                                <span class="chk"></span><span class="chk"></span><span class="chk"></span><span class="chk"></span><span class="chk"></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="sticker-footer">
                         <span class="sticker-brand">bgtags</span>

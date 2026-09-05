@@ -212,15 +212,15 @@ func RestoreFromBytes(db *database.DB, data []byte) error {
 		return fmt.Errorf("clearing games table: %w", err)
 	}
 
-	stmt, err := tx.Prepare(`INSERT INTO games (id, name, url, image, min_players, max_players, bgg_url, created_at, updated_at) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+	stmt, err := tx.Prepare(`INSERT INTO games (id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at) 
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
 	if err != nil {
 		return fmt.Errorf("preparing insert statement: %w", err)
 	}
 	defer stmt.Close()
 
 	for _, g := range backup.Games {
-		if _, err := stmt.Exec(g.ID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BggURL, g.CreatedAt, g.UpdatedAt); err != nil {
+		if _, err := stmt.Exec(g.ID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, g.CreatedAt, g.UpdatedAt); err != nil {
 			return fmt.Errorf("restoring game %s: %w", g.Name, err)
 		}
 	}
