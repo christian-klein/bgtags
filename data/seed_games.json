@@ -8,7 +8,15 @@
     "max_players": 4,
     "best_players": "4",
     "complexity": 3.8,
-    "bgg_url": "https://boardgamegeek.com/boardgame/40765/clash-cultures"
+    "bgg_url": "https://boardgamegeek.com/boardgame/40765/clash-cultures",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "Clash-of-Cultures-Rulebook-2021-02-05-compressed.pdf",
+        "is_primary": true
+      }
+    ]
   },
   {
     "id": 2,
@@ -19,7 +27,27 @@
     "max_players": 6,
     "best_players": "3-4",
     "complexity": 2.7,
-    "bgg_url": "https://boardgamegeek.com/boardgame/315610/massive-darkness-2-hellscape"
+    "bgg_url": "https://boardgamegeek.com/boardgame/315610/massive-darkness-2-hellscape",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "MD2-Hellscape-Rulebook-Web2.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Web Quest: Glacial Inferno",
+        "category": "expansion",
+        "filename": "MD2-Web_Quest_-_Glacial_Inferno.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Web Quest: Hello Darkness One-Shot",
+        "category": "expansion",
+        "filename": "MD2-Web_Quest_-_Hello_Darkness_One-Shot.pdf",
+        "is_primary": false
+      }
+    ]
   },
   {
     "id": 3,
@@ -30,6 +58,294 @@
     "max_players": 4,
     "best_players": "2",
     "complexity": 3.7,
-    "bgg_url": "https://boardgamegeek.com/boardgame/342942/ark-nova"
+    "bgg_url": "https://boardgamegeek.com/boardgame/342942/ark-nova",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "Ark-Nova-Rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Glossary & Card Reference",
+        "category": "reference",
+        "filename": "Ark-Nova-Glossary.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Official FAQ & Errata",
+        "category": "faq",
+        "filename": "Ark-Nova-FAQ.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Icon Overview Sheet",
+        "category": "reference",
+        "filename": "Ark-Nova-Icon-Overview.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Beginner Guide / First Game",
+        "category": "reference",
+        "filename": "Ark-Nova_Start_EN.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Beyond the Sun",
+    "url": "beyond-the-sun.pdf",
+    "image": "beyond-the-sun.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3-4",
+    "complexity": 3.12,
+    "bgg_url": "https://boardgamegeek.com/boardgame/317985/beyond-the-sun",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "beyond-the-sun.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Quick Start Guide",
+        "category": "reference",
+        "filename": "beyond-the-sun-quick-start.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Teaching Script",
+        "category": "reference",
+        "filename": "beyond-the-sun-teaching-script.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Concordia",
+    "url": "concordia-rules.pdf",
+    "image": "concordia.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 3.01,
+    "bgg_url": "https://boardgamegeek.com/boardgame/124361/concordia",
+    "documents": [
+      {
+        "title": "Game Rules",
+        "category": "core",
+        "filename": "concordia-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Blood Rage",
+    "url": "blood-rage.pdf",
+    "image": "blood-rage.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.88,
+    "bgg_url": "https://boardgamegeek.com/boardgame/170216/blood-rage",
+    "documents": [
+      {
+        "title": "Official Rules",
+        "category": "core",
+        "filename": "blood-rage.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Lost Ruins of Arnak",
+    "url": "arnak-rules.pdf",
+    "image": "arnak.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.91,
+    "bgg_url": "https://boardgamegeek.com/boardgame/312484/lost-ruins-of-arnak",
+    "documents": [
+      {
+        "title": "Official Rulebook",
+        "category": "core",
+        "filename": "arnak-rules.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Expedition Leaders Expansion Rules",
+        "category": "expansion",
+        "filename": "arnak-leaders.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Official Player Aid",
+        "category": "reference",
+        "filename": "arnak-player-aid.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "A Feast for Odin",
+    "url": "feast-for-odin-rules.pdf",
+    "image": "feast-for-odin.png",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.86,
+    "bgg_url": "https://boardgamegeek.com/boardgame/177736/a-feast-for-odin",
+    "documents": [
+      {
+        "title": "Official Rulebook",
+        "category": "core",
+        "filename": "feast-for-odin-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Eclipse: Second Dawn for the Galaxy",
+    "url": "eclipse-rules.pdf",
+    "image": "eclipse.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "6",
+    "complexity": 3.63,
+    "bgg_url": "https://boardgamegeek.com/boardgame/246900/eclipse-second-dawn-for-the-galaxy",
+    "documents": [
+      {
+        "title": "Official Rulebook",
+        "category": "core",
+        "filename": "eclipse-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "War Room",
+    "url": "war-room-2e-rules.pdf",
+    "image": "war-room.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "6",
+    "complexity": 4.1,
+    "bgg_url": "https://boardgamegeek.com/boardgame/229713/war-room",
+    "documents": [
+      {
+        "title": "2nd Edition Rules",
+        "category": "core",
+        "filename": "war-room-2e-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Galactic Cruise",
+    "url": "galactic-cruise-rulebook.pdf",
+    "image": "galactic-cruise.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 4.05,
+    "bgg_url": "https://boardgamegeek.com/boardgame/391137/galactic-cruise",
+    "documents": [
+      {
+        "title": "Training Manual (Rulebook)",
+        "category": "core",
+        "filename": "galactic-cruise-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Employee Handbook (Player Aid)",
+        "category": "reference",
+        "filename": "galactic-cruise-player-aid.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Company Records (Reference Book)",
+        "category": "reference",
+        "filename": "galactic-cruise-reference-book.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Solo Rulebook",
+        "category": "expansion",
+        "filename": "galactic-cruise-solo-rules.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Hegemony: Lead Your Class to Victory",
+    "url": "hegemony-rulebook.pdf",
+    "image": "hegemony.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.98,
+    "bgg_url": "https://boardgamegeek.com/boardgame/321608/hegemony-lead-your-class-to-victory",
+    "documents": [
+      {
+        "title": "Rules of Hegemony",
+        "category": "core",
+        "filename": "hegemony-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Teaching Guide",
+        "category": "reference",
+        "filename": "hegemony-teaching-guide.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Class Summary Sheets",
+        "category": "reference",
+        "filename": "hegemony-player-summaries.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Stationfall",
+    "url": "stationfall-reference-manual.pdf",
+    "image": "stationfall.png",
+    "min_players": 1,
+    "max_players": 9,
+    "best_players": "5-6",
+    "complexity": 4.09,
+    "bgg_url": "https://boardgamegeek.com/boardgame/316624/stationfall",
+    "documents": [
+      {
+        "title": "Reference Manual (Core Rules)",
+        "category": "core",
+        "filename": "stationfall-reference-manual.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Ultimate Character Guide",
+        "category": "reference",
+        "filename": "stationfall-character-guide.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "How to Play Teaching Aid",
+        "category": "reference",
+        "filename": "stationfall-teaching-aid.pdf",
+        "is_primary": false
+      }
+    ]
   }
 ]
