@@ -51,6 +51,7 @@ func main() {
 	// UI & HTMX endpoints
 	mux.HandleFunc("/", h.HandleIndex)
 	mux.HandleFunc("/games", h.HandleGames)
+	mux.HandleFunc("/games/", h.HandleGameRoute)
 	mux.HandleFunc("/stickers", h.HandleStickers)
 	mux.HandleFunc("/qr", h.HandleQR)
 	mux.HandleFunc("/backups/modal", h.HandleBackupModal)

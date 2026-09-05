@@ -24,6 +24,9 @@ type Handler struct {
 type PageData struct {
 	Title       string
 	Games       []GameView
+	Game        *GameView
+	Documents   []database.GameDocument
+	Expansions  []database.Game
 	TotalCount  int
 	SearchQuery string
 	PlayerCount int
@@ -36,8 +39,11 @@ type PageData struct {
 
 type GameView struct {
 	database.Game
-	RulesURL string
-	QRCodeURL string
+	RulesHubURL     string
+	QRCodeURL       string
+	PrimaryRulesURL string
+	Documents       []database.GameDocument
+	Expansions      []database.Game
 }
 
 func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) {
@@ -58,7 +64,7 @@ func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) 
 	}
 
 	pages := make(map[string]*template.Template)
-	for _, pageName := range []string{"index.html", "stickers.html"} {
+	for _, pageName := range []string{"index.html", "stickers.html", "rules_hub.html"} {
 		pagePath := filepath.Join(tmplDir, pageName)
 		files := append([]string{layoutPath, pagePath}, partialFiles...)
 		t, err := template.New("layout.html").Funcs(funcMap).ParseFiles(files...)
@@ -89,18 +95,24 @@ func (h *Handler) getBaseURL(r *http.Request) string {
 	if r.TLS != nil || r.Header.Get("X-Forwarded-Proto") == "https" {
 		proto = "https"
 	}
-	return fmt.Sprintf("%s://%s", proto, r.Host)
+	host := r.Host
+	if fwdHost := r.Header.Get("X-Forwarded-Host"); fwdHost != "" {
+		host = fwdHost
+	}
+	return fmt.Sprintf("%s://%s", proto, host)
 }
 
 func (h *Handler) toGameViews(games []database.Game, baseURL string) []GameView {
 	views := make([]GameView, len(games))
 	for i, g := range games {
-		rulesURL := fmt.Sprintf("%s/rules/%s", baseURL, g.URL)
-		qrURL := fmt.Sprintf("/qr?url=%s", rulesURL)
+		rulesHubURL := fmt.Sprintf("%s/games/%d/rules", baseURL, g.ID)
+		qrURL := fmt.Sprintf("/qr?url=%s", rulesHubURL)
+		primaryURL := fmt.Sprintf("%s/rules/%s", baseURL, g.URL)
 		views[i] = GameView{
-			Game:      g,
-			RulesURL:  rulesURL,
-			QRCodeURL: qrURL,
+			Game:            g,
+			RulesHubURL:     rulesHubURL,
+			QRCodeURL:       qrURL,
+			PrimaryRulesURL: primaryURL,
 		}
 	}
 	return views
@@ -135,6 +147,62 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 
 	if err := h.pages["index.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
 		log.Printf("Template execution error: %v", err)
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
+	trimmed := strings.TrimPrefix(r.URL.Path, "/games/")
+	parts := strings.Split(strings.Trim(trimmed, "/"), "/")
+	if len(parts) == 0 || parts[0] == "" {
+		http.NotFound(w, r)
+		return
+	}
+
+	gameID, err := strconv.ParseInt(parts[0], 10, 64)
+	if err != nil {
+		http.NotFound(w, r)
+		return
+	}
+
+	game, docs, expansions, err := h.db.GetGameWithDetails(gameID)
+	if err != nil {
+		log.Printf("Error loading game details for %d: %v", gameID, err)
+		http.Error(w, "Database error", http.StatusInternalServerError)
+		return
+	}
+	if game == nil {
+		http.NotFound(w, r)
+		return
+	}
+
+	baseURL := h.getBaseURL(r)
+	rulesHubURL := fmt.Sprintf("%s/games/%d/rules", baseURL, game.ID)
+	primaryURL := fmt.Sprintf("%s/rules/%s", baseURL, game.URL)
+	if len(docs) > 0 && docs[0].Filename != "" {
+		primaryURL = fmt.Sprintf("%s/rules/%s", baseURL, docs[0].Filename)
+	}
+
+	gv := GameView{
+		Game:            *game,
+		RulesHubURL:     rulesHubURL,
+		QRCodeURL:       fmt.Sprintf("/qr?url=%s", rulesHubURL),
+		PrimaryRulesURL: primaryURL,
+		Documents:       docs,
+		Expansions:      expansions,
+	}
+
+	data := PageData{
+		Title:      fmt.Sprintf("%s - Rules & Documents", game.Name),
+		Game:       &gv,
+		Documents:  docs,
+		Expansions: expansions,
+		BaseURL:    baseURL,
+		ActiveNav:  "rules",
+	}
+
+	if err := h.pages["rules_hub.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
+		log.Printf("Rules hub template execution error: %v", err)
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 	}
 }

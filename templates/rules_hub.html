@@ -1,0 +1,115 @@
+{{define "content"}}
+<div class="rules-hub-page">
+    <div class="rules-hub-topbar no-print">
+        <a href="/" class="btn-back">← Back to Catalog</a>
+        <a href="/stickers" class="btn btn-outline btn-sm">🏷️ Sticker View</a>
+    </div>
+
+    <div class="rules-hub-card">
+        <div class="rules-hero">
+            <div class="rules-hero-cover-wrap">
+                <img src="/img/{{.Game.Image}}" alt="{{.Game.Name}}" class="rules-hero-cover">
+            </div>
+            <div class="rules-hero-details">
+                <h1 class="rules-hero-title">{{.Game.Name}}</h1>
+                <div class="rules-badges-row">
+                    <span class="badge players-badge">👥 {{.Game.MinPlayers}}-{{.Game.MaxPlayers}} Players{{if .Game.BestPlayers}} (Best: {{.Game.BestPlayers}}){{end}}</span>
+                    {{if gt .Game.Complexity 0.0}}
+                    <span class="badge complexity-badge">🧠 Weight: {{printf "%.1f" .Game.Complexity}} / 5</span>
+                    {{end}}
+                </div>
+                {{if .Game.BggURL}}
+                <div class="rules-bgg-link-wrap">
+                    <a href="{{.Game.BggURL}}" target="_blank" rel="noopener noreferrer" class="bgg-hub-link">
+                        🌐 View on BoardGameGeek ↗
+                    </a>
+                </div>
+                {{end}}
+            </div>
+        </div>
+
+        <div class="rules-section">
+            <h2 class="rules-section-title">📚 Rulebooks & Documentation</h2>
+            <div class="doc-cards-list">
+                {{range .Documents}}
+                <div class="doc-card {{if .IsPrimary}}doc-card-primary{{end}}">
+                    <div class="doc-icon-col">
+                        <span class="doc-type-icon">
+                            {{if eq .Category "glossary"}}🔍
+                            {{else if eq .Category "expansion"}}🧩
+                            {{else if eq .Category "faq"}}❓
+                            {{else if eq .Category "reference"}}📋
+                            {{else}}📖{{end}}
+                        </span>
+                    </div>
+                    <div class="doc-info-col">
+                        <div class="doc-name-row">
+                            <h3 class="doc-title">{{.Title}}</h3>
+                            {{if .IsPrimary}}<span class="doc-primary-tag">Primary Rules</span>{{end}}
+                        </div>
+                        <span class="doc-filename">{{.Filename}}</span>
+                    </div>
+                    <div class="doc-action-col">
+                        <a href="/rules/{{.Filename}}" target="_blank" rel="noopener noreferrer" class="btn {{if .IsPrimary}}btn-primary{{else}}btn-outline{{end}} doc-open-btn">
+                            Open PDF ↗
+                        </a>
+                    </div>
+                </div>
+                {{else}}
+                <div class="doc-card doc-card-primary">
+                    <div class="doc-icon-col">
+                        <span class="doc-type-icon">📖</span>
+                    </div>
+                    <div class="doc-info-col">
+                        <div class="doc-name-row">
+                            <h3 class="doc-title">Core Rulebook</h3>
+                            <span class="doc-primary-tag">Primary Rules</span>
+                        </div>
+                        <span class="doc-filename">{{.Game.URL}}</span>
+                    </div>
+                    <div class="doc-action-col">
+                        <a href="/rules/{{.Game.URL}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary doc-open-btn">
+                            Open PDF ↗
+                        </a>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+
+        {{if .Expansions}}
+        <div class="rules-section">
+            <h2 class="rules-section-title">🧩 Available Expansions</h2>
+            <div class="expansions-list">
+                {{range .Expansions}}
+                <div class="expansion-card">
+                    <div class="exp-info">
+                        <h4 class="exp-title">{{.Name}}</h4>
+                        <div class="exp-meta">
+                            <span class="exp-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
+                            {{if gt .Complexity 0.0}}<span class="badge complexity-badge">🧠 {{printf "%.1f" .Complexity}}</span>{{end}}
+                        </div>
+                    </div>
+                    {{if .URL}}
+                    <a href="/rules/{{.URL}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                        📖 Expansion Rules ↗
+                    </a>
+                    {{end}}
+                </div>
+                {{end}}
+            </div>
+        </div>
+        {{end}}
+
+        <div class="rules-qr-share-section no-print">
+            <div class="share-qr-card">
+                <img src="{{.Game.QRCodeURL}}" alt="Rules QR Code" class="share-qr-img">
+                <div class="share-qr-text">
+                    <strong>Share with the Table</strong>
+                    <span>Scan this QR code with any phone or tablet to open these rules directly.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{end}}

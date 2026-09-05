@@ -4,7 +4,7 @@
         <img src="/img/{{.Image}}" alt="{{.Name}}" class="game-cover" loading="lazy">
         <div class="qr-overlay">
             <img src="{{.QRCodeURL}}" alt="QR Code for {{.Name}}" class="qr-code">
-            <span class="qr-hint">Scan for Rules</span>
+            <span class="qr-hint">Scan for Rules Hub</span>
         </div>
     </div>
     <div class="card-body">
@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="card-actions">
-            <a href="{{.RulesURL}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                📖 View Rules PDF
+            <a href="{{.RulesHubURL}}" class="btn btn-primary">
+                📖 Rules & Guides
             </a>
             {{if .BggURL}}
             <a href="{{.BggURL}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Open on BoardGameGeek">

@@ -11,7 +11,8 @@ services:
       - "8081:8080"
     environment:
       - PORT=8080
-      - BASE_URL=http://localhost:8081
+      # Set explicit external domain (e.g. https://bgtags.cklein.us) or leave empty to auto-detect IP:PORT
+      - BASE_URL=${BASE_URL:-}
       - DB_PATH=/app/data/bgtags.db
       - BACKUP_ENABLED=true
       - BACKUP_DIR=/app/backups

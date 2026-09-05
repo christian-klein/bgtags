@@ -18,11 +18,16 @@ const (
 	BackupFileExt        = ".json"
 )
 
+type GameBackupItem struct {
+	database.Game
+	Documents []database.GameDocument `json:"documents,omitempty"`
+}
+
 type BgtagsBackup struct {
-	Version    int             `json:"version"`
-	ExportedAt time.Time       `json:"exported_at"`
-	Summary    BackupSummary   `json:"summary"`
-	Games      []database.Game `json:"games"`
+	Version    int              `json:"version"`
+	ExportedAt time.Time        `json:"exported_at"`
+	Summary    BackupSummary    `json:"summary"`
+	Games      []GameBackupItem `json:"games"`
 }
 
 type BackupSummary struct {
@@ -96,7 +101,20 @@ func ExportData(db *database.DB) (*BgtagsBackup, error) {
 	if err != nil {
 		return nil, fmt.Errorf("querying games: %w", err)
 	}
-	backup.Games = games
+
+	backupItems := make([]GameBackupItem, len(games))
+	for i, g := range games {
+		docs, err := db.ListDocuments(g.ID)
+		if err != nil {
+			docs = nil
+		}
+		backupItems[i] = GameBackupItem{
+			Game:      g,
+			Documents: docs,
+		}
+	}
+
+	backup.Games = backupItems
 	backup.Summary = BackupSummary{
 		GameCount: len(games),
 	}
@@ -208,20 +226,52 @@ func RestoreFromBytes(db *database.DB, data []byte) error {
 	}
 	defer tx.Rollback()
 
+	if _, err := tx.Exec("DELETE FROM game_documents;"); err != nil {
+		return fmt.Errorf("clearing game_documents table: %w", err)
+	}
 	if _, err := tx.Exec("DELETE FROM games;"); err != nil {
 		return fmt.Errorf("clearing games table: %w", err)
 	}
 
-	stmt, err := tx.Prepare(`INSERT INTO games (id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+	stmt, err := tx.Prepare(`INSERT INTO games (id, parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at) 
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
 	if err != nil {
-		return fmt.Errorf("preparing insert statement: %w", err)
+		return fmt.Errorf("preparing game insert statement: %w", err)
 	}
 	defer stmt.Close()
 
-	for _, g := range backup.Games {
-		if _, err := stmt.Exec(g.ID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, g.CreatedAt, g.UpdatedAt); err != nil {
+	docStmt, err := tx.Prepare(`INSERT INTO game_documents (id, game_id, title, category, filename, is_primary, created_at)
+		VALUES (?, ?, ?, ?, ?, ?, ?)`)
+	if err != nil {
+		return fmt.Errorf("preparing doc insert statement: %w", err)
+	}
+	defer docStmt.Close()
+
+	for _, item := range backup.Games {
+		g := item.Game
+		if _, err := stmt.Exec(g.ID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, g.CreatedAt, g.UpdatedAt); err != nil {
 			return fmt.Errorf("restoring game %s: %w", g.Name, err)
+		}
+
+		if len(item.Documents) > 0 {
+			for _, doc := range item.Documents {
+				docID := doc.ID
+				var docIDParam interface{} = docID
+				if docID <= 0 {
+					docIDParam = nil
+				}
+				createdAt := doc.CreatedAt
+				if createdAt.IsZero() {
+					createdAt = g.CreatedAt
+				}
+				if _, err := docStmt.Exec(docIDParam, g.ID, doc.Title, doc.Category, doc.Filename, doc.IsPrimary, createdAt); err != nil {
+					return fmt.Errorf("restoring doc %s for game %s: %w", doc.Title, g.Name, err)
+				}
+			}
+		} else if g.URL != "" {
+			if _, err := docStmt.Exec(nil, g.ID, "Core Rulebook", "core", g.URL, true, g.CreatedAt); err != nil {
+				return fmt.Errorf("creating default doc for game %s: %w", g.Name, err)
+			}
 		}
 	}
 

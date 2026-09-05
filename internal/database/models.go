@@ -4,6 +4,7 @@ import "time"
 
 type Game struct {
 	ID          int64     `json:"id"`
+	ParentID    *int64    `json:"parent_id,omitempty"`
 	Name        string    `json:"name"`
 	URL         string    `json:"url"`
 	Image       string    `json:"image"`
@@ -14,4 +15,14 @@ type Game struct {
 	BggURL      string    `json:"bgg_url"`
 	CreatedAt   time.Time `json:"created_at"`
 	UpdatedAt   time.Time `json:"updated_at"`
+}
+
+type GameDocument struct {
+	ID        int64     `json:"id"`
+	GameID    int64     `json:"game_id"`
+	Title     string    `json:"title"`
+	Category  string    `json:"category"` // 'core', 'glossary', 'expansion', 'faq', 'reference'
+	Filename  string    `json:"filename"`
+	IsPrimary bool      `json:"is_primary"`
+	CreatedAt time.Time `json:"created_at"`
 }

@@ -5,6 +5,7 @@ import (
 	"net/http/httptest"
 	"path/filepath"
 	"testing"
+	"fmt"
 	"strings"
 
 	"github.com/christian-klein/bgtags/internal/config"
@@ -105,5 +106,110 @@ func TestPagesRender(t *testing.T) {
 	h.HandleGames(wGames, rGames)
 	if wGames.Code != http.StatusOK {
 		t.Errorf("expected 200 for games partial, got %d", wGames.Code)
+	}
+}
+
+func TestBaseURLResolution(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	// 1. Explicit BaseURL set
+	hConfigured := &Handler{
+		db: db,
+		cfg: &config.Config{
+			BaseURL: "https://bgtags.cklein.us",
+		},
+	}
+	r1 := httptest.NewRequest("GET", "http://10.0.0.45:8082/", nil)
+	if url := hConfigured.getBaseURL(r1); url != "https://bgtags.cklein.us" {
+		t.Errorf("expected https://bgtags.cklein.us, got %s", url)
+	}
+
+	// 2. Fallback to reverse proxy headers when BaseURL is empty
+	hDynamic := &Handler{
+		db: db,
+		cfg: &config.Config{
+			BaseURL: "",
+		},
+	}
+	rProxy := httptest.NewRequest("GET", "http://10.0.0.45:8080/games/1", nil)
+	rProxy.Header.Set("X-Forwarded-Proto", "https")
+	rProxy.Header.Set("X-Forwarded-Host", "bgtags.cklein.us")
+	if url := hDynamic.getBaseURL(rProxy); url != "https://bgtags.cklein.us" {
+		t.Errorf("expected https://bgtags.cklein.us from proxy headers, got %s", url)
+	}
+
+	// 3. Fallback to direct client host and port
+	rDirect := httptest.NewRequest("GET", "http://10.0.0.45:8082/games/1", nil)
+	if url := hDynamic.getBaseURL(rDirect); url != "http://10.0.0.45:8082" {
+		t.Errorf("expected http://10.0.0.45:8082 from request host, got %s", url)
+	}
+}
+
+func TestRulesHubRender(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "rules_test.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	game := &database.Game{
+		Name:        "Eclipse: Second Dawn",
+		URL:         "eclipse-rules.pdf",
+		Image:       "eclipse.webp",
+		MinPlayers:  2,
+		MaxPlayers:  6,
+		BestPlayers: "4-6",
+		Complexity:  3.6,
+	}
+	if err := db.CreateGame(game); err != nil {
+		t.Fatalf("failed to create game: %v", err)
+	}
+
+	doc := &database.GameDocument{
+		GameID:    game.ID,
+		Title:     "Species Glossary",
+		Category:  "glossary",
+		Filename:  "eclipse-glossary.pdf",
+		IsPrimary: false,
+	}
+	if err := db.AddDocument(doc); err != nil {
+		t.Fatalf("failed to add doc: %v", err)
+	}
+
+	cfg := &config.Config{
+		BaseURL:   "https://bgtags.cklein.us",
+		BackupDir: filepath.Join(tempDir, "backups"),
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	w := httptest.NewRecorder()
+	r := httptest.NewRequest("GET", fmt.Sprintf("/games/%d/rules", game.ID), nil)
+	h.HandleGameRoute(w, r)
+
+	if w.Code != http.StatusOK {
+		t.Fatalf("expected 200 for rules hub, got %d", w.Code)
+	}
+
+	body := w.Body.String()
+	if !strings.Contains(body, "Eclipse: Second Dawn") {
+		t.Errorf("expected game title in body")
+	}
+	if !strings.Contains(body, "Species Glossary") {
+		t.Errorf("expected doc title in body")
+	}
+	if !strings.Contains(body, "bgtags.cklein.us") {
+		t.Errorf("expected configured BaseURL in body/QR")
 	}
 }

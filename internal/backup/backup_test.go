@@ -69,3 +69,54 @@ func TestBackupAndRestore(t *testing.T) {
 		t.Errorf("expected complexity and best_players restored, got %+v", restored[0])
 	}
 }
+
+func TestBackupWithDocuments(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "docs_backup.db")
+	backupDir := filepath.Join(tempDir, "backups")
+
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open test db: %v", err)
+	}
+	defer db.Close()
+
+	g := &database.Game{Name: "Ark Nova", URL: "ark.pdf", Image: "ark.webp", MinPlayers: 1, MaxPlayers: 4}
+	if err := db.CreateGame(g); err != nil {
+		t.Fatalf("failed to create game: %v", err)
+	}
+
+	doc := &database.GameDocument{
+		GameID:    g.ID,
+		Title:     "Glossary",
+		Category:  "glossary",
+		Filename:  "ark-glossary.pdf",
+		IsPrimary: false,
+	}
+	if err := db.AddDocument(doc); err != nil {
+		t.Fatalf("failed to add doc: %v", err)
+	}
+
+	meta, err := CreateBackup(db, backupDir, 5)
+	if err != nil {
+		t.Fatalf("CreateBackup failed: %v", err)
+	}
+
+	// Clear game and docs
+	if err := db.DeleteGame(g.ID); err != nil {
+		t.Fatalf("failed to delete game: %v", err)
+	}
+
+	// Restore
+	if err := RestoreBackup(db, meta.FilePath); err != nil {
+		t.Fatalf("RestoreBackup failed: %v", err)
+	}
+
+	docs, err := db.ListDocuments(g.ID)
+	if err != nil {
+		t.Fatalf("ListDocuments failed: %v", err)
+	}
+	if len(docs) != 2 {
+		t.Fatalf("expected 2 restored documents (core + glossary), got %d", len(docs))
+	}
+}
