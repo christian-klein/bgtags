@@ -562,7 +562,6 @@ body {
     color: #334155;
     padding: 2px 6px;
     border-radius: 4px;
-    margin-bottom: 6px;
 }
 
 .sticker-art {
@@ -812,19 +811,24 @@ body {
 
 .sticker-meta {
     display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 4px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 6px;
+    width: 100%;
 }
 
 .sticker-complexity {
-    display: inline-block;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
     font-size: 0.72rem;
     font-weight: 700;
     background-color: #fef3c7;
     color: #92400e;
     padding: 2px 5px;
     border-radius: 4px;
+    white-space: nowrap;
 }
 
 .sticker-middle {
@@ -833,12 +837,14 @@ body {
     justify-content: space-between;
     gap: 8px;
     margin: 4px 0;
+    width: 100%;
 }
 
 .sticker-checks {
     display: flex;
     align-items: center;
     gap: 6px;
+    margin-left: auto;
 }
 
 .checks-label {
