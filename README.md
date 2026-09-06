@@ -1,4 +1,8 @@
-# Board Game Tags (bgtags)
+<div align="center">
+  <img src="static/img/bgtags-icon.png" width="128" height="128" alt="bgtags logo" style="border-radius: 24px;" />
+  <h1>bgtags</h1>
+  <p><strong>Self-hosted digital rulebook hub & physical QR code sticker generator for board game boxes.</strong></p>
+</div>
 
 A fast, lightweight Go + HTMX web application for board game rule tags and scannable QR codes.
 

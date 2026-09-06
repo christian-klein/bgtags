@@ -1,4 +1,4 @@
-# AI Agent Guide: Operating & Developing `bgtags`
+# <img src="static/img/bgtags-icon.png" width="32" height="32" alt="bgtags logo" style="vertical-align: middle; border-radius: 6px;" /> AI Agent Guide: Operating & Developing `bgtags`
 
 Welcome to the **`bgtags`** repository. This document serves as the canonical technical guide and operating manual for AI agents (and human developers) adding board games, rules, player aids, expansions, companion materials, and maintaining the system.
 
