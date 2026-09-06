@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Title}} - bgtags</title>
     <link rel="icon" type="image/png" href="/static/favicon.png">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css?v=20260906-dialog">
     <script src="/static/js/htmx.min.js"></script>
 </head>
 <body>
@@ -47,11 +47,38 @@
 
     <div id="modal-container"></div>
 
+    <dialog id="qr-dialog" class="qr-modal-dialog" onclick="closeQRPopup()">
+        <div class="qr-modal-card" onclick="closeQRPopup()">
+            <button type="button" class="qr-modal-close" onclick="closeQRPopup()" title="Close" aria-label="Close">✕</button>
+            <div class="qr-modal-header">
+                <h3 id="qr-dialog-title" class="qr-modal-title"></h3>
+                <p class="qr-modal-subtitle">Scan with phone or tablet camera to open rules</p>
+            </div>
+            <div class="qr-modal-img-wrap">
+                <img id="qr-dialog-img" src="" alt="QR Code" class="qr-modal-img">
+            </div>
+            <div class="qr-modal-hint">
+                <span>✕ Click anywhere to close</span>
+            </div>
+        </div>
+    </dialog>
+
     <script>
         function closeModal() {
             const container = document.getElementById('modal-container');
             if (container) container.innerHTML = '';
-            document.body.classList.remove('modal-open');
+            closeQRPopup();
+        }
+
+        function closeQRPopup() {
+            const dialog = document.getElementById('qr-dialog');
+            if (dialog && dialog.open) {
+                if (typeof dialog.close === 'function') {
+                    dialog.close();
+                } else {
+                    dialog.removeAttribute('open');
+                }
+            }
         }
 
         function showQRPopupFromElement(el, event) {
@@ -72,34 +99,23 @@
                 }
             }
 
-            const container = document.getElementById('modal-container');
-            container.innerHTML = `
-                <div class="qr-modal-backdrop" onclick="closeModal()">
-                    <div class="qr-modal-content" onclick="closeModal()">
-                        <button type="button" class="qr-modal-close" onclick="closeModal()" title="Close (or click anywhere)" aria-label="Close">✕</button>
-                        <div class="qr-modal-header">
-                            <h3 class="qr-modal-title">${escapeHTML(title || 'Scan QR Code')}</h3>
-                            <p class="qr-modal-subtitle">Scan with phone or tablet camera to open rules</p>
-                        </div>
-                        <div class="qr-modal-img-wrap">
-                            <img src="${largeUrl}" alt="QR Code for ${escapeHTML(title || '')}" class="qr-modal-img">
-                        </div>
-                        <div class="qr-modal-hint">
-                            <span>✕ Click anywhere to close</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.classList.add('modal-open');
-        }
+            const dialog = document.getElementById('qr-dialog');
+            const titleEl = document.getElementById('qr-dialog-title');
+            const imgEl = document.getElementById('qr-dialog-img');
 
-        function escapeHTML(str) {
-            return String(str || '')
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#039;');
+            if (titleEl) titleEl.textContent = title || 'Scan QR Code';
+            if (imgEl) {
+                imgEl.src = largeUrl;
+                imgEl.alt = 'QR Code for ' + (title || 'game');
+            }
+
+            if (dialog) {
+                if (typeof dialog.showModal === 'function') {
+                    dialog.showModal();
+                } else {
+                    dialog.setAttribute('open', '');
+                }
+            }
         }
 
         document.addEventListener('keydown', function(e) {
