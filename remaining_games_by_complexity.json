@@ -209,17 +209,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/200511/after-the-empire"
   },
   {
-    "bgg_id": 197586,
-    "name": "Eldritch Horror: Signs of Carcosa",
-    "year": 2016,
-    "complexity": 3.1,
-    "geek_rating": 6.869,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/197586/eldritch-horror-signs-of-carcosa"
-  },
-  {
     "bgg_id": 142875,
     "name": "The Lord of the Rings: The Card Game – The Black Riders",
     "year": 2013,
@@ -262,17 +251,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/129423/descent-journeys-in-the-dark-second-edition-lair-o"
-  },
-  {
-    "bgg_id": 221194,
-    "name": "Dinosaur Island",
-    "year": 2017,
-    "complexity": 3.05,
-    "geek_rating": 7.219,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/221194/dinosaur-island"
   },
   {
     "bgg_id": 240980,
@@ -374,39 +352,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/164665/the-lord-of-the-rings-the-card-game-the-treason-of"
   },
   {
-    "bgg_id": 203124,
-    "name": "Massive Darkness: Heroes & Monster Set – Sorcerers vs Lord Tusk",
-    "year": 2017,
-    "complexity": 3,
-    "geek_rating": 5.785,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203124/massive-darkness-heroes-and-monster-set-sorcerers"
-  },
-  {
-    "bgg_id": 202305,
-    "name": "Massive Darkness: Enemy Box – Troglodytes",
-    "year": 2017,
-    "complexity": 3,
-    "geek_rating": 5.783,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202305/massive-darkness-enemy-box-troglodytes"
-  },
-  {
-    "bgg_id": 201748,
-    "name": "Massive Darkness: Heroes & Monster Set – Noble Warriors vs The Cockatrix",
-    "year": 2017,
-    "complexity": 3,
-    "geek_rating": 5.781,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/201748/massive-darkness-heroes-and-monster-set-noble-warr"
-  },
-  {
     "bgg_id": 140917,
     "name": "The Lord of the Rings: The Card Game – The Morgul Vale",
     "year": 2013,
@@ -427,17 +372,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/164313/the-lord-of-the-rings-the-card-game-the-lost-realm"
-  },
-  {
-    "bgg_id": 232977,
-    "name": "Massive Darkness: A Quest of Crystal & Lava",
-    "year": 2017,
-    "complexity": 3,
-    "geek_rating": 5.721,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/232977/massive-darkness-a-quest-of-crystal-and-lava"
   },
   {
     "bgg_id": 207320,
@@ -1208,17 +1142,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/337098/dragonbond-lords-of-vaala"
-  },
-  {
-    "bgg_id": 197070,
-    "name": "Massive Darkness",
-    "year": 2017,
-    "complexity": 2.57,
-    "geek_rating": 6.443,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/197070/massive-darkness"
   },
   {
     "bgg_id": 195571,
@@ -2662,17 +2585,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/353719/crabs-in-a-bucket"
   },
   {
-    "bgg_id": 234672,
-    "name": "Massive Darkness: Lightbringer Pack",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.788,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/234672/massive-darkness-lightbringer-pack"
-  },
-  {
     "bgg_id": 189273,
     "name": "Arcadia Quest: Inferno – Whole Lotta Lava",
     "year": 2017,
@@ -2693,50 +2605,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/233917/arcadia-quest-riders"
-  },
-  {
-    "bgg_id": 203423,
-    "name": "Massive Darkness: Enemy Box – Reptisaurians",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.713,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203423/massive-darkness-enemy-box-reptisaurians"
-  },
-  {
-    "bgg_id": 203011,
-    "name": "Massive Darkness: Heroes & Monster Set – Bloodmoon Assassins vs The Hellephant",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.71,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203011/massive-darkness-heroes-and-monster-set-bloodmoon"
-  },
-  {
-    "bgg_id": 203015,
-    "name": "Massive Darkness: Heroes & Monster Set – Warrior Priests vs The Spearmaiden Cyclops",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.705,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203015/massive-darkness-heroes-and-monster-set-warrior-pr"
-  },
-  {
-    "bgg_id": 202827,
-    "name": "Massive Darkness: Enemy Box – Ratlings",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.69,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202827/massive-darkness-enemy-box-ratlings"
   },
   {
     "bgg_id": 189197,
