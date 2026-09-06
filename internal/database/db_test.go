@@ -261,3 +261,118 @@ func TestPDFOptimizationOperations(t *testing.T) {
 		t.Fatalf("expected total=1, lin=0, pending=1, got total=%d, lin=%d, pending=%d", total, lin, pending)
 	}
 }
+
+func TestFormatExpansionName(t *testing.T) {
+	tests := []struct {
+		name          string
+		expansionName string
+		parentName    string
+		expected      string
+	}{
+		{
+			name:          "LotR en-dash",
+			expansionName: "The Lord of the Rings: The Card Game – The Hunt for Gollum",
+			parentName:    "The Lord of the Rings: The Card Game",
+			expected:      "The Hunt for Gollum",
+		},
+		{
+			name:          "LotR hyphen",
+			expansionName: "The Lord of the Rings: The Card Game - Conflict at the Carrock",
+			parentName:    "The Lord of the Rings: The Card Game",
+			expected:      "Conflict at the Carrock",
+		},
+		{
+			name:          "ASL colon",
+			expansionName: "Advanced Squad Leader: Starter Kit #1",
+			parentName:    "Advanced Squad Leader",
+			expected:      "Starter Kit #1",
+		},
+		{
+			name:          "Root colon",
+			expansionName: "Root: The Riverfolk Expansion",
+			parentName:    "Root",
+			expected:      "The Riverfolk Expansion",
+		},
+		{
+			name:          "Dune Imperium hyphen",
+			expansionName: "Dune: Imperium - Rise of Ix",
+			parentName:    "Dune: Imperium",
+			expected:      "Rise of Ix",
+		},
+		{
+			name:          "Parent with Revised Edition suffix",
+			expansionName: "The Lord of the Rings: The Card Game – The Dark of Mirkwood",
+			parentName:    "The Lord of the Rings: The Card Game (Revised Edition)",
+			expected:      "The Dark of Mirkwood",
+		},
+		{
+			name:          "Internal hyphen in name preserved",
+			expansionName: "The Lord of the Rings: The Card Game – Khazad-dûm",
+			parentName:    "The Lord of the Rings: The Card Game",
+			expected:      "Khazad-dûm",
+		},
+		{
+			name:          "No match returns unchanged",
+			expansionName: "Invaders from Afar",
+			parentName:    "Scythe",
+			expected:      "Invaders from Afar",
+		},
+		{
+			name:          "Identical name returns unchanged",
+			expansionName: "Root",
+			parentName:    "Root",
+			expected:      "Root",
+		},
+		{
+			name:          "Empty parent returns unchanged",
+			expansionName: "Rise of Ix",
+			parentName:    "",
+			expected:      "Rise of Ix",
+		},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			got := FormatExpansionName(tc.expansionName, tc.parentName)
+			if got != tc.expected {
+				t.Errorf("FormatExpansionName(%q, %q) = %q; want %q", tc.expansionName, tc.parentName, got, tc.expected)
+			}
+		})
+	}
+}
+
+func TestSettings(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "settings_test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("Open failed: %v", err)
+	}
+	defer db.Close()
+
+	// 1. Default value when not set
+	if db.GetSettingBool("hide_game_title_in_expansions", false) != false {
+		t.Errorf("expected default false when not set")
+	}
+
+	// 2. Set to true
+	if err := db.SetSettingBool("hide_game_title_in_expansions", true); err != nil {
+		t.Fatalf("SetSettingBool failed: %v", err)
+	}
+	if !db.GetSettingBool("hide_game_title_in_expansions", false) {
+		t.Errorf("expected true after setting to true")
+	}
+
+	settings := db.GetAdminSettings()
+	if !settings.HideGameTitleInExpansions {
+		t.Errorf("expected GetAdminSettings to return HideGameTitleInExpansions=true")
+	}
+
+	// 3. Set to false
+	if err := db.SetSettingBool("hide_game_title_in_expansions", false); err != nil {
+		t.Fatalf("SetSettingBool failed: %v", err)
+	}
+	if db.GetSettingBool("hide_game_title_in_expansions", true) != false {
+		t.Errorf("expected false after setting to false")
+	}
+}

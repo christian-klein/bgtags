@@ -71,6 +71,7 @@ func main() {
 	mux.HandleFunc("/admin/games/", middleware.RequireAdmin(cfg, h.HandleAdminGameRoute))
 	mux.HandleFunc("/admin/documents/", middleware.RequireAdmin(cfg, h.HandleAdminDocumentRoute))
 	mux.HandleFunc("/admin/optimize", middleware.RequireAdmin(cfg, h.HandleAdminOptimize))
+	mux.HandleFunc("/admin/settings", middleware.RequireAdmin(cfg, h.HandleAdminSettings))
 	mux.HandleFunc("/backups/create", middleware.RequireAdmin(cfg, h.HandleCreateBackup))
 	mux.HandleFunc("/backups/restore", middleware.RequireAdmin(cfg, h.HandleRestoreBackup))
 

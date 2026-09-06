@@ -104,7 +104,7 @@
                 <div class="expansion-card">
                     <div class="exp-info">
                         <a href="/games/{{.ID}}/rules" class="exp-title-link">
-                            <h4 class="exp-title">{{.Name}}</h4>
+                            <h4 class="exp-title">{{if .DisplayName}}{{.DisplayName}}{{else}}{{.Name}}{{end}}</h4>
                         </a>
                         <div class="exp-meta">
                             <span class="exp-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>

@@ -134,3 +134,71 @@ func TestAdminPageAndGameCRUD(t *testing.T) {
 		t.Errorf("expected game to be deleted from database")
 	}
 }
+
+func TestAdminSettingsHandler(t *testing.T) {
+	h, db, _ := setupTestHandler(t)
+	defer db.Close()
+
+	// 1. Initial admin page contains Settings tab
+	recAdmin := httptest.NewRecorder()
+	reqAdmin := httptest.NewRequest("GET", "/admin", nil)
+	h.HandleAdmin(recAdmin, reqAdmin)
+	if recAdmin.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d", recAdmin.Code)
+	}
+	bodyAdmin := recAdmin.Body.String()
+	if !strings.Contains(bodyAdmin, "⚙️ Settings") {
+		t.Errorf("expected Settings tab button in admin page")
+	}
+	if !strings.Contains(bodyAdmin, "id=\"tab-settings\"") {
+		t.Errorf("expected tab-settings section in admin page")
+	}
+	if !strings.Contains(bodyAdmin, "hide_game_title_in_expansions") {
+		t.Errorf("expected hide_game_title_in_expansions checkbox in admin page")
+	}
+
+	// 2. Post HTMX update to enable hide_game_title_in_expansions
+	recPost := httptest.NewRecorder()
+	reqPost := httptest.NewRequest("POST", "/admin/settings", strings.NewReader("hide_game_title_in_expansions=true"))
+	reqPost.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	reqPost.Header.Set("HX-Request", "true")
+	h.HandleAdminSettings(recPost, reqPost)
+
+	if recPost.Code != http.StatusOK {
+		t.Fatalf("expected 200 for HTMX post, got %d", recPost.Code)
+	}
+	if !strings.Contains(recPost.Body.String(), "Settings saved successfully") {
+		t.Errorf("expected success notification in HTMX response: %s", recPost.Body.String())
+	}
+
+	// Verify in DB
+	if !db.GetSettingBool("hide_game_title_in_expansions", false) {
+		t.Errorf("expected hide_game_title_in_expansions to be true in DB")
+	}
+
+	// 3. Render admin page again, verify checkbox is checked
+	recChecked := httptest.NewRecorder()
+	h.HandleAdmin(recChecked, reqAdmin)
+	if !strings.Contains(recChecked.Body.String(), "name=\"hide_game_title_in_expansions\" \n                                   value=\"true\" \n                                   checked") &&
+		!strings.Contains(recChecked.Body.String(), "checked") {
+		t.Errorf("expected checkbox to be checked")
+	}
+
+	// 4. Post non-HTMX update to disable (omit field from form)
+	recDisable := httptest.NewRecorder()
+	reqDisable := httptest.NewRequest("POST", "/admin/settings", strings.NewReader(""))
+	reqDisable.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	h.HandleAdminSettings(recDisable, reqDisable)
+
+	if recDisable.Code != http.StatusSeeOther {
+		t.Fatalf("expected 303 redirect for non-HTMX post, got %d", recDisable.Code)
+	}
+	if recDisable.Header().Get("Location") != "/admin?tab=settings" {
+		t.Errorf("expected redirect to /admin?tab=settings, got %s", recDisable.Header().Get("Location"))
+	}
+
+	// Verify in DB
+	if db.GetSettingBool("hide_game_title_in_expansions", true) != false {
+		t.Errorf("expected hide_game_title_in_expansions to be false in DB")
+	}
+}

@@ -219,7 +219,7 @@ func TestRulesHubRender(t *testing.T) {
 	// 2. Test Expansion Game rules hub links back to parent game
 	exp := &database.Game{
 		ParentID:   &game.ID,
-		Name:       "Eclipse: Worlds Afar",
+		Name:       "Eclipse: Second Dawn - Worlds Afar",
 		URL:        "eclipse-worlds-afar.pdf",
 		Image:      "eclipse-exp.webp",
 		MinPlayers: 2,
@@ -244,5 +244,32 @@ func TestRulesHubRender(t *testing.T) {
 	if !strings.Contains(expBody, "← Back to Eclipse: Second Dawn") {
 		t.Errorf("expected expansion rules hub to display '← Back to Eclipse: Second Dawn'")
 	}
+
+	// 3. Test base game rules hub: Available Expansions list with setting OFF (default)
+	wBase := httptest.NewRecorder()
+	rBase := httptest.NewRequest("GET", fmt.Sprintf("/games/%d/rules", game.ID), nil)
+	h.HandleGameRoute(wBase, rBase)
+	if !strings.Contains(wBase.Body.String(), "Eclipse: Second Dawn - Worlds Afar") {
+		t.Errorf("expected full expansion name 'Eclipse: Second Dawn - Worlds Afar' when setting is OFF")
+	}
+
+	// 4. Enable hide_game_title_in_expansions setting
+	if err := db.SetSettingBool("hide_game_title_in_expansions", true); err != nil {
+		t.Fatalf("failed to enable setting: %v", err)
+	}
+
+	// 5. Test base game rules hub: Available Expansions list with setting ON
+	wBaseClean := httptest.NewRecorder()
+	rBaseClean := httptest.NewRequest("GET", fmt.Sprintf("/games/%d/rules", game.ID), nil)
+	h.HandleGameRoute(wBaseClean, rBaseClean)
+	bodyClean := wBaseClean.Body.String()
+	if !strings.Contains(bodyClean, "Worlds Afar") {
+		t.Errorf("expected stripped expansion name 'Worlds Afar' when setting is ON")
+	}
+	// Verify "Eclipse: Worlds Afar" is NOT in the expansion title header
+	if strings.Contains(bodyClean, "<h4 class=\"exp-title\">Eclipse: Worlds Afar</h4>") {
+		t.Errorf("expected parent title to be stripped from expansion title header")
+	}
 }
+
 

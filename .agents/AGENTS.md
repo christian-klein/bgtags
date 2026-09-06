@@ -132,6 +132,11 @@ The Admin Control Panel allows authorized administrators (members of `ADMIN_GROU
 - **Restore Snapshot**:
   - Replaces the active database with a chosen snapshot and safely resets database connections.
 
+### 5.3 System & Display Settings (`/admin?tab=settings`)
+- **Hide Game Title in Expansion Names**:
+  - When enabled, automatically strips the base game's title and separator prefix (e.g. ` – `, `: `, ` - `) from expansion display names in the *Available Expansions* section of game rule hubs.
+  - Settings are persisted in the SQLite `settings` table.
+
 ---
 
 ## 6. Ground Rules & Content Policies

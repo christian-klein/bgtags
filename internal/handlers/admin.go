@@ -61,6 +61,7 @@ func (h *Handler) HandleAdmin(w http.ResponseWriter, r *http.Request) {
 		OptTotal:      totalOpt,
 		OptLinearized: linOpt,
 		OptPending:    pendingOpt,
+		Settings:      h.db.GetAdminSettings(),
 		BaseURL:       baseURL,
 		ActiveNav:     "admin",
 	}
@@ -432,4 +433,39 @@ func (h *Handler) HandleAdminOptimize(w http.ResponseWriter, r *http.Request) {
 		</div>
 	</div>`, processed, skipped, lin, pending, total)
 }
+
+func (h *Handler) HandleAdminSettings(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, "Invalid form data", http.StatusBadRequest)
+		return
+	}
+
+	hideVal := r.FormValue("hide_game_title_in_expansions")
+	hideExp := hideVal == "true" || hideVal == "on" || hideVal == "1"
+	if err := h.db.SetSettingBool("hide_game_title_in_expansions", hideExp); err != nil {
+		log.Printf("Error saving admin settings: %v", err)
+		if r.Header.Get("HX-Request") != "" {
+			w.Header().Set("Content-Type", "text/html; charset=utf-8")
+			w.WriteHeader(http.StatusInternalServerError)
+			fmt.Fprintf(w, `<div class="alert alert-danger" style="margin-bottom: 1rem;">Failed to save settings: %s</div>`, err.Error())
+			return
+		}
+		http.Error(w, "Failed to save settings", http.StatusInternalServerError)
+		return
+	}
+
+	if r.Header.Get("HX-Request") != "" {
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		w.Write([]byte(`<div class="alert alert-success" style="margin-bottom: 1rem; animation: fadeIn 0.3s ease;">✓ Settings saved successfully.</div>`))
+		return
+	}
+
+	http.Redirect(w, r, "/admin?tab=settings", http.StatusSeeOther)
+}
+
 

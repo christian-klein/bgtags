@@ -47,6 +47,9 @@ type PageData struct {
 	OptLinearized int
 	OptPending    int
 
+	// Settings
+	Settings database.AdminSettings
+
 	// Auth & RBAC
 	OIDCEnabled     bool
 	IsAuthenticated bool
@@ -213,6 +216,12 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 		p, err := h.db.GetGame(*game.ParentID)
 		if err == nil {
 			parentGame = p
+		}
+	}
+
+	if h.db.GetSettingBool("hide_game_title_in_expansions", false) {
+		for i := range expansions {
+			expansions[i].DisplayName = database.FormatExpansionName(expansions[i].Name, game.Name)
 		}
 	}
 

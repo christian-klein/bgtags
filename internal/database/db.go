@@ -3,6 +3,7 @@ package database
 import (
 	"database/sql"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -91,6 +92,11 @@ func (db *DB) migrate() error {
 		mod_time INTEGER NOT NULL,
 		is_linearized INTEGER NOT NULL DEFAULT 0,
 		optimized_at DATETIME DEFAULT CURRENT_TIMESTAMP
+	);
+
+	CREATE TABLE IF NOT EXISTS settings (
+		key TEXT PRIMARY KEY,
+		value TEXT NOT NULL
 	);
 	`
 	if _, err := db.Exec(schema); err != nil {
@@ -511,3 +517,79 @@ func (db *DB) GetOptimizationStats() (total, linearized, pending int, err error)
 	pending = total - linearized
 	return total, linearized, pending, nil
 }
+
+func (db *DB) GetSetting(key, defaultValue string) (string, error) {
+	var val string
+	err := db.QueryRow("SELECT value FROM settings WHERE key = ?", key).Scan(&val)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return defaultValue, nil
+		}
+		return defaultValue, err
+	}
+	return val, nil
+}
+
+func (db *DB) GetSettingBool(key string, defaultValue bool) bool {
+	val, err := db.GetSetting(key, "")
+	if err != nil || val == "" {
+		return defaultValue
+	}
+	return val == "1" || strings.ToLower(val) == "true" || val == "on"
+}
+
+func (db *DB) SetSetting(key, value string) error {
+	query := `INSERT INTO settings (key, value) VALUES (?, ?)
+		ON CONFLICT(key) DO UPDATE SET value = excluded.value;`
+	_, err := db.Exec(query, key, value)
+	return err
+}
+
+func (db *DB) SetSettingBool(key string, value bool) error {
+	strVal := "0"
+	if value {
+		strVal = "1"
+	}
+	return db.SetSetting(key, strVal)
+}
+
+func (db *DB) GetAdminSettings() AdminSettings {
+	return AdminSettings{
+		HideGameTitleInExpansions: db.GetSettingBool("hide_game_title_in_expansions", false),
+	}
+}
+
+// FormatExpansionName strips the parent game title and leading separators
+// (such as " – ", ": ", " - ", " — ") from an expansion's name.
+func FormatExpansionName(expansionName, parentName string) string {
+	if parentName == "" || strings.TrimSpace(expansionName) == "" {
+		return expansionName
+	}
+
+	expLower := strings.ToLower(expansionName)
+	candidates := []string{parentName}
+
+	// Also check parentName without trailing parenthetical (e.g. "Game (Revised Edition)" -> "Game")
+	if idx := strings.LastIndex(parentName, " ("); idx != -1 && strings.HasSuffix(parentName, ")") {
+		clean := strings.TrimSpace(parentName[:idx])
+		if clean != "" {
+			candidates = append(candidates, clean)
+		}
+	}
+
+	for _, cand := range candidates {
+		candLower := strings.ToLower(cand)
+		if strings.HasPrefix(expLower, candLower) {
+			trimmed := expansionName[len(cand):]
+			// Trim leading separators (whitespace, colons, hyphens, en-dashes, em-dashes, slashes)
+			trimmed = strings.TrimLeft(trimmed, " \t\r\n:-–—/")
+			trimmed = strings.TrimSpace(trimmed)
+			if trimmed != "" {
+				return trimmed
+			}
+		}
+	}
+
+	return expansionName
+}
+
