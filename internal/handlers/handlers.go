@@ -9,9 +9,13 @@ import (
 	"strconv"
 	"strings"
 
+	"context"
+
+	"github.com/christian-klein/bgtags/internal/auth"
 	"github.com/christian-klein/bgtags/internal/backup"
 	"github.com/christian-klein/bgtags/internal/config"
 	"github.com/christian-klein/bgtags/internal/database"
+	"github.com/christian-klein/bgtags/internal/middleware"
 )
 
 type Handler struct {
@@ -19,6 +23,7 @@ type Handler struct {
 	cfg      *config.Config
 	pages    map[string]*template.Template
 	partials *template.Template
+	oidc     *auth.OIDCService
 }
 
 type PageData struct {
@@ -35,6 +40,12 @@ type PageData struct {
 	Backups     []*backup.BackupFileMeta
 	Message     string
 	Error       string
+
+	// Auth & RBAC
+	OIDCEnabled     bool
+	IsAuthenticated bool
+	IsAdmin         bool
+	User            *auth.SessionData
 }
 
 type GameView struct {
@@ -64,7 +75,7 @@ func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) 
 	}
 
 	pages := make(map[string]*template.Template)
-	for _, pageName := range []string{"index.html", "stickers.html", "rules_hub.html"} {
+	for _, pageName := range []string{"index.html", "stickers.html", "rules_hub.html", "admin.html"} {
 		pagePath := filepath.Join(tmplDir, pageName)
 		files := append([]string{layoutPath, pagePath}, partialFiles...)
 		t, err := template.New("layout.html").Funcs(funcMap).ParseFiles(files...)
@@ -79,11 +90,17 @@ func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) 
 		return nil, fmt.Errorf("parsing partial templates: %w", err)
 	}
 
+	oidc, err := auth.NewOIDCService(context.Background(), cfg.OIDCIssuerURL, cfg.OIDCClientID, cfg.OIDCClientSecret, cfg.OIDCRedirectURL, cfg.OIDCEnabled)
+	if err != nil {
+		log.Printf("[bgtags] Warning: failed to initialize OIDC provider: %v", err)
+	}
+
 	return &Handler{
 		db:       db,
 		cfg:      cfg,
 		pages:    pages,
 		partials: partialsTmpl,
+		oidc:     oidc,
 	}, nil
 }
 
@@ -118,6 +135,13 @@ func (h *Handler) toGameViews(games []database.Game, baseURL string) []GameView 
 	return views
 }
 
+func (h *Handler) populateAuthData(r *http.Request, data *PageData) {
+	data.OIDCEnabled = h.cfg.OIDCEnabled
+	data.IsAuthenticated = middleware.IsAuthenticated(r, h.cfg)
+	data.IsAdmin = middleware.IsAdmin(r, h.cfg)
+	data.User = middleware.UserFromContext(r.Context())
+}
+
 func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
@@ -144,6 +168,7 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 		BaseURL:     baseURL,
 		ActiveNav:   "catalog",
 	}
+	h.populateAuthData(r, &data)
 
 	if err := h.pages["index.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
 		log.Printf("Template execution error: %v", err)
@@ -200,6 +225,7 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 		BaseURL:    baseURL,
 		ActiveNav:  "rules",
 	}
+	h.populateAuthData(r, &data)
 
 	if err := h.pages["rules_hub.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
 		log.Printf("Rules hub template execution error: %v", err)
@@ -254,6 +280,7 @@ func (h *Handler) HandleStickers(w http.ResponseWriter, r *http.Request) {
 		BaseURL:     baseURL,
 		ActiveNav:   "stickers",
 	}
+	h.populateAuthData(r, &data)
 
 	if err := h.pages["stickers.html"].ExecuteTemplate(w, "layout.html", data); err != nil {
 		log.Printf("Template execution error: %v", err)

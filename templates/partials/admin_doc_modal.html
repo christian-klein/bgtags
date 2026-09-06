@@ -1,0 +1,50 @@
+{{define "admin_doc_modal.html"}}
+<div class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-dialog" style="max-width: 540px;">
+        <div class="modal-header">
+            <h2 class="modal-title">📄 Add Document to {{.Game.Name}}</h2>
+            <button type="button" class="modal-close" onclick="closeModal()">×</button>
+        </div>
+
+        <form hx-post="/admin/games/{{.Game.ID}}/documents" 
+              hx-target="#admin-games-container" 
+              hx-encoding="multipart/form-data" 
+              hx-on::after-request="if(event.detail.successful) closeModal()">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label" for="doc-title">Document Title *</label>
+                    <input type="text" id="doc-title" name="title" class="form-control" placeholder="e.g. Reference Manual, Player Aid" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="doc-category">Category *</label>
+                    <select id="doc-category" name="category" class="form-control" required>
+                        <option value="core">Core Rules</option>
+                        <option value="reference" selected>Reference / Player Aid</option>
+                        <option value="expansion">Expansion Rules</option>
+                        <option value="faq">FAQ / Errata</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">PDF File *</label>
+                    <input type="file" name="pdf_file" class="form-control" accept=".pdf,application/pdf">
+                    <input type="text" name="pdf_name" class="form-control" placeholder="Or enter existing filename in rules/ (e.g. guide.pdf)" style="margin-top: 0.4rem;">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-checkbox-label">
+                        <input type="checkbox" name="is_primary" value="true">
+                        Set as Primary Rulebook
+                    </label>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Upload Document</button>
+            </div>
+        </form>
+    </div>
+</div>
+{{end}}

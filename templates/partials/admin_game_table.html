@@ -1,0 +1,100 @@
+{{define "admin_game_table.html"}}
+<table class="admin-table">
+    <thead>
+        <tr>
+            <th style="width: 50px;">Art</th>
+            <th>Game & Documents</th>
+            <th>Players</th>
+            <th>Weight</th>
+            <th>Primary Rules</th>
+            <th style="text-align: right;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{range .Games}}
+        <tr id="game-row-{{.ID}}">
+            <td>
+                {{if .Image}}
+                <img src="/img/{{.Image}}" alt="{{.Name}}" class="admin-thumb" loading="lazy" onerror="this.src='/static/img/placeholder.svg'">
+                {{else}}
+                <div class="admin-thumb" style="display:flex;align-items:center;justify-content:center;color:#64748b;">🎲</div>
+                {{end}}
+            </td>
+            <td>
+                <span class="admin-game-title">{{.Name}}</span>
+                {{if .BggURL}}
+                <a href="{{.BggURL}}" target="_blank" rel="noopener" class="admin-bgg-link">BGG Link ↗</a>
+                {{end}}
+
+                {{if .Documents}}
+                <ul class="admin-docs-list">
+                    {{range .Documents}}
+                    <li class="admin-doc-item">
+                        <span class="admin-doc-name" title="{{.Title}} ({{.Filename}})">
+                            {{if .IsPrimary}}⭐{{else}}📄{{end}} {{.Title}} <span style="font-size:0.75rem;opacity:0.7;">[{{.Category}}]</span>
+                        </span>
+                        <div style="display:flex;align-items:center;gap:0.35rem;">
+                            <a href="/rules/{{.Filename}}" target="_blank" class="admin-bgg-link" style="font-size:0.75rem;">View</a>
+                            <button type="button" 
+                                    class="admin-doc-del-btn" 
+                                    title="Delete file"
+                                    hx-delete="/admin/documents/{{.ID}}/delete"
+                                    hx-target="#admin-games-container"
+                                    hx-confirm="Remove '{{.Title}}' from this game?">
+                                ✕
+                            </button>
+                        </div>
+                    </li>
+                    {{end}}
+                </ul>
+                {{end}}
+            </td>
+            <td>
+                {{if and .MinPlayers .MaxPlayers}}
+                    {{if eq .MinPlayers .MaxPlayers}}{{.MinPlayers}}{{else}}{{.MinPlayers}}-{{.MaxPlayers}}{{end}}
+                    {{if .BestPlayers}}<div style="font-size:0.75rem;color:var(--text-muted);">Best: {{.BestPlayers}}</div>{{end}}
+                {{else}}
+                    <span style="color:var(--text-muted);">-</span>
+                {{end}}
+            </td>
+            <td>
+                {{if .Complexity}}
+                <span style="font-weight:600;">{{printf "%.2f" .Complexity}}</span><span style="font-size:0.75rem;color:var(--text-muted);">/5</span>
+                {{else}}
+                <span style="color:var(--text-muted);">-</span>
+                {{end}}
+            </td>
+            <td>
+                {{if .URL}}
+                <a href="/rules/{{.URL}}" target="_blank" class="admin-bgg-link">
+                    📄 {{.URL}}
+                </a>
+                {{else}}
+                <span style="color:var(--text-muted);">None</span>
+                {{end}}
+            </td>
+            <td style="text-align: right;">
+                <div class="admin-actions-cell" style="justify-content: flex-end;">
+                    <button class="btn btn-sm btn-secondary"
+                            hx-get="/admin/games/{{.ID}}/document-modal"
+                            hx-target="#modal-container"
+                            title="Add Companion PDF">
+                        ➕ Add File
+                    </button>
+                    <button class="btn btn-sm btn-danger"
+                            hx-delete="/admin/games/{{.ID}}/delete"
+                            hx-target="#admin-games-container"
+                            hx-confirm="Are you sure you want to delete '{{.Name}}' and all its associated documents?">
+                        🗑️ Delete
+                    </button>
+                </div>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td colspan="6" class="empty-cell">No games found.</td>
+        </tr>
+        {{end}}
+    </tbody>
+</table>
+{{end}}

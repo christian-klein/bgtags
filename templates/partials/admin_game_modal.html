@@ -1,0 +1,63 @@
+{{define "admin_game_modal.html"}}
+<div class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-dialog" style="max-width: 620px;">
+        <div class="modal-header">
+            <h2 class="modal-title">➕ Add New Board Game</h2>
+            <button type="button" class="modal-close" onclick="closeModal()">×</button>
+        </div>
+
+        <form hx-post="/admin/games/create" 
+              hx-target="#admin-games-container" 
+              hx-encoding="multipart/form-data" 
+              hx-on::after-request="if(event.detail.successful) closeModal()">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label" for="game-name">Game Name *</label>
+                    <input type="text" id="game-name" name="name" class="form-control" placeholder="e.g. Dune: Imperium" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="min-players">Min Players</label>
+                        <input type="number" id="min-players" name="min_players" class="form-control" value="1" min="1" max="99">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="max-players">Max Players</label>
+                        <input type="number" id="max-players" name="max_players" class="form-control" value="4" min="1" max="99">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="best-players">Best Count</label>
+                        <input type="text" id="best-players" name="best_players" class="form-control" placeholder="e.g. 4 or 3-4">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="complexity">Weight (1-5)</label>
+                        <input type="number" step="0.01" id="complexity" name="complexity" class="form-control" placeholder="3.00" min="1.0" max="5.0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="bgg-url">BGG URL</label>
+                    <input type="url" id="bgg-url" name="bgg_url" class="form-control" placeholder="https://boardgamegeek.com/boardgame/...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Box Art Image</label>
+                    <input type="file" name="image_file" class="form-control" accept="image/*">
+                    <input type="text" name="image_name" class="form-control" placeholder="Or enter existing filename in img/ (e.g. dune.jpg)" style="margin-top: 0.4rem;">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Primary Rulebook PDF</label>
+                    <input type="file" name="pdf_file" class="form-control" accept=".pdf,application/pdf">
+                    <input type="text" name="pdf_name" class="form-control" placeholder="Or enter existing filename in rules/ (e.g. dune-rules.pdf)" style="margin-top: 0.4rem;">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Game</button>
+            </div>
+        </form>
+    </div>
+</div>
+{{end}}

@@ -3,12 +3,15 @@ module github.com/christian-klein/bgtags
 go 1.26.5
 
 require (
+	github.com/coreos/go-oidc/v3 v3.21.0
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
+	golang.org/x/oauth2 v0.36.0
 	modernc.org/sqlite v1.58.0
 )
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
+	github.com/go-jose/go-jose/v4 v4.1.4 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/mattn/go-isatty v0.0.24 // indirect
 	github.com/ncruces/go-strftime v1.0.0 // indirect

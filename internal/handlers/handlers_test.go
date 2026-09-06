@@ -185,7 +185,7 @@ func TestRulesHubRender(t *testing.T) {
 	}
 
 	cfg := &config.Config{
-		BaseURL:   "https://bgtags.cklein.us",
+		BaseURL:   "https://bgtags.example.com",
 		BackupDir: filepath.Join(tempDir, "backups"),
 	}
 
@@ -209,7 +209,7 @@ func TestRulesHubRender(t *testing.T) {
 	if !strings.Contains(body, "Species Glossary") {
 		t.Errorf("expected doc title in body")
 	}
-	if !strings.Contains(body, "bgtags.cklein.us") {
+	if !strings.Contains(body, "bgtags.example.com") {
 		t.Errorf("expected configured BaseURL in body/QR")
 	}
 }

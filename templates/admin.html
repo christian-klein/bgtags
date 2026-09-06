@@ -1,0 +1,119 @@
+{{define "content"}}
+<div class="admin-container">
+    <div class="admin-header">
+        <div>
+            <h1 class="admin-title">⚙️ Admin Control Panel</h1>
+            <p class="admin-subtitle">Manage games, companion PDF rulebooks, and database backups.</p>
+        </div>
+    </div>
+
+    {{if .Message}}
+    <div class="alert alert-success">{{.Message}}</div>
+    {{end}}
+    {{if .Error}}
+    <div class="alert alert-danger">{{.Error}}</div>
+    {{end}}
+
+    <div class="admin-tabs">
+        <button type="button" class="admin-tab-btn active" onclick="switchAdminTab('games', this)">
+            🎲 Games & Companion Files ({{.TotalCount}})
+        </button>
+        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('backups', this)">
+            💾 Database Backups
+        </button>
+    </div>
+
+    <!-- Games Section -->
+    <div id="tab-games" class="admin-tab-content">
+        <div class="admin-card">
+            <div class="admin-toolbar">
+                <div class="search-box" style="flex: 1; max-width: 400px;">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" 
+                           name="q" 
+                           placeholder="Filter games..." 
+                           class="search-input"
+                           hx-get="/admin/games" 
+                           hx-trigger="keyup changed delay:250ms, search" 
+                           hx-target="#admin-games-container">
+                </div>
+                <button class="btn btn-primary" hx-get="/admin/games/modal" hx-target="#modal-container">
+                    ➕ Add New Game
+                </button>
+            </div>
+
+            <div id="admin-games-container">
+                {{template "admin_game_table.html" .}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Backups Section -->
+    <div id="tab-backups" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+            <div class="backup-actions-bar">
+                <div>
+                    <h3 style="font-size:1.1rem;margin-bottom:0.25rem;">Database Backups</h3>
+                    <p class="backup-info">Automated and manual snapshots stored as plain JSON in the backup directory.</p>
+                </div>
+                <button class="btn btn-primary" 
+                        hx-post="/backups/create" 
+                        hx-target="#admin-backups-container"
+                        hx-indicator="#admin-backup-spinner">
+                    ⚡ Create Backup Now
+                </button>
+                <span id="admin-backup-spinner" class="htmx-indicator">Creating...</span>
+            </div>
+
+            <div id="admin-backups-container">
+                <table class="backup-table">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Date (UTC)</th>
+                            <th>Games</th>
+                            <th>Size</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .Backups}}
+                        <tr>
+                            <td class="code-cell">{{.FileName}}</td>
+                            <td>{{.CreatedAt.Format "Jan 02, 2006 15:04:05"}}</td>
+                            <td>{{.GameCount}}</td>
+                            <td>{{formatSize .SizeBytes}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning"
+                                        hx-post="/backups/restore"
+                                        hx-vals='{"filename": "{{.FileName}}"}'
+                                        hx-confirm="Are you sure you want to restore from {{.FileName}}? This will replace current game data.">
+                                    Restore
+                                </button>
+                            </td>
+                        </tr>
+                        {{else}}
+                        <tr>
+                            <td colspan="5" class="empty-cell">No backups found yet.</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchAdminTab(tabName, btn) {
+        document.querySelectorAll('.admin-tab-content').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        document.querySelectorAll('.admin-tab-btn').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        document.getElementById('tab-' + tabName).style.display = 'block';
+        btn.classList.add('active');
+    }
+</script>
+{{end}}

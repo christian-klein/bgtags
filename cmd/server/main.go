@@ -15,6 +15,7 @@ import (
 	"github.com/christian-klein/bgtags/internal/config"
 	"github.com/christian-klein/bgtags/internal/database"
 	"github.com/christian-klein/bgtags/internal/handlers"
+	"github.com/christian-klein/bgtags/internal/middleware"
 )
 
 func main() {
@@ -48,25 +49,37 @@ func main() {
 
 	mux := http.NewServeMux()
 
+	// Authentication endpoints
+	mux.HandleFunc("/login", h.HandleLogin)
+	mux.HandleFunc("/auth/callback", h.HandleAuthCallback)
+	mux.HandleFunc("/logout", h.HandleLogout)
+
 	// UI & HTMX endpoints
 	mux.HandleFunc("/", h.HandleIndex)
 	mux.HandleFunc("/games", h.HandleGames)
-	mux.HandleFunc("/games/", h.HandleGameRoute)
-	mux.HandleFunc("/stickers", h.HandleStickers)
+	mux.HandleFunc("/games/", middleware.RequireReader(cfg, h.HandleGameRoute))
+	mux.HandleFunc("/stickers", middleware.RequireReader(cfg, h.HandleStickers))
 	mux.HandleFunc("/qr", h.HandleQR)
-	mux.HandleFunc("/backups/modal", h.HandleBackupModal)
-	mux.HandleFunc("/backups/create", h.HandleCreateBackup)
-	mux.HandleFunc("/backups/restore", h.HandleRestoreBackup)
 	mux.HandleFunc("/health", h.HandleHealth)
+
+	// Admin endpoints (RBAC protected)
+	mux.HandleFunc("/admin", middleware.RequireAdmin(cfg, h.HandleAdmin))
+	mux.HandleFunc("/admin/games", middleware.RequireAdmin(cfg, h.HandleAdminGames))
+	mux.HandleFunc("/admin/games/modal", middleware.RequireAdmin(cfg, h.HandleAdminGameModal))
+	mux.HandleFunc("/admin/games/create", middleware.RequireAdmin(cfg, h.HandleAdminCreateGame))
+	mux.HandleFunc("/admin/games/", middleware.RequireAdmin(cfg, h.HandleAdminGameRoute))
+	mux.HandleFunc("/admin/documents/", middleware.RequireAdmin(cfg, h.HandleAdminDocumentRoute))
+	mux.HandleFunc("/backups/create", middleware.RequireAdmin(cfg, h.HandleCreateBackup))
+	mux.HandleFunc("/backups/restore", middleware.RequireAdmin(cfg, h.HandleRestoreBackup))
 
 	// Static assets
 	staticDir := cfg.StaticDir
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir(staticDir))))
 	mux.Handle("/img/", http.StripPrefix("/img/", http.FileServer(http.Dir(filepath.Join(staticDir, "img")))))
 
-	// Rules PDF handler with inline preview headers
+	// Rules PDF handler with inline preview headers (reader protected)
 	rulesDir := filepath.Join(staticDir, "rules")
-	mux.HandleFunc("/rules/", func(w http.ResponseWriter, r *http.Request) {
+	rulesHandler := func(w http.ResponseWriter, r *http.Request) {
 		filename := filepath.Base(r.URL.Path)
 		filePath := filepath.Join(rulesDir, filename)
 
@@ -79,11 +92,12 @@ func main() {
 		w.Header().Set("Content-Type", "application/pdf")
 		w.Header().Set("Content-Disposition", "inline; filename=\""+filename+"\"")
 		http.ServeFile(w, r, filePath)
-	})
+	}
+	mux.HandleFunc("/rules/", middleware.RequireReader(cfg, rulesHandler))
 
 	server := &http.Server{
 		Addr:         ":" + cfg.Port,
-		Handler:      mux,
+		Handler:      middleware.WithUserContext(cfg)(mux),
 		ReadTimeout:  15 * time.Second,
 		WriteTimeout: 15 * time.Second,
 		IdleTimeout:  60 * time.Second,

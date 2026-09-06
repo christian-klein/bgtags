@@ -18,7 +18,24 @@
             <nav class="nav-links">
                 <a href="/" class="nav-item {{if eq .ActiveNav "catalog"}}active{{end}}">Catalog</a>
                 <a href="/stickers" class="nav-item {{if eq .ActiveNav "stickers"}}active{{end}}">🏷️ Print Stickers</a>
-                <button class="nav-item nav-btn" hx-get="/backups/modal" hx-target="#modal-container">💾 Backups</button>
+                {{if .IsAdmin}}
+                <a href="/admin" class="nav-item {{if eq .ActiveNav "admin"}}active{{end}}">⚙️ Admin</a>
+                {{end}}
+                
+                <div class="nav-auth-section">
+                    {{if .IsAuthenticated}}
+                        <span class="nav-user" title="{{if .User}}{{.User.Email}}{{end}}">
+                            👤 {{if .User}}{{if .User.PreferredUsername}}{{.User.PreferredUsername}}{{else}}{{.User.Username}}{{end}}{{else}}User{{end}}
+                        </span>
+                        {{if .OIDCEnabled}}
+                        <a href="/logout" class="nav-item nav-logout" title="Sign Out">🚪 Logout</a>
+                        {{end}}
+                    {{else}}
+                        {{if .OIDCEnabled}}
+                        <a href="/login" class="nav-item nav-login">🔑 Login</a>
+                        {{end}}
+                    {{end}}
+                </div>
             </nav>
         </div>
     </header>
