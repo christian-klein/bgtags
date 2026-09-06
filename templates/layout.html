@@ -25,7 +25,7 @@
                 <div class="nav-auth-section">
                     {{if .IsAuthenticated}}
                         <span class="nav-user" title="{{if .User}}{{.User.Email}}{{end}}">
-                            👤 {{if .User}}{{if .User.PreferredUsername}}{{.User.PreferredUsername}}{{else}}{{.User.Username}}{{end}}{{else}}User{{end}}
+                            👤 {{if .User}}{{if .User.Username}}{{.User.Username}}{{else if .User.Name}}{{.User.Name}}{{else}}User{{end}}{{else}}User{{end}}
                         </span>
                         {{if .OIDCEnabled}}
                         <a href="/logout" class="nav-item nav-logout" title="Sign Out">🚪 Logout</a>
