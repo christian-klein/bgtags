@@ -5,38 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Title}} - bgtags</title>
     <link rel="icon" type="image/png" href="/static/favicon.png">
-    <link rel="stylesheet" href="/static/css/styles.css?v=20260906-dialog">
+    <link rel="stylesheet" href="/static/css/styles.css?v=20260906-header">
     <script src="/static/js/htmx.min.js"></script>
 </head>
 <body>
     <header class="navbar no-print">
         <div class="nav-container">
-            <a href="/" class="brand">
-                <img src="/static/img/bgtags-icon.png" alt="bgtags logo" class="brand-icon-img">
-                <span class="brand-name">BG Tags</span>
-            </a>
-            <nav class="nav-links">
-                <a href="/" class="nav-item {{if eq .ActiveNav "catalog"}}active{{end}}">Catalog</a>
-                <a href="/stickers" class="nav-item {{if eq .ActiveNav "stickers"}}active{{end}}">🏷️ Print Stickers</a>
-                {{if .IsAdmin}}
-                <a href="/admin" class="nav-item {{if eq .ActiveNav "admin"}}active{{end}}">⚙️ Admin</a>
-                {{end}}
-                
-                <div class="nav-auth-section">
-                    {{if .IsAuthenticated}}
-                        <span class="nav-user" title="{{if .User}}{{.User.Email}}{{end}}">
-                            👤 {{if .User}}{{if .User.Username}}{{.User.Username}}{{else if .User.Name}}{{.User.Name}}{{else}}User{{end}}{{else}}User{{end}}
-                        </span>
-                        {{if .OIDCEnabled}}
-                        <a href="/logout" class="nav-item nav-logout" title="Sign Out">🚪 Logout</a>
-                        {{end}}
-                    {{else}}
-                        {{if .OIDCEnabled}}
-                        <a href="/login" class="nav-item nav-login">🔑 Login</a>
-                        {{end}}
+            <div class="nav-main-row">
+                <a href="/" class="brand">
+                    <img src="/static/img/bgtags-icon.png" alt="BG Tags logo" class="brand-icon-img">
+                    <span class="brand-name">BG Tags</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="/" class="nav-item {{if eq .ActiveNav "catalog"}}active{{end}}">Catalog</a>
+                    <a href="/stickers" class="nav-item {{if eq .ActiveNav "stickers"}}active{{end}}">🏷️ Print Stickers</a>
+                    {{if .IsAdmin}}
+                    <a href="/admin" class="nav-item {{if eq .ActiveNav "admin"}}active{{end}}">⚙️ Admin</a>
                     {{end}}
-                </div>
-            </nav>
+                </nav>
+            </div>
+            
+            <div class="nav-auth-section">
+                {{if .IsAuthenticated}}
+                    <span class="nav-user" title="{{if .User}}{{.User.Email}}{{end}}">
+                        👤 {{if .User}}{{if .User.Username}}{{.User.Username}}{{else if .User.Name}}{{.User.Name}}{{else}}User{{end}}{{else}}User{{end}}
+                    </span>
+                    {{if .OIDCEnabled}}
+                    <a href="/logout" class="nav-item nav-logout" title="Sign Out">🚪 Logout</a>
+                    {{end}}
+                {{else}}
+                    {{if .OIDCEnabled}}
+                    <a href="/login" class="nav-item nav-login">🔑 Login</a>
+                    {{end}}
+                {{end}}
+            </div>
         </div>
     </header>
 
