@@ -348,17 +348,6 @@ body {
     opacity: 1;
 }
 
-.qr-code-wrapper {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.qr-code-wrapper:hover {
-    transform: scale(1.04);
-}
-
 .qr-code {
     width: 130px;
     height: 130px;
@@ -368,33 +357,11 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     display: block;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.qr-zoom-btn {
-    position: absolute;
-    bottom: -6px;
-    right: -6px;
-    width: 32px;
-    height: 32px;
-    background: var(--accent-primary, #6366f1);
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    padding: 0;
-    line-height: 1;
-}
-
-.qr-code-wrapper:hover .qr-zoom-btn,
-.share-qr-img-wrap:hover .qr-zoom-btn {
-    transform: scale(1.15);
-    background: var(--accent-hover, #4f46e5);
+.qr-overlay:hover .qr-code {
+    transform: scale(1.04);
 }
 
 .qr-hint {
@@ -1296,13 +1263,6 @@ body {
     background-color: rgba(99, 102, 241, 0.04);
 }
 
-.share-qr-img-wrap {
-    position: relative;
-    display: inline-block;
-    flex-shrink: 0;
-    cursor: pointer;
-}
-
 .share-qr-img {
     width: 72px;
     height: 72px;
@@ -1312,6 +1272,8 @@ body {
     display: block;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     transition: transform 0.2s ease;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .share-qr-card:hover .share-qr-img {
@@ -1330,18 +1292,6 @@ body {
 .share-qr-text strong {
     color: var(--text-primary);
     font-size: 0.95rem;
-}
-
-.share-qr-action-hint {
-    color: var(--accent-primary, #818cf8);
-    font-weight: 600;
-    font-size: 0.8rem;
-    margin-left: 0.35rem;
-}
-
-.share-qr-action-btn {
-    flex-shrink: 0;
-    white-space: nowrap;
 }
 
 /* QR Code Modal Popup */

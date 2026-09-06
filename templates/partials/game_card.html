@@ -3,13 +3,8 @@
     <div class="card-media">
         <img src="/img/{{.Image}}" alt="{{.Name}}" class="game-cover" loading="lazy">
         <div class="qr-overlay" data-qr="{{.QRCodeURL}}" data-title="{{.Name}}" onclick="showQRPopupFromElement(this, event)" title="Click to enlarge QR code">
-            <div class="qr-code-wrapper">
-                <img src="{{.QRCodeURL}}" alt="QR Code for {{.Name}}" class="qr-code">
-                <button type="button" class="qr-zoom-btn" title="Enlarge QR Code" aria-label="Enlarge QR Code">
-                    🔍
-                </button>
-            </div>
-            <span class="qr-hint">🔍 Click to enlarge</span>
+            <img src="{{.QRCodeURL}}" alt="QR Code for {{.Name}}" class="qr-code">
+            <span class="qr-hint">Click to enlarge</span>
         </div>
     </div>
     <div class="card-body">
