@@ -2,7 +2,6 @@ import fs from "fs";
 
 // Existing game BGG IDs or normalized names in bgtags database
 const EXISTING_BGG_IDS = new Set([
-  40765,   // Clash of Cultures
   315610,  // Massive Darkness 2
   342942,  // Ark Nova
   317985,  // Beyond the Sun
@@ -14,11 +13,50 @@ const EXISTING_BGG_IDS = new Set([
   229713,  // War Room
   391137,  // Galactic Cruise
   321608,  // Hegemony: Lead Your Class to Victory
-  316624   // Stationfall
+  316624,  // Stationfall
+  2639,    // Panzer Leader
+  9823,    // Advanced Squad Leader: Starter Kit #1
+  20542,   // Advanced Squad Leader: Starter Kit #3
+  37111,   // Battlestar Galactica: The Board Game
+  43539,   // Battlestar Galactica: The Board Game – Pegasus Expansion
+  85905,   // Battlestar Galactica: The Board Game – Exodus Expansion
+  141648,  // Battlestar Galactica: The Board Game – Daybreak Expansion
+  243,     // Advanced Squad Leader
+  5287,    // Beyond Valor: ASL Module 1
+  242705,  // Aeon Trespass: Odyssey
+  220308,  // Gaia Project
+  1,       // Die Macher
+  400602,  // Civolution
+  356080,  // The Elder Scrolls: Betrayal of the Second Era
+  230244,  // Black Angel
+  258295,  // Ascendancy
+  175155,  // Forbidden Stars
+  152470,  // Fief: France 1429
+  348554,  // Autobahn
+  360641,  // Maladum: Dungeons of Enveron
+  318182,  // Imperium: Legends
+  358661,  // Andromeda's Edge
+  299659,  // Clash of Cultures: Monumental Edition
+  103343,  // A Game of Thrones: The Board Game (Second Edition)
+  193738,  // Great Western Trail
+  325494,  // ISS Vanguard
+  318184,  // Imperium: Classics
+  172154,  // Fief: France 1429 – Expansions Pack
+  295535,  // Dark Ages: Heritage of Charlemagne
+  342900,  // Earthborne Rangers
+  304985,  // Dark Ages: Holy Roman Empire
+  276182,  // Dead Reckoning
+  364356,  // Company of Heroes: 2nd Edition
+  248591,  // Dinosaur Island: Totally Liquid
+  270871,  // Agemonia
+  305096,  // Endless Winter: Paleoamericans
+  146021,  // Eldritch Horror
+  198830,  // Heroes of Land, Air & Sea
+  203993,  // Lorenzo il Magnifico
+  337627   // Voidfall
 ]);
 
 const EXISTING_NAMES = new Set([
-  "clash of cultures",
   "massive darkness 2",
   "ark nova",
   "beyond the sun",
@@ -30,7 +68,41 @@ const EXISTING_NAMES = new Set([
   "war room",
   "galactic cruise",
   "hegemony: lead your class to victory",
-  "stationfall"
+  "stationfall",
+  "panzer leader",
+  "advanced squad leader",
+  "advanced squad leader: starter kit #1",
+  "advanced squad leader: starter kit #3",
+  "battlestar galactica: the board game",
+  "aeon trespass: odyssey",
+  "gaia project",
+  "die macher",
+  "civolution",
+  "the elder scrolls: betrayal of the second era",
+  "black angel",
+  "ascendancy",
+  "forbidden stars",
+  "fief: france 1429",
+  "autobahn",
+  "maladum: dungeons of enveron",
+  "imperium: legends",
+  "andromeda's edge",
+  "clash of cultures: monumental edition",
+  "a game of thrones: the board game (second edition)",
+  "great western trail",
+  "iss vanguard",
+  "imperium: classics",
+  "dark ages: heritage of charlemagne",
+  "earthborne rangers",
+  "dark ages: holy roman empire",
+  "dead reckoning",
+  "company of heroes: 2nd edition",
+  "agemonia",
+  "endless winter: paleoamericans",
+  "eldritch horror",
+  "heroes of land, air & sea",
+  "lorenzo il magnifico",
+  "voidfall"
 ]);
 
 async function getPageWsUrl() {
@@ -161,7 +233,7 @@ async function run() {
   md += `This list contains all games from your BoardGameGeek collection (**Rohirrim70**) that are **not yet in the \`bgtags\` database**, ordered from highest complexity (weight) to lowest.\n\n`;
   md += `Use this reference to prioritize which game rulebooks and companion guides to import next into the physical sticker and rules hub system.\n\n`;
   md += `*Total Backlog Games*: **${remaining.length}**  \n`;
-  md += `*Currently Active in Database*: **13** (Ark Nova, Beyond the Sun, Blood Rage, Clash of Cultures, Concordia, Eclipse, A Feast for Odin, Galactic Cruise, Hegemony, Lost Ruins of Arnak, Massive Darkness 2, Stationfall, War Room)\n\n`;
+  md += `*Currently Active in Database*: **52** (Aeon Trespass, Agemonia, Andromeda's Edge, Ark Nova, Autobahn, Battlestar Galactica, Black Angel, Beyond the Sun, Civolution, Clash of Cultures: Monumental Edition, Concordia, Company of Heroes 2E, Dark Ages, Dead Reckoning, Die Macher, Earthborne Rangers, Eclipse, Eldritch Horror, Endless Winter, Fief, Forbidden Stars, Gaia Project, Galactic Cruise, Great Western Trail, Hegemony, Heroes of Land Air & Sea, Imperium, ISS Vanguard, Lorenzo il Magnifico, Lost Ruins of Arnak, Maladum, Massive Darkness 2, Panzer Leader, Stationfall, The Elder Scrolls, Voidfall, War Room)\n\n`;
   md += `| # | Game Title | Year | Complexity (1-5) | Geek Rating | Plays | Type | BGG Link |\n`;
   md += `| :-: | :--- | :-: | :-: | :-: | :-: | :--- | :--- |\n`;
 

@@ -127,7 +127,7 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query().Get("q")
 	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
 
-	games, err := h.db.ListGames(q, players)
+	games, err := h.db.ListBaseGames(q, players)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to load games", http.StatusInternalServerError)
@@ -211,7 +211,7 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query().Get("q")
 	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
 
-	games, err := h.db.ListGames(q, players)
+	games, err := h.db.ListBaseGames(q, players)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to filter games", http.StatusInternalServerError)

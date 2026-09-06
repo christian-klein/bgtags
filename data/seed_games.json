@@ -1,24 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Clash of Cultures",
-    "url": "Clash-of-Cultures-Rulebook-2021-02-05-compressed.pdf",
-    "image": "clash-of-cultures.webp",
-    "min_players": 2,
-    "max_players": 4,
-    "best_players": "4",
-    "complexity": 3.8,
-    "bgg_url": "https://boardgamegeek.com/boardgame/40765/clash-cultures",
-    "documents": [
-      {
-        "title": "Core Rulebook",
-        "category": "core",
-        "filename": "Clash-of-Cultures-Rulebook-2021-02-05-compressed.pdf",
-        "is_primary": true
-      }
-    ]
-  },
-  {
     "id": 2,
     "name": "Massive Darkness 2",
     "url": "MD2-Hellscape-Rulebook-Web2.pdf",
@@ -345,6 +326,801 @@
         "category": "reference",
         "filename": "stationfall-teaching-aid.pdf",
         "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Panzer Leader",
+    "url": "panzer-leader-rules.pdf",
+    "image": "panzer-leader.png",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 3.11,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2639/panzer-leader-game-of-tactical-warfare-on-the-west",
+    "documents": [
+      {
+        "title": "Panzer Leader Rules",
+        "category": "core",
+        "filename": "panzer-leader-rules.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Clarifications & Answers Box (2023)",
+        "category": "faq",
+        "filename": "panzer-leader-clarifications.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Advanced Squad Leader",
+    "url": "",
+    "image": "advanced-squad-leader.jpg",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 4.74,
+    "bgg_url": "https://boardgamegeek.com/boardgame/243/advanced-squad-leader",
+    "documents": []
+  },
+  {
+    "id": 15,
+    "name": "Advanced Squad Leader: Starter Kit #1",
+    "url": "asl-starter-kit-rules.pdf",
+    "image": "asl-starter-kit-1.jpg",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 3.76,
+    "bgg_url": "https://boardgamegeek.com/boardgame/9823/advanced-squad-leader-starter-kit-1",
+    "parent_id": 21,
+    "documents": [
+      {
+        "title": "Starter Kit Rules (Consolidated)",
+        "category": "core",
+        "filename": "asl-starter-kit-rules.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "IFT Chart (Colored)",
+        "category": "reference",
+        "filename": "asl-ift-colored.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Errata & Q&A (Combined)",
+        "category": "faq",
+        "filename": "asl-starter-kit-errata-qa.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Advanced Squad Leader: Starter Kit #3",
+    "url": "asl-starter-kit-rules.pdf",
+    "image": "asl-starter-kit-3.jpg",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 3.9,
+    "bgg_url": "https://boardgamegeek.com/boardgame/20542/advanced-squad-leader-starter-kit-3",
+    "parent_id": 21,
+    "documents": [
+      {
+        "title": "Starter Kit Rules (Consolidated)",
+        "category": "core",
+        "filename": "asl-starter-kit-rules.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "IFT Chart (Colored)",
+        "category": "reference",
+        "filename": "asl-ift-colored.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Unofficial Errata & Q&A",
+        "category": "faq",
+        "filename": "asl-starter-kit-3-errata-qa.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Sequence of Play Table",
+        "category": "reference",
+        "filename": "asl-starter-kit-3-seqop-table.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Beyond Valor: ASL Module 1",
+    "url": "",
+    "image": "asl-beyond-valor.jpg",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 4.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/5287/beyond-valor-asl-module-1",
+    "parent_id": 21,
+    "documents": []
+  },
+  {
+    "id": 17,
+    "name": "Battlestar Galactica: The Board Game",
+    "url": "battlestar-galactica-rules.pdf",
+    "image": "battlestar-galactica.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.56,
+    "bgg_url": "https://boardgamegeek.com/boardgame/37111/battlestar-galactica-the-board-game",
+    "documents": [
+      {
+        "title": "Official Rulebook",
+        "category": "core",
+        "filename": "battlestar-galactica-rules.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Official FAQ & Errata (all expansions)",
+        "category": "faq",
+        "filename": "battlestar-galactica-faq.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Battlestar Galactica: The Board Game \u2013 Pegasus Expansion",
+    "url": "battlestar-galactica-pegasus-rules.pdf",
+    "image": "battlestar-galactica-pegasus.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.25,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/43539/battlestar-galactica-the-board-game-pegasus-expans",
+    "parent_id": 17,
+    "documents": [
+      {
+        "title": "Pegasus Expansion Rules",
+        "category": "expansion",
+        "filename": "battlestar-galactica-pegasus-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Battlestar Galactica: The Board Game \u2013 Exodus Expansion",
+    "url": "battlestar-galactica-exodus-rules.pdf",
+    "image": "battlestar-galactica-exodus.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.56,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/85905/battlestar-galactica-the-board-game-exodus-expansi",
+    "parent_id": 17,
+    "documents": [
+      {
+        "title": "Exodus Expansion Rules",
+        "category": "expansion",
+        "filename": "battlestar-galactica-exodus-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Battlestar Galactica: The Board Game \u2013 Daybreak Expansion",
+    "url": "battlestar-galactica-daybreak-rules.pdf",
+    "image": "battlestar-galactica-daybreak.jpg",
+    "min_players": 3,
+    "max_players": 7,
+    "best_players": "5",
+    "complexity": 3.64,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/141648/battlestar-galactica-the-board-game-daybreak-expan",
+    "parent_id": 17,
+    "documents": [
+      {
+        "title": "Daybreak Expansion Rules",
+        "category": "expansion",
+        "filename": "battlestar-galactica-daybreak-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Aeon Trespass: Odyssey",
+    "url": "aeon-trespass-odyssey-rulebook.pdf",
+    "image": "aeon-trespass-odyssey.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 4.75,
+    "bgg_url": "https://boardgamegeek.com/boardgame/242705/aeon-trespass-odyssey",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "aeon-trespass-odyssey-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Gaia Project",
+    "url": "gaia-project-rulebook.pdf",
+    "image": "gaia-project.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 4.4,
+    "bgg_url": "https://boardgamegeek.com/boardgame/220308/gaia-project",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "gaia-project-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Die Macher",
+    "url": "die-macher-rulebook.pdf",
+    "image": "die-macher.jpg",
+    "min_players": 3,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 4.3,
+    "bgg_url": "https://boardgamegeek.com/boardgame/1/die-macher",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "die-macher-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Civolution",
+    "url": "civolution-rulebook.pdf",
+    "image": "civolution.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 4.26,
+    "bgg_url": "https://boardgamegeek.com/boardgame/400602/civolution",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "civolution-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "The Elder Scrolls: Betrayal of the Second Era",
+    "url": "elder-scrolls-betrayal-rulebook.pdf",
+    "image": "elder-scrolls-betrayal.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 4.08,
+    "bgg_url": "https://boardgamegeek.com/boardgame/356080/the-elder-scrolls-betrayal-of-the-second-era",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "elder-scrolls-betrayal-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Black Angel",
+    "url": "black-angel-rulebook.pdf",
+    "image": "black-angel.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.87,
+    "bgg_url": "https://boardgamegeek.com/boardgame/230244/black-angel",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "black-angel-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Ascendancy",
+    "url": "ascendancy-reference-guide.pdf",
+    "image": "ascendancy.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.86,
+    "bgg_url": "https://boardgamegeek.com/boardgame/258295/ascendancy",
+    "documents": [
+      {
+        "title": "Reference Guide",
+        "category": "core",
+        "filename": "ascendancy-reference-guide.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Forbidden Stars",
+    "url": "forbidden-stars-rulebook.pdf",
+    "image": "forbidden-stars.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.84,
+    "bgg_url": "https://boardgamegeek.com/boardgame/175155/forbidden-stars",
+    "documents": [
+      {
+        "title": "Learn to Play Rulebook",
+        "category": "core",
+        "filename": "forbidden-stars-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Fief: France 1429",
+    "url": "fief-france-1429-rulebook.pdf",
+    "image": "fief-france-1429.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.81,
+    "bgg_url": "https://boardgamegeek.com/boardgame/152470/fief-france-1429",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "fief-france-1429-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Autobahn",
+    "url": "autobahn-rulebook.pdf",
+    "image": "autobahn.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.81,
+    "bgg_url": "https://boardgamegeek.com/boardgame/348554/autobahn",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "autobahn-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Maladum: Dungeons of Enveron",
+    "url": "maladum-rulebook.pdf",
+    "image": "maladum-dungeons-of-enveron.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.77,
+    "bgg_url": "https://boardgamegeek.com/boardgame/360641/maladum-dungeons-of-enveron",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "maladum-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Imperium: Legends",
+    "url": "imperium-rulebook.pdf",
+    "image": "imperium-legends.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.76,
+    "bgg_url": "https://boardgamegeek.com/boardgame/318182/imperium-legends",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "imperium-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Andromeda's Edge",
+    "url": "andromedas-edge-rulebook.pdf",
+    "image": "andromedas-edge.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.74,
+    "bgg_url": "https://boardgamegeek.com/boardgame/358661/andromedas-edge",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "andromedas-edge-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Clash of Cultures: Monumental Edition",
+    "url": "clash-of-cultures-monumental-rulebook.pdf",
+    "image": "clash-of-cultures-monumental.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.74,
+    "bgg_url": "https://boardgamegeek.com/boardgame/299659/clash-of-cultures-monumental-edition",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "clash-of-cultures-monumental-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "A Game of Thrones: The Board Game (Second Edition)",
+    "url": "agot-2nd-ed-rulebook.pdf",
+    "image": "agot-2nd-ed.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "6",
+    "complexity": 3.74,
+    "bgg_url": "https://boardgamegeek.com/boardgame/103343/a-game-of-thrones-the-board-game-second-edition",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "agot-2nd-ed-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Great Western Trail",
+    "url": "great-western-trail-rulebook.pdf",
+    "image": "great-western-trail.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.7,
+    "bgg_url": "https://boardgamegeek.com/boardgame/193738/great-western-trail",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "great-western-trail-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "ISS Vanguard",
+    "url": "iss-vanguard-rulebook.pdf",
+    "image": "iss-vanguard.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.67,
+    "bgg_url": "https://boardgamegeek.com/boardgame/325494/iss-vanguard",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "iss-vanguard-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Imperium: Classics",
+    "url": "imperium-rulebook.pdf",
+    "image": "imperium-classics.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.63,
+    "bgg_url": "https://boardgamegeek.com/boardgame/318184/imperium-classics",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "imperium-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Fief: France 1429 \u2013 Expansions Pack",
+    "url": "fief-france-1429-rulebook.pdf",
+    "image": "fief-expansions-pack.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.54,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/172154/fief-france-1429-expansions-pack",
+    "parent_id": 31,
+    "documents": [
+      {
+        "title": "Fief Rules (Base)",
+        "category": "expansion",
+        "filename": "fief-france-1429-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Dark Ages: Heritage of Charlemagne",
+    "url": "dark-ages-rulebook.pdf",
+    "image": "dark-ages-heritage.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.53,
+    "bgg_url": "https://boardgamegeek.com/boardgame/295535/dark-ages-heritage-of-charlemagne",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "dark-ages-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Earthborne Rangers",
+    "url": "earthborne-rangers-rulebook.pdf",
+    "image": "earthborne-rangers.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.48,
+    "bgg_url": "https://boardgamegeek.com/boardgame/342900/earthborne-rangers",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "earthborne-rangers-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Dark Ages: Holy Roman Empire",
+    "url": "dark-ages-rulebook.pdf",
+    "image": "dark-ages-hre.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.48,
+    "bgg_url": "https://boardgamegeek.com/boardgame/304985/dark-ages-holy-roman-empire",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "dark-ages-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Dead Reckoning",
+    "url": "dead-reckoning-rulebook.pdf",
+    "image": "dead-reckoning.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.44,
+    "bgg_url": "https://boardgamegeek.com/boardgame/276182/dead-reckoning",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "dead-reckoning-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Company of Heroes: 2nd Edition",
+    "url": "company-of-heroes-2e-rulebook.pdf",
+    "image": "company-of-heroes-2e.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "4",
+    "complexity": 3.43,
+    "bgg_url": "https://boardgamegeek.com/boardgame/364356/company-of-heroes-2nd-edition",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "company-of-heroes-2e-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Dinosaur Island: Totally Liquid",
+    "url": "dinosaur-island-totally-liquid-rules.pdf",
+    "image": "dinosaur-island-totally-liquid.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 3.41,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/248591/dinosaur-island-totally-liquid",
+    "documents": [
+      {
+        "title": "Totally Liquid Rules",
+        "category": "expansion",
+        "filename": "dinosaur-island-totally-liquid-rules.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Agemonia",
+    "url": "agemonia-rules-reference.pdf",
+    "image": "agemonia.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 3.34,
+    "bgg_url": "https://boardgamegeek.com/boardgame/270871/agemonia",
+    "documents": [
+      {
+        "title": "Rules Reference Book",
+        "category": "core",
+        "filename": "agemonia-rules-reference.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Endless Winter: Paleoamericans",
+    "url": "endless-winter-rulebook.pdf",
+    "image": "endless-winter.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.33,
+    "bgg_url": "https://boardgamegeek.com/boardgame/305096/endless-winter-paleoamericans",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "endless-winter-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Eldritch Horror",
+    "url": "eldritch-horror-rulebook.pdf",
+    "image": "eldritch-horror.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "4",
+    "complexity": 3.32,
+    "bgg_url": "https://boardgamegeek.com/boardgame/146021/eldritch-horror",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "eldritch-horror-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Heroes of Land, Air & Sea",
+    "url": "heroes-of-land-air-sea-rulebook.pdf",
+    "image": "heroes-of-land-air-sea.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.31,
+    "bgg_url": "https://boardgamegeek.com/boardgame/198830/heroes-of-land-air-and-sea",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "heroes-of-land-air-sea-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Lorenzo il Magnifico",
+    "url": "lorenzo-il-magnifico-rulebook.pdf",
+    "image": "lorenzo-il-magnifico.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.3,
+    "bgg_url": "https://boardgamegeek.com/boardgame/203993/lorenzo-il-magnifico",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "lorenzo-il-magnifico-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Voidfall",
+    "url": "voidfall-rulebook.pdf",
+    "image": "voidfall.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 4.62,
+    "bgg_url": "https://boardgamegeek.com/boardgame/337627/voidfall",
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "voidfall-rulebook.pdf",
+        "is_primary": true
       }
     ]
   }

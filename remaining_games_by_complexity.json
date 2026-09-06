@@ -1,27 +1,5 @@
 [
   {
-    "bgg_id": 242705,
-    "name": "Aeon Trespass: Odyssey",
-    "year": 2022,
-    "complexity": 4.75,
-    "geek_rating": 6.937,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/242705/aeon-trespass-odyssey"
-  },
-  {
-    "bgg_id": 243,
-    "name": "Advanced Squad Leader",
-    "year": 1985,
-    "complexity": 4.74,
-    "geek_rating": 6.93,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/243/advanced-squad-leader"
-  },
-  {
     "bgg_id": 295770,
     "name": "Frosthaven",
     "year": 2022,
@@ -31,39 +9,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/295770/frosthaven"
-  },
-  {
-    "bgg_id": 220308,
-    "name": "Gaia Project",
-    "year": 2017,
-    "complexity": 4.4,
-    "geek_rating": 8.083,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/220308/gaia-project"
-  },
-  {
-    "bgg_id": 1,
-    "name": "Die Macher",
-    "year": 1986,
-    "complexity": 4.3,
-    "geek_rating": 6.976,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/1/die-macher"
-  },
-  {
-    "bgg_id": 400602,
-    "name": "Civolution",
-    "year": 2024,
-    "complexity": 4.26,
-    "geek_rating": 7.43,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/400602/civolution"
   },
   {
     "bgg_id": 214032,
@@ -77,17 +22,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/214032/founders-of-gloomhaven"
   },
   {
-    "bgg_id": 356080,
-    "name": "The Elder Scrolls: Betrayal of the Second Era",
-    "year": 2025,
-    "complexity": 4.08,
-    "geek_rating": 7.479,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/356080/the-elder-scrolls-betrayal-of-the-second-era"
-  },
-  {
     "bgg_id": 174430,
     "name": "Gloomhaven",
     "year": 2017,
@@ -97,138 +31,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/174430/gloomhaven"
-  },
-  {
-    "bgg_id": 230244,
-    "name": "Black Angel",
-    "year": 2019,
-    "complexity": 3.87,
-    "geek_rating": 6.638,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/230244/black-angel"
-  },
-  {
-    "bgg_id": 258295,
-    "name": "Ascendancy",
-    "year": 2024,
-    "complexity": 3.86,
-    "geek_rating": 5.738,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/258295/ascendancy"
-  },
-  {
-    "bgg_id": 175155,
-    "name": "Forbidden Stars",
-    "year": 2015,
-    "complexity": 3.84,
-    "geek_rating": 7.437,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/175155/forbidden-stars"
-  },
-  {
-    "bgg_id": 152470,
-    "name": "Fief: France 1429",
-    "year": 2015,
-    "complexity": 3.81,
-    "geek_rating": 6.405,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/152470/fief-france-1429"
-  },
-  {
-    "bgg_id": 348554,
-    "name": "Autobahn",
-    "year": 2022,
-    "complexity": 3.81,
-    "geek_rating": 6.188,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/348554/autobahn"
-  },
-  {
-    "bgg_id": 360641,
-    "name": "Maladum: Dungeons of Enveron",
-    "year": 2024,
-    "complexity": 3.77,
-    "geek_rating": 5.93,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/360641/maladum-dungeons-of-enveron"
-  },
-  {
-    "bgg_id": 318182,
-    "name": "Imperium: Legends",
-    "year": 2021,
-    "complexity": 3.76,
-    "geek_rating": 7.048,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/318182/imperium-legends"
-  },
-  {
-    "bgg_id": 9823,
-    "name": "Advanced Squad Leader: Starter Kit #1",
-    "year": 2004,
-    "complexity": 3.76,
-    "geek_rating": 6.677,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/9823/advanced-squad-leader-starter-kit-1"
-  },
-  {
-    "bgg_id": 358661,
-    "name": "Andromeda's Edge",
-    "year": 2024,
-    "complexity": 3.74,
-    "geek_rating": 7.422,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/358661/andromedas-edge"
-  },
-  {
-    "bgg_id": 299659,
-    "name": "Clash of Cultures: Monumental Edition",
-    "year": 2021,
-    "complexity": 3.74,
-    "geek_rating": 7.315,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/299659/clash-of-cultures-monumental-edition"
-  },
-  {
-    "bgg_id": 103343,
-    "name": "A Game of Thrones: The Board Game (Second Edition)",
-    "year": 2011,
-    "complexity": 3.74,
-    "geek_rating": 7.297,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/103343/a-game-of-thrones-the-board-game-second-edition"
-  },
-  {
-    "bgg_id": 193738,
-    "name": "Great Western Trail",
-    "year": 2016,
-    "complexity": 3.7,
-    "geek_rating": 7.967,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/193738/great-western-trail"
   },
   {
     "bgg_id": 315896,
@@ -242,39 +44,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/315896/marvel-champions-the-card-game-the-galaxys-most-wa"
   },
   {
-    "bgg_id": 325494,
-    "name": "ISS Vanguard",
-    "year": 2022,
-    "complexity": 3.67,
-    "geek_rating": 7.427,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/325494/iss-vanguard"
-  },
-  {
-    "bgg_id": 141648,
-    "name": "Battlestar Galactica: The Board Game – Daybreak Expansion",
-    "year": 2013,
-    "complexity": 3.64,
-    "geek_rating": 6.77,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/141648/battlestar-galactica-the-board-game-daybreak-expan"
-  },
-  {
-    "bgg_id": 318184,
-    "name": "Imperium: Classics",
-    "year": 2021,
-    "complexity": 3.63,
-    "geek_rating": 7.165,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/318184/imperium-classics"
-  },
-  {
     "bgg_id": 205637,
     "name": "Arkham Horror: The Card Game",
     "year": 2016,
@@ -284,39 +53,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/205637/arkham-horror-the-card-game"
-  },
-  {
-    "bgg_id": 85905,
-    "name": "Battlestar Galactica: The Board Game – Exodus Expansion",
-    "year": 2010,
-    "complexity": 3.56,
-    "geek_rating": 7.07,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/85905/battlestar-galactica-the-board-game-exodus-expansi"
-  },
-  {
-    "bgg_id": 172154,
-    "name": "Fief: France 1429 – Expansions Pack",
-    "year": 2015,
-    "complexity": 3.54,
-    "geek_rating": 5.71,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/172154/fief-france-1429-expansions-pack"
-  },
-  {
-    "bgg_id": 295535,
-    "name": "Dark Ages: Heritage of Charlemagne",
-    "year": 2021,
-    "complexity": 3.53,
-    "geek_rating": 5.964,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/295535/dark-ages-heritage-of-charlemagne"
   },
   {
     "bgg_id": 199884,
@@ -330,105 +66,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/199884/descent-journeys-in-the-dark-second-edition-the-ch"
   },
   {
-    "bgg_id": 342900,
-    "name": "Earthborne Rangers",
-    "year": 2023,
-    "complexity": 3.48,
-    "geek_rating": 7.05,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/342900/earthborne-rangers"
-  },
-  {
-    "bgg_id": 304985,
-    "name": "Dark Ages: Holy Roman Empire",
-    "year": 2021,
-    "complexity": 3.48,
-    "geek_rating": 5.997,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/304985/dark-ages-holy-roman-empire"
-  },
-  {
-    "bgg_id": 276182,
-    "name": "Dead Reckoning",
-    "year": 2022,
-    "complexity": 3.44,
-    "geek_rating": 7.137,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/276182/dead-reckoning"
-  },
-  {
-    "bgg_id": 364356,
-    "name": "Company of Heroes: 2nd Edition",
-    "year": 2025,
-    "complexity": 3.43,
-    "geek_rating": 5.962,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/364356/company-of-heroes-2nd-edition"
-  },
-  {
-    "bgg_id": 248591,
-    "name": "Dinosaur Island: Totally Liquid",
-    "year": 2018,
-    "complexity": 3.41,
-    "geek_rating": 6.631,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/248591/dinosaur-island-totally-liquid"
-  },
-  {
-    "bgg_id": 270871,
-    "name": "Agemonia",
-    "year": 2024,
-    "complexity": 3.34,
-    "geek_rating": 6.566,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/270871/agemonia"
-  },
-  {
-    "bgg_id": 305096,
-    "name": "Endless Winter: Paleoamericans",
-    "year": 2022,
-    "complexity": 3.33,
-    "geek_rating": 7.154,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/305096/endless-winter-paleoamericans"
-  },
-  {
-    "bgg_id": 146021,
-    "name": "Eldritch Horror",
-    "year": 2013,
-    "complexity": 3.32,
-    "geek_rating": 7.491,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/146021/eldritch-horror"
-  },
-  {
-    "bgg_id": 43539,
-    "name": "Battlestar Galactica: The Board Game – Pegasus Expansion",
-    "year": 2009,
-    "complexity": 3.31,
-    "geek_rating": 7.15,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/43539/battlestar-galactica-the-board-game-pegasus-expans"
-  },
-  {
     "bgg_id": 219650,
     "name": "Arydia: The Paths We Dare Tread",
     "year": 2025,
@@ -438,28 +75,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/219650/arydia-the-paths-we-dare-tread"
-  },
-  {
-    "bgg_id": 198830,
-    "name": "Heroes of Land, Air & Sea",
-    "year": 2018,
-    "complexity": 3.31,
-    "geek_rating": 6.665,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/198830/heroes-of-land-air-and-sea"
-  },
-  {
-    "bgg_id": 203993,
-    "name": "Lorenzo il Magnifico",
-    "year": 2016,
-    "complexity": 3.3,
-    "geek_rating": 7.483,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/203993/lorenzo-il-magnifico"
   },
   {
     "bgg_id": 192457,
@@ -493,17 +108,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/149915/descent-journeys-in-the-dark-second-edition-shadow"
-  },
-  {
-    "bgg_id": 37111,
-    "name": "Battlestar Galactica: The Board Game",
-    "year": 2008,
-    "complexity": 3.25,
-    "geek_rating": 7.525,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/37111/battlestar-galactica-the-board-game"
   },
   {
     "bgg_id": 239472,
@@ -1760,17 +1364,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/163106/legendary-a-marvel-deck-building-game-guardians-of"
   },
   {
-    "bgg_id": 209010,
-    "name": "Mechs vs. Minions",
-    "year": 2016,
-    "complexity": 2.45,
-    "geek_rating": 7.618,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/209010/mechs-vs-minions"
-  },
-  {
     "bgg_id": 110327,
     "name": "Lords of Waterdeep",
     "year": 2012,
@@ -2517,17 +2110,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202103/hero-realms-character-pack-cleric"
-  },
-  {
-    "bgg_id": 154386,
-    "name": "Medieval Academy",
-    "year": 2014,
-    "complexity": 1.82,
-    "geek_rating": 6.406,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/154386/medieval-academy"
   },
   {
     "bgg_id": 379908,

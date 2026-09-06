@@ -263,6 +263,50 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 	return games, rows.Err()
 }
 
+// ListBaseGames returns only base games (parent_id IS NULL). A base game is
+// included when it matches the search/player filter on its own fields OR when
+// one of its expansions matches, so searching for an expansion surfaces its
+// parent entry. Expansions themselves are grouped under parents by the handler.
+func (db *DB) ListBaseGames(search string, players int) ([]Game, error) {
+	query := `SELECT g.id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.bgg_url, g.created_at, g.updated_at
+		FROM games g WHERE g.parent_id IS NULL`
+	var args []interface{}
+
+	search = strings.TrimSpace(search)
+	if search != "" {
+		like := "%" + search + "%"
+		query += ` AND (g.name LIKE ? OR g.url LIKE ? OR EXISTS (
+			SELECT 1 FROM games e WHERE e.parent_id = g.id AND (e.name LIKE ? OR e.url LIKE ?)
+		))`
+		args = append(args, like, like, like, like)
+	}
+
+	if players > 0 {
+		query += " AND g.min_players <= ? AND g.max_players >= ?"
+		args = append(args, players, players)
+	}
+
+	query += " ORDER BY g.name COLLATE NOCASE ASC"
+
+	rows, err := db.Query(query, args...)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var games []Game
+	for rows.Next() {
+		var g Game
+		var parentID sql.NullInt64
+		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+			return nil, err
+		}
+		games = append(games, g)
+	}
+
+	return games, rows.Err()
+}
+
 func (db *DB) GetGame(id int64) (*Game, error) {
 	var g Game
 	var parentID sql.NullInt64

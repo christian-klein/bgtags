@@ -6,6 +6,11 @@
             <p class="toolbar-desc">Print scannable sticker labels with rules QR codes, player counts, and complexity for game boxes.</p>
         </div>
         <div class="toolbar-actions">
+            <div class="sticker-search-box">
+                <span class="sticker-search-icon">🔍</span>
+                <input type="text" id="sticker-filter-input" class="sticker-search-input" placeholder="Filter games by name..." oninput="filterStickers()">
+            </div>
+
             <div class="size-selector">
                 <label for="sticker-size">Label Size:</label>
                 <select id="sticker-size" onchange="changeStickerSize(this.value)">
@@ -14,10 +19,19 @@
                     <option value="size-large">Large (4" x 3.5")</option>
                 </select>
             </div>
-            <button onclick="window.print()" class="btn btn-primary print-btn">
-                🖨️ Print Stickers Now
-            </button>
-            <a href="/" class="btn btn-outline">Back to Catalog</a>
+
+            <div class="sticker-filter-actions">
+                <button type="button" id="select-all-btn" onclick="toggleSelectAllFiltered()" class="btn btn-secondary btn-sm">
+                    Select All
+                </button>
+                <button type="button" id="show-selected-toggle-btn" onclick="toggleShowSelectedOnly()" class="btn btn-outline btn-sm">
+                    Show Selected (<span id="selected-count">0</span>)
+                </button>
+                <button type="button" onclick="printStickersNow()" class="btn btn-primary print-btn">
+                    🖨️ Print Stickers Now
+                </button>
+                <a href="/" class="btn btn-outline btn-sm">Back to Catalog</a>
+            </div>
         </div>
     </div>
 
@@ -27,7 +41,10 @@
 
     <div id="stickers-sheet" class="stickers-grid size-standard">
         {{range .Games}}
-        <div class="sticker-item">
+        <div class="sticker-item" data-game-id="{{.ID}}" data-game-name="{{.Name}}">
+            <div class="sticker-select-box no-print">
+                <input type="checkbox" class="sticker-checkbox" title="Select {{.Name}} for printing" onchange="onStickerCheckboxChange(this)">
+            </div>
             <div class="sticker-inner">
                 <div class="sticker-qr-col">
                     <img src="{{.QRCodeURL}}&size=300" alt="QR Code" class="sticker-qr">
@@ -37,14 +54,13 @@
                     <div class="sticker-header">
                         <h3 class="sticker-title">{{.Name}}</h3>
                         <div class="sticker-meta">
-                            <span class="sticker-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players{{if .BestPlayers}} (Best: {{.BestPlayers}}){{end}}</span>
                             {{if gt .Complexity 0.0}}
-                            <span class="sticker-complexity">🧠 Weight: {{printf "%.1f" .Complexity}} / 5</span>
+                            <span class="sticker-complexity">🧠 {{printf "%.1f" .Complexity}} / 5</span>
                             {{end}}
+                            <span class="sticker-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players{{if .BestPlayers}} (Best: {{.BestPlayers}}){{end}}</span>
                         </div>
                     </div>
                     <div class="sticker-middle">
-                        <img src="/img/{{.Image}}" alt="{{.Name}}" class="sticker-thumb">
                         <div class="sticker-checks">
                             <span class="checks-label">Plays:</span>
                             <div class="check-boxes">
@@ -64,9 +80,176 @@
 </div>
 
 <script>
+    // Selected game IDs tracked across filtering/searches
+    var selectedGameIds = new Set();
+    var showOnlySelected = false;
+
+    function fitStickerTitles() {
+        document.querySelectorAll('.sticker-item').forEach(function (item) {
+            if (item.style.display === 'none') return;
+            var title = item.querySelector('.sticker-title');
+            if (!title) return;
+
+            title.style.fontSize = '';
+            var baseSize = parseFloat(window.getComputedStyle(title).fontSize) || 17.6;
+            var minSize = 9;
+            var size = baseSize;
+            title.style.fontSize = size + 'px';
+
+            // Reduce font size if the title overflows 2 lines (scrollHeight > clientHeight)
+            while ((title.scrollHeight > title.clientHeight + 1 || title.scrollWidth > title.clientWidth + 1) && size > minSize) {
+                size -= 0.5;
+                title.style.fontSize = size + 'px';
+            }
+        });
+    }
+
     function changeStickerSize(sizeClass) {
         const sheet = document.getElementById('stickers-sheet');
         sheet.className = 'stickers-grid ' + sizeClass;
+        fitStickerTitles();
     }
+
+    function onStickerCheckboxChange(cb) {
+        var item = cb.closest('.sticker-item');
+        var gameId = item.getAttribute('data-game-id');
+        if (cb.checked) {
+            selectedGameIds.add(gameId);
+            item.classList.add('sticker-selected');
+        } else {
+            selectedGameIds.delete(gameId);
+            item.classList.remove('sticker-selected');
+        }
+        updateSelectionUI();
+        if (showOnlySelected) {
+            filterStickers();
+        }
+    }
+
+    function updateSelectionUI() {
+        var count = selectedGameIds.size;
+        var countElem = document.getElementById('selected-count');
+        if (countElem) {
+            countElem.textContent = count;
+        }
+
+        var showSelectedBtn = document.getElementById('show-selected-toggle-btn');
+        if (showSelectedBtn) {
+            if (showOnlySelected) {
+                showSelectedBtn.className = 'btn btn-primary btn-sm';
+                showSelectedBtn.textContent = 'Show All Games (' + count + ')';
+            } else {
+                showSelectedBtn.className = 'btn btn-outline btn-sm';
+                showSelectedBtn.textContent = 'Show Selected (' + count + ')';
+            }
+        }
+
+        // Update Select All / Deselect All button text for current view
+        updateSelectAllButtonState();
+    }
+
+    function filterStickers() {
+        var query = (document.getElementById('sticker-filter-input').value || '').trim().toLowerCase();
+        var items = document.querySelectorAll('.sticker-item');
+
+        items.forEach(function (item) {
+            var name = (item.getAttribute('data-game-name') || '').toLowerCase();
+            var id = item.getAttribute('data-game-id');
+            var matchesQuery = !query || name.indexOf(query) !== -1;
+            var matchesSelected = !showOnlySelected || selectedGameIds.has(id);
+
+            if (matchesQuery && matchesSelected) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        updateSelectAllButtonState();
+        fitStickerTitles();
+    }
+
+    function updateSelectAllButtonState() {
+        var btn = document.getElementById('select-all-btn');
+        if (!btn) return;
+
+        var visibleItems = Array.from(document.querySelectorAll('.sticker-item')).filter(function (it) {
+            return it.style.display !== 'none';
+        });
+
+        if (visibleItems.length === 0) {
+            btn.textContent = 'Select All';
+            return;
+        }
+
+        var allVisibleChecked = visibleItems.every(function (it) {
+            var cb = it.querySelector('.sticker-checkbox');
+            return cb && cb.checked;
+        });
+
+        btn.textContent = allVisibleChecked ? 'Deselect All' : 'Select All';
+    }
+
+    function toggleSelectAllFiltered() {
+        var visibleItems = Array.from(document.querySelectorAll('.sticker-item')).filter(function (it) {
+            return it.style.display !== 'none';
+        });
+
+        if (visibleItems.length === 0) return;
+
+        var allVisibleChecked = visibleItems.every(function (it) {
+            var cb = it.querySelector('.sticker-checkbox');
+            return cb && cb.checked;
+        });
+
+        var shouldCheck = !allVisibleChecked;
+
+        visibleItems.forEach(function (it) {
+            var cb = it.querySelector('.sticker-checkbox');
+            var id = it.getAttribute('data-game-id');
+            if (cb) {
+                cb.checked = shouldCheck;
+            }
+            if (shouldCheck) {
+                selectedGameIds.add(id);
+                it.classList.add('sticker-selected');
+            } else {
+                selectedGameIds.delete(id);
+                it.classList.remove('sticker-selected');
+            }
+        });
+
+        updateSelectionUI();
+        if (showOnlySelected) {
+            filterStickers();
+        }
+    }
+
+    function toggleShowSelectedOnly() {
+        showOnlySelected = !showOnlySelected;
+        filterStickers();
+    }
+
+    function printStickersNow() {
+        // If some stickers are selected, print ONLY the selected stickers (even if filtered from display)
+        if (selectedGameIds.size > 0) {
+            document.body.classList.add('printing-selected');
+        } else {
+            document.body.classList.remove('printing-selected');
+        }
+
+        window.print();
+    }
+
+    // Clean up printing-selected class after printing dialog closes
+    window.addEventListener('afterprint', function () {
+        document.body.classList.remove('printing-selected');
+    });
+
+    window.addEventListener('load', function () {
+        fitStickerTitles();
+        updateSelectionUI();
+    });
+    window.addEventListener('resize', fitStickerTitles);
 </script>
 {{end}}

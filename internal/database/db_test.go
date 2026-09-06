@@ -148,3 +148,53 @@ func TestMigrationFromOldSchema(t *testing.T) {
 		t.Fatalf("expected parent_id column in games table, got count %d, err %v", count, err)
 	}
 }
+
+func TestListBaseGames(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "base_games_test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	base := &Game{Name: "Dune: Imperium", URL: "dune.pdf", Image: "dune.jpg", MinPlayers: 2, MaxPlayers: 4}
+	if err := db.CreateGame(base); err != nil {
+		t.Fatalf("failed to create base: %v", err)
+	}
+	pid := base.ID
+	exp := &Game{ParentID: &pid, Name: "Dune: Imperium - Rise of Ix", URL: "ix.pdf", Image: "ix.jpg", MinPlayers: 2, MaxPlayers: 4}
+	if err := db.CreateGame(exp); err != nil {
+		t.Fatalf("failed to create expansion: %v", err)
+	}
+	standalone := &Game{Name: "Wingspan", URL: "wingspan.pdf", Image: "wingspan.jpg", MinPlayers: 1, MaxPlayers: 5}
+	if err := db.CreateGame(standalone); err != nil {
+		t.Fatalf("failed to create standalone: %v", err)
+	}
+
+	bases, err := db.ListBaseGames("", 0)
+	if err != nil {
+		t.Fatalf("ListBaseGames failed: %v", err)
+	}
+	if len(bases) != 2 {
+		t.Fatalf("expected 2 base games (expansion excluded), got %d", len(bases))
+	}
+
+	// Search by expansion name must surface the parent
+	byExp, err := db.ListBaseGames("Rise of Ix", 0)
+	if err != nil {
+		t.Fatalf("ListBaseGames search failed: %v", err)
+	}
+	if len(byExp) != 1 || byExp[0].Name != "Dune: Imperium" {
+		t.Fatalf("expected parent surfaced by expansion search, got %+v", byExp)
+	}
+
+	// Player filter applies to base games only
+	byPlayers, err := db.ListBaseGames("", 5)
+	if err != nil {
+		t.Fatalf("ListBaseGames player filter failed: %v", err)
+	}
+	if len(byPlayers) != 1 || byPlayers[0].Name != "Wingspan" {
+		t.Fatalf("expected only Wingspan for 5 players, got %+v", byPlayers)
+	}
+}

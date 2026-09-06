@@ -444,26 +444,77 @@ body {
 .toolbar-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
+}
+
+.sticker-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 220px;
+}
+
+.sticker-search-icon {
+    position: absolute;
+    left: 0.75rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    font-size: 0.85rem;
+}
+
+.sticker-search-input {
+    width: 100%;
+    padding: 0.45rem 0.75rem 0.45rem 2.2rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.sticker-search-input:focus {
+    border-color: var(--accent-primary);
 }
 
 .size-selector {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--text-secondary);
 }
 
 .size-selector select {
-    padding: 0.5rem 0.8rem;
+    padding: 0.45rem 0.75rem;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
     font-family: inherit;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+}
+
+.sticker-filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.selection-count-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-primary);
 }
 
 .print-instruction {
@@ -495,6 +546,7 @@ body {
 }
 
 .sticker-item {
+    position: relative;
     background-color: #ffffff;
     color: #0f172a;
     border: 1.5px dashed #94a3b8;
@@ -504,6 +556,26 @@ body {
     box-shadow: var(--shadow-sm);
     page-break-inside: avoid;
     break-inside: avoid;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.sticker-item.sticker-selected {
+    border-color: var(--accent-primary);
+    background-color: #fafcff;
+}
+
+.sticker-select-box {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    z-index: 5;
+}
+
+.sticker-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--accent-primary);
 }
 
 .sticker-inner {
@@ -546,11 +618,16 @@ body {
 }
 
 .sticker-title {
+    width: 100%;
     font-size: 1.1rem;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.25;
     color: #0f172a;
     margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     word-break: break-word;
 }
 
@@ -562,19 +639,8 @@ body {
     color: #334155;
     padding: 2px 6px;
     border-radius: 4px;
-}
-
-.sticker-art {
-    display: flex;
-    align-items: center;
-}
-
-.sticker-thumb {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid #cbd5e1;
+    white-space: nowrap;
+    margin-left: auto;
 }
 
 .sticker-footer {
@@ -793,6 +859,14 @@ body {
     .sticker-scan-text {
         color: #333333 !important;
     }
+
+    .sticker-select-box {
+        display: none !important;
+    }
+
+    body.printing-selected .sticker-item:not(.sticker-selected) {
+        display: none !important;
+    }
 }
 
 /* Additional badge and sticker styles */
@@ -811,15 +885,15 @@ body {
 
 .sticker-meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 6px;
+    gap: 4px 6px;
     margin-bottom: 6px;
     width: 100%;
 }
 
 .sticker-complexity {
-    margin-left: auto;
     display: inline-flex;
     align-items: center;
     font-size: 0.72rem;

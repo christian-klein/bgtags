@@ -65,12 +65,20 @@
                             <h3 class="doc-title">Core Rulebook</h3>
                             <span class="doc-primary-tag">Primary Rules</span>
                         </div>
+                        {{if .Game.URL}}
                         <span class="doc-filename">{{.Game.URL}}</span>
+                        {{else}}
+                        <span class="doc-filename">Rulebook not yet available — check back soon</span>
+                        {{end}}
                     </div>
                     <div class="doc-action-col">
+                        {{if .Game.URL}}
                         <a href="/rules/{{.Game.URL}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary doc-open-btn">
                             Open PDF ↗
                         </a>
+                        {{else}}
+                        <span class="btn btn-outline doc-open-btn" style="pointer-events:none; opacity:0.6;">Pending…</span>
+                        {{end}}
                     </div>
                 </div>
                 {{end}}
@@ -84,17 +92,17 @@
                 {{range .Expansions}}
                 <div class="expansion-card">
                     <div class="exp-info">
-                        <h4 class="exp-title">{{.Name}}</h4>
+                        <a href="/games/{{.ID}}/rules" class="exp-title-link">
+                            <h4 class="exp-title">{{.Name}}</h4>
+                        </a>
                         <div class="exp-meta">
                             <span class="exp-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
                             {{if gt .Complexity 0.0}}<span class="badge complexity-badge">🧠 {{printf "%.1f" .Complexity}}</span>{{end}}
                         </div>
                     </div>
-                    {{if .URL}}
-                    <a href="/rules/{{.URL}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                        📖 Expansion Rules ↗
+                    <a href="/games/{{.ID}}/rules" class="btn btn-outline btn-sm">
+                        📖 View Rules Hub ↗
                     </a>
-                    {{end}}
                 </div>
                 {{end}}
             </div>

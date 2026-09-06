@@ -1,177 +1,53 @@
-/* groovylint-disable CatchException */
-/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
 
-    tools {
-        nodejs 'node16'
-    }
-
     environment {
-
-        REGISTRY_CREDENTIALS = 'registry.cklein.us'
-        /* groovylint-disable-next-line DuplicateStringLiteral */
-        REGISTRY_DNS = 'registry.cklein.us'
-
-        IMAGE_NAME = 'bgtags.cklein.us'
-        IMAGE_PATH = "cklein.us/$IMAGE_NAME"
-        REGISTRY_URL = "https://$REGISTRY_DNS/"
-        DOCKER_SERVER = 'docker.cklein.us'
-
-        NOTICE_START = '********************************************************************\n*            '
-        NOTICE_END = '            *\n********************************************************************'
-        NOTICE_SEP = '***************************************'
-
-        GIT_BRANCH_DEV = 'dev'
-        GIT_BRANCH_MASTER = 'main'
-
-        JWT_SECRET = credentials('JWT_SECRET')
+        // App-specific identifier only.
+        // REGISTRY_HOST and REGISTRY_NAMESPACE are dynamically injected
+        // by Jenkins Global Environment Variables (e.g. forgejo.cklein.us / cdk2128).
+        APP_NAME = 'bgtags'
     }
+
     stages {
-        stage('Environment') {
+        // ==========================================
+        // BUILD BRANCH: Compile, Test, Package, Push
+        // ==========================================
+        stage('Test & Build Container') {
+            when { branch 'build' }
             steps {
-                echo "$NOTICE_START Check Environment $NOTICE_END"
-                sh 'mkdir -p ~/.ssh'
-                sh 'touch ~/.ssh/known_hosts'
-                echo "$NOTICE_SEP"
-                sh "ssh-keygen -R $DOCKER_SERVER"
-                echo "$NOTICE_SEP"
-                sh "ssh-keyscan -t rsa $DOCKER_SERVER >> ~/.ssh/known_hosts"
-                echo "$NOTICE_SEP"
-                sh 'git --version'
-                echo "$NOTICE_SEP"
-                sh 'docker -v'
-                echo "$NOTICE_SEP"
-                sh 'printenv'
-            }
-        }
-        stage('Build React app') {
-            when {
-                expression { env.BRANCH_NAME == "$GIT_BRANCH_MASTER" }
-            }
-            steps {
-                echo "$NOTICE_START Build React App $NOTICE_END"
+                script {
+                    def gitCommit = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+                    def fullImage = "${env.REGISTRY_HOST}/${env.REGISTRY_NAMESPACE}/${env.APP_NAME}"
 
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
-        stage('Build New Image') {
-            when {
-                expression { env.BRANCH_NAME == "$GIT_BRANCH_MASTER" }
-            }
-            steps {
-                echo "$NOTICE_START Build New Image $NOTICE_END"
-                script {
-                    app = docker.build "$IMAGE_PATH"
-                }
-            }
-        }
-        stage('Test') {
-            when {
-                expression { env.BRANCH_NAME == "$GIT_BRANCH_DEV" }
-            }
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy to Registry') {
-            when {
-                expression { env.BRANCH_NAME == "$GIT_BRANCH_MASTER" }
-            }
-            steps {
-                echo "$NOTICE_START Deploy to Registry $NOTICE_END"
-                script {
-                    docker.withRegistry(REGISTRY_URL, REGISTRY_CREDENTIALS) {
-                        echo "$NOTICE_SEP"
-                        app.push("${env.BUILD_NUMBER}")
-                        echo "$NOTICE_SEP"
-                        app.push('latest')
+                    echo "Building ${fullImage}:${gitCommit} and ${fullImage}:latest..."
+                    sh "docker build -t ${fullImage}:${gitCommit} -t ${fullImage}:latest ."
+
+                    echo "Pushing image to registry..."
+                    withCredentials([usernamePassword(
+                        credentialsId: 'forgejo-registry-creds',
+                        usernameVariable: 'REG_USER',
+                        passwordVariable: 'REG_PASS'
+                    )]) {
+                        sh "echo \"${REG_PASS}\" | docker login ${env.REGISTRY_HOST} -u \"${REG_USER}\" --password-stdin"
+                        sh "docker push ${fullImage}:${gitCommit}"
+                        sh "docker push ${fullImage}:latest"
                     }
                 }
             }
         }
-        stage('Remove Unused docker image') {
+
+        // ==========================================
+        // DEPLOY BRANCH: Trigger Deployment via home_automations
+        // ==========================================
+        stage('Deploy Application') {
+            when { branch 'deploy' }
             steps {
-                sh 'docker images'
-                echo "$NOTICE_START Remove Unused docker image $NOTICE_END"
-                script {
-                    try {
-                        sh "docker rmi ${app.imageName()}"
-                    } catch (Exception e) {
-                        "No image ${app.imageName()} found"
-                    }
-                    docker.withRegistry("$REGISTRY_URL", REGISTRY_CREDENTIALS) {
-                        echo "$NOTICE_SEP"
-                        try {
-                            sh "docker rmi ${app.imageName()}:${env.BUILD_NUMBER}"
-                            echo "$NOTICE_SEP"
-                        } catch (Exception e) {
-                            "No image ${app.imageName()}:${env.BUILD_NUMBER} found"
-                        }
-                        try {
-                            sh "docker rmi ${app.imageName()}:latest"
-                        } catch (Exception e) {
-                            "No image ${app.imageName()}:latest found"
-                        }
-                    }
-                }
-                script {
-                    echo "$NOTICE_SEP"
-                    sh 'docker ps --all'
-                    try {
-                        echo "$NOTICE_SEP"
-                        sh 'docker images |' +
-                        'grep "' + $IMAGE_NAME + '"|' +
-                        'awk \'!id[$3]++ {print $3}\'|' +
-                        'xargs -t -I {} docker container ls --all --filter ancestor={} --format \'{{.ID}}\'|' +
-                        'xargs docker stop|xargs docker rm'
-                    } catch (Exception e) {
-                        echo '!!!!! Exception occurred stopping and removing existing containers'
-                        echo '!!!!! ' + e                    }
-                    echo "$NOTICE_SEP"
-                    sh 'docker image prune -f'
-                    try {
-                        echo "$NOTICE_SEP"
-                        sh 'docker rmi $(docker images -a | grep "^<none>" | awk \'{print $3}\')'
-                    } catch (Exception e) {
-                        echo '!!!!! Exception occurred removing <none> images: '
-                        /* groovylint-disable-next-line DuplicateStringLiteral */
-                        echo '!!!!! ' + e
-                    }
-                    try {
-                        echo "$NOTICE_SEP"
-                        sh "docker rmi -f \$(docker images -a | grep \"${app.imageName()}\" | awk '{print \$3}')"
-                    } catch (Exception e) {
-                        echo '!!!!! Exception occurred removing app.imageName: '
-                        /* groovylint-disable-next-line DuplicateStringLiteral */
-                        echo '!!!!! ' + e
-                    }
-                }
-                echo "$NOTICE_SEP"
-                /* groovylint-disable-next-line DuplicateStringLiteral */
-                sh 'docker images'
-            }
-        }
-        stage('Deploy new container using Ansible') {
-            steps {
-                echo "$NOTICE_START Deploy new container using Ansible $NOTICE_END"
-                ansiblePlaybook(
-                    playbook: 'devops/ansible/playbook/bgtags.cklein.us.yml',
-                    inventory: 'devops/ansible/playbook/inventory',
-                    credentialsId: 'ansible',
-                    hostKeyChecking: 'false',
-                    colorized: true
-                )
+                echo "Triggering centralized deployment pipeline for ${env.APP_NAME}..."
+                build job: 'deploy-service', parameters: [
+                    string(name: 'SERVICE_NAME', value: env.APP_NAME),
+                    string(name: 'IMAGE_TAG', value: 'latest')
+                ]
             }
         }
     }
-// post {
-//     always {
-//     }
-//     success {
-//     }
-//     failure {
-//     }
-// }
 }
