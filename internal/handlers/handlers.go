@@ -41,6 +41,11 @@ type PageData struct {
 	Message     string
 	Error       string
 
+	// PDF Optimization
+	OptTotal      int
+	OptLinearized int
+	OptPending    int
+
 	// Auth & RBAC
 	OIDCEnabled     bool
 	IsAuthenticated bool

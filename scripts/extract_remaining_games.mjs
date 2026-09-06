@@ -186,11 +186,6 @@ async function run() {
   const mdPath = new URL("../GAMES_TODO.md", import.meta.url).pathname;
   fs.writeFileSync(mdPath, md);
   console.log(`Saved Markdown: ${mdPath}`);
-
-  // Save plain text games_todo.txt
-  const txtPath = new URL("../games_todo.txt", import.meta.url).pathname;
-  fs.writeFileSync(txtPath, remaining.map(g => g.name).join("\n") + "\n");
-  console.log(`Saved Text: ${txtPath}`);
 }
 
 run().catch(console.error);

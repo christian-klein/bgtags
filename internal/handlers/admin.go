@@ -14,6 +14,7 @@ import (
 
 	"github.com/christian-klein/bgtags/internal/backup"
 	"github.com/christian-klein/bgtags/internal/database"
+	"github.com/christian-klein/bgtags/internal/pdf"
 )
 
 func (h *Handler) loadAdminGames(q string) ([]GameView, error) {
@@ -49,14 +50,19 @@ func (h *Handler) HandleAdmin(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Error listing backups for admin: %v", err)
 	}
 
+	totalOpt, linOpt, pendingOpt, _ := h.db.GetOptimizationStats()
+
 	baseURL := h.getBaseURL(r)
 	data := PageData{
-		Title:      "Admin Control Panel",
-		Games:      games,
-		TotalCount: len(games),
-		Backups:    backups,
-		BaseURL:    baseURL,
-		ActiveNav:  "admin",
+		Title:         "Admin Control Panel",
+		Games:         games,
+		TotalCount:    len(games),
+		Backups:       backups,
+		OptTotal:      totalOpt,
+		OptLinearized: linOpt,
+		OptPending:    pendingOpt,
+		BaseURL:       baseURL,
+		ActiveNav:     "admin",
 	}
 	h.populateAuthData(r, &data)
 
@@ -192,6 +198,10 @@ func (h *Handler) HandleAdminCreateGame(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
+	if pdfName != "" {
+		h.optimizeUploadedPDF(pdfName)
+	}
+
 	log.Printf("[bgtags] Created game #%d: %s", game.ID, game.Name)
 
 	games, _ := h.loadAdminGames("")
@@ -291,6 +301,8 @@ func (h *Handler) handleAdminAddDocument(w http.ResponseWriter, r *http.Request,
 		return
 	}
 
+	h.optimizeUploadedPDF(pdfName)
+
 	log.Printf("[bgtags] Added document '%s' to game #%d", doc.Title, gameID)
 
 	games, _ := h.loadAdminGames("")
@@ -370,3 +382,54 @@ func saveUploadedFile(file multipart.File, originalName, targetDir string, allow
 
 	return filename, nil
 }
+
+func (h *Handler) optimizeUploadedPDF(filename string) {
+	rulesDir := filepath.Join(h.cfg.StaticDir, "rules")
+	fullPath := filepath.Join(rulesDir, filename)
+	go func() {
+		log.Printf("[pdf-optimizer] Running optimization for uploaded file %s...", filename)
+		if err := pdf.LinearizeFile(fullPath); err != nil {
+			log.Printf("[pdf-optimizer] Warning: linearize failed for %s: %v", filename, err)
+			return
+		}
+		if stat, err := os.Stat(fullPath); err == nil {
+			_ = h.db.SavePDFOptimization(&database.PDFOptimization{
+				Filename:     filename,
+				FileSize:     stat.Size(),
+				ModTime:      stat.ModTime().Unix(),
+				IsLinearized: true,
+			})
+			log.Printf("[pdf-optimizer] Uploaded file %s linearized successfully (%d bytes)", filename, stat.Size())
+		}
+	}()
+}
+
+func (h *Handler) HandleAdminOptimize(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	rulesDir := filepath.Join(h.cfg.StaticDir, "rules")
+	processed, skipped, err := pdf.SyncDirectory(h.db, rulesDir)
+	if err != nil {
+		log.Printf("[pdf-optimizer] Optimization error: %v", err)
+		http.Error(w, "Optimization error: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	total, lin, pending, _ := h.db.GetOptimizationStats()
+
+	w.Header().Set("Content-Type", "text/html")
+	fmt.Fprintf(w, `<div class="optimization-result" style="animation: fadeIn 0.3s ease;">
+		<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 0.75rem; font-size: 0.9rem;">
+			✓ <strong>Optimization Complete:</strong> %d processed, %d skipped. All rulebooks are now optimized for Fast Web View!
+		</div>
+		<div style="display: flex; gap: 0.75rem; align-items: center;">
+			<span class="badge" style="background: #10b981; color: white; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 600;">%d Linearized</span>
+			<span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text-muted, #9ca3af); padding: 0.35rem 0.75rem; border-radius: 6px;">%d Pending</span>
+			<span class="badge" style="background: rgba(255,255,255,0.05); color: var(--text-muted, #9ca3af); padding: 0.35rem 0.75rem; border-radius: 6px;">Total: %d</span>
+		</div>
+	</div>`, processed, skipped, lin, pending, total)
+}
+

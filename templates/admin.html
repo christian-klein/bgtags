@@ -21,6 +21,9 @@
         <button type="button" class="admin-tab-btn" onclick="switchAdminTab('backups', this)">
             💾 Database Backups
         </button>
+        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('optimization', this)">
+            ⚡ Fast Web View ({{.OptLinearized}}/{{.OptTotal}})
+        </button>
     </div>
 
     <!-- Games Section -->
@@ -99,6 +102,42 @@
                         {{end}}
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optimization Section -->
+    <div id="tab-optimization" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+            <div class="backup-actions-bar" style="margin-bottom: 1.5rem;">
+                <div>
+                    <h3 style="font-size:1.1rem;margin-bottom:0.25rem;">Rulebook Optimization & Fast Web View</h3>
+                    <p class="backup-info">Linearizes PDF rulebooks in-place so browsers render the first page in milliseconds via HTTP range requests without downloading the entire file.</p>
+                </div>
+                <button class="btn btn-primary" 
+                        hx-post="/admin/optimize" 
+                        hx-target="#optimization-status-box"
+                        hx-indicator="#optimization-spinner">
+                    ⚡ Optimize All PDFs Now
+                </button>
+                <span id="optimization-spinner" class="htmx-indicator" style="font-size: 0.9rem; color: #10b981;">Optimizing PDFs with qpdf...</span>
+            </div>
+
+            <div id="optimization-status-box">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem 1.5rem; flex: 1; min-width: 180px;">
+                        <div style="font-size: 0.85rem; color: var(--text-muted, #9ca3af); margin-bottom: 0.25rem;">Total Tracked Rulebooks</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: white;">{{.OptTotal}}</div>
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 8px; padding: 1rem 1.5rem; flex: 1; min-width: 180px;">
+                        <div style="font-size: 0.85rem; color: #34d399; margin-bottom: 0.25rem;">Linearized (Fast Web View)</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: #10b981;">{{.OptLinearized}}</div>
+                    </div>
+                    <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 8px; padding: 1rem 1.5rem; flex: 1; min-width: 180px;">
+                        <div style="font-size: 0.85rem; color: #fbbf24; margin-bottom: 0.25rem;">Pending Optimization</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: #f59e0b;">{{.OptPending}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

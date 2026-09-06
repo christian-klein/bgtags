@@ -16,6 +16,7 @@ import (
 	"github.com/christian-klein/bgtags/internal/database"
 	"github.com/christian-klein/bgtags/internal/handlers"
 	"github.com/christian-klein/bgtags/internal/middleware"
+	"github.com/christian-klein/bgtags/internal/pdf"
 )
 
 func main() {
@@ -69,6 +70,7 @@ func main() {
 	mux.HandleFunc("/admin/games/create", middleware.RequireAdmin(cfg, h.HandleAdminCreateGame))
 	mux.HandleFunc("/admin/games/", middleware.RequireAdmin(cfg, h.HandleAdminGameRoute))
 	mux.HandleFunc("/admin/documents/", middleware.RequireAdmin(cfg, h.HandleAdminDocumentRoute))
+	mux.HandleFunc("/admin/optimize", middleware.RequireAdmin(cfg, h.HandleAdminOptimize))
 	mux.HandleFunc("/backups/create", middleware.RequireAdmin(cfg, h.HandleCreateBackup))
 	mux.HandleFunc("/backups/restore", middleware.RequireAdmin(cfg, h.HandleRestoreBackup))
 
@@ -77,7 +79,7 @@ func main() {
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir(staticDir))))
 	mux.Handle("/img/", http.StripPrefix("/img/", http.FileServer(http.Dir(filepath.Join(staticDir, "img")))))
 
-	// Rules PDF handler with inline preview headers (reader protected)
+	// Rules PDF handler with inline preview headers & streaming timeout exemption (reader protected)
 	rulesDir := filepath.Join(staticDir, "rules")
 	rulesHandler := func(w http.ResponseWriter, r *http.Request) {
 		filename := filepath.Base(r.URL.Path)
@@ -89,11 +91,27 @@ func main() {
 			return
 		}
 
+		// Disable write timeout for large streaming file downloads
+		rc := http.NewResponseController(w)
+		_ = rc.SetWriteDeadline(time.Time{})
+
 		w.Header().Set("Content-Type", "application/pdf")
 		w.Header().Set("Content-Disposition", "inline; filename=\""+filename+"\"")
+		w.Header().Set("Cache-Control", "public, max-age=86400, stale-while-revalidate=604800")
 		http.ServeFile(w, r, filePath)
 	}
 	mux.HandleFunc("/rules/", middleware.RequireReader(cfg, rulesHandler))
+
+	// Background initial scan to ensure all rulebooks are linearized for Fast Web View
+	go func() {
+		log.Printf("[bgtags] Starting background rulebook optimization scan...")
+		processed, skipped, err := pdf.SyncDirectory(db, rulesDir)
+		if err != nil {
+			log.Printf("[bgtags] Background rulebook optimization error: %v", err)
+		} else {
+			log.Printf("[bgtags] Background rulebook optimization complete: %d processed, %d already optimal", processed, skipped)
+		}
+	}()
 
 	server := &http.Server{
 		Addr:         ":" + cfg.Port,

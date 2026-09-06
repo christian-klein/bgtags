@@ -84,6 +84,14 @@ func (db *DB) migrate() error {
 		created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 	);
 	CREATE INDEX IF NOT EXISTS idx_game_documents_game_id ON game_documents(game_id);
+
+	CREATE TABLE IF NOT EXISTS pdf_optimizations (
+		filename TEXT PRIMARY KEY,
+		file_size INTEGER NOT NULL,
+		mod_time INTEGER NOT NULL,
+		is_linearized INTEGER NOT NULL DEFAULT 0,
+		optimized_at DATETIME DEFAULT CURRENT_TIMESTAMP
+	);
 	`
 	if _, err := db.Exec(schema); err != nil {
 		return err
@@ -449,4 +457,57 @@ func (db *DB) UpdateGame(g *Game) error {
 func (db *DB) DeleteGame(id int64) error {
 	_, err := db.Exec("DELETE FROM games WHERE id = ?", id)
 	return err
+}
+
+type PDFOptimization struct {
+	Filename     string    `json:"filename"`
+	FileSize     int64     `json:"file_size"`
+	ModTime      int64     `json:"mod_time"`
+	IsLinearized bool      `json:"is_linearized"`
+	OptimizedAt  time.Time `json:"optimized_at"`
+}
+
+func (db *DB) GetPDFOptimization(filename string) (*PDFOptimization, error) {
+	row := db.QueryRow(`SELECT filename, file_size, mod_time, is_linearized, optimized_at FROM pdf_optimizations WHERE filename = ?`, filename)
+	var opt PDFOptimization
+	var isLinearized int
+	var optAt time.Time
+	err := row.Scan(&opt.Filename, &opt.FileSize, &opt.ModTime, &isLinearized, &optAt)
+	if err == sql.ErrNoRows {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+	opt.IsLinearized = isLinearized == 1
+	opt.OptimizedAt = optAt
+	return &opt, nil
+}
+
+func (db *DB) SavePDFOptimization(opt *PDFOptimization) error {
+	isLin := 0
+	if opt.IsLinearized {
+		isLin = 1
+	}
+	query := `
+	INSERT INTO pdf_optimizations (filename, file_size, mod_time, is_linearized, optimized_at)
+	VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
+	ON CONFLICT(filename) DO UPDATE SET
+		file_size=excluded.file_size,
+		mod_time=excluded.mod_time,
+		is_linearized=excluded.is_linearized,
+		optimized_at=CURRENT_TIMESTAMP;
+	`
+	_, err := db.Exec(query, opt.Filename, opt.FileSize, opt.ModTime, isLin)
+	return err
+}
+
+func (db *DB) GetOptimizationStats() (total, linearized, pending int, err error) {
+	row := db.QueryRow(`SELECT COUNT(*), COALESCE(SUM(CASE WHEN is_linearized = 1 THEN 1 ELSE 0 END), 0) FROM pdf_optimizations`)
+	err = row.Scan(&total, &linearized)
+	if err != nil {
+		return 0, 0, 0, err
+	}
+	pending = total - linearized
+	return total, linearized, pending, nil
 }

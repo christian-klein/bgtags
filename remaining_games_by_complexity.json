@@ -77,28 +77,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/219650/arydia-the-paths-we-dare-tread"
   },
   {
-    "bgg_id": 192457,
-    "name": "Cry Havoc",
-    "year": 2016,
-    "complexity": 3.29,
-    "geek_rating": 6.642,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/192457/cry-havoc"
-  },
-  {
-    "bgg_id": 181279,
-    "name": "Fury of Dracula (Third/Fourth Edition)",
-    "year": 2015,
-    "complexity": 3.28,
-    "geek_rating": 7.084,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/181279/fury-of-dracula-thirdfourth-edition"
-  },
-  {
     "bgg_id": 149915,
     "name": "Descent: Journeys in the Dark (Second Edition) – Shadow of Nerekhall",
     "year": 2014,
@@ -108,28 +86,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/149915/descent-journeys-in-the-dark-second-edition-shadow"
-  },
-  {
-    "bgg_id": 239472,
-    "name": "Abomination: The Heir of Frankenstein",
-    "year": 2019,
-    "complexity": 3.24,
-    "geek_rating": 6.674,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/239472/abomination-the-heir-of-frankenstein"
-  },
-  {
-    "bgg_id": 77423,
-    "name": "The Lord of the Rings: The Card Game",
-    "year": 2011,
-    "complexity": 3.22,
-    "geek_rating": 7.383,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/77423/the-lord-of-the-rings-the-card-game"
   },
   {
     "bgg_id": 104162,
@@ -154,94 +110,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/137842/descent-journeys-in-the-dark-second-edition-labyri"
   },
   {
-    "bgg_id": 130715,
-    "name": "The Lord of the Rings: The Card Game – The Hobbit: On the Doorstep",
-    "year": 2013,
-    "complexity": 3.22,
-    "geek_rating": 6.044,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/130715/the-lord-of-the-rings-the-card-game-the-hobbit-on"
-  },
-  {
-    "bgg_id": 137649,
-    "name": "Level 7 [Omega Protocol]",
-    "year": 2013,
-    "complexity": 3.18,
-    "geek_rating": 6.383,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/137649/level-7-omega-protocol"
-  },
-  {
-    "bgg_id": 123695,
-    "name": "The Lord of the Rings: The Card Game – The Hobbit: Over Hill and Under Hill",
-    "year": 2012,
-    "complexity": 3.16,
-    "geek_rating": 6.229,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/123695/the-lord-of-the-rings-the-card-game-the-hobbit-ove"
-  },
-  {
-    "bgg_id": 147723,
-    "name": "The Lord of the Rings: The Card Game – The Road Darkens",
-    "year": 2014,
-    "complexity": 3.13,
-    "geek_rating": 5.933,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147723/the-lord-of-the-rings-the-card-game-the-road-darke"
-  },
-  {
-    "bgg_id": 200511,
-    "name": "After the Empire",
-    "year": 2021,
-    "complexity": 3.11,
-    "geek_rating": 6.357,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/200511/after-the-empire"
-  },
-  {
-    "bgg_id": 142875,
-    "name": "The Lord of the Rings: The Card Game – The Black Riders",
-    "year": 2013,
-    "complexity": 3.09,
-    "geek_rating": 6.124,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/142875/the-lord-of-the-rings-the-card-game-the-black-ride"
-  },
-  {
-    "bgg_id": 316554,
-    "name": "Dune: Imperium",
-    "year": 2020,
-    "complexity": 3.08,
-    "geek_rating": 8.218,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/316554/dune-imperium"
-  },
-  {
-    "bgg_id": 146574,
-    "name": "The Lord of the Rings: The Card Game – The Voice of Isengard",
-    "year": 2014,
-    "complexity": 3.07,
-    "geek_rating": 5.851,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/146574/the-lord-of-the-rings-the-card-game-the-voice-of-i"
-  },
-  {
     "bgg_id": 129423,
     "name": "Descent: Journeys in the Dark (Second Edition) – Lair of the Wyrm",
     "year": 2012,
@@ -264,39 +132,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/240980/blood-on-the-clocktower"
   },
   {
-    "bgg_id": 107933,
-    "name": "The Lord of the Rings: The Card Game – Khazad-dûm",
-    "year": 2011,
-    "complexity": 3.03,
-    "geek_rating": 6.473,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/107933/the-lord-of-the-rings-the-card-game-khazad-dum"
-  },
-  {
-    "bgg_id": 150376,
-    "name": "Dead of Winter: A Crossroads Game",
-    "year": 2014,
-    "complexity": 3.01,
-    "geek_rating": 7.268,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/150376/dead-of-winter-a-crossroads-game"
-  },
-  {
-    "bgg_id": 265188,
-    "name": "Glen More II: Chronicles",
-    "year": 2019,
-    "complexity": 3,
-    "geek_rating": 7.358,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/265188/glen-more-ii-chronicles"
-  },
-  {
     "bgg_id": 200784,
     "name": "Descent: Journeys in the Dark (Second Edition) – Road to Legend",
     "year": 2016,
@@ -306,28 +141,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200784/descent-journeys-in-the-dark-second-edition-road-t"
-  },
-  {
-    "bgg_id": 102875,
-    "name": "The Lord of the Rings: The Card Game – Return to Mirkwood",
-    "year": 2011,
-    "complexity": 3,
-    "geek_rating": 6.181,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/102875/the-lord-of-the-rings-the-card-game-return-to-mirk"
-  },
-  {
-    "bgg_id": 121900,
-    "name": "The Lord of the Rings: The Card Game – Shadow and Flame",
-    "year": 2012,
-    "complexity": 3,
-    "geek_rating": 5.995,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/121900/the-lord-of-the-rings-the-card-game-shadow-and-fla"
   },
   {
     "bgg_id": 360060,
@@ -341,61 +154,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/360060/marvel-champions-the-card-game-spider-ham-hero-pac"
   },
   {
-    "bgg_id": 164665,
-    "name": "The Lord of the Rings: The Card Game – The Treason of Saruman",
-    "year": 2015,
-    "complexity": 3,
-    "geek_rating": 5.816,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/164665/the-lord-of-the-rings-the-card-game-the-treason-of"
-  },
-  {
-    "bgg_id": 140917,
-    "name": "The Lord of the Rings: The Card Game – The Morgul Vale",
-    "year": 2013,
-    "complexity": 3,
-    "geek_rating": 5.776,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/140917/the-lord-of-the-rings-the-card-game-the-morgul-val"
-  },
-  {
-    "bgg_id": 164313,
-    "name": "The Lord of the Rings: The Card Game – The Lost Realm",
-    "year": 2015,
-    "complexity": 3,
-    "geek_rating": 5.772,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/164313/the-lord-of-the-rings-the-card-game-the-lost-realm"
-  },
-  {
-    "bgg_id": 207320,
-    "name": "The Dwarves: New Heroes Expansion",
-    "year": 2016,
-    "complexity": 3,
-    "geek_rating": 5.55,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/207320/the-dwarves-new-heroes-expansion"
-  },
-  {
-    "bgg_id": 84876,
-    "name": "The Castles of Burgundy",
-    "year": 2011,
-    "complexity": 2.97,
-    "geek_rating": 8.032,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/84876/the-castles-of-burgundy"
-  },
-  {
     "bgg_id": 285774,
     "name": "Marvel Champions: The Card Game",
     "year": 2019,
@@ -405,17 +163,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/285774/marvel-champions-the-card-game"
-  },
-  {
-    "bgg_id": 286063,
-    "name": "The 7th Citadel",
-    "year": 2024,
-    "complexity": 2.96,
-    "geek_rating": 6.821,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/286063/the-7th-citadel"
   },
   {
     "bgg_id": 138161,
@@ -429,39 +176,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/138161/firefly-the-game"
   },
   {
-    "bgg_id": 240271,
-    "name": "Core Space",
-    "year": 2019,
-    "complexity": 2.95,
-    "geek_rating": 6.196,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/240271/core-space"
-  },
-  {
-    "bgg_id": 133167,
-    "name": "The Lord of the Rings: The Card Game – The Drúadan Forest",
-    "year": 2013,
-    "complexity": 2.93,
-    "geek_rating": 5.788,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/133167/the-lord-of-the-rings-the-card-game-the-druadan-fo"
-  },
-  {
-    "bgg_id": 350184,
-    "name": "Earth",
-    "year": 2023,
-    "complexity": 2.92,
-    "geek_rating": 7.353,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/350184/earth"
-  },
-  {
     "bgg_id": 240196,
     "name": "Betrayal Legacy",
     "year": 2018,
@@ -471,127 +185,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/240196/betrayal-legacy"
-  },
-  {
-    "bgg_id": 98113,
-    "name": "The Lord of the Rings: The Card Game – A Journey to Rhosgobel",
-    "year": 2011,
-    "complexity": 2.92,
-    "geek_rating": 6.188,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/98113/the-lord-of-the-rings-the-card-game-a-journey-to-r"
-  },
-  {
-    "bgg_id": 311731,
-    "name": "Freedom Five: A Sentinel Comics Board Game",
-    "year": 2024,
-    "complexity": 2.92,
-    "geek_rating": 6.077,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/311731/freedom-five-a-sentinel-comics-board-game"
-  },
-  {
-    "bgg_id": 139413,
-    "name": "The Lord of the Rings: The Card Game – The Blood of Gondor",
-    "year": 2013,
-    "complexity": 2.92,
-    "geek_rating": 5.76,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/139413/the-lord-of-the-rings-the-card-game-the-blood-of-g"
-  },
-  {
-    "bgg_id": 119506,
-    "name": "Freedom: The Underground Railroad",
-    "year": 2013,
-    "complexity": 2.91,
-    "geek_rating": 6.853,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/119506/freedom-the-underground-railroad"
-  },
-  {
-    "bgg_id": 180263,
-    "name": "The 7th Continent",
-    "year": 2017,
-    "complexity": 2.9,
-    "geek_rating": 7.409,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/180263/the-7th-continent"
-  },
-  {
-    "bgg_id": 181293,
-    "name": "Alien Artifacts",
-    "year": 2017,
-    "complexity": 2.89,
-    "geek_rating": 6.047,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/181293/alien-artifacts"
-  },
-  {
-    "bgg_id": 153130,
-    "name": "The Lord of the Rings: The Card Game – The Dunland Trap",
-    "year": 2014,
-    "complexity": 2.89,
-    "geek_rating": 5.73,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/153130/the-lord-of-the-rings-the-card-game-the-dunland-tr"
-  },
-  {
-    "bgg_id": 259996,
-    "name": "Everdell: Pearlbrook",
-    "year": 2019,
-    "complexity": 2.88,
-    "geek_rating": 6.852,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/259996/everdell-pearlbrook"
-  },
-  {
-    "bgg_id": 265402,
-    "name": "In the Hall of the Mountain King",
-    "year": 2019,
-    "complexity": 2.87,
-    "geek_rating": 6.839,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/265402/in-the-hall-of-the-mountain-king"
-  },
-  {
-    "bgg_id": 100092,
-    "name": "The Lord of the Rings: The Card Game – The Dead Marshes",
-    "year": 2011,
-    "complexity": 2.87,
-    "geek_rating": 6.107,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/100092/the-lord-of-the-rings-the-card-game-the-dead-marsh"
-  },
-  {
-    "bgg_id": 197376,
-    "name": "Charterstone",
-    "year": 2017,
-    "complexity": 2.86,
-    "geek_rating": 6.881,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/197376/charterstone"
   },
   {
     "bgg_id": 300878,
@@ -605,28 +198,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/300878/marvel-champions-the-card-game-doctor-strange-hero"
   },
   {
-    "bgg_id": 301257,
-    "name": "Maglev Metro",
-    "year": 2021,
-    "complexity": 2.86,
-    "geek_rating": 6.467,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/301257/maglev-metro"
-  },
-  {
-    "bgg_id": 373105,
-    "name": "Legendary Encounters: The Matrix",
-    "year": 2023,
-    "complexity": 2.86,
-    "geek_rating": 5.965,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/373105/legendary-encounters-the-matrix"
-  },
-  {
     "bgg_id": 347813,
     "name": "Marvel Champions: The Card Game – Sinister Motives",
     "year": 2022,
@@ -636,50 +207,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/347813/marvel-champions-the-card-game-sinister-motives"
-  },
-  {
-    "bgg_id": 137773,
-    "name": "The Lord of the Rings: The Card Game – Assault on Osgiliath",
-    "year": 2013,
-    "complexity": 2.85,
-    "geek_rating": 5.769,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/137773/the-lord-of-the-rings-the-card-game-assault-on-osg"
-  },
-  {
-    "bgg_id": 363622,
-    "name": "The Castles of Burgundy: Special Edition",
-    "year": 2023,
-    "complexity": 2.84,
-    "geek_rating": 8.496,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/363622/the-castles-of-burgundy-special-edition"
-  },
-  {
-    "bgg_id": 87507,
-    "name": "Cosmic Encounter: Cosmic Conflict",
-    "year": 2011,
-    "complexity": 2.84,
-    "geek_rating": 6.785,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/87507/cosmic-encounter-cosmic-conflict"
-  },
-  {
-    "bgg_id": 199792,
-    "name": "Everdell",
-    "year": 2018,
-    "complexity": 2.83,
-    "geek_rating": 7.799,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/199792/everdell"
   },
   {
     "bgg_id": 316694,
@@ -693,17 +220,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316694/marvel-champions-the-card-game-quicksilver-hero-pa"
   },
   {
-    "bgg_id": 270844,
-    "name": "Imperial Settlers: Empires of the North",
-    "year": 2019,
-    "complexity": 2.82,
-    "geek_rating": 6.912,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/270844/imperial-settlers-empires-of-the-north"
-  },
-  {
     "bgg_id": 151953,
     "name": "Firefly: The Game – Pirates & Bounty Hunters",
     "year": 2014,
@@ -713,17 +229,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/151953/firefly-the-game-pirates-and-bounty-hunters"
-  },
-  {
-    "bgg_id": 114351,
-    "name": "The Lord of the Rings: The Card Game – The Watcher in the Water",
-    "year": 2012,
-    "complexity": 2.8,
-    "geek_rating": 6.038,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/114351/the-lord-of-the-rings-the-card-game-the-watcher-in"
   },
   {
     "bgg_id": 177497,
@@ -737,17 +242,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177497/firefly-the-game-jetwash"
   },
   {
-    "bgg_id": 316412,
-    "name": "The LOOP",
-    "year": 2020,
-    "complexity": 2.78,
-    "geek_rating": 7.001,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/316412/the-loop"
-  },
-  {
     "bgg_id": 306430,
     "name": "Marvel Champions: The Card Game – The Rise of Red Skull",
     "year": 2020,
@@ -757,105 +251,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/306430/marvel-champions-the-card-game-the-rise-of-red-sku"
-  },
-  {
-    "bgg_id": 110193,
-    "name": "The Lord of the Rings: The Card Game – The Redhorn Gate",
-    "year": 2012,
-    "complexity": 2.78,
-    "geek_rating": 6.004,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/110193/the-lord-of-the-rings-the-card-game-the-redhorn-ga"
-  },
-  {
-    "bgg_id": 154203,
-    "name": "Imperial Settlers",
-    "year": 2014,
-    "complexity": 2.77,
-    "geek_rating": 7.087,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/154203/imperial-settlers"
-  },
-  {
-    "bgg_id": 127398,
-    "name": "Legends of Andor",
-    "year": 2012,
-    "complexity": 2.77,
-    "geek_rating": 6.853,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/127398/legends-of-andor"
-  },
-  {
-    "bgg_id": 277659,
-    "name": "Final Girl",
-    "year": 2021,
-    "complexity": 2.76,
-    "geek_rating": 7.61,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/277659/final-girl"
-  },
-  {
-    "bgg_id": 236457,
-    "name": "Architects of the West Kingdom",
-    "year": 2018,
-    "complexity": 2.76,
-    "geek_rating": 7.508,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/236457/architects-of-the-west-kingdom"
-  },
-  {
-    "bgg_id": 98634,
-    "name": "The Lord of the Rings: The Card Game – The Hills of Emyn Muil",
-    "year": 2011,
-    "complexity": 2.76,
-    "geek_rating": 6.06,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/98634/the-lord-of-the-rings-the-card-game-the-hills-of-e"
-  },
-  {
-    "bgg_id": 266507,
-    "name": "Clank! Legacy: Acquisitions Incorporated",
-    "year": 2019,
-    "complexity": 2.74,
-    "geek_rating": 7.928,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/266507/clank-legacy-acquisitions-incorporated"
-  },
-  {
-    "bgg_id": 156689,
-    "name": "Legendary: A Marvel Deck Building Game – Villains",
-    "year": 2014,
-    "complexity": 2.72,
-    "geek_rating": 6.535,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/156689/legendary-a-marvel-deck-building-game-villains"
-  },
-  {
-    "bgg_id": 146652,
-    "name": "Legendary Encounters: An Alien Deck Building Game",
-    "year": 2014,
-    "complexity": 2.71,
-    "geek_rating": 7.363,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/146652/legendary-encounters-an-alien-deck-building-game"
   },
   {
     "bgg_id": 229987,
@@ -880,50 +275,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/335739/marvel-champions-the-card-game-venom-hero-pack"
   },
   {
-    "bgg_id": 119640,
-    "name": "The Lord of the Rings: The Card Game – Foundations of Stone",
-    "year": 2012,
-    "complexity": 2.71,
-    "geek_rating": 6.065,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/119640/the-lord-of-the-rings-the-card-game-foundations-of"
-  },
-  {
-    "bgg_id": 112064,
-    "name": "The Lord of the Rings: The Card Game – Road to Rivendell",
-    "year": 2012,
-    "complexity": 2.71,
-    "geek_rating": 5.966,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/112064/the-lord-of-the-rings-the-card-game-road-to-rivend"
-  },
-  {
-    "bgg_id": 117929,
-    "name": "The Lord of the Rings: The Card Game – The Long Dark",
-    "year": 2012,
-    "complexity": 2.71,
-    "geek_rating": 5.919,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/117929/the-lord-of-the-rings-the-card-game-the-long-dark"
-  },
-  {
-    "bgg_id": 269385,
-    "name": "The Lord of the Rings: Journeys in Middle-Earth",
-    "year": 2019,
-    "complexity": 2.7,
-    "geek_rating": 7.478,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/269385/the-lord-of-the-rings-journeys-in-middle-earth"
-  },
-  {
     "bgg_id": 205059,
     "name": "Mansions of Madness: Second Edition",
     "year": 2016,
@@ -933,17 +284,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/205059/mansions-of-madness-second-edition"
-  },
-  {
-    "bgg_id": 65532,
-    "name": "Defenders of the Realm",
-    "year": 2010,
-    "complexity": 2.69,
-    "geek_rating": 6.695,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/65532/defenders-of-the-realm"
   },
   {
     "bgg_id": 364655,
@@ -988,39 +328,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/459928/dungeon-crawler-carl-unstoppable"
-  },
-  {
-    "bgg_id": 155426,
-    "name": "Castles of Mad King Ludwig",
-    "year": 2014,
-    "complexity": 2.65,
-    "geek_rating": 7.304,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/155426/castles-of-mad-king-ludwig"
-  },
-  {
-    "bgg_id": 175156,
-    "name": "Legendary: A Marvel Deck Building Game – Secret Wars, Volume 1",
-    "year": 2015,
-    "complexity": 2.65,
-    "geek_rating": 6.623,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/175156/legendary-a-marvel-deck-building-game-secret-wars"
-  },
-  {
-    "bgg_id": 137762,
-    "name": "Legendary: A Marvel Deck Building Game – Dark City",
-    "year": 2013,
-    "complexity": 2.64,
-    "geek_rating": 7.328,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/137762/legendary-a-marvel-deck-building-game-dark-city"
   },
   {
     "bgg_id": 241533,
@@ -1078,94 +385,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/146571/descent-journeys-in-the-dark-second-edition-eliza"
   },
   {
-    "bgg_id": 91872,
-    "name": "Dungeons & Dragons: The Legend of Drizzt Board Game",
-    "year": 2011,
-    "complexity": 2.59,
-    "geek_rating": 6.639,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/91872/dungeons-and-dragons-the-legend-of-drizzt-board-ga"
-  },
-  {
-    "bgg_id": 327711,
-    "name": "It's a Wonderful Kingdom",
-    "year": 2021,
-    "complexity": 2.59,
-    "geek_rating": 6.435,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/327711/its-a-wonderful-kingdom"
-  },
-  {
-    "bgg_id": 190400,
-    "name": "Aventuria: Adventure Card Game",
-    "year": 2016,
-    "complexity": 2.59,
-    "geek_rating": 6.006,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/190400/aventuria-adventure-card-game"
-  },
-  {
-    "bgg_id": 233371,
-    "name": "Clank! In! Space!: A Deck-Building Adventure",
-    "year": 2017,
-    "complexity": 2.58,
-    "geek_rating": 7.423,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/233371/clank-in-space-a-deck-building-adventure"
-  },
-  {
-    "bgg_id": 39463,
-    "name": "Cosmic Encounter",
-    "year": 2008,
-    "complexity": 2.58,
-    "geek_rating": 7.311,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/39463/cosmic-encounter"
-  },
-  {
-    "bgg_id": 337098,
-    "name": "Dragonbond: Lords of Vaala",
-    "year": 2023,
-    "complexity": 2.58,
-    "geek_rating": 5.624,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/337098/dragonbond-lords-of-vaala"
-  },
-  {
-    "bgg_id": 195571,
-    "name": "Legendary Encounters: A Firefly Deck Building Game",
-    "year": 2016,
-    "complexity": 2.55,
-    "geek_rating": 6.202,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/195571/legendary-encounters-a-firefly-deck-building-game"
-  },
-  {
-    "bgg_id": 268504,
-    "name": "Adventure Tactics: Domianne's Tower",
-    "year": 2021,
-    "complexity": 2.54,
-    "geek_rating": 6.244,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/268504/adventure-tactics-domiannes-tower"
-  },
-  {
     "bgg_id": 155068,
     "name": "Arcadia Quest",
     "year": 2014,
@@ -1175,61 +394,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/155068/arcadia-quest"
-  },
-  {
-    "bgg_id": 149922,
-    "name": "Legendary: A Marvel Deck Building Game – Paint the Town Red",
-    "year": 2014,
-    "complexity": 2.53,
-    "geek_rating": 6.815,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/149922/legendary-a-marvel-deck-building-game-paint-the-to"
-  },
-  {
-    "bgg_id": 124668,
-    "name": "The Dwarves",
-    "year": 2012,
-    "complexity": 2.53,
-    "geek_rating": 5.933,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/124668/the-dwarves"
-  },
-  {
-    "bgg_id": 396251,
-    "name": "Invincible: The Hero-Building Game",
-    "year": 2024,
-    "complexity": 2.52,
-    "geek_rating": 6.091,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/396251/invincible-the-hero-building-game"
-  },
-  {
-    "bgg_id": 365717,
-    "name": "Clank!: Catacombs",
-    "year": 2022,
-    "complexity": 2.5,
-    "geek_rating": 7.791,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/365717/clank-catacombs"
-  },
-  {
-    "bgg_id": 59946,
-    "name": "Dungeons & Dragons: Castle Ravenloft Board Game",
-    "year": 2010,
-    "complexity": 2.5,
-    "geek_rating": 6.587,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/59946/dungeons-and-dragons-castle-ravenloft-board-game"
   },
   {
     "bgg_id": 188339,
@@ -1243,17 +407,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188339/arcadia-quest-inferno-kickstarter-exclusives"
   },
   {
-    "bgg_id": 142020,
-    "name": "Legendary: A Marvel Deck Building Game – Fantastic Four",
-    "year": 2013,
-    "complexity": 2.48,
-    "geek_rating": 6.809,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/142020/legendary-a-marvel-deck-building-game-fantastic-fo"
-  },
-  {
     "bgg_id": 179803,
     "name": "Arcadia Quest: Inferno",
     "year": 2017,
@@ -1263,72 +416,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/179803/arcadia-quest-inferno"
-  },
-  {
-    "bgg_id": 285157,
-    "name": "Legendary: A James Bond Deck Building Game (English edition)",
-    "year": 2019,
-    "complexity": 2.48,
-    "geek_rating": 6.059,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/285157/legendary-a-james-bond-deck-building-game"
-  },
-  {
-    "bgg_id": 163106,
-    "name": "Legendary: A Marvel Deck Building Game – Guardians of the Galaxy",
-    "year": 2014,
-    "complexity": 2.47,
-    "geek_rating": 6.854,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/163106/legendary-a-marvel-deck-building-game-guardians-of"
-  },
-  {
-    "bgg_id": 110327,
-    "name": "Lords of Waterdeep",
-    "year": 2012,
-    "complexity": 2.45,
-    "geek_rating": 7.579,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/110327/lords-of-waterdeep"
-  },
-  {
-    "bgg_id": 254470,
-    "name": "Clank! In! Space!: Apocalypse!",
-    "year": 2018,
-    "complexity": 2.45,
-    "geek_rating": 6.531,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/254470/clank-in-space-apocalypse"
-  },
-  {
-    "bgg_id": 334767,
-    "name": "It's a Wonderful World: Leisure & Decadence",
-    "year": 2020,
-    "complexity": 2.44,
-    "geek_rating": 5.826,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/334767/its-a-wonderful-world-leisure-and-decadence"
-  },
-  {
-    "bgg_id": 129437,
-    "name": "Legendary: A Marvel Deck Building Game",
-    "year": 2012,
-    "complexity": 2.43,
-    "geek_rating": 7.221,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/129437/legendary-a-marvel-deck-building-game"
   },
   {
     "bgg_id": 155703,
@@ -1342,17 +429,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/155703/evolution"
   },
   {
-    "bgg_id": 156858,
-    "name": "Black Orchestra",
-    "year": 2016,
-    "complexity": 2.42,
-    "geek_rating": 6.962,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/156858/black-orchestra"
-  },
-  {
     "bgg_id": 302388,
     "name": "Back to the Future: Back in Time",
     "year": 2020,
@@ -1362,17 +438,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/302388/back-to-the-future-back-in-time"
-  },
-  {
-    "bgg_id": 288080,
-    "name": "Dice Realms",
-    "year": 2022,
-    "complexity": 2.42,
-    "geek_rating": 6.088,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/288080/dice-realms"
   },
   {
     "bgg_id": 10547,
@@ -1408,28 +473,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/158275/marvel-dice-masters-uncanny-x-men"
   },
   {
-    "bgg_id": 36218,
-    "name": "Dominion",
-    "year": 2008,
-    "complexity": 2.34,
-    "geek_rating": 7.473,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/36218/dominion"
-  },
-  {
-    "bgg_id": 100423,
-    "name": "Elder Sign",
-    "year": 2011,
-    "complexity": 2.34,
-    "geek_rating": 6.773,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/100423/elder-sign"
-  },
-  {
     "bgg_id": 188699,
     "name": "Arcadia Quest: Pets",
     "year": 2017,
@@ -1441,17 +484,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188699/arcadia-quest-pets"
   },
   {
-    "bgg_id": 271324,
-    "name": "It's a Wonderful World",
-    "year": 2019,
-    "complexity": 2.32,
-    "geek_rating": 7.381,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/271324/its-a-wonderful-world"
-  },
-  {
     "bgg_id": 68448,
     "name": "7 Wonders",
     "year": 2010,
@@ -1461,17 +493,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/68448/7-wonders"
-  },
-  {
-    "bgg_id": 361788,
-    "name": "First in Flight",
-    "year": 2023,
-    "complexity": 2.31,
-    "geek_rating": 6.295,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/361788/first-in-flight"
   },
   {
     "bgg_id": 13,
@@ -1496,83 +517,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/431038/azul-duel"
   },
   {
-    "bgg_id": 448271,
-    "name": "The Lord of the Rings: The Two Towers – Trick-Taking Game",
-    "year": 2026,
-    "complexity": 2.27,
-    "geek_rating": 6.672,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/448271/the-lord-of-the-rings-the-two-towers-trick-taking"
-  },
-  {
-    "bgg_id": 246784,
-    "name": "Cryptid",
-    "year": 2018,
-    "complexity": 2.26,
-    "geek_rating": 7.16,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/246784/cryptid"
-  },
-  {
-    "bgg_id": 415776,
-    "name": "Kingdom Legacy: Feudal Kingdom",
-    "year": 2024,
-    "complexity": 2.26,
-    "geek_rating": 6.935,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/415776/kingdom-legacy-feudal-kingdom"
-  },
-  {
-    "bgg_id": 245377,
-    "name": "Clank!: The Mummy's Curse",
-    "year": 2018,
-    "complexity": 2.26,
-    "geek_rating": 6.76,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/245377/clank-the-mummys-curse"
-  },
-  {
-    "bgg_id": 173275,
-    "name": "Ghostbusters: The Board Game",
-    "year": 2015,
-    "complexity": 2.26,
-    "geek_rating": 5.764,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/173275/ghostbusters-the-board-game"
-  },
-  {
-    "bgg_id": 175324,
-    "name": "Fog of Love",
-    "year": 2017,
-    "complexity": 2.25,
-    "geek_rating": 6.315,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/175324/fog-of-love"
-  },
-  {
-    "bgg_id": 237706,
-    "name": "Heroes of Tenefyr",
-    "year": 2019,
-    "complexity": 2.24,
-    "geek_rating": 6,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/237706/heroes-of-tenefyr"
-  },
-  {
     "bgg_id": 173346,
     "name": "7 Wonders Duel",
     "year": 2015,
@@ -1584,17 +528,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/173346/7-wonders-duel"
   },
   {
-    "bgg_id": 201808,
-    "name": "Clank!: A Deck-Building Adventure",
-    "year": 2016,
-    "complexity": 2.23,
-    "geek_rating": 7.591,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/201808/clank-a-deck-building-adventure"
-  },
-  {
     "bgg_id": 110139,
     "name": "Flash Point: Fire Rescue – Urban Structures",
     "year": 2011,
@@ -1604,50 +537,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/110139/flash-point-fire-rescue-urban-structures"
-  },
-  {
-    "bgg_id": 391163,
-    "name": "Forest Shuffle",
-    "year": 2023,
-    "complexity": 2.22,
-    "geek_rating": 7.463,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/391163/forest-shuffle"
-  },
-  {
-    "bgg_id": 218103,
-    "name": "Clank!: Sunken Treasures",
-    "year": 2017,
-    "complexity": 2.21,
-    "geek_rating": 7.104,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/218103/clank-sunken-treasures"
-  },
-  {
-    "bgg_id": 269144,
-    "name": "Hadara",
-    "year": 2019,
-    "complexity": 2.21,
-    "geek_rating": 6.936,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/269144/hadara"
-  },
-  {
-    "bgg_id": 366013,
-    "name": "Heat: Pedal to the Metal",
-    "year": 2022,
-    "complexity": 2.2,
-    "geek_rating": 7.795,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/366013/heat-pedal-to-the-metal"
   },
   {
     "bgg_id": 171131,
@@ -1694,39 +583,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/321775/marvel-united-guardians-of-the-galaxy-remix-kickst"
   },
   {
-    "bgg_id": 462192,
-    "name": "The Crew: Journey to the Ends of the Earth",
-    "year": 2026,
-    "complexity": 2.2,
-    "geek_rating": 5.686,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/462192/the-crew-journey-to-the-ends-of-the-earth"
-  },
-  {
-    "bgg_id": 373190,
-    "name": "Maps of Misterra",
-    "year": 2023,
-    "complexity": 2.19,
-    "geek_rating": 5.662,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/373190/maps-of-misterra"
-  },
-  {
-    "bgg_id": 298069,
-    "name": "Cubitos",
-    "year": 2021,
-    "complexity": 2.17,
-    "geek_rating": 6.99,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/298069/cubitos"
-  },
-  {
     "bgg_id": 369646,
     "name": "Disney Lorcana",
     "year": 2023,
@@ -1736,17 +592,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/369646/disney-lorcana"
-  },
-  {
-    "bgg_id": 274128,
-    "name": "Epic Spell Wars of the Battle Wizards: Annihilageddon Deck-Building Game",
-    "year": 2019,
-    "complexity": 2.08,
-    "geek_rating": 5.74,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/274128/epic-spell-wars-of-the-battle-wizards-annihilagedd"
   },
   {
     "bgg_id": 302670,
@@ -1760,83 +605,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/302670/marvel-united-guardians-of-the-galaxy-remix"
   },
   {
-    "bgg_id": 324856,
-    "name": "The Crew: Mission Deep Sea",
-    "year": 2021,
-    "complexity": 2.06,
-    "geek_rating": 7.802,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/324856/the-crew-mission-deep-sea"
-  },
-  {
-    "bgg_id": 239188,
-    "name": "Chronicles of Crime",
-    "year": 2018,
-    "complexity": 2.06,
-    "geek_rating": 7.142,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/239188/chronicles-of-crime"
-  },
-  {
-    "bgg_id": 478,
-    "name": "Citadels",
-    "year": 2000,
-    "complexity": 2.05,
-    "geek_rating": 6.929,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/478/citadels"
-  },
-  {
-    "bgg_id": 282524,
-    "name": "Horrified",
-    "year": 2019,
-    "complexity": 2.02,
-    "geek_rating": 7.289,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/282524/horrified"
-  },
-  {
-    "bgg_id": 284189,
-    "name": "Foundations of Rome",
-    "year": 2022,
-    "complexity": 2.02,
-    "geek_rating": 7.207,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/284189/foundations-of-rome"
-  },
-  {
-    "bgg_id": 118000,
-    "name": "Africana",
-    "year": 2012,
-    "complexity": 2.02,
-    "geek_rating": 5.941,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/118000/africana"
-  },
-  {
-    "bgg_id": 414317,
-    "name": "Harmonies",
-    "year": 2024,
-    "complexity": 2.01,
-    "geek_rating": 7.772,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/414317/harmonies"
-  },
-  {
     "bgg_id": 336382,
     "name": "Marvel United: X-Men",
     "year": 2021,
@@ -1846,17 +614,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/336382/marvel-united-x-men"
-  },
-  {
-    "bgg_id": 238992,
-    "name": "Call to Adventure",
-    "year": 2019,
-    "complexity": 2.01,
-    "geek_rating": 6.59,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/238992/call-to-adventure"
   },
   {
     "bgg_id": 379755,
@@ -1870,61 +627,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/379755/marvel-united-civil-war"
   },
   {
-    "bgg_id": 178046,
-    "name": "The Dwarves: The Saga Expansion",
-    "year": 2015,
-    "complexity": 2,
-    "geek_rating": 5.586,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/178046/the-dwarves-the-saga-expansion"
-  },
-  {
-    "bgg_id": 147712,
-    "name": "The Dwarves: Combined Might",
-    "year": 2013,
-    "complexity": 2,
-    "geek_rating": 5.57,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147712/the-dwarves-combined-might"
-  },
-  {
-    "bgg_id": 396882,
-    "name": "Invincible: Escape from Mars",
-    "year": 2024,
-    "complexity": 2,
-    "geek_rating": 0,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/396882/invincible-escape-from-mars"
-  },
-  {
-    "bgg_id": 284083,
-    "name": "The Crew: The Quest for Planet Nine",
-    "year": 2019,
-    "complexity": 1.97,
-    "geek_rating": 7.611,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/284083/the-crew-the-quest-for-planet-nine"
-  },
-  {
-    "bgg_id": 194594,
-    "name": "Dice Forge",
-    "year": 2017,
-    "complexity": 1.97,
-    "geek_rating": 7.005,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/194594/dice-forge"
-  },
-  {
     "bgg_id": 37904,
     "name": "Formula D",
     "year": 2008,
@@ -1936,17 +638,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/37904/formula-d"
   },
   {
-    "bgg_id": 429293,
-    "name": "The Lord of the Rings: The Fellowship of the Ring – Trick-Taking Game",
-    "year": 2025,
-    "complexity": 1.93,
-    "geek_rating": 7.519,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/429293/the-lord-of-the-rings-the-fellowship-of-the-ring-t"
-  },
-  {
     "bgg_id": 309129,
     "name": "Disney: The Haunted Mansion – Call of the Spirits Game",
     "year": 2020,
@@ -1956,17 +647,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/309129/disney-the-haunted-mansion-call-of-the-spirits-gam"
-  },
-  {
-    "bgg_id": 198994,
-    "name": "Hero Realms",
-    "year": 2016,
-    "complexity": 1.85,
-    "geek_rating": 7.192,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/198994/hero-realms"
   },
   {
     "bgg_id": 298047,
@@ -1991,17 +671,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/131835/boss-monster-the-dungeon-building-card-game"
   },
   {
-    "bgg_id": 225694,
-    "name": "Decrypto",
-    "year": 2018,
-    "complexity": 1.83,
-    "geek_rating": 7.547,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/225694/decrypto"
-  },
-  {
     "bgg_id": 205494,
     "name": "Machi Koro: Bright Lights, Big City",
     "year": 2016,
@@ -2022,17 +691,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339128/marvel-united-x-men-gold-team"
-  },
-  {
-    "bgg_id": 202103,
-    "name": "Hero Realms: Character Pack – Cleric",
-    "year": 2016,
-    "complexity": 1.82,
-    "geek_rating": 6.421,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202103/hero-realms-character-pack-cleric"
   },
   {
     "bgg_id": 379908,
@@ -2066,72 +724,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339131/marvel-united-deadpool"
-  },
-  {
-    "bgg_id": 359970,
-    "name": "Challengers!",
-    "year": 2022,
-    "complexity": 1.78,
-    "geek_rating": 6.677,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/359970/challengers"
-  },
-  {
-    "bgg_id": 230802,
-    "name": "Azul",
-    "year": 2017,
-    "complexity": 1.77,
-    "geek_rating": 7.602,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/230802/azul"
-  },
-  {
-    "bgg_id": 13823,
-    "name": "Fairy Tale",
-    "year": 2004,
-    "complexity": 1.77,
-    "geek_rating": 6.435,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/13823/fairy-tale"
-  },
-  {
-    "bgg_id": 102548,
-    "name": "Dungeon Fighter",
-    "year": 2011,
-    "complexity": 1.76,
-    "geek_rating": 6.415,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/102548/dungeon-fighter"
-  },
-  {
-    "bgg_id": 209778,
-    "name": "Magic Maze",
-    "year": 2017,
-    "complexity": 1.75,
-    "geek_rating": 6.773,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/209778/magic-maze"
-  },
-  {
-    "bgg_id": 416851,
-    "name": "Castle Combo",
-    "year": 2024,
-    "complexity": 1.74,
-    "geek_rating": 7.355,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/416851/castle-combo"
   },
   {
     "bgg_id": 65244,
@@ -2178,17 +770,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/98778/hanabi"
   },
   {
-    "bgg_id": 11,
-    "name": "Bohnanza",
-    "year": 1997,
-    "complexity": 1.67,
-    "geek_rating": 6.964,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/11/bohnanza"
-  },
-  {
     "bgg_id": 280896,
     "name": "Foodies",
     "year": 2019,
@@ -2209,17 +790,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169244/arcadia-quest-mchammer"
-  },
-  {
-    "bgg_id": 219513,
-    "name": "Bärenpark",
-    "year": 2017,
-    "complexity": 1.66,
-    "geek_rating": 7.065,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/219513/barenpark"
   },
   {
     "bgg_id": 204755,
@@ -2244,28 +814,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/203427/fabled-fruit"
   },
   {
-    "bgg_id": 411567,
-    "name": "The Gang",
-    "year": 2024,
-    "complexity": 1.6,
-    "geek_rating": 7.14,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/411567/the-gang"
-  },
-  {
-    "bgg_id": 156129,
-    "name": "Deception: Murder in Hong Kong",
-    "year": 2014,
-    "complexity": 1.59,
-    "geek_rating": 7.211,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/156129/deception-murder-in-hong-kong"
-  },
-  {
     "bgg_id": 134453,
     "name": "The Little Prince: Make Me a Planet",
     "year": 2013,
@@ -2275,17 +823,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/134453/the-little-prince-make-me-a-planet"
-  },
-  {
-    "bgg_id": 1339,
-    "name": "Dungeon!",
-    "year": 1975,
-    "complexity": 1.55,
-    "geek_rating": 5.756,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/1339/dungeon"
   },
   {
     "bgg_id": 165217,
@@ -2310,28 +847,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/179973/gobblestones"
   },
   {
-    "bgg_id": 70323,
-    "name": "King of Tokyo",
-    "year": 2011,
-    "complexity": 1.48,
-    "geek_rating": 7.005,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/70323/king-of-tokyo"
-  },
-  {
-    "bgg_id": 113294,
-    "name": "Escape: The Curse of the Temple",
-    "year": 2012,
-    "complexity": 1.48,
-    "geek_rating": 6.749,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/113294/escape-the-curse-of-the-temple"
-  },
-  {
     "bgg_id": 8203,
     "name": "Hey, That's My Fish!",
     "year": 2003,
@@ -2343,28 +858,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/8203/hey-thats-my-fish"
   },
   {
-    "bgg_id": 147151,
-    "name": "Concept",
-    "year": 2013,
-    "complexity": 1.38,
-    "geek_rating": 6.58,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/147151/concept"
-  },
-  {
-    "bgg_id": 770,
-    "name": "Loot",
-    "year": 1992,
-    "complexity": 1.38,
-    "geek_rating": 6.077,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/770/loot"
-  },
-  {
     "bgg_id": 169124,
     "name": "Flick 'em Up!",
     "year": 2015,
@@ -2374,17 +867,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/169124/flick-em-up"
-  },
-  {
-    "bgg_id": 312633,
-    "name": "French Toast",
-    "year": 2021,
-    "complexity": 1.33,
-    "geek_rating": 5.696,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/312633/french-toast"
   },
   {
     "bgg_id": 234669,
@@ -2407,17 +889,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/178900/codenames"
-  },
-  {
-    "bgg_id": 204583,
-    "name": "Kingdomino",
-    "year": 2016,
-    "complexity": 1.24,
-    "geek_rating": 7.168,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/204583/kingdomino"
   },
   {
     "bgg_id": 220775,

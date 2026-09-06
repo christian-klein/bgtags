@@ -198,3 +198,66 @@ func TestListBaseGames(t *testing.T) {
 		t.Fatalf("expected only Wingspan for 5 players, got %+v", byPlayers)
 	}
 }
+
+func TestPDFOptimizationOperations(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "pdf_test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	// Initial check should be nil
+	opt, err := db.GetPDFOptimization("rules.pdf")
+	if err != nil {
+		t.Fatalf("GetPDFOptimization failed: %v", err)
+	}
+	if opt != nil {
+		t.Fatalf("expected nil for non-existent optimization, got %+v", opt)
+	}
+
+	// Save optimization
+	newOpt := &PDFOptimization{
+		Filename:     "rules.pdf",
+		FileSize:     10240,
+		ModTime:      1700000000,
+		IsLinearized: true,
+	}
+	if err := db.SavePDFOptimization(newOpt); err != nil {
+		t.Fatalf("SavePDFOptimization failed: %v", err)
+	}
+
+	// Fetch back
+	opt, err = db.GetPDFOptimization("rules.pdf")
+	if err != nil || opt == nil {
+		t.Fatalf("GetPDFOptimization returned error or nil: %v", err)
+	}
+	if opt.Filename != "rules.pdf" || opt.FileSize != 10240 || !opt.IsLinearized {
+		t.Fatalf("unexpected fetched optimization: %+v", opt)
+	}
+
+	// Update existing record
+	newOpt.FileSize = 10500
+	newOpt.IsLinearized = false
+	if err := db.SavePDFOptimization(newOpt); err != nil {
+		t.Fatalf("SavePDFOptimization update failed: %v", err)
+	}
+
+	opt, err = db.GetPDFOptimization("rules.pdf")
+	if err != nil || opt == nil {
+		t.Fatalf("GetPDFOptimization after update failed: %v", err)
+	}
+	if opt.FileSize != 10500 || opt.IsLinearized {
+		t.Fatalf("expected updated size and false linearization: %+v", opt)
+	}
+
+	// Stats
+	total, lin, pending, err := db.GetOptimizationStats()
+	if err != nil {
+		t.Fatalf("GetOptimizationStats failed: %v", err)
+	}
+	if total != 1 || lin != 0 || pending != 1 {
+		t.Fatalf("expected total=1, lin=0, pending=1, got total=%d, lin=%d, pending=%d", total, lin, pending)
+	}
+}
