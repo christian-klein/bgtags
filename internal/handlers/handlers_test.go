@@ -119,35 +119,35 @@ func TestBaseURLResolution(t *testing.T) {
 	defer db.Close()
 
 	// 1. Explicit BaseURL set
-	hConfigured := &Handler{
+	hStatic := &Handler{
 		db: db,
 		cfg: &config.Config{
-			BaseURL: "https://bgtags.cklein.us",
+			BaseURL: "https://bgtags.example.com",
 		},
 	}
-	r1 := httptest.NewRequest("GET", "http://10.0.0.45:8082/", nil)
-	if url := hConfigured.getBaseURL(r1); url != "https://bgtags.cklein.us" {
-		t.Errorf("expected https://bgtags.cklein.us, got %s", url)
+	r1 := httptest.NewRequest("GET", "http://localhost:8082/", nil)
+	if url := hStatic.getBaseURL(r1); url != "https://bgtags.example.com" {
+		t.Errorf("expected static BASE_URL https://bgtags.example.com, got %s", url)
 	}
 
-	// 2. Fallback to reverse proxy headers when BaseURL is empty
+	// Case 2: No BASE_URL set, should inspect X-Forwarded headers or Host
 	hDynamic := &Handler{
 		db: db,
 		cfg: &config.Config{
 			BaseURL: "",
 		},
 	}
-	rProxy := httptest.NewRequest("GET", "http://10.0.0.45:8080/games/1", nil)
+
+	rProxy := httptest.NewRequest("GET", "http://localhost:8080/games/1", nil)
 	rProxy.Header.Set("X-Forwarded-Proto", "https")
-	rProxy.Header.Set("X-Forwarded-Host", "bgtags.cklein.us")
-	if url := hDynamic.getBaseURL(rProxy); url != "https://bgtags.cklein.us" {
-		t.Errorf("expected https://bgtags.cklein.us from proxy headers, got %s", url)
+	rProxy.Header.Set("X-Forwarded-Host", "bgtags.custom-domain.org")
+	if url := hDynamic.getBaseURL(rProxy); url != "https://bgtags.custom-domain.org" {
+		t.Errorf("expected https://bgtags.custom-domain.org from headers, got %s", url)
 	}
 
-	// 3. Fallback to direct client host and port
-	rDirect := httptest.NewRequest("GET", "http://10.0.0.45:8082/games/1", nil)
-	if url := hDynamic.getBaseURL(rDirect); url != "http://10.0.0.45:8082" {
-		t.Errorf("expected http://10.0.0.45:8082 from request host, got %s", url)
+	rDirect := httptest.NewRequest("GET", "http://localhost:8082/games/1", nil)
+	if url := hDynamic.getBaseURL(rDirect); url != "http://localhost:8082" {
+		t.Errorf("expected http://localhost:8082 from request host, got %s", url)
 	}
 }
 

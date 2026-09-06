@@ -15,25 +15,23 @@ Welcome to the **`bgtags`** repository. This document serves as the canonical te
     - 🧩 **Expansions**
     - 📋 **Player Aids & References**
     - ❓ **FAQs & Errata**
-- **Public & Local Access**: Configured via `BASE_URL` in `.env` (e.g. `https://bgtags.cklein.us` via Pangolin reverse proxy, or fallback to `http://10.0.0.45:8082`).
+- **Public & Local Access**: Configured via `BASE_URL` in `.env` (e.g. `https://bgtags.example.com` or direct client fallback).
 
 ---
 
 ## 2. Infrastructure & Host Architecture
 
+> [!NOTE]
+> All infrastructure endpoints, server IPs, and SSH credentials are maintained privately in the `home_automations` repository.
+
 | Component | Host / IP | Location / Path | Purpose |
 | :--- | :--- | :--- | :--- |
-| **bgtags Application** | `10.0.0.45` | Docker container `bgtags` (`:8082`) | Go 1.22 + Templ web application |
-| **Live SQLite Database** | `10.0.0.45` | `/usr/src/docker/bgtags/data/bgtags.db` | Live operational database |
-| **Rules Storage (NFS)** | `10.0.0.11` | `/volume1/docker/bgtags/rules/` | Synology NAS mount mapped into container `/app/rules/` |
-| **Image Storage (NFS)** | `10.0.0.11` | `/volume1/docker/bgtags/img/` | Synology NAS mount mapped into container `/app/img/` |
-| **Backup Storage** | `10.0.0.11` | `/volume1/backup/bgtags/` | Periodic DB & asset snapshots |
+| **bgtags Application** | `<docker-host>` | Docker container `bgtags` (`:8080`) | Go 1.22 + Templ web application |
+| **Live SQLite Database** | `<docker-host>` | `/app/data/bgtags.db` | Operational database |
+| **Rules Storage** | `<storage-host>` | Rules volume mounted to `/app/rules/` | Persistent PDF storage |
+| **Image Storage** | `<storage-host>` | Images volume mounted to `/app/img/` | Persistent box art |
+| **Backup Storage** | `<storage-host>` | Backup volume mounted to `/app/backups/` | Periodic DB & asset snapshots |
 | **Seed / Source of Truth** | Git Repo | `data/seed_games.json` | Repository-tracked seed data for fresh deployments |
-
-> **SSH Access**:
-> - Docker host: `cdk2128@10.0.0.45` (passwordless local SSH key).
-> - Synology DiskStation: `cdk2128@10.0.0.11` (passwordless local SSH key).
-> - *DiskStation SCP Note*: Use `scp -O` (legacy SCP protocol) to bypass SFTP subsystem warnings on Synology DSM.
 
 ---
 
