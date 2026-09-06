@@ -144,4 +144,33 @@ func TestAuthMiddleware(t *testing.T) {
 			t.Errorf("expected 403 Forbidden for user not in users or admin group, got %d", recGuest.Code)
 		}
 	})
+
+	t.Run("RequireReader - Wildcard Group Allows Any Authenticated User", func(t *testing.T) {
+		wildcardCfg := &config.Config{
+			OIDCEnabled:    true,
+			OIDCUsersGroup: "*",
+		}
+
+		handler := RequireReader(wildcardCfg, func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+		})
+
+		// Unauthenticated -> 302 to login
+		reqUnauth := httptest.NewRequest("GET", "/stickers", nil)
+		recUnauth := httptest.NewRecorder()
+		handler(recUnauth, reqUnauth)
+		if recUnauth.Code != http.StatusFound {
+			t.Errorf("expected 302 redirect for reader without auth, got %d", recUnauth.Code)
+		}
+
+		// Any authenticated user (even guest with no groups) -> 200 OK
+		reqGuest := httptest.NewRequest("GET", "/stickers", nil)
+		reqGuest = reqGuest.WithContext(context.WithValue(reqGuest.Context(), UserContextKey, guestSession))
+		recGuest := httptest.NewRecorder()
+		handler(recGuest, reqGuest)
+		if recGuest.Code != http.StatusOK {
+			t.Errorf("expected 200 OK for any authenticated user when group is *, got %d", recGuest.Code)
+		}
+	})
 }
+

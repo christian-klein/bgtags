@@ -30,6 +30,7 @@ type PageData struct {
 	Title       string
 	Games       []GameView
 	Game        *GameView
+	ParentGame  *database.Game
 	Documents   []database.GameDocument
 	Expansions  []database.Game
 	TotalCount  int
@@ -60,6 +61,7 @@ type GameView struct {
 	PrimaryRulesURL string
 	Documents       []database.GameDocument
 	Expansions      []database.Game
+	ParentGame      *database.Game
 }
 
 func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) {
@@ -206,6 +208,14 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	var parentGame *database.Game
+	if game.ParentID != nil {
+		p, err := h.db.GetGame(*game.ParentID)
+		if err == nil {
+			parentGame = p
+		}
+	}
+
 	baseURL := h.getBaseURL(r)
 	rulesHubURL := fmt.Sprintf("%s/games/%d/rules", baseURL, game.ID)
 	primaryURL := fmt.Sprintf("%s/rules/%s", baseURL, game.URL)
@@ -220,11 +230,13 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 		PrimaryRulesURL: primaryURL,
 		Documents:       docs,
 		Expansions:      expansions,
+		ParentGame:      parentGame,
 	}
 
 	data := PageData{
 		Title:      fmt.Sprintf("%s - Rules & Documents", game.Name),
 		Game:       &gv,
+		ParentGame: parentGame,
 		Documents:  docs,
 		Expansions: expansions,
 		BaseURL:    baseURL,

@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"github.com/christian-klein/bgtags/internal/auth"
 	"github.com/christian-klein/bgtags/internal/config"
@@ -97,6 +98,12 @@ func RequireReader(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
 		if session == nil {
 			returnTo := url.QueryEscape(r.URL.RequestURI())
 			http.Redirect(w, r, "/login?return_to="+returnTo, http.StatusFound)
+			return
+		}
+
+		// If wildcard "*" or "any", any authenticated user has reader access
+		if cfg.OIDCUsersGroup == "*" || strings.EqualFold(cfg.OIDCUsersGroup, "any") || cfg.OIDCUsersGroup == "@authenticated" {
+			next(w, r)
 			return
 		}
 

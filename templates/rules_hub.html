@@ -1,7 +1,11 @@
 {{define "content"}}
 <div class="rules-hub-page">
     <div class="rules-hub-topbar no-print">
+        {{if .ParentGame}}
+        <a href="/games/{{.ParentGame.ID}}/rules" class="btn-back">← Back to {{.ParentGame.Name}}</a>
+        {{else}}
         <a href="/" class="btn-back">← Back to Catalog</a>
+        {{end}}
         <a href="/stickers" class="btn btn-outline btn-sm">🏷️ Sticker View</a>
     </div>
 
@@ -12,6 +16,13 @@
             </div>
             <div class="rules-hero-details">
                 <h1 class="rules-hero-title">{{.Game.Name}}</h1>
+                {{if .ParentGame}}
+                <div class="rules-parent-badge-wrap" style="margin-bottom: 0.5rem;">
+                    <span class="badge" style="background: rgba(139, 92, 246, 0.15); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.3); font-weight: 500;">
+                        🧩 Expansion for <a href="/games/{{.ParentGame.ID}}/rules" style="color: #a78bfa; text-decoration: underline; margin-left: 0.25rem;">{{.ParentGame.Name}}</a>
+                    </span>
+                </div>
+                {{end}}
                 <div class="rules-badges-row">
                     <span class="badge players-badge">👥 {{.Game.MinPlayers}}-{{.Game.MaxPlayers}} Players{{if .Game.BestPlayers}} (Best: {{.Game.BestPlayers}}){{end}}</span>
                     {{if gt .Game.Complexity 0.0}}

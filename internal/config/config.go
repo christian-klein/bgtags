@@ -45,8 +45,8 @@ func Load() *Config {
 		OIDCClientID:     getEnv("OIDC_CLIENT_ID", ""),
 		OIDCClientSecret: getEnv("OIDC_CLIENT_SECRET", ""),
 		OIDCRedirectURL:  getEnv("OIDC_REDIRECT_URL", ""),
-		OIDCAdminGroup:   getEnv("OIDC_ADMIN_GROUP", "bgtags-admins"),
-		OIDCUsersGroup:   getEnv("OIDC_USERS_GROUP", ""),
+		OIDCAdminGroup:   getEnv("OIDC_ADMIN_GROUP", getEnv("ADMIN_GROUP", "bgtags-admins")),
+		OIDCUsersGroup:   getEnv("OIDC_USERS_GROUP", getEnv("USER_GROUP", "")),
 		SessionSecret:    getEnv("SESSION_SECRET", "bgtags-default-session-secret-key-32b"),
 	}
 }

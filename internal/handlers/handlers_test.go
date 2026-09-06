@@ -212,4 +212,37 @@ func TestRulesHubRender(t *testing.T) {
 	if !strings.Contains(body, "bgtags.example.com") {
 		t.Errorf("expected configured BaseURL in body/QR")
 	}
+	if !strings.Contains(body, "← Back to Catalog") {
+		t.Errorf("expected base game to have '← Back to Catalog'")
+	}
+
+	// 2. Test Expansion Game rules hub links back to parent game
+	exp := &database.Game{
+		ParentID:   &game.ID,
+		Name:       "Eclipse: Worlds Afar",
+		URL:        "eclipse-worlds-afar.pdf",
+		Image:      "eclipse-exp.webp",
+		MinPlayers: 2,
+		MaxPlayers: 6,
+	}
+	if err := db.CreateGame(exp); err != nil {
+		t.Fatalf("failed to create expansion: %v", err)
+	}
+
+	wExp := httptest.NewRecorder()
+	rExp := httptest.NewRequest("GET", fmt.Sprintf("/games/%d/rules", exp.ID), nil)
+	h.HandleGameRoute(wExp, rExp)
+
+	if wExp.Code != http.StatusOK {
+		t.Fatalf("expected 200 for expansion rules hub, got %d", wExp.Code)
+	}
+	expBody := wExp.Body.String()
+	expectedBackLink := fmt.Sprintf("href=\"/games/%d/rules\"", game.ID)
+	if !strings.Contains(expBody, expectedBackLink) {
+		t.Errorf("expected expansion rules hub to link back to parent game: %s", expectedBackLink)
+	}
+	if !strings.Contains(expBody, "← Back to Eclipse: Second Dawn") {
+		t.Errorf("expected expansion rules hub to display '← Back to Eclipse: Second Dawn'")
+	}
 }
+

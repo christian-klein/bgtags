@@ -64,7 +64,7 @@ The application is configured via environment variables (passed in Docker Compos
 | `OIDC_CLIENT_SECRET` | Yes (for SSO) | — | OIDC Client Secret registered in Authentik |
 | `OIDC_REDIRECT_URL`| Yes (for SSO) | — | Absolute OAuth callback URL (e.g. `https://bgtags.example.com/auth/callback`) |
 | `ADMIN_GROUP` | No | `bgtags-admins` | Authentik group name required for `/admin` access |
-| `USER_GROUP` | No | `""` (empty) | If set, users must be in this group to access stickers/rules; if empty, public access is enabled |
+| `USER_GROUP` / `OIDC_USERS_GROUP` | No | `""` (empty) | If set to `*` or `any`, any authenticated user in Authentik has reader access. If set to a group name, membership is enforced; if empty `""`, public access is enabled |
 
 ---
 
