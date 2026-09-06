@@ -102,18 +102,20 @@
             <div class="expansions-list">
                 {{range .Expansions}}
                 <div class="expansion-card">
-                    <div class="exp-info">
+                    <div class="exp-card-header">
                         <a href="/games/{{.ID}}/rules" class="exp-title-link">
                             <h4 class="exp-title">{{if .DisplayName}}{{.DisplayName}}{{else}}{{.Name}}{{end}}</h4>
                         </a>
+                    </div>
+                    <div class="exp-card-footer">
                         <div class="exp-meta">
                             <span class="exp-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
                             {{if gt .Complexity 0.0}}<span class="badge complexity-badge">🧠 {{printf "%.1f" .Complexity}}</span>{{end}}
                         </div>
+                        <a href="/games/{{.ID}}/rules" class="btn btn-outline btn-sm">
+                            📖 View Rules ↗
+                        </a>
                     </div>
-                    <a href="/games/{{.ID}}/rules" class="btn btn-outline btn-sm">
-                        📖 View Rules Hub ↗
-                    </a>
                 </div>
                 {{end}}
             </div>
