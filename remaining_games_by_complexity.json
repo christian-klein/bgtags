@@ -33,17 +33,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/174430/gloomhaven"
   },
   {
-    "bgg_id": 315896,
-    "name": "Marvel Champions: The Card Game – The Galaxy's Most Wanted",
-    "year": 2021,
-    "complexity": 3.69,
-    "geek_rating": 6.303,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/315896/marvel-champions-the-card-game-the-galaxys-most-wa"
-  },
-  {
     "bgg_id": 205637,
     "name": "Arkham Horror: The Card Game",
     "year": 2016,
@@ -143,28 +132,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200784/descent-journeys-in-the-dark-second-edition-road-t"
   },
   {
-    "bgg_id": 360060,
-    "name": "Marvel Champions: The Card Game – Spider-Ham Hero Pack",
-    "year": 2022,
-    "complexity": 3,
-    "geek_rating": 5.955,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/360060/marvel-champions-the-card-game-spider-ham-hero-pac"
-  },
-  {
-    "bgg_id": 285774,
-    "name": "Marvel Champions: The Card Game",
-    "year": 2019,
-    "complexity": 2.96,
-    "geek_rating": 7.787,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/285774/marvel-champions-the-card-game"
-  },
-  {
     "bgg_id": 138161,
     "name": "Firefly: The Game",
     "year": 2013,
@@ -185,39 +152,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/240196/betrayal-legacy"
-  },
-  {
-    "bgg_id": 300878,
-    "name": "Marvel Champions: The Card Game – Doctor Strange Hero Pack",
-    "year": 2020,
-    "complexity": 2.86,
-    "geek_rating": 6.796,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/300878/marvel-champions-the-card-game-doctor-strange-hero"
-  },
-  {
-    "bgg_id": 347813,
-    "name": "Marvel Champions: The Card Game – Sinister Motives",
-    "year": 2022,
-    "complexity": 2.85,
-    "geek_rating": 6.471,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/347813/marvel-champions-the-card-game-sinister-motives"
-  },
-  {
-    "bgg_id": 316694,
-    "name": "Marvel Champions: The Card Game – Quicksilver Hero Pack",
-    "year": 2021,
-    "complexity": 2.83,
-    "geek_rating": 6.361,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316694/marvel-champions-the-card-game-quicksilver-hero-pa"
   },
   {
     "bgg_id": 151953,
@@ -242,50 +176,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177497/firefly-the-game-jetwash"
   },
   {
-    "bgg_id": 306430,
-    "name": "Marvel Champions: The Card Game – The Rise of Red Skull",
-    "year": 2020,
-    "complexity": 2.78,
-    "geek_rating": 6.901,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/306430/marvel-champions-the-card-game-the-rise-of-red-sku"
-  },
-  {
-    "bgg_id": 229987,
-    "name": "Mansions of Madness: Second Edition – Streets of Arkham: Expansion",
-    "year": 2017,
-    "complexity": 2.71,
-    "geek_rating": 7.105,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/229987/mansions-of-madness-second-edition-streets-of-arkh"
-  },
-  {
-    "bgg_id": 335739,
-    "name": "Marvel Champions: The Card Game – Venom Hero Pack",
-    "year": 2021,
-    "complexity": 2.71,
-    "geek_rating": 6.247,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/335739/marvel-champions-the-card-game-venom-hero-pack"
-  },
-  {
-    "bgg_id": 205059,
-    "name": "Mansions of Madness: Second Edition",
-    "year": 2016,
-    "complexity": 2.69,
-    "geek_rating": 7.673,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/205059/mansions-of-madness-second-edition"
-  },
-  {
     "bgg_id": 364655,
     "name": "Kinfire Chronicles: Night's Fall (English edition, second printing)",
     "year": 2024,
@@ -295,17 +185,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/364655/kinfire-chronicles-nights-fall"
-  },
-  {
-    "bgg_id": 206547,
-    "name": "Mansions of Madness: Second Edition – Recurring Nightmares: Figure and Tile Collection",
-    "year": 2016,
-    "complexity": 2.67,
-    "geek_rating": 6.44,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206547/mansions-of-madness-second-edition-recurring-night"
   },
   {
     "bgg_id": 156089,
@@ -330,17 +209,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/459928/dungeon-crawler-carl-unstoppable"
   },
   {
-    "bgg_id": 241533,
-    "name": "Mansions of Madness: Second Edition – Sanctum of Twilight: Expansion",
-    "year": 2018,
-    "complexity": 2.62,
-    "geek_rating": 6.833,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/241533/mansions-of-madness-second-edition-sanctum-of-twil"
-  },
-  {
     "bgg_id": 146567,
     "name": "Descent: Journeys in the Dark (Second Edition) – Splig Lieutenant Pack",
     "year": 2013,
@@ -361,17 +229,6 @@
     "subtype": "boardgameexpansion",
     "is_expansion": true,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147736/firefly-the-game-breakin-atmo"
-  },
-  {
-    "bgg_id": 206548,
-    "name": "Mansions of Madness: Second Edition – Suppressed Memories: Figure and Tile Collection",
-    "year": 2016,
-    "complexity": 2.6,
-    "geek_rating": 6.436,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206548/mansions-of-madness-second-edition-suppressed-memo"
   },
   {
     "bgg_id": 146571,
@@ -449,28 +306,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/10547/betrayal-at-house-on-the-hill"
-  },
-  {
-    "bgg_id": 289222,
-    "name": "Marvel Champions: The Card Game – Captain America Hero Pack",
-    "year": 2019,
-    "complexity": 2.38,
-    "geek_rating": 6.85,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/289222/marvel-champions-the-card-game-captain-america-her"
-  },
-  {
-    "bgg_id": 158275,
-    "name": "Marvel Dice Masters: Uncanny X-Men",
-    "year": 2014,
-    "complexity": 2.37,
-    "geek_rating": 6.473,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/158275/marvel-dice-masters-uncanny-x-men"
   },
   {
     "bgg_id": 188699,
@@ -572,17 +407,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/257276/clank-expeditions-gold-and-silk"
   },
   {
-    "bgg_id": 321775,
-    "name": "Marvel United: Guardians of the Galaxy Remix – Kickstarter Edition",
-    "year": 2021,
-    "complexity": 2.2,
-    "geek_rating": 5.869,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/321775/marvel-united-guardians-of-the-galaxy-remix-kickst"
-  },
-  {
     "bgg_id": 369646,
     "name": "Disney Lorcana",
     "year": 2023,
@@ -592,39 +416,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/369646/disney-lorcana"
-  },
-  {
-    "bgg_id": 302670,
-    "name": "Marvel United: Guardians of the Galaxy Remix",
-    "year": 2021,
-    "complexity": 2.07,
-    "geek_rating": 6.002,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/302670/marvel-united-guardians-of-the-galaxy-remix"
-  },
-  {
-    "bgg_id": 336382,
-    "name": "Marvel United: X-Men",
-    "year": 2021,
-    "complexity": 2.01,
-    "geek_rating": 7.089,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/336382/marvel-united-x-men"
-  },
-  {
-    "bgg_id": 379755,
-    "name": "Marvel United: Civil War",
-    "year": 2024,
-    "complexity": 2,
-    "geek_rating": 5.672,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/379755/marvel-united-civil-war"
   },
   {
     "bgg_id": 37904,
@@ -649,17 +440,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/309129/disney-the-haunted-mansion-call-of-the-spirits-gam"
   },
   {
-    "bgg_id": 298047,
-    "name": "Marvel United",
-    "year": 2020,
-    "complexity": 1.85,
-    "geek_rating": 7.164,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/298047/marvel-united"
-  },
-  {
     "bgg_id": 131835,
     "name": "Boss Monster: The Dungeon Building Card Game",
     "year": 2013,
@@ -671,39 +451,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/131835/boss-monster-the-dungeon-building-card-game"
   },
   {
-    "bgg_id": 205494,
-    "name": "Machi Koro: Bright Lights, Big City",
-    "year": 2016,
-    "complexity": 1.83,
-    "geek_rating": 6.079,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/205494/machi-koro-bright-lights-big-city"
-  },
-  {
-    "bgg_id": 339128,
-    "name": "Marvel United: X-Men – Gold Team",
-    "year": 2022,
-    "complexity": 1.83,
-    "geek_rating": 5.935,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339128/marvel-united-x-men-gold-team"
-  },
-  {
-    "bgg_id": 379908,
-    "name": "Marvel United: Spider-Geddon",
-    "year": 2023,
-    "complexity": 1.82,
-    "geek_rating": 6.146,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/379908/marvel-united-spider-geddon"
-  },
-  {
     "bgg_id": 209685,
     "name": "Century: Spice Road",
     "year": 2017,
@@ -713,17 +460,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/209685/century-spice-road"
-  },
-  {
-    "bgg_id": 339131,
-    "name": "Marvel United: Deadpool",
-    "year": 2022,
-    "complexity": 1.8,
-    "geek_rating": 5.838,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339131/marvel-united-deadpool"
   },
   {
     "bgg_id": 65244,
@@ -922,17 +658,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/39856/dixit"
-  },
-  {
-    "bgg_id": 168584,
-    "name": "Love Letter: Batman",
-    "year": 2015,
-    "complexity": 1.19,
-    "geek_rating": 6.726,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/168584/love-letter-batman"
   },
   {
     "bgg_id": 74,

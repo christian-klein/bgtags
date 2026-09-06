@@ -51,6 +51,59 @@
         function closeModal() {
             document.getElementById('modal-container').innerHTML = '';
         }
+
+        function showQRPopupFromElement(el, event) {
+            if (event) event.stopPropagation();
+            const qr = el.getAttribute('data-qr');
+            const title = el.getAttribute('data-title');
+            showQRPopup(qr, title);
+        }
+
+        function showQRPopup(qrUrl, title) {
+            if (!qrUrl) return;
+            let largeUrl = qrUrl;
+            if (largeUrl.includes('/qr?')) {
+                if (largeUrl.includes('size=')) {
+                    largeUrl = largeUrl.replace(/size=\d+/, 'size=512');
+                } else {
+                    largeUrl += '&size=512';
+                }
+            }
+
+            const container = document.getElementById('modal-container');
+            container.innerHTML = `
+                <div class="qr-modal-backdrop" onclick="closeModal()">
+                    <div class="qr-modal-content" onclick="closeModal()">
+                        <button type="button" class="qr-modal-close" onclick="closeModal()" title="Close (or click anywhere)" aria-label="Close">✕</button>
+                        <div class="qr-modal-header">
+                            <h3 class="qr-modal-title">${escapeHTML(title || 'Scan QR Code')}</h3>
+                            <p class="qr-modal-subtitle">Scan with phone or tablet camera to open rules</p>
+                        </div>
+                        <div class="qr-modal-img-wrap">
+                            <img src="${largeUrl}" alt="QR Code for ${escapeHTML(title || '')}" class="qr-modal-img">
+                        </div>
+                        <div class="qr-modal-hint">
+                            <span>✕ Click anywhere to close</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function escapeHTML(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>

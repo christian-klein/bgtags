@@ -123,12 +123,20 @@
         {{end}}
 
         <div class="rules-qr-share-section no-print">
-            <div class="share-qr-card">
-                <img src="{{.Game.QRCodeURL}}" alt="Rules QR Code" class="share-qr-img">
+            <div class="share-qr-card" data-qr="{{.Game.QRCodeURL}}" data-title="{{.Game.Name}}" onclick="showQRPopupFromElement(this, event)" title="Click to enlarge QR code">
+                <div class="share-qr-img-wrap">
+                    <img src="{{.Game.QRCodeURL}}" alt="Rules QR Code" class="share-qr-img">
+                    <button type="button" class="qr-zoom-btn" title="Enlarge QR Code" aria-label="Enlarge QR Code">
+                        🔍
+                    </button>
+                </div>
                 <div class="share-qr-text">
                     <strong>Share with the Table</strong>
-                    <span>Scan this QR code with any phone or tablet to open these rules directly.</span>
+                    <span>Scan this QR code with any phone or tablet to open these rules directly. <span class="share-qr-action-hint">🔍 Click to enlarge</span></span>
                 </div>
+                <button type="button" class="btn btn-outline btn-sm share-qr-action-btn" title="Enlarge QR Code">
+                    🔍 Enlarge QR
+                </button>
             </div>
         </div>
     </div>

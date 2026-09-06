@@ -3796,5 +3796,925 @@
         "is_primary": true
       }
     ]
+  },
+  {
+    "id": 183,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Hunt for Gollum",
+    "url": "lotr-lcg-hunt-gollum-rulebook.pdf",
+    "image": "lotr-lcg-hunt-gollum.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.68,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/94288",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-hunt-gollum-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "name": "The Lord of the Rings: The Card Game \u2013 Conflict at the Carrock",
+    "url": "lotr-lcg-conflict-carrock-rulebook.pdf",
+    "image": "lotr-lcg-conflict-carrock.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.83,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/95338",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-conflict-carrock-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "name": "The Lord of the Rings: The Card Game \u2013 Heirs of N\u00famenor",
+    "url": "lotr-lcg-heirs-numenor-rulebook.pdf",
+    "image": "lotr-lcg-heirs-numenor.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.28,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/129480",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-heirs-numenor-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Steward's Fear",
+    "url": "lotr-lcg-stewards-fear-rulebook.pdf",
+    "image": "lotr-lcg-stewards-fear.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.04,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/132020",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-stewards-fear-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "name": "The Lord of the Rings: The Card Game \u2013 Encounter at Amon D\u00een",
+    "url": "lotr-lcg-encounter-amon-din-rulebook.pdf",
+    "image": "lotr-lcg-encounter-amon-din.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.9,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/134946",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-encounter-amon-din-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Three Trials",
+    "url": "lotr-lcg-three-trials-rulebook.pdf",
+    "image": "lotr-lcg-three-trials.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.1,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/154493",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-three-trials-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "name": "The Lord of the Rings: The Card Game \u2013 Trouble in Tharbad",
+    "url": "lotr-lcg-trouble-tharbad-rulebook.pdf",
+    "image": "lotr-lcg-trouble-tharbad.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.08,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/156416",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-trouble-tharbad-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "name": "The Lord of the Rings: The Card Game \u2013 The N\u00een-in-Eilph",
+    "url": "lotr-lcg-nin-eilph-rulebook.pdf",
+    "image": "lotr-lcg-nin-eilph.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.14,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/158019",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-nin-eilph-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "name": "The Lord of the Rings: The Card Game \u2013 Celebrimbor's Secret",
+    "url": "lotr-lcg-celebrimbor-secret-rulebook.pdf",
+    "image": "lotr-lcg-celebrimbor-secret.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/158969",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-celebrimbor-secret-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Antlered Crown",
+    "url": "lotr-lcg-antlered-crown-rulebook.pdf",
+    "image": "lotr-lcg-antlered-crown.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/160464",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-antlered-crown-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Wastes of Eriador",
+    "url": "lotr-lcg-wastes-eriador-rulebook.pdf",
+    "image": "lotr-lcg-wastes-eriador.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.08,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/172680",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-wastes-eriador-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 194,
+    "name": "The Lord of the Rings: The Card Game \u2013 Escape from Mount Gram",
+    "url": "lotr-lcg-escape-mount-gram-rulebook.pdf",
+    "image": "lotr-lcg-escape-mount-gram.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.26,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/174565",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-escape-mount-gram-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 195,
+    "name": "The Lord of the Rings: The Card Game \u2013 Across the Ettenmoors",
+    "url": "lotr-lcg-across-ettenmoors-rulebook.pdf",
+    "image": "lotr-lcg-across-ettenmoors.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.22,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/176058",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-across-ettenmoors-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Land of Shadow",
+    "url": "lotr-lcg-land-shadow-rulebook.pdf",
+    "image": "lotr-lcg-land-shadow.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177163",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-land-shadow-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Treachery of Rhudaur",
+    "url": "lotr-lcg-treachery-rhudaur-rulebook.pdf",
+    "image": "lotr-lcg-treachery-rhudaur.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.18,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177608",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-treachery-rhudaur-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Battle of Carn D\u00fbm",
+    "url": "lotr-lcg-battle-carn-dum-rulebook.pdf",
+    "image": "lotr-lcg-battle-carn-dum.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.28,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/178862",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-battle-carn-dum-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dread Realm",
+    "url": "lotr-lcg-dread-realm-rulebook.pdf",
+    "image": "lotr-lcg-dread-realm.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.29,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/180695",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-dread-realm-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Grey Havens",
+    "url": "lotr-lcg-grey-havens-rulebook.pdf",
+    "image": "lotr-lcg-grey-havens.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.26,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/182930",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "lotr-lcg-grey-havens-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "name": "The Lord of the Rings: The Card Game \u2013 Flight of the Stormcaller",
+    "url": "lotr-lcg-flight-stormcaller-rulebook.pdf",
+    "image": "lotr-lcg-flight-stormcaller.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188228",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-flight-stormcaller-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Thing in the Depths",
+    "url": "lotr-lcg-thing-depths-rulebook.pdf",
+    "image": "lotr-lcg-thing-depths.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.18,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189625",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-thing-depths-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 203,
+    "name": "The Lord of the Rings: The Card Game \u2013 Temple of the Deceived",
+    "url": "lotr-lcg-temple-deceived-rulebook.pdf",
+    "image": "lotr-lcg-temple-deceived.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.24,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/191436",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-temple-deceived-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 204,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Drowned Ruins",
+    "url": "lotr-lcg-drowned-ruins-rulebook.pdf",
+    "image": "lotr-lcg-drowned-ruins.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.04,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/193154",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-drowned-ruins-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 205,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Flame of the West",
+    "url": "lotr-lcg-flame-west-rulebook.pdf",
+    "image": "lotr-lcg-flame-west.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.48,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/198926",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-flame-west-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 206,
+    "name": "The Lord of the Rings: The Card Game \u2013 A Storm on Cobas Haven",
+    "url": "lotr-lcg-storm-cobas-haven-rulebook.pdf",
+    "image": "lotr-lcg-storm-cobas-haven.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200092",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-storm-cobas-haven-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 207,
+    "name": "The Lord of the Rings: The Card Game \u2013 The City of Corsairs",
+    "url": "lotr-lcg-city-corsairs-rulebook.pdf",
+    "image": "lotr-lcg-city-corsairs.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/201875",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-city-corsairs-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Sands of Harad",
+    "url": "lotr-lcg-sands-harad-rulebook.pdf",
+    "image": "lotr-lcg-sands-harad.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.24,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/204091",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "lotr-lcg-sands-harad-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "name": "The Lord of the Rings: The Card Game \u2013 The M\u00fbmakil",
+    "url": "lotr-lcg-mumakil-rulebook.pdf",
+    "image": "lotr-lcg-mumakil.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206259",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-mumakil-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "name": "The Lord of the Rings: The Card Game \u2013 Race Across Harad",
+    "url": "lotr-lcg-race-across-harad-rulebook.pdf",
+    "image": "lotr-lcg-race-across-harad.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.08,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/207615",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-race-across-harad-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 211,
+    "name": "The Lord of the Rings: The Card Game \u2013 Beneath the Sands",
+    "url": "lotr-lcg-beneath-sands-rulebook.pdf",
+    "image": "lotr-lcg-beneath-sands.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/209997",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-beneath-sands-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 212,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Black Serpent",
+    "url": "lotr-lcg-black-serpent-rulebook.pdf",
+    "image": "lotr-lcg-black-serpent.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.12,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/212142",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-black-serpent-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 213,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dungeons of Cirith Gurat",
+    "url": "lotr-lcg-dungeons-cirith-rulebook.pdf",
+    "image": "lotr-lcg-dungeons-cirith.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/217403",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-dungeons-cirith-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 214,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Crossings of Poros",
+    "url": "lotr-lcg-crossings-poros-rulebook.pdf",
+    "image": "lotr-lcg-crossings-poros.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.14,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/220139",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-crossings-poros-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 215,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Mountain of Fire",
+    "url": "lotr-lcg-mountain-fire-rulebook.pdf",
+    "image": "lotr-lcg-mountain-fire.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.51,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/225188",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-mountain-fire-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 216,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Wilds of Rhovanion",
+    "url": "lotr-lcg-wilds-rhovanion-rulebook.pdf",
+    "image": "lotr-lcg-wilds-rhovanion.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.29,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/241926",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "lotr-lcg-wilds-rhovanion-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 217,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Withered Heath",
+    "url": "lotr-lcg-withered-heath-rulebook.pdf",
+    "image": "lotr-lcg-withered-heath.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/250767",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-withered-heath-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 218,
+    "name": "The Lord of the Rings: The Card Game \u2013 Roam Across Rhovanion",
+    "url": "lotr-lcg-roam-rhovanion-rulebook.pdf",
+    "image": "lotr-lcg-roam-rhovanion.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.1,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/253392",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-roam-rhovanion-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 219,
+    "name": "The Lord of the Rings: The Card Game \u2013 Fire in the Night",
+    "url": "lotr-lcg-fire-night-rulebook.pdf",
+    "image": "lotr-lcg-fire-night.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.12,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/262558",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-fire-night-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 220,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Ghost of Framsburg",
+    "url": "lotr-lcg-ghost-framsburg-rulebook.pdf",
+    "image": "lotr-lcg-ghost-framsburg.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.22,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/262559",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-ghost-framsburg-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 221,
+    "name": "The Lord of the Rings: The Card Game \u2013 Mount Gundabad",
+    "url": "lotr-lcg-mount-gundabad-rulebook.pdf",
+    "image": "lotr-lcg-mount-gundabad.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.24,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/268187",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-mount-gundabad-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 222,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Fate of Wilderland",
+    "url": "lotr-lcg-fate-wilderland-rulebook.pdf",
+    "image": "lotr-lcg-fate-wilderland.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.26,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/272393",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-fate-wilderland-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 223,
+    "name": "The Lord of the Rings: The Card Game \u2013 A Shadow in the East",
+    "url": "lotr-lcg-shadow-east-rulebook.pdf",
+    "image": "lotr-lcg-shadow-east.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.37,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/278303",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "lotr-lcg-shadow-east-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 224,
+    "name": "The Lord of the Rings: The Card Game \u2013 Wrath and Ruin",
+    "url": "lotr-lcg-wrath-ruin-rulebook.pdf",
+    "image": "lotr-lcg-wrath-ruin.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.18,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/283586",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-wrath-ruin-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 225,
+    "name": "The Lord of the Rings: The Card Game \u2013 The City of Ulfast",
+    "url": "lotr-lcg-city-ulfast-rulebook.pdf",
+    "image": "lotr-lcg-city-ulfast.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.24,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/288924",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-city-ulfast-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 226,
+    "name": "The Lord of the Rings: The Card Game \u2013 Under the Ash Mountains",
+    "url": "lotr-lcg-ash-mountains-rulebook.pdf",
+    "image": "lotr-lcg-ash-mountains.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/298693",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-ash-mountains-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 227,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Land of Sorrow",
+    "url": "lotr-lcg-land-sorrow-rulebook.pdf",
+    "image": "lotr-lcg-land-sorrow.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.28,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/302309",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-land-sorrow-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 228,
+    "name": "The Lord of the Rings: The Card Game \u2013 The Fortress of Nurn",
+    "url": "lotr-lcg-fortress-nurn-rulebook.pdf",
+    "image": "lotr-lcg-fortress-nurn.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.38,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/313550",
+    "parent_id": 160,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "lotr-lcg-fortress-nurn-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
   }
 ]
