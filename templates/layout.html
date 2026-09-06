@@ -49,7 +49,9 @@
 
     <script>
         function closeModal() {
-            document.getElementById('modal-container').innerHTML = '';
+            const container = document.getElementById('modal-container');
+            if (container) container.innerHTML = '';
+            document.body.classList.remove('modal-open');
         }
 
         function showQRPopupFromElement(el, event) {
@@ -88,6 +90,7 @@
                     </div>
                 </div>
             `;
+            document.body.classList.add('modal-open');
         }
 
         function escapeHTML(str) {
