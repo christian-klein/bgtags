@@ -281,7 +281,7 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 // included when it matches the search/player filter on its own fields OR when
 // one of its expansions matches, so searching for an expansion surfaces its
 // parent entry. Expansions themselves are grouped under parents by the handler.
-func (db *DB) ListBaseGames(search string, players int) ([]Game, error) {
+func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComplexity float64) ([]Game, error) {
 	query := `SELECT g.id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.bgg_url, g.created_at, g.updated_at
 		FROM games g WHERE g.parent_id IS NULL`
 	var args []interface{}
@@ -298,6 +298,14 @@ func (db *DB) ListBaseGames(search string, players int) ([]Game, error) {
 	if players > 0 {
 		query += " AND g.min_players <= ? AND g.max_players >= ?"
 		args = append(args, players, players)
+	}
+
+	if minComplexity > 0.0 || (maxComplexity > 0.0 && maxComplexity < 5.0) {
+		if maxComplexity <= 0.0 {
+			maxComplexity = 5.0
+		}
+		query += " AND g.complexity >= ? AND g.complexity <= ?"
+		args = append(args, minComplexity, maxComplexity)
 	}
 
 	query += " ORDER BY g.name COLLATE NOCASE ASC"

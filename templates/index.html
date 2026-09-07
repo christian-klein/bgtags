@@ -16,7 +16,7 @@
                    hx-get="/games" 
                    hx-trigger="keyup changed delay:250ms, search" 
                    hx-target="#game-grid"
-                   hx-include="[name='players']">
+                   hx-include="[name='players'], [name='min_complexity'], [name='max_complexity']">
         </div>
 
         <div class="filter-group">
@@ -27,7 +27,7 @@
                     hx-get="/games" 
                     hx-trigger="change" 
                     hx-target="#game-grid"
-                    hx-include="[name='q']">
+                    hx-include="[name='q'], [name='min_complexity'], [name='max_complexity']">
                 <option value="0" {{if eq .PlayerCount 0}}selected{{end}}>Any count</option>
                 <option value="1" {{if eq .PlayerCount 1}}selected{{end}}>1 Player (Solo)</option>
                 <option value="2" {{if eq .PlayerCount 2}}selected{{end}}>2 Players</option>
@@ -36,6 +36,45 @@
                 <option value="5" {{if eq .PlayerCount 5}}selected{{end}}>5 Players</option>
                 <option value="6" {{if eq .PlayerCount 6}}selected{{end}}>6+ Players</option>
             </select>
+        </div>
+
+        <div class="filter-group complexity-filter-group">
+            <div class="complexity-header">
+                <span class="filter-label">🧠 Complexity:</span>
+                <span id="complexity-display" class="complexity-display-val">
+                    {{printf "%.1f" .MinComplexity}} – {{if gt .MaxComplexity 0.0}}{{printf "%.1f" .MaxComplexity}}{{else}}5.0{{end}}
+                </span>
+            </div>
+            <div class="dual-range-container">
+                <div class="dual-range-track"></div>
+                <div class="dual-range-highlight" id="complexity-highlight"></div>
+                <input type="range" 
+                       id="min-complexity" 
+                       name="min_complexity" 
+                       min="0" 
+                       max="5" 
+                       step="0.1" 
+                       value="{{printf "%.1f" .MinComplexity}}" 
+                       class="dual-range-input"
+                       aria-label="Minimum complexity"
+                       hx-get="/games" 
+                       hx-trigger="change" 
+                       hx-target="#game-grid" 
+                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity']">
+                <input type="range" 
+                       id="max-complexity" 
+                       name="max_complexity" 
+                       min="0" 
+                       max="5" 
+                       step="0.1" 
+                       value="{{if gt .MaxComplexity 0.0}}{{printf "%.1f" .MaxComplexity}}{{else}}5.0{{end}}" 
+                       class="dual-range-input"
+                       aria-label="Maximum complexity"
+                       hx-get="/games" 
+                       hx-trigger="change" 
+                       hx-target="#game-grid" 
+                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity']">
+            </div>
         </div>
 
         <a href="/stickers" class="btn btn-secondary">
@@ -47,4 +86,49 @@
 <div id="game-grid">
     {{template "game_grid.html" .}}
 </div>
+
+<script>
+    function setupComplexitySlider() {
+        const minInput = document.getElementById('min-complexity');
+        const maxInput = document.getElementById('max-complexity');
+        const display = document.getElementById('complexity-display');
+        const highlight = document.getElementById('complexity-highlight');
+
+        if (!minInput || !maxInput || !display || !highlight) return;
+
+        function updateSlider(isMin) {
+            let minVal = parseFloat(minInput.value) || 0;
+            let maxVal = parseFloat(maxInput.value) || 5;
+
+            if (minVal > maxVal) {
+                if (isMin) {
+                    minInput.value = maxVal;
+                    minVal = maxVal;
+                } else {
+                    maxInput.value = minVal;
+                    maxVal = minVal;
+                }
+            }
+
+            display.textContent = minVal.toFixed(1) + ' – ' + maxVal.toFixed(1);
+
+            const minPercent = (minVal / 5) * 100;
+            const maxPercent = (maxVal / 5) * 100;
+
+            highlight.style.left = minPercent + '%';
+            highlight.style.width = Math.max(0, maxPercent - minPercent) + '%';
+        }
+
+        minInput.addEventListener('input', () => updateSlider(true));
+        maxInput.addEventListener('input', () => updateSlider(false));
+
+        updateSlider(true);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupComplexitySlider);
+    } else {
+        setupComplexitySlider();
+    }
+</script>
 {{end}}

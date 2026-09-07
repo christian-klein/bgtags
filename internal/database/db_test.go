@@ -158,21 +158,21 @@ func TestListBaseGames(t *testing.T) {
 	}
 	defer db.Close()
 
-	base := &Game{Name: "Dune: Imperium", URL: "dune.pdf", Image: "dune.jpg", MinPlayers: 2, MaxPlayers: 4}
+	base := &Game{Name: "Dune: Imperium", URL: "dune.pdf", Image: "dune.jpg", MinPlayers: 2, MaxPlayers: 4, Complexity: 3.05}
 	if err := db.CreateGame(base); err != nil {
 		t.Fatalf("failed to create base: %v", err)
 	}
 	pid := base.ID
-	exp := &Game{ParentID: &pid, Name: "Dune: Imperium - Rise of Ix", URL: "ix.pdf", Image: "ix.jpg", MinPlayers: 2, MaxPlayers: 4}
+	exp := &Game{ParentID: &pid, Name: "Dune: Imperium - Rise of Ix", URL: "ix.pdf", Image: "ix.jpg", MinPlayers: 2, MaxPlayers: 4, Complexity: 3.2}
 	if err := db.CreateGame(exp); err != nil {
 		t.Fatalf("failed to create expansion: %v", err)
 	}
-	standalone := &Game{Name: "Wingspan", URL: "wingspan.pdf", Image: "wingspan.jpg", MinPlayers: 1, MaxPlayers: 5}
+	standalone := &Game{Name: "Wingspan", URL: "wingspan.pdf", Image: "wingspan.jpg", MinPlayers: 1, MaxPlayers: 5, Complexity: 2.45}
 	if err := db.CreateGame(standalone); err != nil {
 		t.Fatalf("failed to create standalone: %v", err)
 	}
 
-	bases, err := db.ListBaseGames("", 0)
+	bases, err := db.ListBaseGames("", 0, 0, 5)
 	if err != nil {
 		t.Fatalf("ListBaseGames failed: %v", err)
 	}
@@ -181,7 +181,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Search by expansion name must surface the parent
-	byExp, err := db.ListBaseGames("Rise of Ix", 0)
+	byExp, err := db.ListBaseGames("Rise of Ix", 0, 0, 5)
 	if err != nil {
 		t.Fatalf("ListBaseGames search failed: %v", err)
 	}
@@ -190,12 +190,30 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Player filter applies to base games only
-	byPlayers, err := db.ListBaseGames("", 5)
+	byPlayers, err := db.ListBaseGames("", 5, 0, 5)
 	if err != nil {
 		t.Fatalf("ListBaseGames player filter failed: %v", err)
 	}
 	if len(byPlayers) != 1 || byPlayers[0].Name != "Wingspan" {
 		t.Fatalf("expected only Wingspan for 5 players, got %+v", byPlayers)
+	}
+
+	// Complexity filter: high complexity only (>= 3.0)
+	byHighComp, err := db.ListBaseGames("", 0, 3.0, 5.0)
+	if err != nil {
+		t.Fatalf("ListBaseGames high complexity failed: %v", err)
+	}
+	if len(byHighComp) != 1 || byHighComp[0].Name != "Dune: Imperium" {
+		t.Fatalf("expected only Dune: Imperium for complexity >= 3.0, got %+v", byHighComp)
+	}
+
+	// Complexity filter: medium complexity only (2.0 to 3.0)
+	byMedComp, err := db.ListBaseGames("", 0, 2.0, 3.0)
+	if err != nil {
+		t.Fatalf("ListBaseGames medium complexity failed: %v", err)
+	}
+	if len(byMedComp) != 1 || byMedComp[0].Name != "Wingspan" {
+		t.Fatalf("expected only Wingspan for complexity 2.0-3.0, got %+v", byMedComp)
 	}
 }
 

@@ -220,6 +220,111 @@ body {
     border-color: var(--accent-primary);
 }
 
+/* Complexity Range Slider Filter */
+.complexity-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 190px;
+    flex: 0 1 210px;
+}
+
+.complexity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.complexity-display-val {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-primary, #818cf8);
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-variant-numeric: tabular-nums;
+}
+
+.dual-range-container {
+    position: relative;
+    height: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.dual-range-track {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: var(--border-color, #334155);
+    border-radius: 9999px;
+}
+
+.dual-range-highlight {
+    position: absolute;
+    height: 6px;
+    background: linear-gradient(90deg, #6366f1, #a78bfa);
+    border-radius: 9999px;
+    pointer-events: none;
+}
+
+.dual-range-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.dual-range-input:focus {
+    outline: none;
+}
+
+.dual-range-input::-webkit-slider-thumb {
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid var(--accent-primary, #6366f1);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.dual-range-input::-webkit-slider-thumb:hover,
+.dual-range-input::-webkit-slider-thumb:active {
+    transform: scale(1.2);
+    background-color: #f1f5f9;
+}
+
+.dual-range-input::-moz-range-thumb {
+    pointer-events: auto;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid var(--accent-primary, #6366f1);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease;
+}
+
+.dual-range-input::-moz-range-thumb:hover,
+.dual-range-input::-moz-range-thumb:active {
+    transform: scale(1.2);
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;

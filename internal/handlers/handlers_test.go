@@ -107,6 +107,14 @@ func TestPagesRender(t *testing.T) {
 	if wGames.Code != http.StatusOK {
 		t.Errorf("expected 200 for games partial, got %d", wGames.Code)
 	}
+
+	// 4. Test Games partial with complexity filtering
+	wComp := httptest.NewRecorder()
+	rComp := httptest.NewRequest("GET", "/games?min_complexity=2.0&max_complexity=3.5", nil)
+	h.HandleGames(wComp, rComp)
+	if wComp.Code != http.StatusOK {
+		t.Errorf("expected 200 for games partial with complexity, got %d", wComp.Code)
+	}
 }
 
 func TestBaseURLResolution(t *testing.T) {

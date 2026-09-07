@@ -33,12 +33,14 @@ type PageData struct {
 	ParentGame  *database.Game
 	Documents   []database.GameDocument
 	Expansions  []database.Game
-	TotalCount  int
-	SearchQuery string
-	PlayerCount int
-	BaseURL     string
-	ActiveNav   string
-	Backups     []*backup.BackupFileMeta
+	TotalCount    int
+	SearchQuery   string
+	PlayerCount   int
+	MinComplexity float64
+	MaxComplexity float64
+	BaseURL       string
+	ActiveNav     string
+	Backups       []*backup.BackupFileMeta
 	Message     string
 	Error       string
 
@@ -160,8 +162,20 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 
 	q := r.URL.Query().Get("q")
 	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
+	minComp := 0.0
+	maxComp := 5.0
+	if minStr := r.URL.Query().Get("min_complexity"); minStr != "" {
+		if v, err := strconv.ParseFloat(minStr, 64); err == nil {
+			minComp = v
+		}
+	}
+	if maxStr := r.URL.Query().Get("max_complexity"); maxStr != "" {
+		if v, err := strconv.ParseFloat(maxStr, 64); err == nil {
+			maxComp = v
+		}
+	}
 
-	games, err := h.db.ListBaseGames(q, players)
+	games, err := h.db.ListBaseGames(q, players, minComp, maxComp)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to load games", http.StatusInternalServerError)
@@ -170,13 +184,15 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 
 	baseURL := h.getBaseURL(r)
 	data := PageData{
-		Title:       "Board Game Rule Tags",
-		Games:       h.toGameViews(games, baseURL),
-		TotalCount:  len(games),
-		SearchQuery: q,
-		PlayerCount: players,
-		BaseURL:     baseURL,
-		ActiveNav:   "catalog",
+		Title:         "Board Game Rule Tags",
+		Games:         h.toGameViews(games, baseURL),
+		TotalCount:    len(games),
+		SearchQuery:   q,
+		PlayerCount:   players,
+		MinComplexity: minComp,
+		MaxComplexity: maxComp,
+		BaseURL:       baseURL,
+		ActiveNav:     "catalog",
 	}
 	h.populateAuthData(r, &data)
 
@@ -262,8 +278,20 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query().Get("q")
 	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
+	minComp := 0.0
+	maxComp := 5.0
+	if minStr := r.URL.Query().Get("min_complexity"); minStr != "" {
+		if v, err := strconv.ParseFloat(minStr, 64); err == nil {
+			minComp = v
+		}
+	}
+	if maxStr := r.URL.Query().Get("max_complexity"); maxStr != "" {
+		if v, err := strconv.ParseFloat(maxStr, 64); err == nil {
+			maxComp = v
+		}
+	}
 
-	games, err := h.db.ListBaseGames(q, players)
+	games, err := h.db.ListBaseGames(q, players, minComp, maxComp)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to filter games", http.StatusInternalServerError)
@@ -272,11 +300,13 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 
 	baseURL := h.getBaseURL(r)
 	data := PageData{
-		Games:       h.toGameViews(games, baseURL),
-		TotalCount:  len(games),
-		SearchQuery: q,
-		PlayerCount: players,
-		BaseURL:     baseURL,
+		Games:         h.toGameViews(games, baseURL),
+		TotalCount:    len(games),
+		SearchQuery:   q,
+		PlayerCount:   players,
+		MinComplexity: minComp,
+		MaxComplexity: maxComp,
+		BaseURL:       baseURL,
 	}
 
 	if err := h.partials.ExecuteTemplate(w, "game_grid.html", data); err != nil {
