@@ -119,8 +119,27 @@
             highlight.style.width = Math.max(0, maxPercent - minPercent) + '%';
         }
 
-        minInput.addEventListener('input', () => updateSlider(true));
-        maxInput.addEventListener('input', () => updateSlider(false));
+        function activateMin() {
+            minInput.style.zIndex = '3';
+            maxInput.style.zIndex = '2';
+        }
+
+        function activateMax() {
+            maxInput.style.zIndex = '3';
+            minInput.style.zIndex = '2';
+        }
+
+        minInput.addEventListener('pointerdown', activateMin);
+        maxInput.addEventListener('pointerdown', activateMax);
+
+        minInput.addEventListener('input', () => {
+            activateMin();
+            updateSlider(true);
+        });
+        maxInput.addEventListener('input', () => {
+            activateMax();
+            updateSlider(false);
+        });
 
         updateSlider(true);
     }

@@ -4716,5 +4716,215 @@
         "is_primary": true
       }
     ]
+  },
+  {
+    "id": 229,
+    "name": "Mansions of Madness: Second Edition",
+    "url": "mom2e-rulebook.pdf",
+    "image": "mom2e.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.69,
+    "bgg_url": "https://boardgamegeek.com/boardgame/205059/mansions-of-madness-second-edition",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "core",
+        "filename": "mom2e-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Learn to Play",
+        "category": "core",
+        "filename": "mom2e-learn-to-play.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "FAQ v1.0",
+        "category": "faq",
+        "filename": "mom2e-faq.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 230,
+    "name": "Mansions of Madness: Second Edition \u2013 Recurring Nightmares: Figure and Tile Collection",
+    "url": "",
+    "image": "mom2e-recurring-nightmares.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206547/mansions-of-madness-second-edition-recurring-nightm",
+    "parent_id": 229,
+    "documents": []
+  },
+  {
+    "id": 231,
+    "name": "Mansions of Madness: Second Edition \u2013 Suppressed Memories: Figure and Tile Collection",
+    "url": "",
+    "image": "mom2e-suppressed-memories.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206548/mansions-of-madness-second-edition-suppressed-memori",
+    "parent_id": 229,
+    "documents": []
+  },
+  {
+    "id": 232,
+    "name": "Mansions of Madness: Second Edition \u2013 Streets of Arkham: Expansion",
+    "url": "mom2e-streets-arkham-rulebook.pdf",
+    "image": "mom2e-streets-arkham.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.71,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/229987/mansions-of-madness-second-edition-streets-of-arkham",
+    "parent_id": 229,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "expansion",
+        "filename": "mom2e-streets-arkham-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 233,
+    "name": "Mansions of Madness: Second Edition \u2013 Sanctum of Twilight: Expansion",
+    "url": "mom2e-sanctum-twilight-rulebook.pdf",
+    "image": "mom2e-sanctum-twilight.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.62,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/241533/mansions-of-madness-second-edition-sanctum-of-twilig",
+    "parent_id": 229,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "expansion",
+        "filename": "mom2e-sanctum-twilight-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 234,
+    "name": "Mansions of Madness: Second Edition \u2013 Horrific Journeys",
+    "url": "mom2e-horrific-journeys-rulebook.pdf",
+    "image": "mom2e-horrific-journeys.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.86,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/255823/mansions-of-madness-second-edition-horrific-journey",
+    "parent_id": 229,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "expansion",
+        "filename": "mom2e-horrific-journeys-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 235,
+    "name": "Mansions of Madness: Second Edition \u2013 Path of the Serpent",
+    "url": "mom2e-path-serpent-rulebook.pdf",
+    "image": "mom2e-path-serpent.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/283094/mansions-of-madness-second-edition-path-of-the-serpen",
+    "parent_id": 229,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "expansion",
+        "filename": "mom2e-path-serpent-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 236,
+    "name": "Mansions of Madness: Second Edition \u2013 Beyond the Threshold",
+    "url": "mom2e-beyond-threshold-rulebook.pdf",
+    "image": "mom2e-beyond-threshold.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.7,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/210674/mansions-of-madness-second-edition-beyond-the-thresh",
+    "parent_id": 229,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "expansion",
+        "filename": "mom2e-beyond-threshold-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 237,
+    "name": "Freedom Five: Rubble & Ruin",
+    "url": "",
+    "image": "freedom-five-rubble-ruin.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/437597/freedom-five-rubble-and-ruin",
+    "parent_id": 67,
+    "documents": []
+  },
+  {
+    "id": 238,
+    "name": "Freedom Five: Team Up Pack \u2013 Guise and Chrono-Ranger",
+    "url": "",
+    "image": "freedom-five-guise-chrono.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/437596/freedom-five-team-up-pack-guise-and-chrono-ran",
+    "parent_id": 67,
+    "documents": []
+  },
+  {
+    "id": 239,
+    "name": "Freedom Five: Team-Up Pack \u2013 Parse and The Scholar",
+    "url": "",
+    "image": "freedom-five-parse-scholar.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/386900/freedom-five-team-up-pack-parse-and-the-scholar",
+    "parent_id": 67,
+    "documents": []
+  },
+  {
+    "id": 240,
+    "name": "Freedom Five: Cosmic Threats",
+    "url": "",
+    "image": "freedom-five-cosmic-threats.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/330623/freedom-five-cosmic-threats",
+    "parent_id": 67,
+    "documents": []
   }
 ]

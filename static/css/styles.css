@@ -1530,6 +1530,10 @@ body {
 }
 
 @media (max-width: 640px) {
+    .complexity-filter-group {
+        width: 100%;
+        flex: 1 1 100%;
+    }
     .rules-hero {
         flex-direction: column;
         text-align: center;
