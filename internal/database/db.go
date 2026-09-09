@@ -329,6 +329,22 @@ func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComple
 	return games, rows.Err()
 }
 
+// CountGamesAndExpansions returns the total count of base games (parent_id IS NULL)
+// and expansions (parent_id IS NOT NULL) in the collection.
+func (db *DB) CountGamesAndExpansions() (int, int, error) {
+	var games, expansions int
+	err := db.QueryRow(`
+		SELECT 
+			COALESCE(SUM(CASE WHEN parent_id IS NULL THEN 1 ELSE 0 END), 0),
+			COALESCE(SUM(CASE WHEN parent_id IS NOT NULL THEN 1 ELSE 0 END), 0)
+		FROM games
+	`).Scan(&games, &expansions)
+	if err != nil {
+		return 0, 0, err
+	}
+	return games, expansions, nil
+}
+
 func (db *DB) GetGame(id int64) (*Game, error) {
 	var g Game
 	var parentID sql.NullInt64

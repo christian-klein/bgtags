@@ -1,8 +1,8 @@
 [
   {
     "id": 2,
-    "name": "Massive Darkness 2",
-    "url": "MD2-Hellscape-Rulebook-Web2.pdf",
+    "name": "Massive Darkness 2: Hellscape",
+    "url": "md2-hellscape-rulebook.pdf",
     "image": "massive-darkness-2.jpg",
     "min_players": 1,
     "max_players": 6,
@@ -12,9 +12,9 @@
     "parent_id": null,
     "documents": [
       {
-        "title": "Core Rulebook",
+        "title": "Rules & Quests",
         "category": "core",
-        "filename": "MD2-Hellscape-Rulebook-Web2.pdf",
+        "filename": "md2-hellscape-rulebook.pdf",
         "is_primary": true
       },
       {
@@ -343,7 +343,7 @@
   },
   {
     "id": 14,
-    "name": "Panzer Leader",
+    "name": "Panzer Leader: Game of Tactical Warfare on the Western Front",
     "url": "panzer-leader-rules.pdf",
     "image": "panzer-leader.png",
     "min_players": 2,
@@ -2079,7 +2079,7 @@
     "best_players": "5",
     "complexity": 2.48,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/142020/legendary-a-marvel-deck-building-game-fantastic-fo",
-    "parent_id": null,
+    "parent_id": 136,
     "documents": [
       {
         "title": "Expansion Rules",
@@ -2091,7 +2091,7 @@
   },
   {
     "id": 97,
-    "name": "Legendary: A James Bond Deck Building Game",
+    "name": "Legendary: A James Bond Deck Building Game (English edition)",
     "url": "legendary-james-bond-rulebook.pdf",
     "image": "legendary-james-bond.jpg",
     "min_players": 1,
@@ -2119,7 +2119,7 @@
     "best_players": "5",
     "complexity": 2.47,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/163106/legendary-a-marvel-deck-building-game-guardians-of",
-    "parent_id": null,
+    "parent_id": 136,
     "documents": [
       {
         "title": "Expansion Rules",
@@ -4817,7 +4817,7 @@
   },
   {
     "id": 234,
-    "name": "Mansions of Madness: Second Edition \u2013 Horrific Journeys",
+    "name": "Mansions of Madness: Second Edition \u2013 Horrific Journeys: Expansion",
     "url": "mom2e-horrific-journeys-rulebook.pdf",
     "image": "mom2e-horrific-journeys.jpg",
     "min_players": 1,
@@ -4837,7 +4837,7 @@
   },
   {
     "id": 235,
-    "name": "Mansions of Madness: Second Edition \u2013 Path of the Serpent",
+    "name": "Mansions of Madness: Second Edition \u2013 Path of the Serpent: Expansion",
     "url": "mom2e-path-serpent-rulebook.pdf",
     "image": "mom2e-path-serpent.jpg",
     "min_players": 1,
@@ -4857,7 +4857,7 @@
   },
   {
     "id": 236,
-    "name": "Mansions of Madness: Second Edition \u2013 Beyond the Threshold",
+    "name": "Mansions of Madness: Second Edition \u2013 Beyond the Threshold: Expansion",
     "url": "mom2e-beyond-threshold-rulebook.pdf",
     "image": "mom2e-beyond-threshold.jpg",
     "min_players": 1,
@@ -4926,5 +4926,3721 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/330623/freedom-five-cosmic-threats",
     "parent_id": 67,
     "documents": []
+  },
+  {
+    "id": 241,
+    "name": "It's a Wonderful World: Leisure & Decadence",
+    "url": "",
+    "image": "wonderful-world-leisure-decadence.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "4",
+    "complexity": 2.44,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/334767/its-a-wonderful-world-leisure-and-decadence",
+    "parent_id": 139,
+    "documents": []
+  },
+  {
+    "id": 242,
+    "name": "Founders of Gloomhaven",
+    "url": "founders-of-gloomhaven-rulebook.pdf",
+    "image": "founders-of-gloomhaven.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 4.12,
+    "bgg_url": "https://boardgamegeek.com/boardgame/214032/founders-of-gloomhaven",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "founders-of-gloomhaven-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 243,
+    "name": "Arydia: The Paths We Dare Tread",
+    "url": "arydia-rulebook.pdf",
+    "image": "arydia.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.31,
+    "bgg_url": "https://boardgamegeek.com/boardgame/219650/arydia-the-paths-we-dare-tread",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "arydia-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 244,
+    "name": "Blood on the Clocktower",
+    "url": "blood-on-clocktower-rulebook.pdf",
+    "image": "blood-on-clocktower.jpg",
+    "min_players": 5,
+    "max_players": 20,
+    "best_players": "8",
+    "complexity": 3.03,
+    "bgg_url": "https://boardgamegeek.com/boardgame/240980/blood-on-the-clocktower",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "blood-on-clocktower-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 245,
+    "name": "Evolution",
+    "url": "evolution-rulebook.pdf",
+    "image": "evolution.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 2.43,
+    "bgg_url": "https://boardgamegeek.com/boardgame/155703/evolution",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "evolution-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 246,
+    "name": "7 Wonders",
+    "url": "7-wonders-rulebook.pdf",
+    "image": "7-wonders.jpg",
+    "min_players": 2,
+    "max_players": 7,
+    "best_players": "5",
+    "complexity": 2.32,
+    "bgg_url": "https://boardgamegeek.com/boardgame/68448/7-wonders",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "7-wonders-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 247,
+    "name": "Catan",
+    "url": "catan-rulebook.pdf",
+    "image": "catan.jpg",
+    "min_players": 3,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.28,
+    "bgg_url": "https://boardgamegeek.com/boardgame/13/catan",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "catan-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 248,
+    "name": "Azul Duel",
+    "url": "azul-duel-rulebook.pdf",
+    "image": "azul-duel.jpg",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 2.28,
+    "bgg_url": "https://boardgamegeek.com/boardgame/431038/azul-duel",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "azul-duel-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 249,
+    "name": "Boss Monster: The Dungeon Building Card Game",
+    "url": "boss-monster-rulebook.pdf",
+    "image": "boss-monster.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 1.85,
+    "bgg_url": "https://boardgamegeek.com/boardgame/131835/boss-monster-the-dungeon-building-card-game",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "boss-monster-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Advanced Rules Guide & FAQ",
+        "category": "faq",
+        "filename": "boss-monster-faq.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 250,
+    "name": "Machi Koro: Bright Lights, Big City",
+    "url": "machi-koro-bright-lights-rulebook.pdf",
+    "image": "machi-koro-bright-lights.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.83,
+    "bgg_url": "https://boardgamegeek.com/boardgame/205494/machi-koro-bright-lights-big-city",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "machi-koro-bright-lights-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 251,
+    "name": "Century: Spice Road",
+    "url": "century-spice-road-rulebook.pdf",
+    "image": "century-spice-road.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.8,
+    "bgg_url": "https://boardgamegeek.com/boardgame/209685/century-spice-road",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "century-spice-road-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 252,
+    "name": "Forbidden Island",
+    "url": "forbidden-island-rulebook.pdf",
+    "image": "forbidden-island.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.74,
+    "bgg_url": "https://boardgamegeek.com/boardgame/65244/forbidden-island",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "forbidden-island-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 253,
+    "name": "Blokus",
+    "url": "blokus-rulebook.pdf",
+    "image": "blokus.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.73,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2453/blokus",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "blokus-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 254,
+    "name": "Century: Golem Edition",
+    "url": "century-golem-rulebook.pdf",
+    "image": "century-golem-edition.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.72,
+    "bgg_url": "https://boardgamegeek.com/boardgame/232832/century-golem-edition",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "century-golem-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 255,
+    "name": "Hanabi",
+    "url": "hanabi-rulebook.pdf",
+    "image": "hanabi.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.69,
+    "bgg_url": "https://boardgamegeek.com/boardgame/98778/hanabi",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "hanabi-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 256,
+    "name": "Foodies",
+    "url": "foodies-rulebook.pdf",
+    "image": "foodies.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "4",
+    "complexity": 1.67,
+    "bgg_url": "https://boardgamegeek.com/boardgame/280896/foodies",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "foodies-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 257,
+    "name": "Fabled Fruit",
+    "url": "fabled-fruit-rulebook.pdf",
+    "image": "fabled-fruit.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.61,
+    "bgg_url": "https://boardgamegeek.com/boardgame/203427/fabled-fruit",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "fabled-fruit-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 258,
+    "name": "The Little Prince: Make Me a Planet",
+    "url": "little-prince-planet-rulebook.pdf",
+    "image": "little-prince-planet.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 1.58,
+    "bgg_url": "https://boardgamegeek.com/boardgame/134453/the-little-prince-make-me-a-planet",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "little-prince-planet-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 259,
+    "name": "Legacy of Dragonholt",
+    "url": "legacy-of-dragonholt-rulebook.pdf",
+    "image": "legacy-of-dragonholt.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "4",
+    "complexity": 1.28,
+    "bgg_url": "https://boardgamegeek.com/boardgame/234669/legacy-of-dragonholt",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "legacy-of-dragonholt-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 260,
+    "name": "Dixit",
+    "url": "dixit-rulebook.pdf",
+    "image": "dixit.jpg",
+    "min_players": 3,
+    "max_players": 8,
+    "best_players": "6",
+    "complexity": 1.19,
+    "bgg_url": "https://boardgamegeek.com/boardgame/39856/dixit",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "dixit-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 261,
+    "name": "Love Letter: Batman",
+    "url": "",
+    "image": "love-letter-batman.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.19,
+    "bgg_url": "https://boardgamegeek.com/boardgame/168584/love-letter-batman",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 262,
+    "name": "3 Wishes",
+    "url": "3-wishes-rulebook.pdf",
+    "image": "3-wishes.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.15,
+    "bgg_url": "https://boardgamegeek.com/boardgame/198836/3-wishes",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "3-wishes-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 263,
+    "name": "Dragomino",
+    "url": "dragomino-rulebook.pdf",
+    "image": "dragomino.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 1.06,
+    "bgg_url": "https://boardgamegeek.com/boardgame/300010/dragomino",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "dragomino-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 264,
+    "name": "Flip 7",
+    "url": "flip-7-rulebook.pdf",
+    "image": "flip-7.jpg",
+    "min_players": 2,
+    "max_players": 8,
+    "best_players": "6",
+    "complexity": 1.04,
+    "bgg_url": "https://boardgamegeek.com/boardgame/420087/flip-7",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "flip-7-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 265,
+    "name": "Just One",
+    "url": "just-one-rulebook.pdf",
+    "image": "just-one.jpg",
+    "min_players": 3,
+    "max_players": 7,
+    "best_players": "5",
+    "complexity": 1.03,
+    "bgg_url": "https://boardgamegeek.com/boardgame/254640/just-one",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "just-one-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 266,
+    "name": "Crabs in a Bucket",
+    "url": "",
+    "image": "crabs-in-a-bucket.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "4",
+    "complexity": 1.0,
+    "bgg_url": "https://boardgamegeek.com/boardgame/353719/crabs-in-a-bucket",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 267,
+    "name": "Clank!: A Deck-Building Adventure",
+    "url": "clank-rulebook.pdf",
+    "image": "clank-2016.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.23,
+    "bgg_url": "https://boardgamegeek.com/boardgame/201808/clank-a-deck-building-adventure",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "clank-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 268,
+    "name": "Clank!: The Mummy's Curse",
+    "url": "clank-mummys-curse-rulebook.pdf",
+    "image": "clank-mummys-curse.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.26,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/245377/clank-the-mummys-curse",
+    "parent_id": 267,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "clank-mummys-curse-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 269,
+    "name": "Clank!: Sunken Treasures",
+    "url": "clank-sunken-treasures-rulebook.pdf",
+    "image": "clank-sunken-treasures.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.21,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/218103/clank-sunken-treasures",
+    "parent_id": 267,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "clank-sunken-treasures-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 270,
+    "name": "Clank! Expeditions: Gold and Silk",
+    "url": "clank-gold-silk-rulebook.pdf",
+    "image": "clank-gold-silk.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/257276/clank-expeditions-gold-and-silk",
+    "parent_id": 267,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "clank-gold-silk-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "name": "Marvel Champions: The Card Game",
+    "url": "mc-core-rules-reference.pdf",
+    "image": "mc-core.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.96,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/285774",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "core",
+        "filename": "mc-core-rules-reference.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Learn to Play",
+        "category": "core",
+        "filename": "mc-core-learn-to-play.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 272,
+    "name": "Marvel Champions: The Card Game \u2013 Captain America Hero Pack",
+    "url": "mc-captain-america-rulesheet.pdf",
+    "image": "mc-captain-america.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.38,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/289222",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-captain-america-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 273,
+    "name": "Marvel Champions: The Card Game \u2013 Ms. Marvel Hero Pack",
+    "url": "mc-ms-marvel-rulesheet.pdf",
+    "image": "mc-ms-marvel.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.71,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/291432",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-ms-marvel-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 274,
+    "name": "Marvel Champions: The Card Game \u2013 Thor Hero Pack",
+    "url": "mc-thor-rulesheet.pdf",
+    "image": "mc-thor.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/295782",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-thor-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 275,
+    "name": "Marvel Champions: The Card Game \u2013 Black Widow Hero Pack",
+    "url": "mc-black-widow-rulesheet.pdf",
+    "image": "mc-black-widow.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.86,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/299049",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-black-widow-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "name": "Marvel Champions: The Card Game \u2013 Doctor Strange Hero Pack",
+    "url": "mc-doctor-strange-rulesheet.pdf",
+    "image": "mc-doctor-strange.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.86,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/300878",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-doctor-strange-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 277,
+    "name": "Marvel Champions: The Card Game \u2013 Hulk Hero Pack",
+    "url": "mc-hulk-rulesheet.pdf",
+    "image": "mc-hulk.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.15,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/303708",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-hulk-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 278,
+    "name": "Marvel Champions: The Card Game \u2013 The Rise of Red Skull",
+    "url": "mc-rise-red-skull-rulebook.pdf",
+    "image": "mc-rise-red-skull.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.78,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/306430",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-rise-red-skull-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 279,
+    "name": "Marvel Champions: The Card Game \u2013 Ant-Man Hero Pack",
+    "url": "mc-ant-man-rulesheet.pdf",
+    "image": "mc-ant-man.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.71,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/315981",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-ant-man-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 280,
+    "name": "Marvel Champions: The Card Game \u2013 Quicksilver Hero Pack",
+    "url": "mc-quicksilver-rulesheet.pdf",
+    "image": "mc-quicksilver.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.83,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316694",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-quicksilver-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 281,
+    "name": "Marvel Champions: The Card Game \u2013 Scarlet Witch Hero Pack",
+    "url": "mc-scarlet-witch-rulesheet.pdf",
+    "image": "mc-scarlet-witch.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.89,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316695",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-scarlet-witch-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 282,
+    "name": "Marvel Champions: The Card Game \u2013 Wasp Hero Pack",
+    "url": "mc-wasp-rulesheet.pdf",
+    "image": "mc-wasp.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316696",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-wasp-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 283,
+    "name": "Marvel Champions: The Card Game \u2013 The Galaxy's Most Wanted",
+    "url": "mc-galaxys-most-wanted-rulebook.pdf",
+    "image": "mc-galaxys-most-wanted.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.69,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/315896",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-galaxys-most-wanted-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 284,
+    "name": "Marvel Champions: The Card Game \u2013 Star-Lord Hero Pack",
+    "url": "mc-star-lord-rulesheet.pdf",
+    "image": "mc-star-lord.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/330615",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-star-lord-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 285,
+    "name": "Marvel Champions: The Card Game \u2013 Gamora Hero Pack",
+    "url": "mc-gamora-rulesheet.pdf",
+    "image": "mc-gamora.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.75,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/333154",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-gamora-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 286,
+    "name": "Marvel Champions: The Card Game \u2013 Venom Hero Pack",
+    "url": "mc-venom-rulesheet.pdf",
+    "image": "mc-venom.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.71,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/335739",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-venom-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 287,
+    "name": "Marvel Champions: The Card Game \u2013 War Machine Hero Pack",
+    "url": "mc-war-machine-rulesheet.pdf",
+    "image": "mc-war-machine.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/342671",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-war-machine-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 288,
+    "name": "Marvel Champions: The Card Game \u2013 Valkyrie Hero Pack",
+    "url": "mc-valkyrie-rulesheet.pdf",
+    "image": "mc-valkyrie.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/345587",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-valkyrie-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 289,
+    "name": "Marvel Champions: The Card Game \u2013 The Mad Titan's Shadow",
+    "url": "mc-mad-titans-shadow-rulebook.pdf",
+    "image": "mc-mad-titans-shadow.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.17,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339711",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-mad-titans-shadow-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 290,
+    "name": "Marvel Champions: The Card Game \u2013 The Vision Hero Pack",
+    "url": "mc-vision-rulesheet.pdf",
+    "image": "mc-vision.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.8,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/347812",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-vision-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 291,
+    "name": "Marvel Champions: The Card Game \u2013 Sinister Motives",
+    "url": "mc-sinister-motives-rulebook.pdf",
+    "image": "mc-sinister-motives.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.85,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/347813",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-sinister-motives-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 292,
+    "name": "Marvel Champions: The Card Game \u2013 Nova Hero Pack",
+    "url": "mc-nova-rulesheet.pdf",
+    "image": "mc-nova.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.83,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/356075",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-nova-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 293,
+    "name": "Marvel Champions: The Card Game \u2013 Ironheart Hero Pack",
+    "url": "mc-ironheart-rulesheet.pdf",
+    "image": "mc-ironheart.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.8,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/357957",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-ironheart-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 294,
+    "name": "Marvel Champions: The Card Game \u2013 Spider-Ham Hero Pack",
+    "url": "mc-spider-ham-rulesheet.pdf",
+    "image": "mc-spider-ham.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/360060",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-spider-ham-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 295,
+    "name": "Marvel Champions: The Card Game \u2013 SP//dr Hero Pack",
+    "url": "mc-spdr-rulesheet.pdf",
+    "image": "mc-spdr.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/361485",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-spdr-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 296,
+    "name": "Marvel Champions: The Card Game \u2013 Cyclops Hero Pack",
+    "url": "mc-cyclops-rulesheet.pdf",
+    "image": "mc-cyclops.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/365913",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-cyclops-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 297,
+    "name": "Marvel Champions: The Card Game \u2013 Phoenix Hero Pack",
+    "url": "mc-phoenix-rulesheet.pdf",
+    "image": "mc-phoenix.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.4,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/366645",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-phoenix-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 298,
+    "name": "Marvel Champions: The Card Game \u2013 Wolverine Hero Pack",
+    "url": "mc-wolverine-rulesheet.pdf",
+    "image": "mc-wolverine.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/369039",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-wolverine-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 299,
+    "name": "Marvel Champions: The Card Game \u2013 Storm Hero Pack",
+    "url": "mc-storm-rulesheet.pdf",
+    "image": "mc-storm.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/370237",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-storm-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "name": "Marvel Champions: The Card Game \u2013 Gambit Hero Pack",
+    "url": "mc-gambit-rulesheet.pdf",
+    "image": "mc-gambit.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/372718",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-gambit-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 301,
+    "name": "Marvel Champions: The Card Game \u2013 Rogue Hero Pack",
+    "url": "mc-rogue-rulesheet.pdf",
+    "image": "mc-rogue.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/374986",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-rogue-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 302,
+    "name": "Marvel Champions: The Card Game \u2013 NeXt Evolution",
+    "url": "mc-next-evolution-rulebook.pdf",
+    "image": "mc-next-evolution.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/383818",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-next-evolution-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 303,
+    "name": "Marvel Champions: The Card Game \u2013 Psylocke Hero Pack",
+    "url": "mc-psylocke-rulesheet.pdf",
+    "image": "mc-psylocke.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/386959",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-psylocke-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 304,
+    "name": "Marvel Champions: The Card Game \u2013 Angel Hero Pack",
+    "url": "mc-angel-rulesheet.pdf",
+    "image": "mc-angel.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/388330",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-angel-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 305,
+    "name": "Marvel Champions: The Card Game \u2013 X-23 Hero Pack",
+    "url": "mc-x23-rulesheet.pdf",
+    "image": "mc-x23.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/391675",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-x23-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 306,
+    "name": "Marvel Champions: The Card Game \u2013 Deadpool Hero Pack",
+    "url": "mc-deadpool-rulesheet.pdf",
+    "image": "mc-deadpool.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/398039",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-deadpool-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 307,
+    "name": "Marvel Champions: The Card Game \u2013 Age of Apocalypse",
+    "url": "mc-age-apocalypse-rulebook.pdf",
+    "image": "mc-age-apocalypse.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.43,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/405724",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-age-apocalypse-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 308,
+    "name": "Marvel Champions: The Card Game \u2013 Iceman Hero Pack",
+    "url": "mc-iceman-rulesheet.pdf",
+    "image": "mc-iceman.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/413236",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-iceman-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 309,
+    "name": "Marvel Champions: The Card Game \u2013 Jubilee Hero Pack",
+    "url": "mc-jubilee-rulesheet.pdf",
+    "image": "mc-jubilee.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/417417",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-jubilee-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 310,
+    "name": "Marvel Champions: The Card Game \u2013 Nightcrawler Hero Pack",
+    "url": "mc-nightcrawler-rulesheet.pdf",
+    "image": "mc-nightcrawler.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/422976",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-nightcrawler-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 311,
+    "name": "Marvel Champions: The Card Game \u2013 Magneto Hero Pack",
+    "url": "mc-magneto-rulesheet.pdf",
+    "image": "mc-magneto.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 2.75,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/426008",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-magneto-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 312,
+    "name": "Marvel Champions: The Card Game \u2013 Agents of S.H.I.E.L.D.",
+    "url": "mc-agents-shield-rulebook.pdf",
+    "image": "mc-agents-shield.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/430260",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-agents-shield-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 313,
+    "name": "Marvel Champions: The Card Game \u2013 Black Panther Hero Pack",
+    "url": "mc-black-panther-rulesheet.pdf",
+    "image": "mc-black-panther.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/438671",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-black-panther-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 314,
+    "name": "Marvel Champions: The Card Game \u2013 Falcon Hero Pack",
+    "url": "mc-falcon-rulesheet.pdf",
+    "image": "mc-falcon.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/446592",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-falcon-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 315,
+    "name": "Marvel Champions: The Card Game \u2013 Winter Soldier Hero Pack",
+    "url": "mc-winter-soldier-rulesheet.pdf",
+    "image": "mc-winter-soldier.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/446593",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "mc-winter-soldier-rulesheet.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 316,
+    "name": "Marvel Champions: The Card Game \u2013 Civil War",
+    "url": "mc-civil-war-rulebook.pdf",
+    "image": "mc-civil-war.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/448997",
+    "parent_id": 271,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "mc-civil-war-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 317,
+    "name": "Descent: Journeys in the Dark (Second Edition)",
+    "url": "descent2e-rulebook.pdf",
+    "image": "descent2e.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.22,
+    "bgg_url": "https://boardgamegeek.com/boardgame/104162/descent-journeys-in-the-dark-second-edition",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "core",
+        "filename": "descent2e-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "FAQ v1.6",
+        "category": "faq",
+        "filename": "descent2e-faq.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 318,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Lair of the Wyrm",
+    "url": "descent2e-lair-wyrm-rulebook.pdf",
+    "image": "descent2e-lair-wyrm.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.06,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/129423/descent-journeys-in-the-dark-second-edition-lair-of",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "expansion",
+        "filename": "descent2e-lair-wyrm-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 319,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Labyrinth of Ruin",
+    "url": "descent2e-labyrinth-ruin-rulebook.pdf",
+    "image": "descent2e-labyrinth-ruin.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.22,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/137842/descent-journeys-in-the-dark-second-edition-labyrinth",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "expansion",
+        "filename": "descent2e-labyrinth-ruin-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 320,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Splig Lieutenant Pack",
+    "url": "descent2e-lieutenant-rulebook.pdf",
+    "image": "descent2e-splig.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.63,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/146567/descent-journeys-in-the-dark-second-edition-splig-li",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Lieutenant Rules",
+        "category": "expansion",
+        "filename": "descent2e-lieutenant-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 321,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Eliza Farrow Lieutenant Pack",
+    "url": "descent2e-lieutenant-rulebook.pdf",
+    "image": "descent2e-eliza-farrow.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/146571/descent-journeys-in-the-dark-second-edition-eliza-far",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Lieutenant Rules",
+        "category": "expansion",
+        "filename": "descent2e-lieutenant-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Shadow of Nerekhall",
+    "url": "descent2e-shadow-nerekhall-rulebook.pdf",
+    "image": "descent2e-shadow-nerekhall.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.26,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/149915/descent-journeys-in-the-dark-second-edition-shadow-of",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "expansion",
+        "filename": "descent2e-shadow-nerekhall-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 323,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 The Chains That Rust",
+    "url": "descent2e-chains-rust-rulebook.pdf",
+    "image": "descent2e-chains-rust.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/199884/descent-journeys-in-the-dark-second-edition-the-chain",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "expansion",
+        "filename": "descent2e-chains-rust-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 324,
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Road to Legend",
+    "url": "descent2e-road-legend-rulebook.pdf",
+    "image": "descent2e-road-legend.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200784/descent-journeys-in-the-dark-second-edition-road-to-le",
+    "parent_id": 317,
+    "documents": [
+      {
+        "title": "Rules",
+        "category": "expansion",
+        "filename": "descent2e-road-legend-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 325,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Dark City",
+    "url": "legendary-dark-city-rulebook.pdf",
+    "image": "legendary-dark-city.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.64,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/137762",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-dark-city-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 326,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Paint the Town Red",
+    "url": "legendary-paint-town-red-rulebook.pdf",
+    "image": "legendary-paint-town-red.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.53,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/149922",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-paint-town-red-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 327,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Secret Wars, Volume 1",
+    "url": "legendary-secret-wars-1-rulebook.pdf",
+    "image": "legendary-secret-wars-1.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.65,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/175156",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-secret-wars-1-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 328,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Secret Wars, Volume 2",
+    "url": "legendary-secret-wars-2-rulebook.pdf",
+    "image": "legendary-secret-wars-2.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.64,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/182692",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-secret-wars-2-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 329,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Captain America 75th Anniversary",
+    "url": "legendary-captain-america-75-rulebook.pdf",
+    "image": "legendary-captain-america-75.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.17,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/186845",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-captain-america-75-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 330,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Civil War",
+    "url": "legendary-civil-war-rulebook.pdf",
+    "image": "legendary-civil-war.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.54,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/193513",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-civil-war-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 331,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Marvel Noir",
+    "url": "legendary-marvel-noir-rulebook.pdf",
+    "image": "legendary-marvel-noir.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.3,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/210936",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-marvel-noir-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 332,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Spider-Man Homecoming",
+    "url": "legendary-spider-man-homecoming-rulebook.pdf",
+    "image": "legendary-spider-man-homecoming.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/231037",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-spider-man-homecoming-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 333,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Champions",
+    "url": "legendary-champions-rulebook.pdf",
+    "image": "legendary-champions.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/239469",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-champions-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 334,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Venom",
+    "url": "legendary-venom-rulebook.pdf",
+    "image": "legendary-venom.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 2.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/265181",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-venom-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 335,
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Dimensions",
+    "url": "legendary-dimensions-rulebook.pdf",
+    "image": "legendary-dimensions.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/275726",
+    "parent_id": 136,
+    "documents": [
+      {
+        "title": "Rulesheet",
+        "category": "expansion",
+        "filename": "legendary-dimensions-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 336,
+    "name": "Arkham Horror: The Card Game",
+    "url": "arkham-core-rules-reference.pdf",
+    "image": "arkham-core.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.57,
+    "bgg_url": "https://boardgamegeek.com/boardgame/205637",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "core",
+        "filename": "arkham-core-rules-reference.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Learn to Play",
+        "category": "core",
+        "filename": "arkham-core-learn-to-play.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Night of the Zealot Campaign Guide",
+        "category": "core",
+        "filename": "arkham-core-campaign.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Arkham Grimoire FAQ v1.1",
+        "category": "faq",
+        "filename": "arkham-faq.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 337,
+    "name": "Arkham Horror: The Card Game \u2013 The Dunwich Legacy: Expansion",
+    "url": "arkham-dunwich-investigator.pdf",
+    "image": "arkham-dunwich-legacy.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.46,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/208545",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-dunwich-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-dunwich-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 338,
+    "name": "Arkham Horror: The Card Game \u2013 The Miskatonic Museum: Mythos Pack",
+    "url": "",
+    "image": "arkham-miskatonic-museum.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.37,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/210025",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 339,
+    "name": "Arkham Horror: The Card Game \u2013 The Essex County Express: Mythos Pack",
+    "url": "",
+    "image": "arkham-essex-county-express.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.74,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/212734",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 340,
+    "name": "Arkham Horror: The Card Game \u2013 Blood on the Altar: Mythos Pack",
+    "url": "",
+    "image": "arkham-blood-on-altar.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.54,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/216556",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 341,
+    "name": "Arkham Horror: The Card Game \u2013 Undimensioned and Unseen: Mythos Pack",
+    "url": "",
+    "image": "arkham-undimensioned-unseen.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.69,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/219054",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 342,
+    "name": "Arkham Horror: The Card Game \u2013 Where Doom Awaits: Mythos Pack",
+    "url": "",
+    "image": "arkham-where-doom-awaits.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/221725",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 343,
+    "name": "Arkham Horror: The Card Game \u2013 Lost in Time and Space: Mythos Pack",
+    "url": "",
+    "image": "arkham-lost-time-space.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.42,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/224363",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 344,
+    "name": "Arkham Horror: The Card Game \u2013 The Path to Carcosa: Expansion",
+    "url": "arkham-carcosa-investigator.pdf",
+    "image": "arkham-path-carcosa.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.52,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/225563",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-carcosa-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-carcosa-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 345,
+    "name": "Arkham Horror: The Card Game \u2013 Echoes of the Past: Mythos Pack",
+    "url": "",
+    "image": "arkham-echoes-past.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.69,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/228778",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 346,
+    "name": "Arkham Horror: The Card Game \u2013 The Unspeakable Oath: Mythos Pack",
+    "url": "",
+    "image": "arkham-unspeakable-oath.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.64,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/230510",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 347,
+    "name": "Arkham Horror: The Card Game \u2013 A Phantom of Truth: Mythos Pack",
+    "url": "",
+    "image": "arkham-phantom-truth.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/235542",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 348,
+    "name": "Arkham Horror: The Card Game \u2013 The Pallid Mask: Mythos Pack",
+    "url": "",
+    "image": "arkham-pallid-mask.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.69,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/237234",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 349,
+    "name": "Arkham Horror: The Card Game \u2013 Black Stars Rise: Mythos Pack",
+    "url": "",
+    "image": "arkham-black-stars-rise.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.77,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/239330",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 350,
+    "name": "Arkham Horror: The Card Game \u2013 Dim Carcosa: Mythos Pack",
+    "url": "",
+    "image": "arkham-dim-carcosa.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.9,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/242088",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 351,
+    "name": "Arkham Horror: The Card Game \u2013 Return to the Night of the Zealot",
+    "url": "arkham-return-night-zealot-rulebook.pdf",
+    "image": "arkham-return-night-zealot.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.8,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/244145",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-return-night-zealot-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 352,
+    "name": "Arkham Horror: The Card Game \u2013 The Circle Undone: Expansion",
+    "url": "arkham-circle-undone-investigator.pdf",
+    "image": "arkham-circle-undone.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.83,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/262754",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-circle-undone-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-circle-undone-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 353,
+    "name": "Arkham Horror: The Card Game \u2013 Nathaniel Cho: Investigator Starter Deck",
+    "url": "",
+    "image": "arkham-nathaniel-cho.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.38,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305509",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 354,
+    "name": "Arkham Horror: The Card Game \u2013 Harvey Walters: Investigator Starter Deck",
+    "url": "",
+    "image": "arkham-harvey-walters.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.56,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305512",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 355,
+    "name": "Arkham Horror: The Card Game \u2013 Winifred Habbamock: Investigator Starter Deck",
+    "url": "",
+    "image": "arkham-winifred-habbamock.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305513",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 356,
+    "name": "Arkham Horror: The Card Game \u2013 Jacqueline Fine: Investigator Starter Deck",
+    "url": "",
+    "image": "arkham-jacqueline-fine.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.56,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305517",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 357,
+    "name": "Arkham Horror: The Card Game \u2013 Stella Clark: Investigator Starter Deck",
+    "url": "",
+    "image": "arkham-stella-clark.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305518",
+    "parent_id": 336,
+    "documents": []
+  },
+  {
+    "id": 358,
+    "name": "Arkham Horror: The Card Game \u2013 Edge of the Earth: Investigator Expansion",
+    "url": "arkham-edge-earth-investigator.pdf",
+    "image": "arkham-edge-earth.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.86,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/340036",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-edge-earth-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-edge-earth-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 359,
+    "name": "Arkham Horror: The Card Game \u2013 The Scarlet Keys: Campaign Expansion",
+    "url": "arkham-scarlet-keys-investigator.pdf",
+    "image": "arkham-scarlet-keys.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 4.21,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/366215",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-scarlet-keys-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-scarlet-keys-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 360,
+    "name": "Arkham Horror: The Card Game \u2013 The Forgotten Age: Campaign Expansion",
+    "url": "arkham-forgotten-age-investigator.pdf",
+    "image": "arkham-forgotten-age.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 3.91,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/377055",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-forgotten-age-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-forgotten-age-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 361,
+    "name": "Arkham Horror: The Card Game \u2013 The Feast of Hemlock Vale: Campaign Expansion",
+    "url": "arkham-hemlock-vale-investigator.pdf",
+    "image": "arkham-feast-hemlock-vale.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 4.1,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/398893",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-hemlock-vale-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide",
+        "category": "expansion",
+        "filename": "arkham-hemlock-vale-campaign.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 362,
+    "name": "Arkham Horror: The Card Game \u2013 The Dream-Eaters: Investigator Expansion",
+    "url": "arkham-dream-eaters-investigator.pdf",
+    "image": "arkham-dream-eaters.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "2",
+    "complexity": 4.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/414695",
+    "parent_id": 336,
+    "documents": [
+      {
+        "title": "Investigator Rules",
+        "category": "expansion",
+        "filename": "arkham-dream-eaters-investigator.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Campaign Guide A",
+        "category": "expansion",
+        "filename": "arkham-dream-eaters-campaign-a.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Campaign Guide B",
+        "category": "expansion",
+        "filename": "arkham-dream-eaters-campaign-b.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 363,
+    "name": "Flash Point: Fire Rescue",
+    "url": "flash-point-rulebook.pdf",
+    "image": "flash-point.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "6",
+    "complexity": 2.2,
+    "bgg_url": "https://boardgamegeek.com/boardgame/100901/flash-point-fire-rescue",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "flash-point-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 364,
+    "name": "Firefly: The Game",
+    "url": "firefly-the-game-rulebook.pdf",
+    "image": "firefly-the-game.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.95,
+    "bgg_url": "https://boardgamegeek.com/boardgame/138161/firefly-the-game",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "firefly-the-game-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 365,
+    "name": "Arcadia Quest",
+    "url": "arcadia-quest-rulebook.pdf",
+    "image": "arcadia-quest.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.53,
+    "bgg_url": "https://boardgamegeek.com/boardgame/155068/arcadia-quest",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "arcadia-quest-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 366,
+    "name": "Arcadia Quest: Inferno",
+    "url": "arcadia-quest-inferno-rulebook.pdf",
+    "image": "arcadia-quest-inferno.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.48,
+    "bgg_url": "https://boardgamegeek.com/boardgame/179803/arcadia-quest-inferno",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "arcadia-quest-inferno-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 367,
+    "name": "Flash Point: Fire Rescue \u2013 Urban Structures",
+    "url": "",
+    "image": "flash-point-urban-structures.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "6",
+    "complexity": 2.23,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/110139/flash-point-fire-rescue-urban-structures",
+    "parent_id": 363,
+    "documents": []
+  },
+  {
+    "id": 368,
+    "name": "Firefly: The Game \u2013 Breakin' Atmo",
+    "url": "",
+    "image": "firefly-breakin-atmo.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.61,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147736/firefly-the-game-breakin-atmo",
+    "parent_id": 364,
+    "documents": []
+  },
+  {
+    "id": 369,
+    "name": "Firefly: The Game \u2013 Pirates & Bounty Hunters",
+    "url": "firefly-big-damn-rulebook.pdf",
+    "image": "firefly-pirates-bounty-hunters.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.8,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/151953/firefly-the-game-pirates-and-bounty-hunters",
+    "parent_id": 364,
+    "documents": [
+      {
+        "title": "Combined Rules (Big Damn Rulebook)",
+        "category": "expansion",
+        "filename": "firefly-big-damn-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 370,
+    "name": "Firefly: The Game \u2013 Jetwash",
+    "url": "",
+    "image": "firefly-jetwash.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.79,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177497/firefly-the-game-jetwash",
+    "parent_id": 364,
+    "documents": []
+  },
+  {
+    "id": 371,
+    "name": "Arcadia Quest: Beyond the Grave",
+    "url": "arcadia-quest-beyond-grave-rulebook.pdf",
+    "image": "arcadia-quest-beyond-grave.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/156089/arcadia-quest-beyond-the-grave",
+    "parent_id": 365,
+    "documents": [
+      {
+        "title": "Rulebook & Campaign",
+        "category": "expansion",
+        "filename": "arcadia-quest-beyond-grave-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "name": "Arcadia Quest: Nibbles",
+    "url": "",
+    "image": "arcadia-quest-nibbles.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/165217/arcadia-quest-nibbles",
+    "parent_id": 365,
+    "documents": []
+  },
+  {
+    "id": 373,
+    "name": "Arcadia Quest: McHammer",
+    "url": "",
+    "image": "arcadia-quest-mchammer.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169244/arcadia-quest-mchammer",
+    "parent_id": 365,
+    "documents": []
+  },
+  {
+    "id": 374,
+    "name": "Arcadia Quest: Leeroy",
+    "url": "",
+    "image": "arcadia-quest-leeroy.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169415/arcadia-quest-leeroy",
+    "parent_id": 365,
+    "documents": []
+  },
+  {
+    "id": 375,
+    "name": "Arcadia Quest: Inferno \u2013 Kickstarter Exclusives",
+    "url": "",
+    "image": "arcadia-quest-inferno-ks.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188339/arcadia-quest-inferno-kickstarter-exclusives",
+    "parent_id": 366,
+    "documents": []
+  },
+  {
+    "id": 376,
+    "name": "Arcadia Quest: Pets",
+    "url": "arcadia-quest-pets-rulebook.pdf",
+    "image": "arcadia-quest-pets.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188699/arcadia-quest-pets",
+    "parent_id": 365,
+    "documents": [
+      {
+        "title": "Rulebook & Campaign",
+        "category": "expansion",
+        "filename": "arcadia-quest-pets-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 377,
+    "name": "Arcadia Quest: Chaos Dragon",
+    "url": "",
+    "image": "arcadia-quest-chaos-dragon.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189197/arcadia-quest-chaos-dragon",
+    "parent_id": 365,
+    "documents": []
+  },
+  {
+    "id": 378,
+    "name": "Arcadia Quest: Pets \u2013 Cerby",
+    "url": "",
+    "image": "arcadia-quest-pets-cerby.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189262/arcadia-quest-pets-cerby",
+    "parent_id": 365,
+    "documents": []
+  },
+  {
+    "id": 379,
+    "name": "Arcadia Quest: Inferno \u2013 Whole Lotta Lava",
+    "url": "",
+    "image": "arcadia-quest-inferno-lava.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189273/arcadia-quest-inferno-whole-lotta-lava",
+    "parent_id": 366,
+    "documents": []
+  },
+  {
+    "id": 380,
+    "name": "Arcadia Quest: Riders",
+    "url": "arcadia-quest-riders-rulebook.pdf",
+    "image": "arcadia-quest-riders.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/233917/arcadia-quest-riders",
+    "parent_id": 365,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "arcadia-quest-riders-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 381,
+    "name": "Thunderstone Quest",
+    "url": "thunderstone-quest-rulebook.pdf",
+    "image": "thunderstone-quest.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.89,
+    "bgg_url": "https://boardgamegeek.com/boardgame/215341/thunderstone-quest",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "thunderstone-quest-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Questbook",
+        "category": "core",
+        "filename": "thunderstone-quest-questbook.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 382,
+    "name": "Thunderstone Advance: Towers of Ruin",
+    "url": "thunderstone-advance-towers-ruin-rulebook.pdf",
+    "image": "thunderstone-advance-towers-ruin.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "3",
+    "complexity": 2.75,
+    "bgg_url": "https://boardgamegeek.com/boardgame/116998/thunderstone-advance-towers-of-ruin",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "thunderstone-advance-towers-ruin-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 383,
+    "name": "Thunderstone Advance: Worlds Collide",
+    "url": "",
+    "image": "thunderstone-advance-worlds-collide.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "3",
+    "complexity": 2.8,
+    "bgg_url": "https://boardgamegeek.com/boardgame/152765/thunderstone-advance-worlds-collide",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 384,
+    "name": "Thunderstone: Avatars",
+    "url": "",
+    "image": "thunderstone-avatars.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "3",
+    "complexity": 2.36,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/121007/thunderstone-avatars",
+    "parent_id": 382,
+    "documents": []
+  },
+  {
+    "id": 385,
+    "name": "Thunderstone Advance: Caverns of Bane",
+    "url": "thunderstone-advance-caverns-bane-rulebook.pdf",
+    "image": "thunderstone-advance-caverns-bane.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "3",
+    "complexity": 2.69,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/122967/thunderstone-advance-caverns-of-bane",
+    "parent_id": 382,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "thunderstone-advance-caverns-bane-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 386,
+    "name": "Thunderstone Advance: Root of Corruption",
+    "url": "thunderstone-advance-root-corruption-rulebook.pdf",
+    "image": "thunderstone-advance-root-corruption.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "3",
+    "complexity": 2.77,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/131306/thunderstone-advance-root-of-corruption",
+    "parent_id": 382,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "thunderstone-advance-root-corruption-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 387,
+    "name": "Thunderstone Advance: Into the Abyss",
+    "url": "",
+    "image": "thunderstone-advance-into-abyss.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "3",
+    "complexity": 2.79,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/158727/thunderstone-advance-into-the-abyss",
+    "parent_id": 383,
+    "documents": []
+  },
+  {
+    "id": 388,
+    "name": "Thunderstone Quest: Barricades Mode",
+    "url": "",
+    "image": "thunderstone-quest-barricades.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.35,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/256610/thunderstone-quest-barricades-mode",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 389,
+    "name": "Thunderstone Quest: Vengeful Sands",
+    "url": "",
+    "image": "thunderstone-quest-vengeful-sands.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/282348/thunderstone-quest-vengeful-sands",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 390,
+    "name": "Thunderstone Quest: Clockwork Destiny",
+    "url": "",
+    "image": "thunderstone-quest-clockwork-destiny.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/282349/thunderstone-quest-clockwork-destiny",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 391,
+    "name": "Thunderstone Quest: 4th Level Heroes",
+    "url": "",
+    "image": "thunderstone-quest-4th-level-heroes.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/295249/thunderstone-quest-4th-level-heroes",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 392,
+    "name": "Thunderstone Quest: Enemies Among Us",
+    "url": "",
+    "image": "thunderstone-quest-enemies-among-us.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/356571/thunderstone-quest-enemies-among-us",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 393,
+    "name": "Thunderstone Quest: Nature's Wrath",
+    "url": "",
+    "image": "thunderstone-quest-natures-wrath.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/362998/thunderstone-quest-natures-wrath",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 394,
+    "name": "Thunderstone Quest: Rotten Roots",
+    "url": "",
+    "image": "thunderstone-quest-rotten-roots.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/362999/thunderstone-quest-rotten-roots",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 395,
+    "name": "Thunderstone Quest: Raging Seas",
+    "url": "",
+    "image": "thunderstone-quest-raging-seas.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/398179/thunderstone-quest-raging-seas",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 396,
+    "name": "Thunderstone Quest: Ancient Adversaries",
+    "url": "",
+    "image": "thunderstone-quest-ancient-adversaries.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/398659/thunderstone-quest-ancient-adversaries",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 397,
+    "name": "Thunderstone Quest: Twilight Souls",
+    "url": "",
+    "image": "thunderstone-quest-twilight-souls.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/421664/thunderstone-quest-twilight-souls",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 398,
+    "name": "Thunderstone Quest: The All-Consuming Hive",
+    "url": "",
+    "image": "thunderstone-quest-hive.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/421665/thunderstone-quest-the-all-consuming-hive",
+    "parent_id": 381,
+    "documents": []
+  },
+  {
+    "id": 399,
+    "name": "Rising Sun",
+    "url": "rising-sun-rulebook.pdf",
+    "image": "rising-sun.jpg",
+    "min_players": 3,
+    "max_players": 5,
+    "best_players": "5",
+    "complexity": 3.3,
+    "bgg_url": "https://boardgamegeek.com/boardgame/205896/rising-sun",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "rising-sun-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 400,
+    "name": "Mechs vs. Minions",
+    "url": "mechs-vs-minions-rulebook.pdf",
+    "image": "mechs-vs-minions.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.45,
+    "bgg_url": "https://boardgamegeek.com/boardgame/209010/mechs-vs-minions",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mechs-vs-minions-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 401,
+    "name": "Trash Pandas",
+    "url": "trash-pandas-rulebook.pdf",
+    "image": "trash-pandas.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 1.42,
+    "bgg_url": "https://boardgamegeek.com/boardgame/216439/trash-pandas",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "trash-pandas-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 402,
+    "name": "Traveller Customizable Card Game: Two Player Starter Set",
+    "url": "traveller-ccg-rulebook.pdf",
+    "image": "traveller-ccg.jpg",
+    "min_players": 2,
+    "max_players": 2,
+    "best_players": "2",
+    "complexity": 3.29,
+    "bgg_url": "https://boardgamegeek.com/boardgame/216630/traveller-customizable-card-game-two-player-start",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "traveller-ccg-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 403,
+    "name": "The Quest for El Dorado",
+    "url": "quest-for-el-dorado-rulebook.pdf",
+    "image": "quest-for-el-dorado.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 1.94,
+    "bgg_url": "https://boardgamegeek.com/boardgame/217372/the-quest-for-el-dorado",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "quest-for-el-dorado-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 404,
+    "name": "Path of Light and Shadow",
+    "url": "path-light-shadow-rulebook.pdf",
+    "image": "path-light-shadow.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.13,
+    "bgg_url": "https://boardgamegeek.com/boardgame/217398/path-of-light-and-shadow",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "path-light-shadow-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 405,
+    "name": "Paper Tales",
+    "url": "paper-tales-rulebook.pdf",
+    "image": "paper-tales.jpg",
+    "min_players": 2,
+    "max_players": 5,
+    "best_players": "4",
+    "complexity": 2.19,
+    "bgg_url": "https://boardgamegeek.com/boardgame/217861/paper-tales",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "paper-tales-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 406,
+    "name": "UBOOT: The Board Game",
+    "url": "uboot-rulebook.pdf",
+    "image": "uboot.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 4.15,
+    "bgg_url": "https://boardgamegeek.com/boardgame/219100/uboot-the-board-game",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "uboot-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 407,
+    "name": "Rajas of the Ganges",
+    "url": "rajas-of-the-ganges-rulebook.pdf",
+    "image": "rajas-of-the-ganges.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.9,
+    "bgg_url": "https://boardgamegeek.com/boardgame/220877/rajas-of-the-ganges",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "rajas-of-the-ganges-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 408,
+    "name": "Pandemic Legacy: Season 2",
+    "url": "pandemic-legacy-s2-rulebook.pdf",
+    "image": "pandemic-legacy-s2.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.25,
+    "bgg_url": "https://boardgamegeek.com/boardgame/221107/pandemic-legacy-season-2",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "pandemic-legacy-s2-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 409,
+    "name": "Dinosaur Island",
+    "url": "dinosaur-island-rulebook.pdf",
+    "image": "dinosaur-island.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 3.05,
+    "bgg_url": "https://boardgamegeek.com/boardgame/221194/dinosaur-island",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "dinosaur-island-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 410,
+    "name": "Queendomino",
+    "url": "queendomino-rulebook.pdf",
+    "image": "queendomino.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "4",
+    "complexity": 2.06,
+    "bgg_url": "https://boardgamegeek.com/boardgame/232043/queendomino",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "queendomino-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 411,
+    "name": "Massive Darkness",
+    "url": "massive-darkness-rulebook.pdf",
+    "image": "md1.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 2.57,
+    "bgg_url": "https://boardgamegeek.com/boardgame/197070/massive-darkness",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules & Quests",
+        "category": "core",
+        "filename": "massive-darkness-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 413,
+    "name": "Heroes of Might and Magic III: The Board Game",
+    "url": "homm3-rulebook.pdf",
+    "image": "homm3.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.49,
+    "bgg_url": "https://boardgamegeek.com/boardgame/355326/heroes-of-might-and-magic-iii-the-board-game",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "homm3-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Mission Book",
+        "category": "core",
+        "filename": "homm3-mission-book.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Designer's Commentary (FAQ)",
+        "category": "faq",
+        "filename": "homm3-faq.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 414,
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Noble Warriors vs The Cockatrix",
+    "url": "",
+    "image": "md-noble-warriors.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/201748",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 415,
+    "name": "Massive Darkness: Enemy Box \u2013 Troglodytes",
+    "url": "",
+    "image": "md-troglodytes.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202305",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 416,
+    "name": "Massive Darkness: Enemy Box \u2013 Ratlings",
+    "url": "",
+    "image": "md-ratlings.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202827",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 417,
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Bloodmoon Assassins vs The Hellephant",
+    "url": "",
+    "image": "md-bloodmoon.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203011",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 418,
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Warrior Priests vs The Spearmaiden Cyclops",
+    "url": "",
+    "image": "md-warrior-priests.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203015",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 419,
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Sorcerers vs Lord Tusk",
+    "url": "",
+    "image": "md-sorcerers.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203124",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 420,
+    "name": "Massive Darkness: Enemy Box \u2013 Reptisaurians",
+    "url": "",
+    "image": "md-reptisaurians.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203423",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 421,
+    "name": "Massive Darkness: A Quest of Crystal & Lava",
+    "url": "",
+    "image": "md-quest-crystal-lava.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/232977",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 422,
+    "name": "Massive Darkness: Lightbringer Pack",
+    "url": "",
+    "image": "md-lightbringer.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "5",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/234672",
+    "parent_id": 411,
+    "documents": []
+  },
+  {
+    "id": 423,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Tower Expansion",
+    "url": "homm3-tower-content-guide.pdf",
+    "image": "homm3-tower.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/411654",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Content Guide",
+        "category": "expansion",
+        "filename": "homm3-tower-content-guide.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 424,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Fortress Expansion",
+    "url": "homm3-fortress-mission.pdf",
+    "image": "homm3-fortress.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/412071",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Mission Book",
+        "category": "expansion",
+        "filename": "homm3-fortress-mission.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 425,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Rampart Expansion",
+    "url": "homm3-rampart-mission.pdf",
+    "image": "homm3-rampart.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/412072",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Mission Book",
+        "category": "expansion",
+        "filename": "homm3-rampart-mission.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 426,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Inferno Expansion",
+    "url": "homm3-inferno-mission.pdf",
+    "image": "homm3-inferno.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/412073",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Mission Book",
+        "category": "expansion",
+        "filename": "homm3-inferno-mission.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 427,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Battlefield Expansion",
+    "url": "homm3-battlefield-rulebook.pdf",
+    "image": "homm3-battlefield.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/413367",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Rulebook",
+        "category": "expansion",
+        "filename": "homm3-battlefield-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 428,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Stronghold Expansion",
+    "url": "homm3-stronghold-mission.pdf",
+    "image": "homm3-stronghold.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/423894",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Mission Book",
+        "category": "expansion",
+        "filename": "homm3-stronghold-mission.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 429,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Conflux Expansion",
+    "url": "homm3-conflux-mission.pdf",
+    "image": "homm3-conflux.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/423895",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Mission Book",
+        "category": "expansion",
+        "filename": "homm3-conflux-mission.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 430,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Cove Expansion",
+    "url": "homm3-cove-mission.pdf",
+    "image": "homm3-cove.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/423897",
+    "parent_id": 413,
+    "documents": [
+      {
+        "title": "Mission Book",
+        "category": "expansion",
+        "filename": "homm3-cove-mission.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 431,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Big Box Expansion",
+    "url": "",
+    "image": "homm3-big-box.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 4.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/430981",
+    "parent_id": 413,
+    "documents": []
+  },
+  {
+    "id": 432,
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Stretch Goals Regular",
+    "url": "",
+    "image": "homm3-stretch-goals.jpg",
+    "min_players": 1,
+    "max_players": 3,
+    "best_players": "3",
+    "complexity": 3.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/467792",
+    "parent_id": 413,
+    "documents": []
+  },
+  {
+    "id": 433,
+    "name": "Smash Up",
+    "url": "smash-up-rulebook.pdf",
+    "image": "smash-up.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.06,
+    "bgg_url": "https://boardgamegeek.com/boardgame/122522",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "smash-up-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 434,
+    "name": "Smash Up: Awesome Level 9000",
+    "url": "smash-up-awesome-level-9000-rulebook.pdf",
+    "image": "smash-up-awesome-level-9000.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.12,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/134726",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-awesome-level-9000-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 435,
+    "name": "Smash Up: The Obligatory Cthulhu Set",
+    "url": "smash-up-cthulhu-rulebook.pdf",
+    "image": "smash-up-cthulhu.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.17,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/143185",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-cthulhu-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 436,
+    "name": "Smash Up: Science Fiction Double Feature",
+    "url": "smash-up-sci-fi-rulebook.pdf",
+    "image": "smash-up-sci-fi.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.25,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/151004",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-sci-fi-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 437,
+    "name": "Smash Up: The Big Geeky Box",
+    "url": "",
+    "image": "smash-up-big-geeky-box.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.31,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/157427",
+    "parent_id": 433,
+    "documents": []
+  },
+  {
+    "id": 438,
+    "name": "Smash Up: Monster Smash",
+    "url": "smash-up-monster-smash-rulebook.pdf",
+    "image": "smash-up-monster-smash.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.19,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/160018",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-monster-smash-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 439,
+    "name": "Smash Up: Munchkin",
+    "url": "smash-up-munchkin-rulebook.pdf",
+    "image": "smash-up-munchkin.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/162559",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-munchkin-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 440,
+    "name": "Smash Up: Pretty Pretty Smash Up",
+    "url": "smash-up-pretty-pretty-rulebook.pdf",
+    "image": "smash-up-pretty-pretty.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.12,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/168917",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-pretty-pretty-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 441,
+    "name": "Smash Up: It's Your Fault!",
+    "url": "smash-up-its-your-fault-rulebook.pdf",
+    "image": "smash-up-its-your-fault.jpg",
+    "min_players": 2,
+    "max_players": 4,
+    "best_players": "3",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177802",
+    "parent_id": 433,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "smash-up-its-your-fault-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
   }
 ]

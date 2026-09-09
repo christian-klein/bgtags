@@ -2,7 +2,7 @@
 <section class="catalog-hero">
     <div class="hero-content">
         <h1 class="hero-title">Board Game Rules & QR Tags</h1>
-        <p class="hero-subtitle">Instant rulebooks and scannable QR tags for your board game shelf.</p>
+        <p class="hero-subtitle">Instant rulebooks and scannable QR tags for your board game shelf.{{if or (gt .TotalGames 0) (gt .TotalExpansions 0)}} Currently featuring <span class="hero-stat-highlight">{{.TotalGames}}</span> {{if eq .TotalGames 1}}game{{else}}games{{end}}{{if gt .TotalExpansions 0}} and <span class="hero-stat-highlight">{{.TotalExpansions}}</span> {{if eq .TotalExpansions 1}}expansion{{else}}expansions{{end}}{{end}} in the collection.{{end}}</p>
     </div>
 
     <div class="filters-bar">

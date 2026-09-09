@@ -11,17 +11,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/295770/frosthaven"
   },
   {
-    "bgg_id": 214032,
-    "name": "Founders of Gloomhaven",
-    "year": 2018,
-    "complexity": 4.12,
-    "geek_rating": 6.082,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/214032/founders-of-gloomhaven"
-  },
-  {
     "bgg_id": 174430,
     "name": "Gloomhaven",
     "year": 2017,
@@ -31,116 +20,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/174430/gloomhaven"
-  },
-  {
-    "bgg_id": 205637,
-    "name": "Arkham Horror: The Card Game",
-    "year": 2016,
-    "complexity": 3.57,
-    "geek_rating": 7.889,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/205637/arkham-horror-the-card-game"
-  },
-  {
-    "bgg_id": 199884,
-    "name": "Descent: Journeys in the Dark (Second Edition) – The Chains That Rust",
-    "year": 2016,
-    "complexity": 3.5,
-    "geek_rating": 5.911,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/199884/descent-journeys-in-the-dark-second-edition-the-ch"
-  },
-  {
-    "bgg_id": 219650,
-    "name": "Arydia: The Paths We Dare Tread",
-    "year": 2025,
-    "complexity": 3.31,
-    "geek_rating": 7.098,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/219650/arydia-the-paths-we-dare-tread"
-  },
-  {
-    "bgg_id": 149915,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Shadow of Nerekhall",
-    "year": 2014,
-    "complexity": 3.26,
-    "geek_rating": 6.501,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/149915/descent-journeys-in-the-dark-second-edition-shadow"
-  },
-  {
-    "bgg_id": 104162,
-    "name": "Descent: Journeys in the Dark (Second Edition)",
-    "year": 2012,
-    "complexity": 3.22,
-    "geek_rating": 7.313,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/104162/descent-journeys-in-the-dark-second-edition"
-  },
-  {
-    "bgg_id": 137842,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Labyrinth of Ruin",
-    "year": 2013,
-    "complexity": 3.22,
-    "geek_rating": 6.473,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/137842/descent-journeys-in-the-dark-second-edition-labyri"
-  },
-  {
-    "bgg_id": 129423,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Lair of the Wyrm",
-    "year": 2012,
-    "complexity": 3.06,
-    "geek_rating": 6.515,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/129423/descent-journeys-in-the-dark-second-edition-lair-o"
-  },
-  {
-    "bgg_id": 240980,
-    "name": "Blood on the Clocktower",
-    "year": 2022,
-    "complexity": 3.03,
-    "geek_rating": 7.724,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/240980/blood-on-the-clocktower"
-  },
-  {
-    "bgg_id": 200784,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Road to Legend",
-    "year": 2016,
-    "complexity": 3,
-    "geek_rating": 6.422,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200784/descent-journeys-in-the-dark-second-edition-road-t"
-  },
-  {
-    "bgg_id": 138161,
-    "name": "Firefly: The Game",
-    "year": 2013,
-    "complexity": 2.95,
-    "geek_rating": 6.98,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/138161/firefly-the-game"
   },
   {
     "bgg_id": 240196,
@@ -154,48 +33,15 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/240196/betrayal-legacy"
   },
   {
-    "bgg_id": 151953,
-    "name": "Firefly: The Game – Pirates & Bounty Hunters",
-    "year": 2014,
-    "complexity": 2.8,
-    "geek_rating": 6.43,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/151953/firefly-the-game-pirates-and-bounty-hunters"
-  },
-  {
-    "bgg_id": 177497,
-    "name": "Firefly: The Game – Jetwash",
-    "year": 2015,
-    "complexity": 2.79,
-    "geek_rating": 6.032,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177497/firefly-the-game-jetwash"
-  },
-  {
     "bgg_id": 364655,
     "name": "Kinfire Chronicles: Night's Fall (English edition, second printing)",
     "year": 2024,
     "complexity": 2.68,
-    "geek_rating": 6.478,
+    "geek_rating": 6.479,
     "plays": 0,
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/364655/kinfire-chronicles-nights-fall"
-  },
-  {
-    "bgg_id": 156089,
-    "name": "Arcadia Quest: Beyond the Grave",
-    "year": 2015,
-    "complexity": 2.67,
-    "geek_rating": 6.33,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/156089/arcadia-quest-beyond-the-grave"
   },
   {
     "bgg_id": 459928,
@@ -207,83 +53,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/459928/dungeon-crawler-carl-unstoppable"
-  },
-  {
-    "bgg_id": 146567,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Splig Lieutenant Pack",
-    "year": 2013,
-    "complexity": 2.62,
-    "geek_rating": 5.784,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/146567/descent-journeys-in-the-dark-second-edition-splig"
-  },
-  {
-    "bgg_id": 147736,
-    "name": "Firefly: The Game – Breakin' Atmo",
-    "year": 2013,
-    "complexity": 2.61,
-    "geek_rating": 6.439,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147736/firefly-the-game-breakin-atmo"
-  },
-  {
-    "bgg_id": 146571,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Eliza Farrow Lieutenant Pack",
-    "year": 2013,
-    "complexity": 2.6,
-    "geek_rating": 5.747,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/146571/descent-journeys-in-the-dark-second-edition-eliza"
-  },
-  {
-    "bgg_id": 155068,
-    "name": "Arcadia Quest",
-    "year": 2014,
-    "complexity": 2.53,
-    "geek_rating": 7.119,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/155068/arcadia-quest"
-  },
-  {
-    "bgg_id": 188339,
-    "name": "Arcadia Quest: Inferno – Kickstarter Exclusives",
-    "year": 2017,
-    "complexity": 2.5,
-    "geek_rating": 5.899,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188339/arcadia-quest-inferno-kickstarter-exclusives"
-  },
-  {
-    "bgg_id": 179803,
-    "name": "Arcadia Quest: Inferno",
-    "year": 2017,
-    "complexity": 2.48,
-    "geek_rating": 6.615,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/179803/arcadia-quest-inferno"
-  },
-  {
-    "bgg_id": 155703,
-    "name": "Evolution",
-    "year": 2014,
-    "complexity": 2.43,
-    "geek_rating": 6.777,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/155703/evolution"
   },
   {
     "bgg_id": 302388,
@@ -308,50 +77,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/10547/betrayal-at-house-on-the-hill"
   },
   {
-    "bgg_id": 188699,
-    "name": "Arcadia Quest: Pets",
-    "year": 2017,
-    "complexity": 2.33,
-    "geek_rating": 6.053,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188699/arcadia-quest-pets"
-  },
-  {
-    "bgg_id": 68448,
-    "name": "7 Wonders",
-    "year": 2010,
-    "complexity": 2.31,
-    "geek_rating": 7.546,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/68448/7-wonders"
-  },
-  {
-    "bgg_id": 13,
-    "name": "Catan",
-    "year": 1995,
-    "complexity": 2.28,
-    "geek_rating": 6.902,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/13/catan"
-  },
-  {
-    "bgg_id": 431038,
-    "name": "Azul Duel",
-    "year": 2025,
-    "complexity": 2.28,
-    "geek_rating": 6.311,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/431038/azul-duel"
-  },
-  {
     "bgg_id": 173346,
     "name": "7 Wonders Duel",
     "year": 2015,
@@ -363,17 +88,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/173346/7-wonders-duel"
   },
   {
-    "bgg_id": 110139,
-    "name": "Flash Point: Fire Rescue – Urban Structures",
-    "year": 2011,
-    "complexity": 2.23,
-    "geek_rating": 6.289,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/110139/flash-point-fire-rescue-urban-structures"
-  },
-  {
     "bgg_id": 171131,
     "name": "Captain Sonar",
     "year": 2016,
@@ -383,28 +97,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/171131/captain-sonar"
-  },
-  {
-    "bgg_id": 100901,
-    "name": "Flash Point: Fire Rescue",
-    "year": 2011,
-    "complexity": 2.2,
-    "geek_rating": 6.961,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/100901/flash-point-fire-rescue"
-  },
-  {
-    "bgg_id": 257276,
-    "name": "Clank! Expeditions: Gold and Silk",
-    "year": 2018,
-    "complexity": 2.2,
-    "geek_rating": 6.592,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/257276/clank-expeditions-gold-and-silk"
   },
   {
     "bgg_id": 369646,
@@ -440,94 +132,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/309129/disney-the-haunted-mansion-call-of-the-spirits-gam"
   },
   {
-    "bgg_id": 131835,
-    "name": "Boss Monster: The Dungeon Building Card Game",
-    "year": 2013,
-    "complexity": 1.85,
-    "geek_rating": 6.077,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/131835/boss-monster-the-dungeon-building-card-game"
-  },
-  {
-    "bgg_id": 209685,
-    "name": "Century: Spice Road",
-    "year": 2017,
-    "complexity": 1.8,
-    "geek_rating": 7.101,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/209685/century-spice-road"
-  },
-  {
-    "bgg_id": 65244,
-    "name": "Forbidden Island",
-    "year": 2010,
-    "complexity": 1.74,
-    "geek_rating": 6.638,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/65244/forbidden-island"
-  },
-  {
-    "bgg_id": 2453,
-    "name": "Blokus",
-    "year": 2000,
-    "complexity": 1.73,
-    "geek_rating": 6.706,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/2453/blokus"
-  },
-  {
-    "bgg_id": 232832,
-    "name": "Century: Golem Edition",
-    "year": 2017,
-    "complexity": 1.72,
-    "geek_rating": 7.231,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/232832/century-golem-edition"
-  },
-  {
-    "bgg_id": 98778,
-    "name": "Hanabi",
-    "year": 2010,
-    "complexity": 1.69,
-    "geek_rating": 6.919,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/98778/hanabi"
-  },
-  {
-    "bgg_id": 280896,
-    "name": "Foodies",
-    "year": 2019,
-    "complexity": 1.67,
-    "geek_rating": 5.715,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/280896/foodies"
-  },
-  {
-    "bgg_id": 169244,
-    "name": "Arcadia Quest: McHammer",
-    "year": 2014,
-    "complexity": 1.67,
-    "geek_rating": 5.615,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169244/arcadia-quest-mchammer"
-  },
-  {
     "bgg_id": 204755,
     "name": "Isle of Monsters",
     "year": 2017,
@@ -537,39 +141,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/204755/isle-of-monsters"
-  },
-  {
-    "bgg_id": 203427,
-    "name": "Fabled Fruit",
-    "year": 2016,
-    "complexity": 1.61,
-    "geek_rating": 6.567,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/203427/fabled-fruit"
-  },
-  {
-    "bgg_id": 134453,
-    "name": "The Little Prince: Make Me a Planet",
-    "year": 2013,
-    "complexity": 1.58,
-    "geek_rating": 6.352,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/134453/the-little-prince-make-me-a-planet"
-  },
-  {
-    "bgg_id": 165217,
-    "name": "Arcadia Quest: Nibbles",
-    "year": 2015,
-    "complexity": 1.5,
-    "geek_rating": 5.693,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/165217/arcadia-quest-nibbles"
   },
   {
     "bgg_id": 179973,
@@ -605,17 +176,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/169124/flick-em-up"
   },
   {
-    "bgg_id": 234669,
-    "name": "Legacy of Dragonholt",
-    "year": 2017,
-    "complexity": 1.28,
-    "geek_rating": 6.45,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/234669/legacy-of-dragonholt"
-  },
-  {
     "bgg_id": 178900,
     "name": "Codenames",
     "year": 2015,
@@ -649,37 +209,15 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/9852/clue-jr-the-case-of-the-missing-cake"
   },
   {
-    "bgg_id": 39856,
-    "name": "Dixit",
-    "year": 2008,
-    "complexity": 1.19,
-    "geek_rating": 7.062,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/39856/dixit"
-  },
-  {
     "bgg_id": 74,
     "name": "Apples to Apples",
     "year": 1999,
     "complexity": 1.15,
-    "geek_rating": 5.625,
+    "geek_rating": 5.624,
     "plays": 0,
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/74/apples-to-apples"
-  },
-  {
-    "bgg_id": 198836,
-    "name": "3 Wishes",
-    "year": 2016,
-    "complexity": 1.15,
-    "geek_rating": 5.455,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/198836/3-wishes"
   },
   {
     "bgg_id": 20422,
@@ -704,17 +242,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/1855/hedbanz-for-adults"
   },
   {
-    "bgg_id": 300010,
-    "name": "Dragomino",
-    "year": 2020,
-    "complexity": 1.06,
-    "geek_rating": 6.343,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/300010/dragomino"
-  },
-  {
     "bgg_id": 194626,
     "name": "Happy Salmon",
     "year": 2016,
@@ -726,28 +253,6 @@
     "bgg_url": "https://boardgamegeek.com/boardgame/194626/happy-salmon"
   },
   {
-    "bgg_id": 420087,
-    "name": "Flip 7",
-    "year": 2024,
-    "complexity": 1.04,
-    "geek_rating": 6.996,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/420087/flip-7"
-  },
-  {
-    "bgg_id": 254640,
-    "name": "Just One",
-    "year": 2018,
-    "complexity": 1.03,
-    "geek_rating": 7.435,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/254640/just-one"
-  },
-  {
     "bgg_id": 6714,
     "name": "Go Away Monster!",
     "year": 1997,
@@ -757,72 +262,6 @@
     "subtype": "boardgame",
     "is_expansion": false,
     "bgg_url": "https://boardgamegeek.com/boardgame/6714/go-away-monster"
-  },
-  {
-    "bgg_id": 169415,
-    "name": "Arcadia Quest: Leeroy",
-    "year": 2014,
-    "complexity": 1,
-    "geek_rating": 5.598,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169415/arcadia-quest-leeroy"
-  },
-  {
-    "bgg_id": 353719,
-    "name": "Crabs in a Bucket",
-    "year": 2023,
-    "complexity": 1,
-    "geek_rating": 5.545,
-    "plays": 0,
-    "subtype": "boardgame",
-    "is_expansion": false,
-    "bgg_url": "https://boardgamegeek.com/boardgame/353719/crabs-in-a-bucket"
-  },
-  {
-    "bgg_id": 189273,
-    "name": "Arcadia Quest: Inferno – Whole Lotta Lava",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.76,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189273/arcadia-quest-inferno-whole-lotta-lava"
-  },
-  {
-    "bgg_id": 233917,
-    "name": "Arcadia Quest: Riders",
-    "year": 2018,
-    "complexity": 0,
-    "geek_rating": 5.729,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/233917/arcadia-quest-riders"
-  },
-  {
-    "bgg_id": 189197,
-    "name": "Arcadia Quest: Chaos Dragon",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.664,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189197/arcadia-quest-chaos-dragon"
-  },
-  {
-    "bgg_id": 189262,
-    "name": "Arcadia Quest: Pets – Cerby",
-    "year": 2017,
-    "complexity": 0,
-    "geek_rating": 5.605,
-    "plays": 0,
-    "subtype": "boardgameexpansion",
-    "is_expansion": true,
-    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189262/arcadia-quest-pets-cerby"
   },
   {
     "bgg_id": 402243,

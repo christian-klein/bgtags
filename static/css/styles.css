@@ -150,6 +150,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.hero-stat-highlight {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 .filters-bar {
     display: flex;
     flex-wrap: wrap;

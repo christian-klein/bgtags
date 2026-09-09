@@ -394,3 +394,50 @@ func TestSettings(t *testing.T) {
 		t.Errorf("expected false after setting to false")
 	}
 }
+
+func TestCountGamesAndExpansions(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "count_test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("Open failed: %v", err)
+	}
+	defer db.Close()
+
+	// Empty DB
+	games, expansions, err := db.CountGamesAndExpansions()
+	if err != nil {
+		t.Fatalf("CountGamesAndExpansions failed on empty db: %v", err)
+	}
+	if games != 0 || expansions != 0 {
+		t.Fatalf("expected 0, 0 for empty db, got %d, %d", games, expansions)
+	}
+
+	// Add 2 base games
+	base1 := &Game{Name: "Game 1", URL: "g1.pdf"}
+	base2 := &Game{Name: "Game 2", URL: "g2.pdf"}
+	if err := db.CreateGame(base1); err != nil {
+		t.Fatalf("CreateGame base1 failed: %v", err)
+	}
+	if err := db.CreateGame(base2); err != nil {
+		t.Fatalf("CreateGame base2 failed: %v", err)
+	}
+
+	games, expansions, err = db.CountGamesAndExpansions()
+	if err != nil || games != 2 || expansions != 0 {
+		t.Fatalf("expected 2 games, 0 expansions, got %d games, %d expansions (err: %v)", games, expansions, err)
+	}
+
+	// Add 1 expansion
+	parentID := base1.ID
+	exp1 := &Game{Name: "Exp 1", URL: "e1.pdf", ParentID: &parentID}
+	if err := db.CreateGame(exp1); err != nil {
+		t.Fatalf("CreateGame exp1 failed: %v", err)
+	}
+
+	games, expansions, err = db.CountGamesAndExpansions()
+	if err != nil || games != 2 || expansions != 1 {
+		t.Fatalf("expected 2 games, 1 expansion, got %d games, %d expansions (err: %v)", games, expansions, err)
+	}
+}
+

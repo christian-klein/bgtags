@@ -33,8 +33,10 @@ type PageData struct {
 	ParentGame  *database.Game
 	Documents   []database.GameDocument
 	Expansions  []database.Game
-	TotalCount    int
-	SearchQuery   string
+	TotalCount      int
+	TotalGames      int
+	TotalExpansions int
+	SearchQuery     string
 	PlayerCount   int
 	MinComplexity float64
 	MaxComplexity float64
@@ -182,17 +184,24 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	totalGames, totalExpansions, err := h.db.CountGamesAndExpansions()
+	if err != nil {
+		log.Printf("Error counting collection: %v", err)
+	}
+
 	baseURL := h.getBaseURL(r)
 	data := PageData{
-		Title:         "Board Game Rule Tags",
-		Games:         h.toGameViews(games, baseURL),
-		TotalCount:    len(games),
-		SearchQuery:   q,
-		PlayerCount:   players,
-		MinComplexity: minComp,
-		MaxComplexity: maxComp,
-		BaseURL:       baseURL,
-		ActiveNav:     "catalog",
+		Title:           "Board Game Rule Tags",
+		Games:           h.toGameViews(games, baseURL),
+		TotalCount:      len(games),
+		TotalGames:      totalGames,
+		TotalExpansions: totalExpansions,
+		SearchQuery:     q,
+		PlayerCount:     players,
+		MinComplexity:   minComp,
+		MaxComplexity:   maxComp,
+		BaseURL:         baseURL,
+		ActiveNav:       "catalog",
 	}
 	h.populateAuthData(r, &data)
 

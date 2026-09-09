@@ -78,7 +78,7 @@ func TestPagesRender(t *testing.T) {
 		t.Fatalf("failed to create handler: %v", err)
 	}
 
-	// 1. Test Index
+	// 1. Test Index (Empty DB)
 	wIndex := httptest.NewRecorder()
 	rIndex := httptest.NewRequest("GET", "/", nil)
 	h.HandleIndex(wIndex, rIndex)
@@ -87,6 +87,28 @@ func TestPagesRender(t *testing.T) {
 	}
 	if !strings.Contains(wIndex.Body.String(), "Board Game Rules & QR Tags") {
 		t.Errorf("index page missing hero title")
+	}
+
+	// Test Index with games and expansions
+	baseGame := &database.Game{Name: "Core Game", URL: "core.pdf"}
+	if err := db.CreateGame(baseGame); err != nil {
+		t.Fatalf("failed to create base game: %v", err)
+	}
+	parentID := baseGame.ID
+	expansion := &database.Game{Name: "Exp 1", URL: "exp.pdf", ParentID: &parentID}
+	if err := db.CreateGame(expansion); err != nil {
+		t.Fatalf("failed to create expansion: %v", err)
+	}
+
+	wIndex2 := httptest.NewRecorder()
+	rIndex2 := httptest.NewRequest("GET", "/", nil)
+	h.HandleIndex(wIndex2, rIndex2)
+	if wIndex2.Code != http.StatusOK {
+		t.Errorf("expected 200 for index, got %d", wIndex2.Code)
+	}
+	body2 := wIndex2.Body.String()
+	if !strings.Contains(body2, "Currently featuring") || !strings.Contains(body2, "1</span> game") || !strings.Contains(body2, "1</span> expansion") {
+		t.Errorf("index page missing collection stats, body: %s", body2)
 	}
 
 	// 2. Test Stickers
