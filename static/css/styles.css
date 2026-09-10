@@ -347,21 +347,26 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
-    background: var(--bg-surface);
-    color: var(--text-primary);
+    border: 1px solid #475569;
+    background-color: #334155;
+    color: #f8fafc !important;
     cursor: pointer;
     transition: all 0.15s ease;
+    flex-shrink: 0;
 }
 
 .sort-icon-btn:hover {
-    background: var(--bg-surface-hover);
-    border-color: var(--accent-primary);
-    color: #ffffff;
+    background-color: #475569;
+    border-color: var(--accent-primary, #6366f1);
+    color: #ffffff !important;
 }
 
 .sort-svg-icon {
     display: block;
+    width: 20px;
+    height: 20px;
+    stroke: #f8fafc !important;
+    color: #f8fafc !important;
 }
 
 .sort-popover {
@@ -369,7 +374,8 @@ body {
     top: calc(100% + 0.4rem);
     right: 0;
     z-index: 60;
-    width: 195px;
+    width: 200px;
+    max-width: calc(100vw - 2rem);
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
@@ -481,11 +487,6 @@ body {
     font-weight: 500;
 }
 
-@media (max-width: 640px) {
-    .sort-popover {
-        right: 0;
-    }
-}
 
 /* Floating Back to Top Glass Button */
 .back-to-top-btn {
@@ -1746,9 +1747,30 @@ body {
 }
 
 @media (max-width: 640px) {
-    .complexity-filter-group {
+    .filters-bar {
+        gap: 0.75rem;
+    }
+    .search-box {
+        order: 1;
         width: 100%;
         flex: 1 1 100%;
+    }
+    .filter-group:not(.complexity-filter-group) {
+        order: 2;
+        flex: 1 1 auto;
+    }
+    .sort-dropdown-container {
+        order: 3;
+        margin-left: auto;
+    }
+    .complexity-filter-group {
+        order: 4;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+    .sort-popover {
+        right: 0;
+        left: auto;
     }
     .rules-hero {
         flex-direction: column;

@@ -85,11 +85,11 @@
                     aria-expanded="false" 
                     onclick="toggleSortMenu(event)"
                     title="Sort games">
-                <svg class="sort-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M7 3v18"/>
-                    <path d="M3 7l4-4 4 4"/>
-                    <path d="M17 21V3"/>
-                    <path d="M13 17l4 4 4-4"/>
+                <svg class="sort-svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 20V4"/>
+                    <path d="M3 8l4-4 4 4"/>
+                    <path d="M17 4v16"/>
+                    <path d="M13 16l4 4 4-4"/>
                 </svg>
             </button>
             <div id="sort-dropdown-menu" class="sort-popover" style="display: none;">
@@ -211,8 +211,25 @@
         const btn = document.getElementById('sort-menu-btn');
         if (!menu || !btn) return;
         const isOpen = menu.style.display !== 'none';
-        menu.style.display = isOpen ? 'none' : 'block';
-        btn.setAttribute('aria-expanded', !isOpen);
+        if (!isOpen) {
+            menu.style.display = 'block';
+            btn.setAttribute('aria-expanded', 'true');
+
+            // Dynamic viewport collision detection
+            menu.style.left = '';
+            menu.style.right = '0';
+            const rect = menu.getBoundingClientRect();
+            if (rect.left < 10) {
+                menu.style.left = '0';
+                menu.style.right = 'auto';
+            } else if (rect.right > window.innerWidth - 10) {
+                menu.style.right = '0';
+                menu.style.left = 'auto';
+            }
+        } else {
+            menu.style.display = 'none';
+            btn.setAttribute('aria-expanded', 'false');
+        }
     }
 
     function selectSortBy(field) {
