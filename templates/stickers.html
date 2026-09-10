@@ -30,7 +30,12 @@
                 <button type="button" onclick="printStickersNow()" class="btn btn-primary print-btn">
                     🖨️ Print Stickers Now
                 </button>
+                {{if eq .TotalCount 1}}
+                <a href="/games/{{(index .Games 0).ID}}/rules" class="btn btn-outline btn-sm">← Back to Game</a>
+                <a href="/stickers" class="btn btn-outline btn-sm">All Stickers</a>
+                {{else}}
                 <a href="/" class="btn btn-outline btn-sm">Back to Catalog</a>
+                {{end}}
             </div>
         </div>
     </div>

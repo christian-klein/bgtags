@@ -233,6 +233,15 @@ func TestRulesHubRender(t *testing.T) {
 	}
 
 	body := w.Body.String()
+	if !strings.Contains(body, "Eclipse: Second Dawn - Rules &amp; Docs") {
+		t.Errorf("expected page title 'Eclipse: Second Dawn - Rules &amp; Docs', got: %s", body)
+	}
+	if !strings.Contains(body, "📚 Rules &amp; Docs") && !strings.Contains(body, "📚 Rules & Docs") {
+		t.Errorf("expected section title '📚 Rules & Docs' in body")
+	}
+	if !strings.Contains(body, fmt.Sprintf("href=\"/stickers?game_id=%d\"", game.ID)) {
+		t.Errorf("expected single-game sticker link '/stickers?game_id=%d' in body", game.ID)
+	}
 	if !strings.Contains(body, "Eclipse: Second Dawn") {
 		t.Errorf("expected game title in body")
 	}
@@ -536,6 +545,101 @@ func TestSortMenuAndFiltering(t *testing.T) {
 	}
 }
 
+func TestStickersSingleGameFilter(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test_stickers.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
 
+	cfg := &config.Config{
+		Port:      "8081",
+		StaticDir: "../../static",
+	}
 
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
 
+	g1 := &database.Game{Name: "Gloomhaven", URL: "gh.pdf", Rating: 8.7, Complexity: 3.9, MinPlayers: 1, MaxPlayers: 4}
+	g2 := &database.Game{Name: "Spirit Island", URL: "si.pdf", Rating: 8.3, Complexity: 4.1, MinPlayers: 1, MaxPlayers: 4}
+	if err := db.CreateGame(g1); err != nil {
+		t.Fatalf("failed to create g1: %v", err)
+	}
+	if err := db.CreateGame(g2); err != nil {
+		t.Fatalf("failed to create g2: %v", err)
+	}
+
+	// 1. Request all stickers
+	wAll := httptest.NewRecorder()
+	rAll := httptest.NewRequest("GET", "/stickers", nil)
+	h.HandleStickers(wAll, rAll)
+	if wAll.Code != http.StatusOK {
+		t.Fatalf("expected 200 for all stickers, got %d", wAll.Code)
+	}
+	bodyAll := wAll.Body.String()
+	if !strings.Contains(bodyAll, "Gloomhaven") || !strings.Contains(bodyAll, "Spirit Island") {
+		t.Errorf("expected both games in all stickers view")
+	}
+	if !strings.Contains(bodyAll, "Back to Catalog") {
+		t.Errorf("expected 'Back to Catalog' link when displaying multiple stickers")
+	}
+
+	// 2. Request single game sticker with ?game_id=...
+	wSingle := httptest.NewRecorder()
+	rSingle := httptest.NewRequest("GET", fmt.Sprintf("/stickers?game_id=%d", g1.ID), nil)
+	h.HandleStickers(wSingle, rSingle)
+	if wSingle.Code != http.StatusOK {
+		t.Fatalf("expected 200 for single sticker, got %d", wSingle.Code)
+	}
+	bodySingle := wSingle.Body.String()
+	if !strings.Contains(bodySingle, "Gloomhaven") {
+		t.Errorf("expected Gloomhaven sticker")
+	}
+	if strings.Contains(bodySingle, "Spirit Island") {
+		t.Errorf("did not expect Spirit Island in filtered single sticker view")
+	}
+	if !strings.Contains(bodySingle, fmt.Sprintf("/games/%d/rules", g1.ID)) {
+		t.Errorf("expected link back to game rules hub in single sticker view")
+	}
+	if !strings.Contains(bodySingle, "All Stickers") {
+		t.Errorf("expected 'All Stickers' link in single sticker view")
+	}
+}
+
+func TestBackToTopButton(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test_btt.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	cfg := &config.Config{
+		Port:      "8081",
+		StaticDir: "../../static",
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	w := httptest.NewRecorder()
+	r := httptest.NewRequest("GET", "/", nil)
+	h.HandleIndex(w, r)
+	if w.Code != http.StatusOK {
+		t.Fatalf("expected 200 for index, got %d", w.Code)
+	}
+	body := w.Body.String()
+	if !strings.Contains(body, "id=\"back-to-top-btn\"") {
+		t.Errorf("expected back-to-top button in layout")
+	}
+	if !strings.Contains(body, "back-to-top-icon") {
+		t.Errorf("expected back-to-top-icon in layout")
+	}
+}

@@ -281,7 +281,7 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := PageData{
-		Title:      fmt.Sprintf("%s - Rules & Documents", game.Name),
+		Title:      fmt.Sprintf("%s - Rules & Docs", game.Name),
 		Game:       &gv,
 		ParentGame: parentGame,
 		Documents:  docs,
@@ -352,16 +352,36 @@ func (h *Handler) HandleStickers(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query().Get("q")
 	players, _ := strconv.Atoi(r.URL.Query().Get("players"))
 
-	games, err := h.db.ListGames(q, players)
-	if err != nil {
-		log.Printf("Error listing games for stickers: %v", err)
-		http.Error(w, "Failed to load games", http.StatusInternalServerError)
-		return
+	var games []database.Game
+	var err error
+
+	gameIDStr := r.URL.Query().Get("game_id")
+	if gameIDStr != "" {
+		if gid, parseErr := strconv.ParseInt(gameIDStr, 10, 64); parseErr == nil {
+			targetGame, getErr := h.db.GetGame(gid)
+			if getErr == nil && targetGame != nil {
+				games = []database.Game{*targetGame}
+			}
+		}
+	}
+
+	if games == nil {
+		games, err = h.db.ListGames(q, players)
+		if err != nil {
+			log.Printf("Error listing games for stickers: %v", err)
+			http.Error(w, "Failed to load games", http.StatusInternalServerError)
+			return
+		}
 	}
 
 	baseURL := h.getBaseURL(r)
+	title := "Print Game Box Stickers"
+	if len(games) == 1 && gameIDStr != "" {
+		title = fmt.Sprintf("Print %s Sticker", games[0].Name)
+	}
+
 	data := PageData{
-		Title:       "Print Game Box Stickers",
+		Title:       title,
 		Games:       h.toGameViews(games, baseURL),
 		TotalCount:  len(games),
 		SearchQuery: q,

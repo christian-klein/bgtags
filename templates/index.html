@@ -80,52 +80,52 @@
         <div class="sort-dropdown-container">
             <button type="button" 
                     id="sort-menu-btn" 
-                    class="btn btn-secondary sort-btn" 
+                    class="btn btn-secondary sort-icon-btn" 
                     aria-haspopup="true" 
                     aria-expanded="false" 
-                    onclick="toggleSortMenu(event)">
-                <span class="sort-icon">⇅</span>
-                <span id="sort-btn-label">Sort: Name (A-Z)</span>
+                    onclick="toggleSortMenu(event)"
+                    title="Sort games">
+                <svg class="sort-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 3v18"/>
+                    <path d="M3 7l4-4 4 4"/>
+                    <path d="M17 21V3"/>
+                    <path d="M13 17l4 4 4-4"/>
+                </svg>
             </button>
-            <div id="sort-dropdown-menu" class="sort-dropdown-menu" style="display: none;">
-                <div class="sort-menu-section">
-                    <div class="sort-menu-heading">Sort By</div>
-                    <div class="sort-options-list">
-                        <button type="button" class="sort-menu-item {{if or (eq .SortBy "name") (not .SortBy)}}active{{end}}" data-sort-by="name" onclick="selectSortBy('name')">
-                            <span>🔤 Name</span>
-                            <span class="sort-check">✓</span>
-                        </button>
-                        <button type="button" class="sort-menu-item {{if eq .SortBy "rating"}}active{{end}}" data-sort-by="rating" onclick="selectSortBy('rating')">
-                            <span>⭐ BGG Rating</span>
-                            <span class="sort-check">✓</span>
-                        </button>
-                        <button type="button" class="sort-menu-item {{if eq .SortBy "complexity"}}active{{end}}" data-sort-by="complexity" onclick="selectSortBy('complexity')">
-                            <span>🧠 Complexity</span>
-                            <span class="sort-check">✓</span>
-                        </button>
-                        <button type="button" class="sort-menu-item {{if eq .SortBy "min_players"}}active{{end}}" data-sort-by="min_players" onclick="selectSortBy('min_players')">
-                            <span>👥 Min Players</span>
-                            <span class="sort-check">✓</span>
-                        </button>
-                        <button type="button" class="sort-menu-item {{if eq .SortBy "max_players"}}active{{end}}" data-sort-by="max_players" onclick="selectSortBy('max_players')">
-                            <span>👥 Max Players</span>
-                            <span class="sort-check">✓</span>
-                        </button>
+            <div id="sort-dropdown-menu" class="sort-popover" style="display: none;">
+                <div class="sort-popover-title">Sort by</div>
+                <div class="sort-radio-group">
+                    <div class="sort-radio-item" onclick="selectSortBy('name')">
+                        <span class="sort-radio-dot {{if or (eq .SortBy "name") (not .SortBy)}}selected{{end}}" data-radio="name"></span>
+                        <span class="sort-radio-label">Name</span>
+                    </div>
+                    <div class="sort-radio-item" onclick="selectSortBy('rating')">
+                        <span class="sort-radio-dot {{if eq .SortBy "rating"}}selected{{end}}" data-radio="rating"></span>
+                        <span class="sort-radio-label">Rating</span>
+                    </div>
+                    <div class="sort-radio-item" onclick="selectSortBy('complexity')">
+                        <span class="sort-radio-dot {{if eq .SortBy "complexity"}}selected{{end}}" data-radio="complexity"></span>
+                        <span class="sort-radio-label">Complexity</span>
+                    </div>
+                    <div class="sort-radio-item" onclick="selectSortBy('min_players')">
+                        <span class="sort-radio-dot {{if eq .SortBy "min_players"}}selected{{end}}" data-radio="min_players"></span>
+                        <span class="sort-radio-label">Min Players</span>
+                    </div>
+                    <div class="sort-radio-item" onclick="selectSortBy('max_players')">
+                        <span class="sort-radio-dot {{if eq .SortBy "max_players"}}selected{{end}}" data-radio="max_players"></span>
+                        <span class="sort-radio-label">Max Players</span>
                     </div>
                 </div>
-                <div class="sort-menu-divider"></div>
-                <div class="sort-menu-section">
-                    <div class="sort-menu-heading">Order</div>
-                    <div class="sort-options-list">
-                        <button type="button" class="sort-menu-item {{if or (eq .SortOrder "asc") (not .SortOrder)}}active{{end}}" data-sort-order="asc" onclick="selectSortOrder('asc')">
-                            <span id="order-asc-text">⬆️ Ascending (A-Z)</span>
-                            <span class="sort-check">✓</span>
-                        </button>
-                        <button type="button" class="sort-menu-item {{if eq .SortOrder "desc"}}active{{end}}" data-sort-order="desc" onclick="selectSortOrder('desc')">
-                            <span id="order-desc-text">⬇️ Descending (Z-A)</span>
-                            <span class="sort-check">✓</span>
-                        </button>
-                    </div>
+                <div class="sort-popover-divider"></div>
+                <div class="sort-direction-group">
+                    <button type="button" class="sort-dir-btn {{if or (eq .SortOrder "asc") (not .SortOrder)}}active{{end}}" data-dir="asc" onclick="selectSortOrder('asc')">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                        <span>Ascending</span>
+                    </button>
+                    <button type="button" class="sort-dir-btn {{if eq .SortOrder "desc"}}active{{end}}" data-dir="desc" onclick="selectSortOrder('desc')">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                        <span>Descending</span>
+                    </button>
                 </div>
             </div>
             <input type="hidden" 
@@ -220,15 +220,14 @@
         if (!input) return;
         input.value = field;
 
-        document.querySelectorAll('.sort-menu-item[data-sort-by]').forEach(el => {
-            if (el.getAttribute('data-sort-by') === field) {
-                el.classList.add('active');
+        document.querySelectorAll('.sort-radio-dot').forEach(el => {
+            if (el.getAttribute('data-radio') === field) {
+                el.classList.add('selected');
             } else {
-                el.classList.remove('active');
+                el.classList.remove('selected');
             }
         });
 
-        updateSortBtnLabel();
         htmx.trigger(input, 'change');
     }
 
@@ -238,62 +237,15 @@
         if (!orderInput || !sortByInput) return;
         orderInput.value = order;
 
-        document.querySelectorAll('.sort-menu-item[data-sort-order]').forEach(el => {
-            if (el.getAttribute('data-sort-order') === order) {
+        document.querySelectorAll('.sort-dir-btn').forEach(el => {
+            if (el.getAttribute('data-dir') === order) {
                 el.classList.add('active');
             } else {
                 el.classList.remove('active');
             }
         });
 
-        updateSortBtnLabel();
         htmx.trigger(sortByInput, 'change');
-    }
-
-    function updateSortBtnLabel() {
-        const sortByInput = document.getElementById('sort-by-input');
-        const sortOrderInput = document.getElementById('sort-order-input');
-        const label = document.getElementById('sort-btn-label');
-        if (!sortByInput || !sortOrderInput || !label) return;
-
-        const field = sortByInput.value || 'name';
-        const order = sortOrderInput.value || 'asc';
-
-        const fieldLabels = {
-            'name': 'Name',
-            'rating': 'Rating',
-            'complexity': 'Complexity',
-            'min_players': 'Min Players',
-            'max_players': 'Max Players'
-        };
-
-        const fieldName = fieldLabels[field] || 'Name';
-        let orderSuffix = order === 'desc' ? ' (Desc)' : ' (Asc)';
-        if (field === 'name') {
-            orderSuffix = order === 'desc' ? ' (Z-A)' : ' (A-Z)';
-        } else if (field === 'rating' || field === 'complexity') {
-            orderSuffix = order === 'desc' ? ' (High-Low)' : ' (Low-High)';
-        }
-
-        label.textContent = `Sort: ${fieldName}${orderSuffix}`;
-
-        const ascText = document.getElementById('order-asc-text');
-        const descText = document.getElementById('order-desc-text');
-        if (ascText && descText) {
-            if (field === 'name') {
-                ascText.textContent = '⬆️ Ascending (A-Z)';
-                descText.textContent = '⬇️ Descending (Z-A)';
-            } else if (field === 'rating' || field === 'complexity') {
-                ascText.textContent = '⬆️ Ascending (Low to High)';
-                descText.textContent = '⬇️ Descending (High to Low)';
-            } else if (field === 'min_players' || field === 'max_players') {
-                ascText.textContent = '⬆️ Ascending (Fewest First)';
-                descText.textContent = '⬇️ Descending (Most First)';
-            } else {
-                ascText.textContent = '⬆️ Ascending';
-                descText.textContent = '⬇️ Descending';
-            }
-        }
     }
 
     document.addEventListener('click', function(e) {
@@ -306,15 +258,10 @@
         }
     });
 
-    function initCatalog() {
-        setupComplexitySlider();
-        updateSortBtnLabel();
-    }
-
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCatalog);
+        document.addEventListener('DOMContentLoaded', setupComplexitySlider);
     } else {
-        initCatalog();
+        setupComplexitySlider();
     }
 </script>
 {{end}}

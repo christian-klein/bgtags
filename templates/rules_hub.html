@@ -6,7 +6,7 @@
         {{else}}
         <a href="/" class="btn-back">← Back to Catalog</a>
         {{end}}
-        <a href="/stickers" class="btn btn-outline btn-sm">🏷️ Sticker View</a>
+        <a href="/stickers?game_id={{.Game.ID}}" class="btn btn-outline btn-sm">🏷️ Sticker View</a>
     </div>
 
     <div class="rules-hub-card">
@@ -43,7 +43,7 @@
         </div>
 
         <div class="rules-section">
-            <h2 class="rules-section-title">📚 Rulebooks & Documentation</h2>
+            <h2 class="rules-section-title">📚 Rules & Docs</h2>
             <div class="doc-cards-list">
                 {{range .Documents}}
                 <div class="doc-card {{if .IsPrimary}}doc-card-primary{{end}}">

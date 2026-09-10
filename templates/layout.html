@@ -11,7 +11,7 @@
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="apple-touch-icon" href="/static/img/bgtags-icon.png">
     <link rel="icon" type="image/png" href="/static/favicon.png">
-    <link rel="stylesheet" href="/static/css/styles.css?v=20260910-sort-menu">
+    <link rel="stylesheet" href="/static/css/styles.css?v=20260910-clean-sort-btt">
     <script src="/static/js/htmx.min.js"></script>
 </head>
 <body>
@@ -138,6 +138,27 @@
                 });
             });
         }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('back-to-top-btn');
+            if (!btn) return;
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
+
+    <!-- Floating Back to Top Button -->
+    <button type="button" id="back-to-top-btn" class="back-to-top-btn no-print" onclick="scrollToTop()" aria-label="Back to top" title="Back to top">
+        <svg class="back-to-top-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 5l-7 9h14l-7-9z"/>
+        </svg>
+    </button>
 </body>
 </html>
