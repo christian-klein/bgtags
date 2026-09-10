@@ -342,7 +342,7 @@ body {
 .sort-icon-btn {
     width: 42px;
     height: 42px;
-    padding: 0;
+    padding: 0 !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -365,6 +365,9 @@ body {
     display: block;
     width: 20px;
     height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    flex-shrink: 0;
     stroke: #f8fafc !important;
     color: #f8fafc !important;
 }
