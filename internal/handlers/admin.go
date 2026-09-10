@@ -152,6 +152,7 @@ func (h *Handler) HandleAdminCreateGame(w http.ResponseWriter, r *http.Request) 
 	maxPlayers, _ := strconv.Atoi(r.FormValue("max_players"))
 	bestPlayers := strings.TrimSpace(r.FormValue("best_players"))
 	complexity, _ := strconv.ParseFloat(r.FormValue("complexity"), 64)
+	rating, _ := strconv.ParseFloat(r.FormValue("rating"), 64)
 	bggURL := strings.TrimSpace(r.FormValue("bgg_url"))
 
 	var imageName string
@@ -190,6 +191,7 @@ func (h *Handler) HandleAdminCreateGame(w http.ResponseWriter, r *http.Request) 
 		MaxPlayers:  maxPlayers,
 		BestPlayers: bestPlayers,
 		Complexity:  complexity,
+		Rating:      rating,
 		BggURL:      bggURL,
 	}
 

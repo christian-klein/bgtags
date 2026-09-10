@@ -233,8 +233,8 @@ func RestoreFromBytes(db *database.DB, data []byte) error {
 		return fmt.Errorf("clearing games table: %w", err)
 	}
 
-	stmt, err := tx.Prepare(`INSERT INTO games (id, parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+	stmt, err := tx.Prepare(`INSERT INTO games (id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at) 
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
 	if err != nil {
 		return fmt.Errorf("preparing game insert statement: %w", err)
 	}
@@ -249,7 +249,7 @@ func RestoreFromBytes(db *database.DB, data []byte) error {
 
 	for _, item := range backup.Games {
 		g := item.Game
-		if _, err := stmt.Exec(g.ID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, g.CreatedAt, g.UpdatedAt); err != nil {
+		if _, err := stmt.Exec(g.ID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, g.CreatedAt, g.UpdatedAt); err != nil {
 			return fmt.Errorf("restoring game %s: %w", g.Name, err)
 		}
 

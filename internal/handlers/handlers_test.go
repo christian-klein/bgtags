@@ -302,4 +302,135 @@ func TestRulesHubRender(t *testing.T) {
 	}
 }
 
+func TestPWAEndpoints(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	cfg := &config.Config{
+		Port:      "8081",
+		StaticDir: "../../static",
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	// Test Manifest
+	wManifest := httptest.NewRecorder()
+	rManifest := httptest.NewRequest("GET", "/manifest.webmanifest", nil)
+	h.HandleManifest(wManifest, rManifest)
+
+	if wManifest.Code != http.StatusOK {
+		t.Errorf("expected status 200 for /manifest.webmanifest, got %d", wManifest.Code)
+	}
+	if !strings.Contains(wManifest.Header().Get("Content-Type"), "application/manifest+json") {
+		t.Errorf("expected Content-Type application/manifest+json, got %s", wManifest.Header().Get("Content-Type"))
+	}
+	if !strings.Contains(wManifest.Body.String(), "BG Tags") {
+		t.Errorf("expected manifest body to contain BG Tags")
+	}
+
+	// Test Service Worker
+	wSW := httptest.NewRecorder()
+	rSW := httptest.NewRequest("GET", "/sw.js", nil)
+	h.HandleServiceWorker(wSW, rSW)
+
+	if wSW.Code != http.StatusOK {
+		t.Errorf("expected status 200 for /sw.js, got %d", wSW.Code)
+	}
+	if !strings.Contains(wSW.Header().Get("Content-Type"), "application/javascript") {
+		t.Errorf("expected Content-Type application/javascript, got %s", wSW.Header().Get("Content-Type"))
+	}
+	if wSW.Header().Get("Service-Worker-Allowed") != "/" {
+		t.Errorf("expected Service-Worker-Allowed header to be '/', got %s", wSW.Header().Get("Service-Worker-Allowed"))
+	}
+	if !strings.Contains(wSW.Body.String(), "bgtags-v1") {
+		t.Errorf("expected service worker body to contain cache version bgtags-v1")
+	}
+}
+
+func TestRatingAndQRButtonRendering(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	cfg := &config.Config{
+		Port:      "8081",
+		StaticDir: "../../static",
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	game := &database.Game{
+		Name:       "Ark Nova",
+		URL:        "ark-nova.pdf",
+		Image:      "ark-nova.jpg",
+		MinPlayers: 1,
+		MaxPlayers: 4,
+		Rating:     8.53,
+		Complexity: 3.74,
+	}
+	if err := db.CreateGame(game); err != nil {
+		t.Fatalf("failed to create game: %v", err)
+	}
+
+	// 1. Check Catalog Rendering
+	wGames := httptest.NewRecorder()
+	rGames := httptest.NewRequest("GET", "/games", nil)
+	h.HandleGames(wGames, rGames)
+
+	if wGames.Code != http.StatusOK {
+		t.Fatalf("expected 200 for /games, got %d", wGames.Code)
+	}
+	gamesBody := wGames.Body.String()
+	if !strings.Contains(gamesBody, "card-qr-btn") {
+		t.Errorf("expected dedicated QR code button on game card")
+	}
+	if !strings.Contains(gamesBody, "⭐ 8.5") {
+		t.Errorf("expected rating badge ⭐ 8.5 on game card, got: %s", gamesBody)
+	}
+	if !strings.Contains(gamesBody, fmt.Sprintf("/games/%d/rules", game.ID)) {
+		t.Errorf("expected game cover image link to point to rules hub")
+	}
+
+	// 2. Check Rules Hub Rendering
+	// Add secondary doc so it renders hub page rather than 302
+	doc := &database.GameDocument{
+		GameID:    game.ID,
+		Title:     "Reference Guide",
+		Category:  "reference",
+		Filename:  "ark-nova-ref.pdf",
+		IsPrimary: false,
+	}
+	if err := db.AddDocument(doc); err != nil {
+		t.Fatalf("failed to add document: %v", err)
+	}
+
+	wHub := httptest.NewRecorder()
+	rHub := httptest.NewRequest("GET", fmt.Sprintf("/games/%d/rules", game.ID), nil)
+	h.HandleGameRoute(wHub, rHub)
+
+	if wHub.Code != http.StatusOK {
+		t.Fatalf("expected 200 for rules hub, got %d", wHub.Code)
+	}
+	hubBody := wHub.Body.String()
+	if !strings.Contains(hubBody, "⭐ Rating: 8.5 / 10") {
+		t.Errorf("expected rating badge in rules hub, got: %s", hubBody)
+	}
+}
+
+
 

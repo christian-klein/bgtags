@@ -69,6 +69,7 @@ func (db *DB) migrate() error {
 		max_players INTEGER DEFAULT 4,
 		best_players TEXT DEFAULT '',
 		complexity REAL DEFAULT 0.0,
+		rating REAL DEFAULT 0.0,
 		bgg_url TEXT DEFAULT '',
 		created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 		updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -104,7 +105,7 @@ func (db *DB) migrate() error {
 	}
 
 	// Dynamic column migrations for existing SQLite databases
-	var hasBestPlayers, hasComplexity, hasParentID bool
+	var hasBestPlayers, hasComplexity, hasRating, hasParentID bool
 	rows, err := db.Query("PRAGMA table_info(games);")
 	if err != nil {
 		return err
@@ -123,6 +124,9 @@ func (db *DB) migrate() error {
 			if name == "complexity" {
 				hasComplexity = true
 			}
+			if name == "rating" {
+				hasRating = true
+			}
 			if name == "parent_id" {
 				hasParentID = true
 			}
@@ -134,6 +138,9 @@ func (db *DB) migrate() error {
 	}
 	if !hasComplexity {
 		_, _ = db.Exec("ALTER TABLE games ADD COLUMN complexity REAL DEFAULT 0.0;")
+	}
+	if !hasRating {
+		_, _ = db.Exec("ALTER TABLE games ADD COLUMN rating REAL DEFAULT 0.0;")
 	}
 	if !hasParentID {
 		_, _ = db.Exec("ALTER TABLE games ADD COLUMN parent_id INTEGER REFERENCES games(id) ON DELETE SET NULL;")
@@ -181,6 +188,7 @@ func (db *DB) seedIfEmpty(seedPath string) error {
 		MaxPlayers  int     `json:"max_players"`
 		BestPlayers string  `json:"best_players"`
 		Complexity  float64 `json:"complexity"`
+		Rating      float64 `json:"rating"`
 		BggURL      string  `json:"bgg_url"`
 		Documents   []struct {
 			Title     string `json:"title"`
@@ -200,8 +208,8 @@ func (db *DB) seedIfEmpty(seedPath string) error {
 	}
 	defer tx.Rollback()
 
-	stmt, err := tx.Prepare(`INSERT INTO games (id, parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+	stmt, err := tx.Prepare(`INSERT INTO games (id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at) 
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
 	if err != nil {
 		return err
 	}
@@ -216,7 +224,7 @@ func (db *DB) seedIfEmpty(seedPath string) error {
 
 	now := time.Now().UTC()
 	for _, g := range rawGames {
-		if _, err := stmt.Exec(g.ID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, now, now); err != nil {
+		if _, err := stmt.Exec(g.ID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, now); err != nil {
 			return err
 		}
 
@@ -238,7 +246,7 @@ func (db *DB) seedIfEmpty(seedPath string) error {
 }
 
 func (db *DB) ListGames(search string, players int) ([]Game, error) {
-	query := "SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at FROM games WHERE 1=1"
+	query := "SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE 1=1"
 	var args []interface{}
 
 	search = strings.TrimSpace(search)
@@ -264,7 +272,7 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 	for rows.Next() {
 		var g Game
 		var parentID sql.NullInt64
-		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
 			return nil, err
 		}
 		if parentID.Valid {
@@ -282,7 +290,7 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 // one of its expansions matches, so searching for an expansion surfaces its
 // parent entry. Expansions themselves are grouped under parents by the handler.
 func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComplexity float64) ([]Game, error) {
-	query := `SELECT g.id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.bgg_url, g.created_at, g.updated_at
+	query := `SELECT g.id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.rating, g.bgg_url, g.created_at, g.updated_at
 		FROM games g WHERE g.parent_id IS NULL`
 	var args []interface{}
 
@@ -320,7 +328,7 @@ func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComple
 	for rows.Next() {
 		var g Game
 		var parentID sql.NullInt64
-		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
 			return nil, err
 		}
 		games = append(games, g)
@@ -348,8 +356,8 @@ func (db *DB) CountGamesAndExpansions() (int, int, error) {
 func (db *DB) GetGame(id int64) (*Game, error) {
 	var g Game
 	var parentID sql.NullInt64
-	err := db.QueryRow("SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at FROM games WHERE id = ?", id).
-		Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.BggURL, &g.CreatedAt, &g.UpdatedAt)
+	err := db.QueryRow("SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE id = ?", id).
+		Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
@@ -403,7 +411,7 @@ func (db *DB) DeleteDocument(id int64) error {
 }
 
 func (db *DB) ListExpansions(parentID int64) ([]Game, error) {
-	rows, err := db.Query(`SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at 
+	rows, err := db.Query(`SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at 
 		FROM games WHERE parent_id = ? ORDER BY name COLLATE NOCASE ASC`, parentID)
 	if err != nil {
 		return nil, err
@@ -414,7 +422,7 @@ func (db *DB) ListExpansions(parentID int64) ([]Game, error) {
 	for rows.Next() {
 		var g Game
 		var pID sql.NullInt64
-		if err := rows.Scan(&g.ID, &pID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+		if err := rows.Scan(&g.ID, &pID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
 			return nil, err
 		}
 		if pID.Valid {
@@ -447,9 +455,9 @@ func (db *DB) GetGameWithDetails(id int64) (*Game, []GameDocument, []Game, error
 
 func (db *DB) CreateGame(g *Game) error {
 	now := time.Now().UTC()
-	res, err := db.Exec(`INSERT INTO games (parent_id, name, url, image, min_players, max_players, best_players, complexity, bgg_url, created_at, updated_at) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-		g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, now, now)
+	res, err := db.Exec(`INSERT INTO games (parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at) 
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, now)
 	if err != nil {
 		return err
 	}
@@ -476,8 +484,8 @@ func (db *DB) CreateGame(g *Game) error {
 
 func (db *DB) UpdateGame(g *Game) error {
 	now := time.Now().UTC()
-	_, err := db.Exec(`UPDATE games SET parent_id = ?, name = ?, url = ?, image = ?, min_players = ?, max_players = ?, best_players = ?, complexity = ?, bgg_url = ?, updated_at = ? WHERE id = ?`,
-		g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.BggURL, now, g.ID)
+	_, err := db.Exec(`UPDATE games SET parent_id = ?, name = ?, url = ?, image = ?, min_players = ?, max_players = ?, best_players = ?, complexity = ?, rating = ?, bgg_url = ?, updated_at = ? WHERE id = ?`,
+		g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, g.ID)
 	if err == nil {
 		g.UpdatedAt = now
 	}

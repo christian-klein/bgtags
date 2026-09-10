@@ -423,3 +423,15 @@ func (h *Handler) HandleHealth(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(`{"status":"ok"}`))
 }
+
+func (h *Handler) HandleManifest(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/manifest+json")
+	http.ServeFile(w, r, filepath.Join(h.cfg.StaticDir, "manifest.webmanifest"))
+}
+
+func (h *Handler) HandleServiceWorker(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/javascript")
+	w.Header().Set("Service-Worker-Allowed", "/")
+	http.ServeFile(w, r, filepath.Join(h.cfg.StaticDir, "js", "sw.js"))
+}
+

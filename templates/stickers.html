@@ -57,6 +57,9 @@
                             {{if gt .Complexity 0.0}}
                             <span class="sticker-complexity">🧠 {{printf "%.1f" .Complexity}} / 5</span>
                             {{end}}
+                            {{if gt .Rating 0.0}}
+                            <span class="sticker-rating">⭐ {{printf "%.1f" .Rating}}</span>
+                            {{end}}
                             <span class="sticker-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players{{if .BestPlayers}} (Best: {{.BestPlayers}}){{end}}</span>
                         </div>
                     </div>

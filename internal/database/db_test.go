@@ -441,3 +441,54 @@ func TestCountGamesAndExpansions(t *testing.T) {
 	}
 }
 
+func TestGameRating(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "rating_test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("Open failed: %v", err)
+	}
+	defer db.Close()
+
+	// 1. Verify rating column exists in schema
+	var count int
+	err = db.QueryRow("SELECT COUNT(*) FROM pragma_table_info('games') WHERE name = 'rating'").Scan(&count)
+	if err != nil || count != 1 {
+		t.Fatalf("expected rating column in games table, got count %d, err %v", count, err)
+	}
+
+	// 2. Create game with Rating
+	g := &Game{
+		Name:        "Castles of Burgundy",
+		URL:         "cob.pdf",
+		Image:       "cob.jpg",
+		MinPlayers:  1,
+		MaxPlayers:  4,
+		BestPlayers: "2",
+		Complexity:  3.0,
+		Rating:      8.35,
+	}
+	if err := db.CreateGame(g); err != nil {
+		t.Fatalf("CreateGame failed: %v", err)
+	}
+
+	loaded, err := db.GetGame(g.ID)
+	if err != nil || loaded == nil {
+		t.Fatalf("GetGame failed: %v", err)
+	}
+	if loaded.Rating != 8.35 {
+		t.Errorf("expected rating 8.35, got %f", loaded.Rating)
+	}
+
+	// 3. Update game rating
+	loaded.Rating = 8.5
+	if err := db.UpdateGame(loaded); err != nil {
+		t.Fatalf("UpdateGame failed: %v", err)
+	}
+	reloaded, _ := db.GetGame(g.ID)
+	if reloaded.Rating != 8.5 {
+		t.Errorf("expected updated rating 8.5, got %f", reloaded.Rating)
+	}
+}
+
+

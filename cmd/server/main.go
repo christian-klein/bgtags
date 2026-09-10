@@ -62,6 +62,8 @@ func main() {
 	mux.HandleFunc("/stickers", middleware.RequireReader(cfg, h.HandleStickers))
 	mux.HandleFunc("/qr", h.HandleQR)
 	mux.HandleFunc("/health", h.HandleHealth)
+	mux.HandleFunc("/manifest.webmanifest", h.HandleManifest)
+	mux.HandleFunc("/sw.js", h.HandleServiceWorker)
 
 	// Admin endpoints (RBAC protected)
 	mux.HandleFunc("/admin", middleware.RequireAdmin(cfg, h.HandleAdmin))

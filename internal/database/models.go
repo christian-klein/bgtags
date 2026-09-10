@@ -13,6 +13,7 @@ type Game struct {
 	MaxPlayers  int       `json:"max_players"`
 	BestPlayers string    `json:"best_players"`
 	Complexity  float64   `json:"complexity"`
+	Rating      float64   `json:"rating,omitempty"`
 	BggURL      string    `json:"bgg_url"`
 	CreatedAt   time.Time `json:"created_at"`
 	UpdatedAt   time.Time `json:"updated_at"`

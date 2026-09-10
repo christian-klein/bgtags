@@ -430,10 +430,15 @@ body {
     position: relative;
     height: 240px;
     background-color: #0b0f19;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+}
+
+.card-media-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .game-cover {
@@ -444,61 +449,45 @@ body {
 }
 
 .game-card:hover .game-cover {
-    transform: scale(1.03);
-    filter: brightness(0.65);
-}
-
-.qr-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(15, 23, 42, 0.85);
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.game-card:hover .qr-overlay {
-    opacity: 1;
-}
-
-.qr-code {
-    width: 130px;
-    height: 130px;
-    background-color: #fff;
-    padding: 6px;
-    border-radius: var(--radius-sm);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    display: block;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.qr-overlay:hover .qr-code {
     transform: scale(1.04);
 }
 
-.qr-hint {
-    margin-top: 0.65rem;
-    font-size: 0.8rem;
-    font-weight: 600;
+.card-qr-btn {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: var(--radius-sm);
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-primary);
-    background-color: rgba(0,0,0,0.6);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
 }
 
-.qr-overlay:hover .qr-hint {
-    background-color: var(--accent-primary, #6366f1);
+.card-qr-btn:hover {
+    background: var(--accent-primary, #6366f1);
+    border-color: var(--accent-primary, #6366f1);
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px -2px rgba(99, 102, 241, 0.5);
+}
+
+.card-qr-btn:active {
+    transform: scale(0.95);
+}
+
+.qr-btn-svg {
+    display: block;
 }
 
 .card-body {
@@ -1026,6 +1015,12 @@ body {
     border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
+.rating-badge {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
 .sticker-meta {
     display: flex;
     flex-wrap: wrap;
@@ -1043,6 +1038,18 @@ body {
     font-weight: 700;
     background-color: #fef3c7;
     color: #92400e;
+    padding: 2px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.sticker-rating {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background-color: #d1fae5;
+    color: #065f46;
     padding: 2px 5px;
     border-radius: 4px;
     white-space: nowrap;

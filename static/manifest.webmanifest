@@ -1,0 +1,26 @@
+{
+  "name": "BG Tags - Board Game Rules & QR Tags",
+  "short_name": "BG Tags",
+  "description": "Instant rulebooks and scannable QR tags for your board game shelf.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "categories": ["games", "utilities"],
+  "icons": [
+    {
+      "src": "/static/img/bgtags-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/img/bgtags-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
