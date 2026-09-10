@@ -289,7 +289,7 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 // included when it matches the search/player filter on its own fields OR when
 // one of its expansions matches, so searching for an expansion surfaces its
 // parent entry. Expansions themselves are grouped under parents by the handler.
-func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComplexity float64) ([]Game, error) {
+func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComplexity float64, sortBy, sortOrder string) ([]Game, error) {
 	query := `SELECT g.id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.rating, g.bgg_url, g.created_at, g.updated_at
 		FROM games g WHERE g.parent_id IS NULL`
 	var args []interface{}
@@ -316,7 +316,36 @@ func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComple
 		args = append(args, minComplexity, maxComplexity)
 	}
 
-	query += " ORDER BY g.name COLLATE NOCASE ASC"
+	orderDir := "ASC"
+	if strings.ToLower(sortOrder) == "desc" {
+		orderDir = "DESC"
+	}
+
+	var sortExpr string
+	switch strings.ToLower(sortBy) {
+	case "rating":
+		if orderDir == "DESC" {
+			sortExpr = "CASE WHEN g.rating > 0 THEN 0 ELSE 1 END, g.rating DESC, g.name COLLATE NOCASE ASC"
+		} else {
+			sortExpr = "CASE WHEN g.rating > 0 THEN 0 ELSE 1 END, g.rating ASC, g.name COLLATE NOCASE ASC"
+		}
+	case "complexity":
+		if orderDir == "DESC" {
+			sortExpr = "CASE WHEN g.complexity > 0 THEN 0 ELSE 1 END, g.complexity DESC, g.name COLLATE NOCASE ASC"
+		} else {
+			sortExpr = "CASE WHEN g.complexity > 0 THEN 0 ELSE 1 END, g.complexity ASC, g.name COLLATE NOCASE ASC"
+		}
+	case "min_players":
+		sortExpr = fmt.Sprintf("g.min_players %s, g.name COLLATE NOCASE ASC", orderDir)
+	case "max_players":
+		sortExpr = fmt.Sprintf("g.max_players %s, g.name COLLATE NOCASE ASC", orderDir)
+	case "name":
+		fallthrough
+	default:
+		sortExpr = fmt.Sprintf("g.name COLLATE NOCASE %s", orderDir)
+	}
+
+	query += " ORDER BY " + sortExpr
 
 	rows, err := db.Query(query, args...)
 	if err != nil {

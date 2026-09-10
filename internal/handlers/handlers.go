@@ -40,6 +40,8 @@ type PageData struct {
 	PlayerCount   int
 	MinComplexity float64
 	MaxComplexity float64
+	SortBy        string
+	SortOrder     string
 	BaseURL       string
 	ActiveNav     string
 	Backups       []*backup.BackupFileMeta
@@ -177,7 +179,16 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	games, err := h.db.ListBaseGames(q, players, minComp, maxComp)
+	sortBy := r.URL.Query().Get("sort_by")
+	if sortBy == "" {
+		sortBy = "name"
+	}
+	sortOrder := r.URL.Query().Get("sort_order")
+	if sortOrder == "" {
+		sortOrder = "asc"
+	}
+
+	games, err := h.db.ListBaseGames(q, players, minComp, maxComp, sortBy, sortOrder)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to load games", http.StatusInternalServerError)
@@ -200,6 +211,8 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 		PlayerCount:     players,
 		MinComplexity:   minComp,
 		MaxComplexity:   maxComp,
+		SortBy:          sortBy,
+		SortOrder:       sortOrder,
 		BaseURL:         baseURL,
 		ActiveNav:       "catalog",
 	}
@@ -300,7 +313,16 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	games, err := h.db.ListBaseGames(q, players, minComp, maxComp)
+	sortBy := r.URL.Query().Get("sort_by")
+	if sortBy == "" {
+		sortBy = "name"
+	}
+	sortOrder := r.URL.Query().Get("sort_order")
+	if sortOrder == "" {
+		sortOrder = "asc"
+	}
+
+	games, err := h.db.ListBaseGames(q, players, minComp, maxComp, sortBy, sortOrder)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to filter games", http.StatusInternalServerError)
@@ -315,6 +337,8 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 		PlayerCount:   players,
 		MinComplexity: minComp,
 		MaxComplexity: maxComp,
+		SortBy:        sortBy,
+		SortOrder:     sortOrder,
 		BaseURL:       baseURL,
 	}
 

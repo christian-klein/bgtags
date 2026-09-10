@@ -16,7 +16,7 @@
                    hx-get="/games" 
                    hx-trigger="keyup changed delay:250ms, search" 
                    hx-target="#game-grid"
-                   hx-include="[name='players'], [name='min_complexity'], [name='max_complexity']">
+                   hx-include="[name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
         </div>
 
         <div class="filter-group">
@@ -26,8 +26,8 @@
                     class="filter-select"
                     hx-get="/games" 
                     hx-trigger="change" 
-                    hx-target="#game-grid"
-                    hx-include="[name='q'], [name='min_complexity'], [name='max_complexity']">
+                    hx-target="#game-grid" 
+                    hx-include="[name='q'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
                 <option value="0" {{if eq .PlayerCount 0}}selected{{end}}>Any count</option>
                 <option value="1" {{if eq .PlayerCount 1}}selected{{end}}>1 Player (Solo)</option>
                 <option value="2" {{if eq .PlayerCount 2}}selected{{end}}>2 Players</option>
@@ -60,7 +60,7 @@
                        hx-get="/games" 
                        hx-trigger="change" 
                        hx-target="#game-grid" 
-                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity']">
+                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
                 <input type="range" 
                        id="max-complexity" 
                        name="max_complexity" 
@@ -73,13 +73,74 @@
                        hx-get="/games" 
                        hx-trigger="change" 
                        hx-target="#game-grid" 
-                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity']">
+                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
             </div>
         </div>
 
-        <a href="/stickers" class="btn btn-secondary">
-            🏷️ Print Stickers
-        </a>
+        <div class="sort-dropdown-container">
+            <button type="button" 
+                    id="sort-menu-btn" 
+                    class="btn btn-secondary sort-btn" 
+                    aria-haspopup="true" 
+                    aria-expanded="false" 
+                    onclick="toggleSortMenu(event)">
+                <span class="sort-icon">⇅</span>
+                <span id="sort-btn-label">Sort: Name (A-Z)</span>
+            </button>
+            <div id="sort-dropdown-menu" class="sort-dropdown-menu" style="display: none;">
+                <div class="sort-menu-section">
+                    <div class="sort-menu-heading">Sort By</div>
+                    <div class="sort-options-list">
+                        <button type="button" class="sort-menu-item {{if or (eq .SortBy "name") (not .SortBy)}}active{{end}}" data-sort-by="name" onclick="selectSortBy('name')">
+                            <span>🔤 Name</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                        <button type="button" class="sort-menu-item {{if eq .SortBy "rating"}}active{{end}}" data-sort-by="rating" onclick="selectSortBy('rating')">
+                            <span>⭐ BGG Rating</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                        <button type="button" class="sort-menu-item {{if eq .SortBy "complexity"}}active{{end}}" data-sort-by="complexity" onclick="selectSortBy('complexity')">
+                            <span>🧠 Complexity</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                        <button type="button" class="sort-menu-item {{if eq .SortBy "min_players"}}active{{end}}" data-sort-by="min_players" onclick="selectSortBy('min_players')">
+                            <span>👥 Min Players</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                        <button type="button" class="sort-menu-item {{if eq .SortBy "max_players"}}active{{end}}" data-sort-by="max_players" onclick="selectSortBy('max_players')">
+                            <span>👥 Max Players</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="sort-menu-divider"></div>
+                <div class="sort-menu-section">
+                    <div class="sort-menu-heading">Order</div>
+                    <div class="sort-options-list">
+                        <button type="button" class="sort-menu-item {{if or (eq .SortOrder "asc") (not .SortOrder)}}active{{end}}" data-sort-order="asc" onclick="selectSortOrder('asc')">
+                            <span id="order-asc-text">⬆️ Ascending (A-Z)</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                        <button type="button" class="sort-menu-item {{if eq .SortOrder "desc"}}active{{end}}" data-sort-order="desc" onclick="selectSortOrder('desc')">
+                            <span id="order-desc-text">⬇️ Descending (Z-A)</span>
+                            <span class="sort-check">✓</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" 
+                   name="sort_by" 
+                   id="sort-by-input" 
+                   value="{{if .SortBy}}{{.SortBy}}{{else}}name{{end}}"
+                   hx-get="/games" 
+                   hx-trigger="change" 
+                   hx-target="#game-grid" 
+                   hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+            <input type="hidden" 
+                   name="sort_order" 
+                   id="sort-order-input" 
+                   value="{{if .SortOrder}}{{.SortOrder}}{{else}}asc{{end}}">
+        </div>
     </div>
 </section>
 
@@ -144,10 +205,116 @@
         updateSlider(true);
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupComplexitySlider);
-    } else {
+    function toggleSortMenu(event) {
+        if (event) event.stopPropagation();
+        const menu = document.getElementById('sort-dropdown-menu');
+        const btn = document.getElementById('sort-menu-btn');
+        if (!menu || !btn) return;
+        const isOpen = menu.style.display !== 'none';
+        menu.style.display = isOpen ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', !isOpen);
+    }
+
+    function selectSortBy(field) {
+        const input = document.getElementById('sort-by-input');
+        if (!input) return;
+        input.value = field;
+
+        document.querySelectorAll('.sort-menu-item[data-sort-by]').forEach(el => {
+            if (el.getAttribute('data-sort-by') === field) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+
+        updateSortBtnLabel();
+        htmx.trigger(input, 'change');
+    }
+
+    function selectSortOrder(order) {
+        const orderInput = document.getElementById('sort-order-input');
+        const sortByInput = document.getElementById('sort-by-input');
+        if (!orderInput || !sortByInput) return;
+        orderInput.value = order;
+
+        document.querySelectorAll('.sort-menu-item[data-sort-order]').forEach(el => {
+            if (el.getAttribute('data-sort-order') === order) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+
+        updateSortBtnLabel();
+        htmx.trigger(sortByInput, 'change');
+    }
+
+    function updateSortBtnLabel() {
+        const sortByInput = document.getElementById('sort-by-input');
+        const sortOrderInput = document.getElementById('sort-order-input');
+        const label = document.getElementById('sort-btn-label');
+        if (!sortByInput || !sortOrderInput || !label) return;
+
+        const field = sortByInput.value || 'name';
+        const order = sortOrderInput.value || 'asc';
+
+        const fieldLabels = {
+            'name': 'Name',
+            'rating': 'Rating',
+            'complexity': 'Complexity',
+            'min_players': 'Min Players',
+            'max_players': 'Max Players'
+        };
+
+        const fieldName = fieldLabels[field] || 'Name';
+        let orderSuffix = order === 'desc' ? ' (Desc)' : ' (Asc)';
+        if (field === 'name') {
+            orderSuffix = order === 'desc' ? ' (Z-A)' : ' (A-Z)';
+        } else if (field === 'rating' || field === 'complexity') {
+            orderSuffix = order === 'desc' ? ' (High-Low)' : ' (Low-High)';
+        }
+
+        label.textContent = `Sort: ${fieldName}${orderSuffix}`;
+
+        const ascText = document.getElementById('order-asc-text');
+        const descText = document.getElementById('order-desc-text');
+        if (ascText && descText) {
+            if (field === 'name') {
+                ascText.textContent = '⬆️ Ascending (A-Z)';
+                descText.textContent = '⬇️ Descending (Z-A)';
+            } else if (field === 'rating' || field === 'complexity') {
+                ascText.textContent = '⬆️ Ascending (Low to High)';
+                descText.textContent = '⬇️ Descending (High to Low)';
+            } else if (field === 'min_players' || field === 'max_players') {
+                ascText.textContent = '⬆️ Ascending (Fewest First)';
+                descText.textContent = '⬇️ Descending (Most First)';
+            } else {
+                ascText.textContent = '⬆️ Ascending';
+                descText.textContent = '⬇️ Descending';
+            }
+        }
+    }
+
+    document.addEventListener('click', function(e) {
+        const container = document.querySelector('.sort-dropdown-container');
+        const menu = document.getElementById('sort-dropdown-menu');
+        const btn = document.getElementById('sort-menu-btn');
+        if (container && menu && !container.contains(e.target)) {
+            menu.style.display = 'none';
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    function initCatalog() {
         setupComplexitySlider();
+        updateSortBtnLabel();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCatalog);
+    } else {
+        initCatalog();
     }
 </script>
 {{end}}

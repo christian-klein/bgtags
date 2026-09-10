@@ -172,7 +172,7 @@ func TestListBaseGames(t *testing.T) {
 		t.Fatalf("failed to create standalone: %v", err)
 	}
 
-	bases, err := db.ListBaseGames("", 0, 0, 5)
+	bases, err := db.ListBaseGames("", 0, 0, 5, "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames failed: %v", err)
 	}
@@ -181,7 +181,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Search by expansion name must surface the parent
-	byExp, err := db.ListBaseGames("Rise of Ix", 0, 0, 5)
+	byExp, err := db.ListBaseGames("Rise of Ix", 0, 0, 5, "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames search failed: %v", err)
 	}
@@ -190,7 +190,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Player filter applies to base games only
-	byPlayers, err := db.ListBaseGames("", 5, 0, 5)
+	byPlayers, err := db.ListBaseGames("", 5, 0, 5, "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames player filter failed: %v", err)
 	}
@@ -199,7 +199,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Complexity filter: high complexity only (>= 3.0)
-	byHighComp, err := db.ListBaseGames("", 0, 3.0, 5.0)
+	byHighComp, err := db.ListBaseGames("", 0, 3.0, 5.0, "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames high complexity failed: %v", err)
 	}
@@ -208,12 +208,88 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Complexity filter: medium complexity only (2.0 to 3.0)
-	byMedComp, err := db.ListBaseGames("", 0, 2.0, 3.0)
+	byMedComp, err := db.ListBaseGames("", 0, 2.0, 3.0, "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames medium complexity failed: %v", err)
 	}
 	if len(byMedComp) != 1 || byMedComp[0].Name != "Wingspan" {
 		t.Fatalf("expected only Wingspan for complexity 2.0-3.0, got %+v", byMedComp)
+	}
+}
+
+func TestListBaseGamesSorting(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test_sort.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	games := []*Game{
+		{Name: "Brass: Birmingham", URL: "brass.pdf", Rating: 8.6, Complexity: 3.9, MinPlayers: 2, MaxPlayers: 4},
+		{Name: "Cascadia", URL: "cascadia.pdf", Rating: 7.9, Complexity: 1.8, MinPlayers: 1, MaxPlayers: 4},
+		{Name: "Captain Sonar", URL: "sonar.pdf", Rating: 7.5, Complexity: 2.1, MinPlayers: 2, MaxPlayers: 8},
+		{Name: "Unrated Proto", URL: "proto.pdf", Rating: 0.0, Complexity: 2.0, MinPlayers: 3, MaxPlayers: 6},
+	}
+	for _, g := range games {
+		if err := db.CreateGame(g); err != nil {
+			t.Fatalf("failed to create game: %v", err)
+		}
+	}
+
+	// 1. Sort by Name Asc
+	byNameAsc, err := db.ListBaseGames("", 0, 0, 5, "name", "asc")
+	if err != nil {
+		t.Fatalf("failed to list by name asc: %v", err)
+	}
+	if byNameAsc[0].Name != "Brass: Birmingham" || byNameAsc[3].Name != "Unrated Proto" {
+		t.Errorf("unexpected name asc order: %v, %v", byNameAsc[0].Name, byNameAsc[3].Name)
+	}
+
+	// 2. Sort by Name Desc
+	byNameDesc, err := db.ListBaseGames("", 0, 0, 5, "name", "desc")
+	if err != nil {
+		t.Fatalf("failed to list by name desc: %v", err)
+	}
+	if byNameDesc[0].Name != "Unrated Proto" || byNameDesc[3].Name != "Brass: Birmingham" {
+		t.Errorf("unexpected name desc order: %v, %v", byNameDesc[0].Name, byNameDesc[3].Name)
+	}
+
+	// 3. Sort by Rating Desc (0.0 unrated goes to end)
+	byRatingDesc, err := db.ListBaseGames("", 0, 0, 5, "rating", "desc")
+	if err != nil {
+		t.Fatalf("failed to list by rating desc: %v", err)
+	}
+	if byRatingDesc[0].Name != "Brass: Birmingham" || byRatingDesc[3].Name != "Unrated Proto" {
+		t.Errorf("unexpected rating desc order: %v, %v", byRatingDesc[0].Name, byRatingDesc[3].Name)
+	}
+
+	// 4. Sort by Complexity Desc
+	byCompDesc, err := db.ListBaseGames("", 0, 0, 5, "complexity", "desc")
+	if err != nil {
+		t.Fatalf("failed to list by complexity desc: %v", err)
+	}
+	if byCompDesc[0].Name != "Brass: Birmingham" || byCompDesc[3].Name != "Cascadia" {
+		t.Errorf("unexpected complexity desc order: %v, %v", byCompDesc[0].Name, byCompDesc[3].Name)
+	}
+
+	// 5. Sort by Min Players Asc
+	byMinAsc, err := db.ListBaseGames("", 0, 0, 5, "min_players", "asc")
+	if err != nil {
+		t.Fatalf("failed to list by min players asc: %v", err)
+	}
+	if byMinAsc[0].Name != "Cascadia" { // 1 player
+		t.Errorf("expected Cascadia (1 min player) first, got: %s", byMinAsc[0].Name)
+	}
+
+	// 6. Sort by Max Players Desc
+	byMaxDesc, err := db.ListBaseGames("", 0, 0, 5, "max_players", "desc")
+	if err != nil {
+		t.Fatalf("failed to list by max players desc: %v", err)
+	}
+	if byMaxDesc[0].Name != "Captain Sonar" { // 8 players
+		t.Errorf("expected Captain Sonar (8 max players) first, got: %s", byMaxDesc[0].Name)
 	}
 }
 

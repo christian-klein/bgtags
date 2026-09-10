@@ -438,5 +438,104 @@ func TestRatingAndQRButtonRendering(t *testing.T) {
 	}
 }
 
+func TestSortMenuAndFiltering(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test_sort_ui.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	cfg := &config.Config{
+		Port:      "8081",
+		StaticDir: "../../static",
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	// Create test games
+	games := []*database.Game{
+		{Name: "Agricola", URL: "agricola.pdf", Rating: 7.9, Complexity: 3.6, MinPlayers: 1, MaxPlayers: 4},
+		{Name: "Blood Rage", URL: "bloodrage.pdf", Rating: 8.0, Complexity: 2.8, MinPlayers: 2, MaxPlayers: 4},
+		{Name: "Codenames", URL: "codenames.pdf", Rating: 7.5, Complexity: 1.2, MinPlayers: 2, MaxPlayers: 8},
+	}
+	for _, g := range games {
+		if err := db.CreateGame(g); err != nil {
+			t.Fatalf("failed to create game: %v", err)
+		}
+	}
+
+	// 1. Verify Index page has sort button and menu, and stickers link is removed from filters bar
+	wIndex := httptest.NewRecorder()
+	rIndex := httptest.NewRequest("GET", "/", nil)
+	h.HandleIndex(wIndex, rIndex)
+
+	if wIndex.Code != http.StatusOK {
+		t.Fatalf("expected 200 for index, got %d", wIndex.Code)
+	}
+	indexBody := wIndex.Body.String()
+	if !strings.Contains(indexBody, "id=\"sort-menu-btn\"") {
+		t.Errorf("expected sort-menu-btn in index page")
+	}
+	if !strings.Contains(indexBody, "id=\"sort-dropdown-menu\"") {
+		t.Errorf("expected sort-dropdown-menu in index page")
+	}
+	if !strings.Contains(indexBody, "name=\"sort_by\"") || !strings.Contains(indexBody, "name=\"sort_order\"") {
+		t.Errorf("expected hidden sort inputs in index page")
+	}
+	if strings.Contains(indexBody, "<a href=\"/stickers\" class=\"btn btn-secondary\">") {
+		t.Errorf("stickers button should be removed from the catalog filter bar")
+	}
+
+	// 2. Test /games?sort_by=rating&sort_order=desc
+	wRatingDesc := httptest.NewRecorder()
+	rRatingDesc := httptest.NewRequest("GET", "/games?sort_by=rating&sort_order=desc", nil)
+	h.HandleGames(wRatingDesc, rRatingDesc)
+
+	bodyRating := wRatingDesc.Body.String()
+	idxBloodRage := strings.Index(bodyRating, "Blood Rage") // 8.0
+	idxAgricola := strings.Index(bodyRating, "Agricola")   // 7.9
+	idxCodenames := strings.Index(bodyRating, "Codenames") // 7.5
+
+	if idxBloodRage == -1 || idxAgricola == -1 || idxCodenames == -1 {
+		t.Fatalf("missing expected games in rating sorted grid")
+	}
+	if !(idxBloodRage < idxAgricola && idxAgricola < idxCodenames) {
+		t.Errorf("expected rating desc order: Blood Rage (8.0), Agricola (7.9), Codenames (7.5)")
+	}
+
+	// 3. Test /games?sort_by=complexity&sort_order=asc
+	wCompAsc := httptest.NewRecorder()
+	rCompAsc := httptest.NewRequest("GET", "/games?sort_by=complexity&sort_order=asc", nil)
+	h.HandleGames(wCompAsc, rCompAsc)
+
+	bodyComp := wCompAsc.Body.String()
+	idxCodenamesComp := strings.Index(bodyComp, "Codenames") // 1.2
+	idxBloodRageComp := strings.Index(bodyComp, "Blood Rage") // 2.8
+	idxAgricolaComp := strings.Index(bodyComp, "Agricola")   // 3.6
+
+	if !(idxCodenamesComp < idxBloodRageComp && idxBloodRageComp < idxAgricolaComp) {
+		t.Errorf("expected complexity asc order: Codenames (1.2), Blood Rage (2.8), Agricola (3.6)")
+	}
+
+	// 4. Test /games?sort_by=max_players&sort_order=desc
+	wMaxDesc := httptest.NewRecorder()
+	rMaxDesc := httptest.NewRequest("GET", "/games?sort_by=max_players&sort_order=desc", nil)
+	h.HandleGames(wMaxDesc, rMaxDesc)
+
+	bodyMax := wMaxDesc.Body.String()
+	idxCodenamesMax := strings.Index(bodyMax, "Codenames") // 8 players
+	idxAgricolaMax := strings.Index(bodyMax, "Agricola")   // 4 players
+
+	if !(idxCodenamesMax < idxAgricolaMax) {
+		t.Errorf("expected Codenames (8 players) to come before Agricola (4 players) in max_players desc")
+	}
+}
+
+
 
 
