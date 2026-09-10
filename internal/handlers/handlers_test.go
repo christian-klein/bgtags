@@ -350,8 +350,8 @@ func TestPWAEndpoints(t *testing.T) {
 	if wSW.Header().Get("Service-Worker-Allowed") != "/" {
 		t.Errorf("expected Service-Worker-Allowed header to be '/', got %s", wSW.Header().Get("Service-Worker-Allowed"))
 	}
-	if !strings.Contains(wSW.Body.String(), "bgtags-v1") {
-		t.Errorf("expected service worker body to contain cache version bgtags-v1")
+	if !strings.Contains(wSW.Body.String(), "bgtags-v2") {
+		t.Errorf("expected service worker body to contain cache version bgtags-v2")
 	}
 }
 

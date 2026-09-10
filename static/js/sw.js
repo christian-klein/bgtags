@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'bgtags-v1';
+const CACHE_VERSION = 'bgtags-v2';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const PAGES_CACHE = `${CACHE_VERSION}-pages`;
 const RULES_CACHE = `${CACHE_VERSION}-rules`;

@@ -454,23 +454,23 @@ body {
 
 .card-qr-btn {
     position: absolute;
-    top: 0.65rem;
-    right: 0.65rem;
+    top: 0.75rem;
+    right: 0.75rem;
     z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 72px;
+    height: 72px;
     padding: 0;
-    border-radius: var(--radius-sm);
-    background: rgba(15, 23, 42, 0.75);
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: var(--text-primary);
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.4);
     transition: all 0.2s ease;
 }
 
