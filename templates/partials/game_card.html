@@ -22,7 +22,7 @@
             <div class="card-badges">
                 <span class="badge players-badge">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players{{if .BestPlayers}} (Best: {{.BestPlayers}}){{end}}</span>
                 {{if gt .Complexity 0.0}}
-                <span class="badge complexity-badge">🧠 {{printf "%.1f" .Complexity}} / 5</span>
+                <span class="badge complexity-badge" title="BGG Complexity: {{printf "%.2f" .Complexity}} / 5">🧠 {{printf "%.1f" .Complexity}} / 5</span>
                 {{end}}
                 {{if gt .Rating 0.0}}
                 <span class="badge rating-badge" title="BGG Rating: {{printf "%.2f" .Rating}} / 10">⭐ {{printf "%.1f" .Rating}}</span>

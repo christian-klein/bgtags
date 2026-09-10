@@ -26,7 +26,7 @@
                 <div class="rules-badges-row">
                     <span class="badge players-badge">👥 {{.Game.MinPlayers}}-{{.Game.MaxPlayers}} Players{{if .Game.BestPlayers}} (Best: {{.Game.BestPlayers}}){{end}}</span>
                     {{if gt .Game.Complexity 0.0}}
-                    <span class="badge complexity-badge">🧠 Weight: {{printf "%.1f" .Game.Complexity}} / 5</span>
+                    <span class="badge complexity-badge" title="BGG Complexity: {{printf "%.2f" .Game.Complexity}} / 5">🧠 Weight: {{printf "%.1f" .Game.Complexity}} / 5</span>
                     {{end}}
                     {{if gt .Game.Rating 0.0}}
                     <span class="badge rating-badge" title="BGG Rating: {{printf "%.2f" .Game.Rating}} / 10">⭐ Rating: {{printf "%.1f" .Game.Rating}} / 10</span>
@@ -113,7 +113,7 @@
                     <div class="exp-card-footer">
                         <div class="exp-meta">
                             <span class="exp-players">👥 {{.MinPlayers}}-{{.MaxPlayers}} Players</span>
-                            {{if gt .Complexity 0.0}}<span class="badge complexity-badge">🧠 {{printf "%.1f" .Complexity}}</span>{{end}}
+                            {{if gt .Complexity 0.0}}<span class="badge complexity-badge" title="BGG Complexity: {{printf "%.2f" .Complexity}} / 5">🧠 {{printf "%.1f" .Complexity}}</span>{{end}}
                             {{if gt .Rating 0.0}}<span class="badge rating-badge" title="BGG Rating: {{printf "%.2f" .Rating}} / 10">⭐ {{printf "%.1f" .Rating}}</span>{{end}}
                         </div>
                         <a href="/games/{{.ID}}/rules" class="btn btn-outline btn-sm">

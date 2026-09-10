@@ -402,6 +402,9 @@ func TestRatingAndQRButtonRendering(t *testing.T) {
 	if !strings.Contains(gamesBody, "⭐ 8.5") {
 		t.Errorf("expected rating badge ⭐ 8.5 on game card, got: %s", gamesBody)
 	}
+	if !strings.Contains(gamesBody, "title=\"BGG Complexity: 3.74 / 5\"") {
+		t.Errorf("expected complexity tooltip on game card, got: %s", gamesBody)
+	}
 	if !strings.Contains(gamesBody, fmt.Sprintf("/games/%d/rules", game.ID)) {
 		t.Errorf("expected game cover image link to point to rules hub")
 	}
@@ -429,6 +432,9 @@ func TestRatingAndQRButtonRendering(t *testing.T) {
 	hubBody := wHub.Body.String()
 	if !strings.Contains(hubBody, "⭐ Rating: 8.5 / 10") {
 		t.Errorf("expected rating badge in rules hub, got: %s", hubBody)
+	}
+	if !strings.Contains(hubBody, "title=\"BGG Complexity: 3.74 / 5\"") {
+		t.Errorf("expected complexity tooltip in rules hub, got: %s", hubBody)
 	}
 }
 
