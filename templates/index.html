@@ -275,10 +275,73 @@
         }
     });
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupComplexitySlider);
-    } else {
+    function jumpToSection(sectionId, event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        const el = document.getElementById(sectionId);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        document.querySelectorAll('.quick-jump-item').forEach(btn => {
+            if (btn.getAttribute('data-jump-target') === sectionId) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    let quickJumpObserver = null;
+    function initQuickJumpObserver() {
+        if (quickJumpObserver) {
+            quickJumpObserver.disconnect();
+            quickJumpObserver = null;
+        }
+
+        const headers = document.querySelectorAll('.grid-section-header');
+        const rail = document.getElementById('quick-jump-rail');
+        if (!headers.length || !rail) return;
+
+        quickJumpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const key = entry.target.getAttribute('data-section-key');
+                    if (key) {
+                        document.querySelectorAll('.quick-jump-item').forEach(btn => {
+                            if (btn.getAttribute('data-jump-target') === key) {
+                                btn.classList.add('active');
+                            } else {
+                                btn.classList.remove('active');
+                            }
+                        });
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-70px 0px -70% 0px',
+            threshold: 0
+        });
+
+        headers.forEach(h => quickJumpObserver.observe(h));
+    }
+
+    document.body.addEventListener('htmx:afterSwap', function(evt) {
+        if (evt.detail && evt.detail.target && evt.detail.target.id === 'game-grid') {
+            initQuickJumpObserver();
+        }
+    });
+
+    function initCatalog() {
         setupComplexitySlider();
+        initQuickJumpObserver();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCatalog);
+    } else {
+        initCatalog();
     }
 </script>
 {{end}}

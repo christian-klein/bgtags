@@ -3,8 +3,14 @@
     <span class="results-count">{{.TotalCount}} games available</span>
 </div>
 <div class="games-grid">
-    {{range .Games}}
-        {{template "game_card.html" .}}
+    {{range .SectionGroups}}
+        <div class="grid-section-header" id="{{.Section.Key}}" data-section-key="{{.Section.Key}}">
+            <h3 class="grid-section-title">{{.Section.Title}}</h3>
+            <span class="grid-section-badge">{{.Section.Count}}</span>
+        </div>
+        {{range .Games}}
+            {{template "game_card.html" .}}
+        {{end}}
     {{else}}
         <div class="empty-state">
             <span class="empty-icon">🎲</span>
@@ -13,4 +19,20 @@
         </div>
     {{end}}
 </div>
+
+{{if gt (len .Sections) 1}}
+<nav class="quick-jump-rail no-print" id="quick-jump-rail" aria-label="Quick jump to section">
+    <div class="quick-jump-pill">
+        {{range .Sections}}
+        <button type="button" 
+                class="quick-jump-item" 
+                data-jump-target="{{.Key}}"
+                onclick="jumpToSection('{{.Key}}', event)"
+                title="{{.Title}} ({{.Count}})">
+            {{.Label}}
+        </button>
+        {{end}}
+    </div>
+</nav>
+{{end}}
 {{end}}

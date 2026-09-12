@@ -29,8 +29,7 @@
         "filename": "MD2-Web_Quest_-_Hello_Darkness_One-Shot.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.01
+    ]
   },
   {
     "id": 3,
@@ -74,8 +73,7 @@
         "filename": "Ark-Nova_Start_EN.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 8.35
+    ]
   },
   {
     "id": 4,
@@ -107,8 +105,7 @@
         "filename": "beyond-the-sun-teaching-script.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.56
+    ]
   },
   {
     "id": 5,
@@ -128,8 +125,7 @@
         "filename": "concordia-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.92
+    ]
   },
   {
     "id": 6,
@@ -149,8 +145,7 @@
         "filename": "blood-rage.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.72
+    ]
   },
   {
     "id": 7,
@@ -182,8 +177,7 @@
         "filename": "arnak-player-aid.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.92
+    ]
   },
   {
     "id": 8,
@@ -203,8 +197,7 @@
         "filename": "feast-for-odin-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.94
+    ]
   },
   {
     "id": 9,
@@ -224,8 +217,7 @@
         "filename": "eclipse-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.96
+    ]
   },
   {
     "id": 10,
@@ -283,8 +275,7 @@
         "filename": "galactic-cruise-solo-rules.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.58
+    ]
   },
   {
     "id": 12,
@@ -316,8 +307,7 @@
         "filename": "hegemony-player-summaries.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.83
+    ]
   },
   {
     "id": 13,
@@ -407,8 +397,7 @@
         "filename": "asl-starter-kit-errata-qa.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.68
+    ]
   },
   {
     "id": 16,
@@ -446,8 +435,7 @@
         "filename": "asl-starter-kit-3-seqop-table.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.26
+    ]
   },
   {
     "id": 17,
@@ -473,12 +461,11 @@
         "filename": "battlestar-galactica-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.53
+    ]
   },
   {
     "id": 18,
-    "name": "Battlestar Galactica: The Board Game – Pegasus Expansion",
+    "name": "Battlestar Galactica: The Board Game \u2013 Pegasus Expansion",
     "url": "battlestar-galactica-pegasus-rules.pdf",
     "image": "battlestar-galactica-pegasus.jpg",
     "min_players": 3,
@@ -494,12 +481,11 @@
         "filename": "battlestar-galactica-pegasus-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.15
+    ]
   },
   {
     "id": 19,
-    "name": "Battlestar Galactica: The Board Game – Exodus Expansion",
+    "name": "Battlestar Galactica: The Board Game \u2013 Exodus Expansion",
     "url": "battlestar-galactica-exodus-rules.pdf",
     "image": "battlestar-galactica-exodus.jpg",
     "min_players": 3,
@@ -515,12 +501,11 @@
         "filename": "battlestar-galactica-exodus-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.07
+    ]
   },
   {
     "id": 20,
-    "name": "Battlestar Galactica: The Board Game – Daybreak Expansion",
+    "name": "Battlestar Galactica: The Board Game \u2013 Daybreak Expansion",
     "url": "battlestar-galactica-daybreak-rules.pdf",
     "image": "battlestar-galactica-daybreak.jpg",
     "min_players": 3,
@@ -536,8 +521,7 @@
         "filename": "battlestar-galactica-daybreak-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.77
+    ]
   },
   {
     "id": 21,
@@ -550,8 +534,7 @@
     "complexity": 4.74,
     "bgg_url": "https://boardgamegeek.com/boardgame/243/advanced-squad-leader",
     "parent_id": null,
-    "documents": [],
-    "rating": 6.93
+    "documents": []
   },
   {
     "id": 22,
@@ -564,8 +547,7 @@
     "complexity": 4.6,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/5287/beyond-valor-asl-module-1",
     "parent_id": 21,
-    "documents": [],
-    "rating": 6.5
+    "documents": []
   },
   {
     "id": 23,
@@ -585,8 +567,7 @@
         "filename": "aeon-trespass-odyssey-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.94
+    ]
   },
   {
     "id": 24,
@@ -606,8 +587,7 @@
         "filename": "gaia-project-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 8.08
+    ]
   },
   {
     "id": 25,
@@ -627,8 +607,7 @@
         "filename": "die-macher-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.98
+    ]
   },
   {
     "id": 26,
@@ -648,8 +627,7 @@
         "filename": "civolution-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.43
+    ]
   },
   {
     "id": 27,
@@ -669,8 +647,7 @@
         "filename": "elder-scrolls-betrayal-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.48
+    ]
   },
   {
     "id": 28,
@@ -690,8 +667,7 @@
         "filename": "black-angel-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.64
+    ]
   },
   {
     "id": 29,
@@ -711,8 +687,7 @@
         "filename": "ascendancy-reference-guide.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.74
+    ]
   },
   {
     "id": 30,
@@ -732,8 +707,7 @@
         "filename": "forbidden-stars-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.44
+    ]
   },
   {
     "id": 31,
@@ -753,8 +727,7 @@
         "filename": "fief-france-1429-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.41
+    ]
   },
   {
     "id": 32,
@@ -774,8 +747,7 @@
         "filename": "autobahn-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.19
+    ]
   },
   {
     "id": 33,
@@ -795,8 +767,7 @@
         "filename": "maladum-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.93
+    ]
   },
   {
     "id": 34,
@@ -816,8 +787,7 @@
         "filename": "imperium-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.05
+    ]
   },
   {
     "id": 35,
@@ -837,8 +807,7 @@
         "filename": "andromedas-edge-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.42
+    ]
   },
   {
     "id": 36,
@@ -858,8 +827,7 @@
         "filename": "clash-of-cultures-monumental-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.32
+    ]
   },
   {
     "id": 37,
@@ -879,8 +847,7 @@
         "filename": "agot-2nd-ed-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.3
+    ]
   },
   {
     "id": 38,
@@ -900,8 +867,7 @@
         "filename": "great-western-trail-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.97
+    ]
   },
   {
     "id": 39,
@@ -921,8 +887,7 @@
         "filename": "iss-vanguard-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.43
+    ]
   },
   {
     "id": 40,
@@ -942,12 +907,11 @@
         "filename": "imperium-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.17
+    ]
   },
   {
     "id": 41,
-    "name": "Fief: France 1429 – Expansions Pack",
+    "name": "Fief: France 1429 \u2013 Expansions Pack",
     "url": "fief-france-1429-rulebook.pdf",
     "image": "fief-expansions-pack.jpg",
     "min_players": 3,
@@ -963,8 +927,7 @@
         "filename": "fief-france-1429-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.71
+    ]
   },
   {
     "id": 42,
@@ -984,8 +947,7 @@
         "filename": "dark-ages-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.96
+    ]
   },
   {
     "id": 43,
@@ -1005,8 +967,7 @@
         "filename": "earthborne-rangers-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.05
+    ]
   },
   {
     "id": 44,
@@ -1026,8 +987,7 @@
         "filename": "dark-ages-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6
+    ]
   },
   {
     "id": 45,
@@ -1047,8 +1007,7 @@
         "filename": "dead-reckoning-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.14
+    ]
   },
   {
     "id": 46,
@@ -1068,8 +1027,7 @@
         "filename": "company-of-heroes-2e-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.96
+    ]
   },
   {
     "id": 47,
@@ -1089,8 +1047,7 @@
         "filename": "dinosaur-island-totally-liquid-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.63
+    ]
   },
   {
     "id": 48,
@@ -1110,8 +1067,7 @@
         "filename": "agemonia-rules-reference.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.57
+    ]
   },
   {
     "id": 49,
@@ -1131,8 +1087,7 @@
         "filename": "endless-winter-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.15
+    ]
   },
   {
     "id": 50,
@@ -1152,8 +1107,7 @@
         "filename": "eldritch-horror-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.49
+    ]
   },
   {
     "id": 51,
@@ -1173,8 +1127,7 @@
         "filename": "heroes-of-land-air-sea-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.67
+    ]
   },
   {
     "id": 52,
@@ -1194,8 +1147,7 @@
         "filename": "lorenzo-il-magnifico-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.48
+    ]
   },
   {
     "id": 53,
@@ -1265,8 +1217,7 @@
         "filename": "cry-havoc-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.64
+    ]
   },
   {
     "id": 55,
@@ -1292,8 +1243,7 @@
         "filename": "fury-of-dracula-rules-reference.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.08
+    ]
   },
   {
     "id": 56,
@@ -1313,8 +1263,7 @@
         "filename": "abomination-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.68
+    ]
   },
   {
     "id": 57,
@@ -1334,8 +1283,7 @@
         "filename": "level-7-omega-protocol-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.38
+    ]
   },
   {
     "id": 58,
@@ -1355,8 +1303,7 @@
         "filename": "after-the-empire-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.36
+    ]
   },
   {
     "id": 59,
@@ -1382,8 +1329,7 @@
         "filename": "dune-imperium-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 8.22
+    ]
   },
   {
     "id": 60,
@@ -1403,8 +1349,7 @@
         "filename": "dead-of-winter-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.27
+    ]
   },
   {
     "id": 61,
@@ -1414,7 +1359,7 @@
     "min_players": 1,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgame/265188/glen-more-ii-chronicles",
     "parent_id": null,
     "documents": [
@@ -1424,8 +1369,7 @@
         "filename": "glen-more-ii-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.36
+    ]
   },
   {
     "id": 62,
@@ -1445,8 +1389,7 @@
         "filename": "7th-citadel-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.82
+    ]
   },
   {
     "id": 63,
@@ -1472,8 +1415,7 @@
         "filename": "core-space-reference.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.2
+    ]
   },
   {
     "id": 64,
@@ -1493,8 +1435,7 @@
         "filename": "earth-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.35
+    ]
   },
   {
     "id": 65,
@@ -1514,8 +1455,7 @@
         "filename": "alien-artifacts-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.05
+    ]
   },
   {
     "id": 66,
@@ -1535,8 +1475,7 @@
         "filename": "freedom-underground-railroad-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.85
+    ]
   },
   {
     "id": 67,
@@ -1562,8 +1501,7 @@
         "filename": "freedom-five-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.08
+    ]
   },
   {
     "id": 68,
@@ -1583,8 +1521,7 @@
         "filename": "in-the-hall-of-the-mountain-king-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.84
+    ]
   },
   {
     "id": 69,
@@ -1604,8 +1541,7 @@
         "filename": "castles-of-burgundy-special-edition-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 8.5
+    ]
   },
   {
     "id": 70,
@@ -1625,8 +1561,7 @@
         "filename": "charterstone-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.88
+    ]
   },
   {
     "id": 71,
@@ -1646,12 +1581,11 @@
         "filename": "7th-continent-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.41
+    ]
   },
   {
     "id": 72,
-    "name": "The Lord of the Rings: The Card Game – The Hobbit: On the Doorstep",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Hobbit: On the Doorstep",
     "url": "lotr-hobbit-on-the-doorstep-rules.pdf",
     "image": "lotr-hobbit-on-the-doorstep.jpg",
     "min_players": 1,
@@ -1667,8 +1601,7 @@
         "filename": "lotr-hobbit-on-the-doorstep-rules.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.04
+    ]
   },
   {
     "id": 73,
@@ -1688,8 +1621,7 @@
         "filename": "maglev-metro-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.47
+    ]
   },
   {
     "id": 74,
@@ -1709,8 +1641,7 @@
         "filename": "legendary-matrix-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.97
+    ]
   },
   {
     "id": 75,
@@ -1730,8 +1661,7 @@
         "filename": "imperial-settlers-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.09
+    ]
   },
   {
     "id": 76,
@@ -1757,8 +1687,7 @@
         "filename": "legends-of-andor-reference.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.85
+    ]
   },
   {
     "id": 77,
@@ -1778,8 +1707,7 @@
         "filename": "imperial-settlers-empires-of-the-north-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.91
+    ]
   },
   {
     "id": 78,
@@ -1799,8 +1727,7 @@
         "filename": "the-loop-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7
+    ]
   },
   {
     "id": 79,
@@ -1820,8 +1747,7 @@
         "filename": "architects-of-the-west-kingdom-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.51
+    ]
   },
   {
     "id": 80,
@@ -1841,8 +1767,7 @@
         "filename": "clank-legacy-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.93
+    ]
   },
   {
     "id": 81,
@@ -1862,8 +1787,7 @@
         "filename": "defenders-of-the-realm-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.69
+    ]
   },
   {
     "id": 82,
@@ -1883,8 +1807,7 @@
         "filename": "castles-of-mad-king-ludwig-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.3
+    ]
   },
   {
     "id": 83,
@@ -1904,8 +1827,7 @@
         "filename": "drizzt-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.64
+    ]
   },
   {
     "id": 84,
@@ -1925,8 +1847,7 @@
         "filename": "its-a-wonderful-kingdom-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.44
+    ]
   },
   {
     "id": 85,
@@ -1946,8 +1867,7 @@
         "filename": "aventuria-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.01
+    ]
   },
   {
     "id": 86,
@@ -1967,8 +1887,7 @@
         "filename": "clank-in-space-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.42
+    ]
   },
   {
     "id": 87,
@@ -1988,8 +1907,7 @@
         "filename": "cosmic-encounter-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.31
+    ]
   },
   {
     "id": 88,
@@ -2009,8 +1927,7 @@
         "filename": "dragonbond-lords-of-vaala-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.62
+    ]
   },
   {
     "id": 89,
@@ -2030,8 +1947,7 @@
         "filename": "legendary-firefly-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.2
+    ]
   },
   {
     "id": 90,
@@ -2051,8 +1967,7 @@
         "filename": "everdell-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.8
+    ]
   },
   {
     "id": 91,
@@ -2072,12 +1987,11 @@
         "filename": "final-girl-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.61
+    ]
   },
   {
     "id": 92,
-    "name": "Legendary: A Marvel Deck Building Game – Villains",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Villains",
     "url": "legendary-villains-rulebook.pdf",
     "image": "legendary-villains.jpg",
     "min_players": 1,
@@ -2093,8 +2007,7 @@
         "filename": "legendary-villains-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.54
+    ]
   },
   {
     "id": 93,
@@ -2114,8 +2027,7 @@
         "filename": "legendary-alien-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.36
+    ]
   },
   {
     "id": 94,
@@ -2135,8 +2047,7 @@
         "filename": "invincible-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.1
+    ]
   },
   {
     "id": 95,
@@ -2156,12 +2067,11 @@
         "filename": "castle-ravenloft-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.59
+    ]
   },
   {
     "id": 96,
-    "name": "Legendary: A Marvel Deck Building Game – Fantastic Four",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Fantastic Four",
     "url": "legendary-fantastic-four-rulebook.pdf",
     "image": "legendary-fantastic-four.jpg",
     "min_players": 1,
@@ -2177,8 +2087,7 @@
         "filename": "legendary-fantastic-four-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.81
+    ]
   },
   {
     "id": 97,
@@ -2198,12 +2107,11 @@
         "filename": "legendary-james-bond-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.06
+    ]
   },
   {
     "id": 98,
-    "name": "Legendary: A Marvel Deck Building Game – Guardians of the Galaxy",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Guardians of the Galaxy",
     "url": "legendary-guardians-rulebook.pdf",
     "image": "legendary-guardians.jpg",
     "min_players": 1,
@@ -2219,8 +2127,7 @@
         "filename": "legendary-guardians-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.85
+    ]
   },
   {
     "id": 99,
@@ -2240,8 +2147,7 @@
         "filename": "lords-of-waterdeep-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.58
+    ]
   },
   {
     "id": 100,
@@ -2261,8 +2167,7 @@
         "filename": "black-orchestra-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.96
+    ]
   },
   {
     "id": 101,
@@ -2282,8 +2187,7 @@
         "filename": "dice-realms-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.09
+    ]
   },
   {
     "id": 102,
@@ -2303,8 +2207,7 @@
         "filename": "first-in-flight-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.3
+    ]
   },
   {
     "id": 103,
@@ -2324,8 +2227,7 @@
         "filename": "cryptid-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.16
+    ]
   },
   {
     "id": 104,
@@ -2345,8 +2247,7 @@
         "filename": "kingdom-legacy-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.94
+    ]
   },
   {
     "id": 105,
@@ -2366,8 +2267,7 @@
         "filename": "ghostbusters-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.76
+    ]
   },
   {
     "id": 106,
@@ -2387,8 +2287,7 @@
         "filename": "fog-of-love-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.32
+    ]
   },
   {
     "id": 107,
@@ -2408,8 +2307,7 @@
         "filename": "heroes-of-tenefyr-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6
+    ]
   },
   {
     "id": 108,
@@ -2429,8 +2327,7 @@
         "filename": "forest-shuffle-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.46
+    ]
   },
   {
     "id": 109,
@@ -2450,8 +2347,7 @@
         "filename": "hadara-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.94
+    ]
   },
   {
     "id": 110,
@@ -2464,8 +2360,7 @@
     "complexity": 2.2,
     "bgg_url": "https://boardgamegeek.com/boardgame/462192/the-crew-journey-to-the-ends-of-the-earth",
     "parent_id": null,
-    "documents": [],
-    "rating": 5.71
+    "documents": []
   },
   {
     "id": 111,
@@ -2485,8 +2380,7 @@
         "filename": "maps-of-misterra-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.66
+    ]
   },
   {
     "id": 112,
@@ -2506,8 +2400,7 @@
         "filename": "cubitos-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.99
+    ]
   },
   {
     "id": 113,
@@ -2527,8 +2420,7 @@
         "filename": "epic-spell-wars-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.74
+    ]
   },
   {
     "id": 114,
@@ -2548,8 +2440,7 @@
         "filename": "the-crew-mission-deep-sea-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.8
+    ]
   },
   {
     "id": 115,
@@ -2569,8 +2460,7 @@
         "filename": "chronicles-of-crime-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.14
+    ]
   },
   {
     "id": 116,
@@ -2590,8 +2480,7 @@
         "filename": "citadels-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.93
+    ]
   },
   {
     "id": 117,
@@ -2611,8 +2500,7 @@
         "filename": "horrified-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.29
+    ]
   },
   {
     "id": 118,
@@ -2632,8 +2520,7 @@
         "filename": "foundations-of-rome-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.21
+    ]
   },
   {
     "id": 119,
@@ -2653,8 +2540,7 @@
         "filename": "africana-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.94
+    ]
   },
   {
     "id": 120,
@@ -2674,8 +2560,7 @@
         "filename": "harmonies-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.77
+    ]
   },
   {
     "id": 121,
@@ -2695,8 +2580,7 @@
         "filename": "call-to-adventure-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.59
+    ]
   },
   {
     "id": 122,
@@ -2709,8 +2593,7 @@
     "complexity": 2.53,
     "bgg_url": "https://boardgamegeek.com/boardgame/124668/the-dwarves",
     "parent_id": null,
-    "documents": [],
-    "rating": 5.93
+    "documents": []
   },
   {
     "id": 123,
@@ -2720,11 +2603,10 @@
     "min_players": 2,
     "max_players": 5,
     "best_players": "4",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/207320/the-dwarves-new-heroes-expansion",
     "parent_id": 122,
-    "documents": [],
-    "rating": 5.55
+    "documents": []
   },
   {
     "id": 124,
@@ -2734,11 +2616,10 @@
     "min_players": 2,
     "max_players": 5,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/178046/the-dwarves-the-saga-expansion",
     "parent_id": 122,
-    "documents": [],
-    "rating": 5.59
+    "documents": []
   },
   {
     "id": 125,
@@ -2748,11 +2629,10 @@
     "min_players": 2,
     "max_players": 5,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147712/the-dwarves-combined-might",
     "parent_id": 122,
-    "documents": [],
-    "rating": 5.57
+    "documents": []
   },
   {
     "id": 126,
@@ -2762,7 +2642,7 @@
     "min_players": 4,
     "max_players": 10,
     "best_players": "8",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgame/396882/invincible-escape-from-mars",
     "parent_id": null,
     "documents": []
@@ -2785,8 +2665,7 @@
         "filename": "the-crew-planet-nine-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.61
+    ]
   },
   {
     "id": 128,
@@ -2806,8 +2685,7 @@
         "filename": "dice-forge-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.01
+    ]
   },
   {
     "id": 129,
@@ -2833,12 +2711,11 @@
         "filename": "lotr-journeys-middle-earth-learn-to-play.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.48
+    ]
   },
   {
     "id": 130,
-    "name": "The Lord of the Rings: The Two Towers – Trick-Taking Game",
+    "name": "The Lord of the Rings: The Two Towers \u2013 Trick-Taking Game",
     "url": "lotr-two-towers-rulebook.pdf",
     "image": "lotr-two-towers.jpg",
     "min_players": 2,
@@ -2858,7 +2735,7 @@
   },
   {
     "id": 131,
-    "name": "The Lord of the Rings: The Fellowship of the Ring – Trick-Taking Game",
+    "name": "The Lord of the Rings: The Fellowship of the Ring \u2013 Trick-Taking Game",
     "url": "lotr-fellowship-rulebook.pdf",
     "image": "lotr-fellowship.jpg",
     "min_players": 2,
@@ -2874,8 +2751,7 @@
         "filename": "lotr-fellowship-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.52
+    ]
   },
   {
     "id": 132,
@@ -2887,7 +2763,7 @@
     "best_players": "5",
     "complexity": 2.84,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/87507/cosmic-encounter-cosmic-conflict",
-    "parent_id": null,
+    "parent_id": 87,
     "documents": [
       {
         "title": "Expansion Rules",
@@ -2895,8 +2771,7 @@
         "filename": "cosmic-conflict-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.79
+    ]
   },
   {
     "id": 133,
@@ -2916,8 +2791,7 @@
         "filename": "adventure-tactics-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.25
+    ]
   },
   {
     "id": 134,
@@ -2943,8 +2817,7 @@
         "filename": "clank-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.79
+    ]
   },
   {
     "id": 135,
@@ -2964,8 +2837,7 @@
         "filename": "clank-in-space-apocalypse-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.53
+    ]
   },
   {
     "id": 136,
@@ -2985,8 +2857,7 @@
         "filename": "legendary-marvel-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.22
+    ]
   },
   {
     "id": 137,
@@ -3006,8 +2877,7 @@
         "filename": "dominion-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.47
+    ]
   },
   {
     "id": 138,
@@ -3033,8 +2903,7 @@
         "filename": "elder-sign-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.77
+    ]
   },
   {
     "id": 139,
@@ -3054,8 +2923,7 @@
         "filename": "its-a-wonderful-world-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.38
+    ]
   },
   {
     "id": 140,
@@ -3075,8 +2943,7 @@
         "filename": "heat-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.8
+    ]
   },
   {
     "id": 141,
@@ -3096,8 +2963,7 @@
         "filename": "hero-realms-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.19
+    ]
   },
   {
     "id": 142,
@@ -3117,8 +2983,7 @@
         "filename": "decrypto-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.55
+    ]
   },
   {
     "id": 143,
@@ -3138,8 +3003,7 @@
         "filename": "challengers-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.68
+    ]
   },
   {
     "id": 144,
@@ -3159,8 +3023,7 @@
         "filename": "azul-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.6
+    ]
   },
   {
     "id": 145,
@@ -3180,8 +3043,7 @@
         "filename": "fairy-tale-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.44
+    ]
   },
   {
     "id": 146,
@@ -3201,8 +3063,7 @@
         "filename": "dungeon-fighter-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.42
+    ]
   },
   {
     "id": 147,
@@ -3222,8 +3083,7 @@
         "filename": "magic-maze-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.77
+    ]
   },
   {
     "id": 148,
@@ -3243,8 +3103,7 @@
         "filename": "castle-combo-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.36
+    ]
   },
   {
     "id": 149,
@@ -3264,12 +3123,11 @@
         "filename": "bohnanza-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.96
+    ]
   },
   {
     "id": 150,
-    "name": "Bärenpark",
+    "name": "B\u00e4renpark",
     "url": "barenpark-rulebook.pdf",
     "image": "barenpark.jpg",
     "min_players": 2,
@@ -3285,8 +3143,7 @@
         "filename": "barenpark-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.07
+    ]
   },
   {
     "id": 151,
@@ -3306,8 +3163,7 @@
         "filename": "the-gang-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.14
+    ]
   },
   {
     "id": 152,
@@ -3327,8 +3183,7 @@
         "filename": "deception-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.21
+    ]
   },
   {
     "id": 153,
@@ -3348,8 +3203,7 @@
         "filename": "dungeon-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.76
+    ]
   },
   {
     "id": 154,
@@ -3369,8 +3223,7 @@
         "filename": "king-of-tokyo-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.01
+    ]
   },
   {
     "id": 155,
@@ -3390,8 +3243,7 @@
         "filename": "escape-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.75
+    ]
   },
   {
     "id": 156,
@@ -3411,8 +3263,7 @@
         "filename": "concept-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.58
+    ]
   },
   {
     "id": 157,
@@ -3432,8 +3283,7 @@
         "filename": "loot-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.08
+    ]
   },
   {
     "id": 158,
@@ -3453,8 +3303,7 @@
         "filename": "french-toast-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.7
+    ]
   },
   {
     "id": 159,
@@ -3474,8 +3323,7 @@
         "filename": "kingdomino-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.17
+    ]
   },
   {
     "id": 160,
@@ -3507,12 +3355,11 @@
         "filename": "lotr-lcg-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.38
+    ]
   },
   {
     "id": 161,
-    "name": "The Lord of the Rings: The Card Game – Khazad-dûm",
+    "name": "The Lord of the Rings: The Card Game \u2013 Khazad-d\u00fbm",
     "url": "lotr-lcg-khazad-dum-rulebook.pdf",
     "image": "lotr-lcg-khazad-dum.jpg",
     "min_players": 1,
@@ -3528,12 +3375,11 @@
         "filename": "lotr-lcg-khazad-dum-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.47
+    ]
   },
   {
     "id": 162,
-    "name": "The Lord of the Rings: The Card Game – The Hobbit: Over Hill and Under Hill",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Hobbit: Over Hill and Under Hill",
     "url": "lotr-lcg-hobbit-over-hill-rulebook.pdf",
     "image": "lotr-lcg-hobbit-over-hill.jpg",
     "min_players": 1,
@@ -3549,12 +3395,11 @@
         "filename": "lotr-lcg-hobbit-over-hill-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.23
+    ]
   },
   {
     "id": 163,
-    "name": "The Lord of the Rings: The Card Game – A Journey to Rhosgobel",
+    "name": "The Lord of the Rings: The Card Game \u2013 A Journey to Rhosgobel",
     "url": "lotr-lcg-journey-rhosgobel-rulebook.pdf",
     "image": "lotr-lcg-journey-rhosgobel.jpg",
     "min_players": 1,
@@ -3570,18 +3415,17 @@
         "filename": "lotr-lcg-journey-rhosgobel-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.19
+    ]
   },
   {
     "id": 164,
-    "name": "The Lord of the Rings: The Card Game – Return to Mirkwood",
+    "name": "The Lord of the Rings: The Card Game \u2013 Return to Mirkwood",
     "url": "lotr-lcg-return-mirkwood-rulebook.pdf",
     "image": "lotr-lcg-return-mirkwood.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/102875/the-lord-of-the-rings-the-card-game-return-to-mirkw",
     "parent_id": 160,
     "documents": [
@@ -3591,12 +3435,11 @@
         "filename": "lotr-lcg-return-mirkwood-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.18
+    ]
   },
   {
     "id": 165,
-    "name": "The Lord of the Rings: The Card Game – The Black Riders",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Black Riders",
     "url": "lotr-lcg-black-riders-rulebook.pdf",
     "image": "lotr-lcg-black-riders.jpg",
     "min_players": 1,
@@ -3612,12 +3455,11 @@
         "filename": "lotr-lcg-black-riders-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.12
+    ]
   },
   {
     "id": 166,
-    "name": "The Lord of the Rings: The Card Game – The Dead Marshes",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dead Marshes",
     "url": "lotr-lcg-dead-marshes-rulebook.pdf",
     "image": "lotr-lcg-dead-marshes.jpg",
     "min_players": 1,
@@ -3633,12 +3475,11 @@
         "filename": "lotr-lcg-dead-marshes-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.11
+    ]
   },
   {
     "id": 167,
-    "name": "The Lord of the Rings: The Card Game – Foundations of Stone",
+    "name": "The Lord of the Rings: The Card Game \u2013 Foundations of Stone",
     "url": "lotr-lcg-foundations-stone-rulebook.pdf",
     "image": "lotr-lcg-foundations-stone.jpg",
     "min_players": 1,
@@ -3654,12 +3495,11 @@
         "filename": "lotr-lcg-foundations-stone-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.07
+    ]
   },
   {
     "id": 168,
-    "name": "The Lord of the Rings: The Card Game – The Hills of Emyn Muil",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Hills of Emyn Muil",
     "url": "lotr-lcg-hills-emyn-muil-rulebook.pdf",
     "image": "lotr-lcg-hills-emyn-muil.jpg",
     "min_players": 1,
@@ -3675,12 +3515,11 @@
         "filename": "lotr-lcg-hills-emyn-muil-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.06
+    ]
   },
   {
     "id": 169,
-    "name": "The Lord of the Rings: The Card Game – The Watcher in the Water",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Watcher in the Water",
     "url": "lotr-lcg-watcher-water-rulebook.pdf",
     "image": "lotr-lcg-watcher-water.jpg",
     "min_players": 1,
@@ -3696,12 +3535,11 @@
         "filename": "lotr-lcg-watcher-water-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.04
+    ]
   },
   {
     "id": 170,
-    "name": "The Lord of the Rings: The Card Game – The Redhorn Gate",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Redhorn Gate",
     "url": "lotr-lcg-redhorn-gate-rulebook.pdf",
     "image": "lotr-lcg-redhorn-gate.jpg",
     "min_players": 1,
@@ -3717,18 +3555,17 @@
         "filename": "lotr-lcg-redhorn-gate-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6
+    ]
   },
   {
     "id": 171,
-    "name": "The Lord of the Rings: The Card Game – Shadow and Flame",
+    "name": "The Lord of the Rings: The Card Game \u2013 Shadow and Flame",
     "url": "lotr-lcg-shadow-flame-rulebook.pdf",
     "image": "lotr-lcg-shadow-flame.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/121900/the-lord-of-the-rings-the-card-game-shadow-and-flam",
     "parent_id": 160,
     "documents": [
@@ -3738,12 +3575,11 @@
         "filename": "lotr-lcg-shadow-flame-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6
+    ]
   },
   {
     "id": 172,
-    "name": "The Lord of the Rings: The Card Game – Road to Rivendell",
+    "name": "The Lord of the Rings: The Card Game \u2013 Road to Rivendell",
     "url": "lotr-lcg-road-rivendell-rulebook.pdf",
     "image": "lotr-lcg-road-rivendell.jpg",
     "min_players": 1,
@@ -3759,12 +3595,11 @@
         "filename": "lotr-lcg-road-rivendell-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.97
+    ]
   },
   {
     "id": 173,
-    "name": "The Lord of the Rings: The Card Game – The Road Darkens",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Road Darkens",
     "url": "lotr-lcg-road-darkens-rulebook.pdf",
     "image": "lotr-lcg-road-darkens.jpg",
     "min_players": 1,
@@ -3780,12 +3615,11 @@
         "filename": "lotr-lcg-road-darkens-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.93
+    ]
   },
   {
     "id": 174,
-    "name": "The Lord of the Rings: The Card Game – The Long Dark",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Long Dark",
     "url": "lotr-lcg-long-dark-rulebook.pdf",
     "image": "lotr-lcg-long-dark.jpg",
     "min_players": 1,
@@ -3801,12 +3635,11 @@
         "filename": "lotr-lcg-long-dark-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.92
+    ]
   },
   {
     "id": 175,
-    "name": "The Lord of the Rings: The Card Game – The Voice of Isengard",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Voice of Isengard",
     "url": "lotr-lcg-voice-isengard-rulebook.pdf",
     "image": "lotr-lcg-voice-isengard.jpg",
     "min_players": 1,
@@ -3822,18 +3655,17 @@
         "filename": "lotr-lcg-voice-isengard-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.85
+    ]
   },
   {
     "id": 176,
-    "name": "The Lord of the Rings: The Card Game – The Treason of Saruman",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Treason of Saruman",
     "url": "lotr-lcg-treason-saruman-rulebook.pdf",
     "image": "lotr-lcg-treason-saruman.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/164665/the-lord-of-the-rings-the-card-game-the-treason-of",
     "parent_id": 160,
     "documents": [
@@ -3843,12 +3675,11 @@
         "filename": "lotr-lcg-treason-saruman-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.82
+    ]
   },
   {
     "id": 177,
-    "name": "The Lord of the Rings: The Card Game – The Drúadan Forest",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dr\u00faadan Forest",
     "url": "lotr-lcg-druadan-forest-rulebook.pdf",
     "image": "lotr-lcg-druadan-forest.jpg",
     "min_players": 1,
@@ -3864,18 +3695,17 @@
         "filename": "lotr-lcg-druadan-forest-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.79
+    ]
   },
   {
     "id": 178,
-    "name": "The Lord of the Rings: The Card Game – The Morgul Vale",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Morgul Vale",
     "url": "lotr-lcg-morgul-vale-rulebook.pdf",
     "image": "lotr-lcg-morgul-vale.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/140917/the-lord-of-the-rings-the-card-game-the-morgul-vale",
     "parent_id": 160,
     "documents": [
@@ -3885,18 +3715,17 @@
         "filename": "lotr-lcg-morgul-vale-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.78
+    ]
   },
   {
     "id": 179,
-    "name": "The Lord of the Rings: The Card Game – The Lost Realm",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Lost Realm",
     "url": "lotr-lcg-lost-realm-rulebook.pdf",
     "image": "lotr-lcg-lost-realm.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/164313/the-lord-of-the-rings-the-card-game-the-lost-realm",
     "parent_id": 160,
     "documents": [
@@ -3906,12 +3735,11 @@
         "filename": "lotr-lcg-lost-realm-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.77
+    ]
   },
   {
     "id": 180,
-    "name": "The Lord of the Rings: The Card Game – Assault on Osgiliath",
+    "name": "The Lord of the Rings: The Card Game \u2013 Assault on Osgiliath",
     "url": "lotr-lcg-assault-osgiliath-rulebook.pdf",
     "image": "lotr-lcg-assault-osgiliath.jpg",
     "min_players": 1,
@@ -3927,12 +3755,11 @@
         "filename": "lotr-lcg-assault-osgiliath-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.77
+    ]
   },
   {
     "id": 181,
-    "name": "The Lord of the Rings: The Card Game – The Blood of Gondor",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Blood of Gondor",
     "url": "lotr-lcg-blood-gondor-rulebook.pdf",
     "image": "lotr-lcg-blood-gondor.jpg",
     "min_players": 1,
@@ -3948,12 +3775,11 @@
         "filename": "lotr-lcg-blood-gondor-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.76
+    ]
   },
   {
     "id": 182,
-    "name": "The Lord of the Rings: The Card Game – The Dunland Trap",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dunland Trap",
     "url": "lotr-lcg-dunland-trap-rulebook.pdf",
     "image": "lotr-lcg-dunland-trap.jpg",
     "min_players": 1,
@@ -3969,12 +3795,11 @@
         "filename": "lotr-lcg-dunland-trap-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.73
+    ]
   },
   {
     "id": 183,
-    "name": "The Lord of the Rings: The Card Game – The Hunt for Gollum",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Hunt for Gollum",
     "url": "lotr-lcg-hunt-gollum-rulebook.pdf",
     "image": "lotr-lcg-hunt-gollum.jpg",
     "min_players": 1,
@@ -3990,12 +3815,11 @@
         "filename": "lotr-lcg-hunt-gollum-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.25
+    ]
   },
   {
     "id": 184,
-    "name": "The Lord of the Rings: The Card Game – Conflict at the Carrock",
+    "name": "The Lord of the Rings: The Card Game \u2013 Conflict at the Carrock",
     "url": "lotr-lcg-conflict-carrock-rulebook.pdf",
     "image": "lotr-lcg-conflict-carrock.jpg",
     "min_players": 1,
@@ -4011,12 +3835,11 @@
         "filename": "lotr-lcg-conflict-carrock-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.34
+    ]
   },
   {
     "id": 185,
-    "name": "The Lord of the Rings: The Card Game – Heirs of Númenor",
+    "name": "The Lord of the Rings: The Card Game \u2013 Heirs of N\u00famenor",
     "url": "lotr-lcg-heirs-numenor-rulebook.pdf",
     "image": "lotr-lcg-heirs-numenor.jpg",
     "min_players": 1,
@@ -4032,12 +3855,11 @@
         "filename": "lotr-lcg-heirs-numenor-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.02
+    ]
   },
   {
     "id": 186,
-    "name": "The Lord of the Rings: The Card Game – The Steward's Fear",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Steward's Fear",
     "url": "lotr-lcg-stewards-fear-rulebook.pdf",
     "image": "lotr-lcg-stewards-fear.jpg",
     "min_players": 1,
@@ -4053,12 +3875,11 @@
         "filename": "lotr-lcg-stewards-fear-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.85
+    ]
   },
   {
     "id": 187,
-    "name": "The Lord of the Rings: The Card Game – Encounter at Amon Dîn",
+    "name": "The Lord of the Rings: The Card Game \u2013 Encounter at Amon D\u00een",
     "url": "lotr-lcg-encounter-amon-din-rulebook.pdf",
     "image": "lotr-lcg-encounter-amon-din.jpg",
     "min_players": 1,
@@ -4074,12 +3895,11 @@
         "filename": "lotr-lcg-encounter-amon-din-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.79
+    ]
   },
   {
     "id": 188,
-    "name": "The Lord of the Rings: The Card Game – The Three Trials",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Three Trials",
     "url": "lotr-lcg-three-trials-rulebook.pdf",
     "image": "lotr-lcg-three-trials.jpg",
     "min_players": 1,
@@ -4095,12 +3915,11 @@
         "filename": "lotr-lcg-three-trials-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.74
+    ]
   },
   {
     "id": 189,
-    "name": "The Lord of the Rings: The Card Game – Trouble in Tharbad",
+    "name": "The Lord of the Rings: The Card Game \u2013 Trouble in Tharbad",
     "url": "lotr-lcg-trouble-tharbad-rulebook.pdf",
     "image": "lotr-lcg-trouble-tharbad.jpg",
     "min_players": 1,
@@ -4116,12 +3935,11 @@
         "filename": "lotr-lcg-trouble-tharbad-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.71
+    ]
   },
   {
     "id": 190,
-    "name": "The Lord of the Rings: The Card Game – The Nîn-in-Eilph",
+    "name": "The Lord of the Rings: The Card Game \u2013 The N\u00een-in-Eilph",
     "url": "lotr-lcg-nin-eilph-rulebook.pdf",
     "image": "lotr-lcg-nin-eilph.jpg",
     "min_players": 1,
@@ -4137,12 +3955,11 @@
         "filename": "lotr-lcg-nin-eilph-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.69
+    ]
   },
   {
     "id": 191,
-    "name": "The Lord of the Rings: The Card Game – Celebrimbor's Secret",
+    "name": "The Lord of the Rings: The Card Game \u2013 Celebrimbor's Secret",
     "url": "lotr-lcg-celebrimbor-secret-rulebook.pdf",
     "image": "lotr-lcg-celebrimbor-secret.jpg",
     "min_players": 1,
@@ -4158,12 +3975,11 @@
         "filename": "lotr-lcg-celebrimbor-secret-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.72
+    ]
   },
   {
     "id": 192,
-    "name": "The Lord of the Rings: The Card Game – The Antlered Crown",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Antlered Crown",
     "url": "lotr-lcg-antlered-crown-rulebook.pdf",
     "image": "lotr-lcg-antlered-crown.jpg",
     "min_players": 1,
@@ -4179,12 +3995,11 @@
         "filename": "lotr-lcg-antlered-crown-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.7
+    ]
   },
   {
     "id": 193,
-    "name": "The Lord of the Rings: The Card Game – The Wastes of Eriador",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Wastes of Eriador",
     "url": "lotr-lcg-wastes-eriador-rulebook.pdf",
     "image": "lotr-lcg-wastes-eriador.jpg",
     "min_players": 1,
@@ -4200,12 +4015,11 @@
         "filename": "lotr-lcg-wastes-eriador-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.66
+    ]
   },
   {
     "id": 194,
-    "name": "The Lord of the Rings: The Card Game – Escape from Mount Gram",
+    "name": "The Lord of the Rings: The Card Game \u2013 Escape from Mount Gram",
     "url": "lotr-lcg-escape-mount-gram-rulebook.pdf",
     "image": "lotr-lcg-escape-mount-gram.jpg",
     "min_players": 1,
@@ -4221,12 +4035,11 @@
         "filename": "lotr-lcg-escape-mount-gram-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 195,
-    "name": "The Lord of the Rings: The Card Game – Across the Ettenmoors",
+    "name": "The Lord of the Rings: The Card Game \u2013 Across the Ettenmoors",
     "url": "lotr-lcg-across-ettenmoors-rulebook.pdf",
     "image": "lotr-lcg-across-ettenmoors.jpg",
     "min_players": 1,
@@ -4242,12 +4055,11 @@
         "filename": "lotr-lcg-across-ettenmoors-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 196,
-    "name": "The Lord of the Rings: The Card Game – The Land of Shadow",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Land of Shadow",
     "url": "lotr-lcg-land-shadow-rulebook.pdf",
     "image": "lotr-lcg-land-shadow.jpg",
     "min_players": 1,
@@ -4263,12 +4075,11 @@
         "filename": "lotr-lcg-land-shadow-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.74
+    ]
   },
   {
     "id": 197,
-    "name": "The Lord of the Rings: The Card Game – The Treachery of Rhudaur",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Treachery of Rhudaur",
     "url": "lotr-lcg-treachery-rhudaur-rulebook.pdf",
     "image": "lotr-lcg-treachery-rhudaur.jpg",
     "min_players": 1,
@@ -4284,12 +4095,11 @@
         "filename": "lotr-lcg-treachery-rhudaur-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.65
+    ]
   },
   {
     "id": 198,
-    "name": "The Lord of the Rings: The Card Game – The Battle of Carn Dûm",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Battle of Carn D\u00fbm",
     "url": "lotr-lcg-battle-carn-dum-rulebook.pdf",
     "image": "lotr-lcg-battle-carn-dum.jpg",
     "min_players": 1,
@@ -4305,12 +4115,11 @@
         "filename": "lotr-lcg-battle-carn-dum-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.64
+    ]
   },
   {
     "id": 199,
-    "name": "The Lord of the Rings: The Card Game – The Dread Realm",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dread Realm",
     "url": "lotr-lcg-dread-realm-rulebook.pdf",
     "image": "lotr-lcg-dread-realm.jpg",
     "min_players": 1,
@@ -4326,12 +4135,11 @@
         "filename": "lotr-lcg-dread-realm-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.65
+    ]
   },
   {
     "id": 200,
-    "name": "The Lord of the Rings: The Card Game – The Grey Havens",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Grey Havens",
     "url": "lotr-lcg-grey-havens-rulebook.pdf",
     "image": "lotr-lcg-grey-havens.jpg",
     "min_players": 1,
@@ -4347,18 +4155,17 @@
         "filename": "lotr-lcg-grey-havens-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.77
+    ]
   },
   {
     "id": 201,
-    "name": "The Lord of the Rings: The Card Game – Flight of the Stormcaller",
+    "name": "The Lord of the Rings: The Card Game \u2013 Flight of the Stormcaller",
     "url": "lotr-lcg-flight-stormcaller-rulebook.pdf",
     "image": "lotr-lcg-flight-stormcaller.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188228",
     "parent_id": 160,
     "documents": [
@@ -4368,12 +4175,11 @@
         "filename": "lotr-lcg-flight-stormcaller-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 202,
-    "name": "The Lord of the Rings: The Card Game – The Thing in the Depths",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Thing in the Depths",
     "url": "lotr-lcg-thing-depths-rulebook.pdf",
     "image": "lotr-lcg-thing-depths.jpg",
     "min_players": 1,
@@ -4389,12 +4195,11 @@
         "filename": "lotr-lcg-thing-depths-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.65
+    ]
   },
   {
     "id": 203,
-    "name": "The Lord of the Rings: The Card Game – Temple of the Deceived",
+    "name": "The Lord of the Rings: The Card Game \u2013 Temple of the Deceived",
     "url": "lotr-lcg-temple-deceived-rulebook.pdf",
     "image": "lotr-lcg-temple-deceived.jpg",
     "min_players": 1,
@@ -4410,12 +4215,11 @@
         "filename": "lotr-lcg-temple-deceived-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.65
+    ]
   },
   {
     "id": 204,
-    "name": "The Lord of the Rings: The Card Game – The Drowned Ruins",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Drowned Ruins",
     "url": "lotr-lcg-drowned-ruins-rulebook.pdf",
     "image": "lotr-lcg-drowned-ruins.jpg",
     "min_players": 1,
@@ -4431,12 +4235,11 @@
         "filename": "lotr-lcg-drowned-ruins-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.63
+    ]
   },
   {
     "id": 205,
-    "name": "The Lord of the Rings: The Card Game – The Flame of the West",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Flame of the West",
     "url": "lotr-lcg-flame-west-rulebook.pdf",
     "image": "lotr-lcg-flame-west.jpg",
     "min_players": 1,
@@ -4452,18 +4255,17 @@
         "filename": "lotr-lcg-flame-west-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.72
+    ]
   },
   {
     "id": 206,
-    "name": "The Lord of the Rings: The Card Game – A Storm on Cobas Haven",
+    "name": "The Lord of the Rings: The Card Game \u2013 A Storm on Cobas Haven",
     "url": "lotr-lcg-storm-cobas-haven-rulebook.pdf",
     "image": "lotr-lcg-storm-cobas-haven.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200092",
     "parent_id": 160,
     "documents": [
@@ -4473,12 +4275,11 @@
         "filename": "lotr-lcg-storm-cobas-haven-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.63
+    ]
   },
   {
     "id": 207,
-    "name": "The Lord of the Rings: The Card Game – The City of Corsairs",
+    "name": "The Lord of the Rings: The Card Game \u2013 The City of Corsairs",
     "url": "lotr-lcg-city-corsairs-rulebook.pdf",
     "image": "lotr-lcg-city-corsairs.jpg",
     "min_players": 1,
@@ -4494,12 +4295,11 @@
         "filename": "lotr-lcg-city-corsairs-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.63
+    ]
   },
   {
     "id": 208,
-    "name": "The Lord of the Rings: The Card Game – The Sands of Harad",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Sands of Harad",
     "url": "lotr-lcg-sands-harad-rulebook.pdf",
     "image": "lotr-lcg-sands-harad.jpg",
     "min_players": 1,
@@ -4515,12 +4315,11 @@
         "filename": "lotr-lcg-sands-harad-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 209,
-    "name": "The Lord of the Rings: The Card Game – The Mûmakil",
+    "name": "The Lord of the Rings: The Card Game \u2013 The M\u00fbmakil",
     "url": "lotr-lcg-mumakil-rulebook.pdf",
     "image": "lotr-lcg-mumakil.jpg",
     "min_players": 1,
@@ -4536,12 +4335,11 @@
         "filename": "lotr-lcg-mumakil-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.62
+    ]
   },
   {
     "id": 210,
-    "name": "The Lord of the Rings: The Card Game – Race Across Harad",
+    "name": "The Lord of the Rings: The Card Game \u2013 Race Across Harad",
     "url": "lotr-lcg-race-across-harad-rulebook.pdf",
     "image": "lotr-lcg-race-across-harad.jpg",
     "min_players": 1,
@@ -4557,12 +4355,11 @@
         "filename": "lotr-lcg-race-across-harad-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.61
+    ]
   },
   {
     "id": 211,
-    "name": "The Lord of the Rings: The Card Game – Beneath the Sands",
+    "name": "The Lord of the Rings: The Card Game \u2013 Beneath the Sands",
     "url": "lotr-lcg-beneath-sands-rulebook.pdf",
     "image": "lotr-lcg-beneath-sands.jpg",
     "min_players": 1,
@@ -4578,12 +4375,11 @@
         "filename": "lotr-lcg-beneath-sands-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.6
+    ]
   },
   {
     "id": 212,
-    "name": "The Lord of the Rings: The Card Game – The Black Serpent",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Black Serpent",
     "url": "lotr-lcg-black-serpent-rulebook.pdf",
     "image": "lotr-lcg-black-serpent.jpg",
     "min_players": 1,
@@ -4599,12 +4395,11 @@
         "filename": "lotr-lcg-black-serpent-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.61
+    ]
   },
   {
     "id": 213,
-    "name": "The Lord of the Rings: The Card Game – The Dungeons of Cirith Gurat",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Dungeons of Cirith Gurat",
     "url": "lotr-lcg-dungeons-cirith-rulebook.pdf",
     "image": "lotr-lcg-dungeons-cirith.jpg",
     "min_players": 1,
@@ -4620,12 +4415,11 @@
         "filename": "lotr-lcg-dungeons-cirith-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.6
+    ]
   },
   {
     "id": 214,
-    "name": "The Lord of the Rings: The Card Game – The Crossings of Poros",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Crossings of Poros",
     "url": "lotr-lcg-crossings-poros-rulebook.pdf",
     "image": "lotr-lcg-crossings-poros.jpg",
     "min_players": 1,
@@ -4641,12 +4435,11 @@
         "filename": "lotr-lcg-crossings-poros-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.59
+    ]
   },
   {
     "id": 215,
-    "name": "The Lord of the Rings: The Card Game – The Mountain of Fire",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Mountain of Fire",
     "url": "lotr-lcg-mountain-fire-rulebook.pdf",
     "image": "lotr-lcg-mountain-fire.jpg",
     "min_players": 1,
@@ -4662,12 +4455,11 @@
         "filename": "lotr-lcg-mountain-fire-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.69
+    ]
   },
   {
     "id": 216,
-    "name": "The Lord of the Rings: The Card Game – The Wilds of Rhovanion",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Wilds of Rhovanion",
     "url": "lotr-lcg-wilds-rhovanion-rulebook.pdf",
     "image": "lotr-lcg-wilds-rhovanion.jpg",
     "min_players": 1,
@@ -4683,12 +4475,11 @@
         "filename": "lotr-lcg-wilds-rhovanion-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.62
+    ]
   },
   {
     "id": 217,
-    "name": "The Lord of the Rings: The Card Game – The Withered Heath",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Withered Heath",
     "url": "lotr-lcg-withered-heath-rulebook.pdf",
     "image": "lotr-lcg-withered-heath.jpg",
     "min_players": 1,
@@ -4704,12 +4495,11 @@
         "filename": "lotr-lcg-withered-heath-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.58
+    ]
   },
   {
     "id": 218,
-    "name": "The Lord of the Rings: The Card Game – Roam Across Rhovanion",
+    "name": "The Lord of the Rings: The Card Game \u2013 Roam Across Rhovanion",
     "url": "lotr-lcg-roam-rhovanion-rulebook.pdf",
     "image": "lotr-lcg-roam-rhovanion.jpg",
     "min_players": 1,
@@ -4725,12 +4515,11 @@
         "filename": "lotr-lcg-roam-rhovanion-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.58
+    ]
   },
   {
     "id": 219,
-    "name": "The Lord of the Rings: The Card Game – Fire in the Night",
+    "name": "The Lord of the Rings: The Card Game \u2013 Fire in the Night",
     "url": "lotr-lcg-fire-night-rulebook.pdf",
     "image": "lotr-lcg-fire-night.jpg",
     "min_players": 1,
@@ -4746,12 +4535,11 @@
         "filename": "lotr-lcg-fire-night-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.58
+    ]
   },
   {
     "id": 220,
-    "name": "The Lord of the Rings: The Card Game – The Ghost of Framsburg",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Ghost of Framsburg",
     "url": "lotr-lcg-ghost-framsburg-rulebook.pdf",
     "image": "lotr-lcg-ghost-framsburg.jpg",
     "min_players": 1,
@@ -4767,12 +4555,11 @@
         "filename": "lotr-lcg-ghost-framsburg-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.57
+    ]
   },
   {
     "id": 221,
-    "name": "The Lord of the Rings: The Card Game – Mount Gundabad",
+    "name": "The Lord of the Rings: The Card Game \u2013 Mount Gundabad",
     "url": "lotr-lcg-mount-gundabad-rulebook.pdf",
     "image": "lotr-lcg-mount-gundabad.jpg",
     "min_players": 1,
@@ -4788,12 +4575,11 @@
         "filename": "lotr-lcg-mount-gundabad-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.58
+    ]
   },
   {
     "id": 222,
-    "name": "The Lord of the Rings: The Card Game – The Fate of Wilderland",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Fate of Wilderland",
     "url": "lotr-lcg-fate-wilderland-rulebook.pdf",
     "image": "lotr-lcg-fate-wilderland.jpg",
     "min_players": 1,
@@ -4809,12 +4595,11 @@
         "filename": "lotr-lcg-fate-wilderland-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.58
+    ]
   },
   {
     "id": 223,
-    "name": "The Lord of the Rings: The Card Game – A Shadow in the East",
+    "name": "The Lord of the Rings: The Card Game \u2013 A Shadow in the East",
     "url": "lotr-lcg-shadow-east-rulebook.pdf",
     "image": "lotr-lcg-shadow-east.jpg",
     "min_players": 1,
@@ -4830,12 +4615,11 @@
         "filename": "lotr-lcg-shadow-east-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.59
+    ]
   },
   {
     "id": 224,
-    "name": "The Lord of the Rings: The Card Game – Wrath and Ruin",
+    "name": "The Lord of the Rings: The Card Game \u2013 Wrath and Ruin",
     "url": "lotr-lcg-wrath-ruin-rulebook.pdf",
     "image": "lotr-lcg-wrath-ruin.jpg",
     "min_players": 1,
@@ -4851,12 +4635,11 @@
         "filename": "lotr-lcg-wrath-ruin-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.56
+    ]
   },
   {
     "id": 225,
-    "name": "The Lord of the Rings: The Card Game – The City of Ulfast",
+    "name": "The Lord of the Rings: The Card Game \u2013 The City of Ulfast",
     "url": "lotr-lcg-city-ulfast-rulebook.pdf",
     "image": "lotr-lcg-city-ulfast.jpg",
     "min_players": 1,
@@ -4872,12 +4655,11 @@
         "filename": "lotr-lcg-city-ulfast-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.57
+    ]
   },
   {
     "id": 226,
-    "name": "The Lord of the Rings: The Card Game – Under the Ash Mountains",
+    "name": "The Lord of the Rings: The Card Game \u2013 Under the Ash Mountains",
     "url": "lotr-lcg-ash-mountains-rulebook.pdf",
     "image": "lotr-lcg-ash-mountains.jpg",
     "min_players": 1,
@@ -4893,12 +4675,11 @@
         "filename": "lotr-lcg-ash-mountains-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.56
+    ]
   },
   {
     "id": 227,
-    "name": "The Lord of the Rings: The Card Game – The Land of Sorrow",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Land of Sorrow",
     "url": "lotr-lcg-land-sorrow-rulebook.pdf",
     "image": "lotr-lcg-land-sorrow.jpg",
     "min_players": 1,
@@ -4914,12 +4695,11 @@
         "filename": "lotr-lcg-land-sorrow-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.56
+    ]
   },
   {
     "id": 228,
-    "name": "The Lord of the Rings: The Card Game – The Fortress of Nurn",
+    "name": "The Lord of the Rings: The Card Game \u2013 The Fortress of Nurn",
     "url": "lotr-lcg-fortress-nurn-rulebook.pdf",
     "image": "lotr-lcg-fortress-nurn.jpg",
     "min_players": 1,
@@ -4935,8 +4715,7 @@
         "filename": "lotr-lcg-fortress-nurn-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.55
+    ]
   },
   {
     "id": 229,
@@ -4968,12 +4747,11 @@
         "filename": "mom2e-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.67
+    ]
   },
   {
     "id": 230,
-    "name": "Mansions of Madness: Second Edition – Recurring Nightmares: Figure and Tile Collection",
+    "name": "Mansions of Madness: Second Edition \u2013 Recurring Nightmares: Figure and Tile Collection",
     "url": "",
     "image": "mom2e-recurring-nightmares.jpg",
     "min_players": 1,
@@ -4982,12 +4760,11 @@
     "complexity": 2.67,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206547/mansions-of-madness-second-edition-recurring-nightm",
     "parent_id": 229,
-    "documents": [],
-    "rating": 6.44
+    "documents": []
   },
   {
     "id": 231,
-    "name": "Mansions of Madness: Second Edition – Suppressed Memories: Figure and Tile Collection",
+    "name": "Mansions of Madness: Second Edition \u2013 Suppressed Memories: Figure and Tile Collection",
     "url": "",
     "image": "mom2e-suppressed-memories.jpg",
     "min_players": 1,
@@ -4996,12 +4773,11 @@
     "complexity": 2.6,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/206548/mansions-of-madness-second-edition-suppressed-memori",
     "parent_id": 229,
-    "documents": [],
-    "rating": 6.44
+    "documents": []
   },
   {
     "id": 232,
-    "name": "Mansions of Madness: Second Edition – Streets of Arkham: Expansion",
+    "name": "Mansions of Madness: Second Edition \u2013 Streets of Arkham: Expansion",
     "url": "mom2e-streets-arkham-rulebook.pdf",
     "image": "mom2e-streets-arkham.jpg",
     "min_players": 1,
@@ -5017,12 +4793,11 @@
         "filename": "mom2e-streets-arkham-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.11
+    ]
   },
   {
     "id": 233,
-    "name": "Mansions of Madness: Second Edition – Sanctum of Twilight: Expansion",
+    "name": "Mansions of Madness: Second Edition \u2013 Sanctum of Twilight: Expansion",
     "url": "mom2e-sanctum-twilight-rulebook.pdf",
     "image": "mom2e-sanctum-twilight.jpg",
     "min_players": 1,
@@ -5038,12 +4813,11 @@
         "filename": "mom2e-sanctum-twilight-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.83
+    ]
   },
   {
     "id": 234,
-    "name": "Mansions of Madness: Second Edition – Horrific Journeys: Expansion",
+    "name": "Mansions of Madness: Second Edition \u2013 Horrific Journeys: Expansion",
     "url": "mom2e-horrific-journeys-rulebook.pdf",
     "image": "mom2e-horrific-journeys.jpg",
     "min_players": 1,
@@ -5059,18 +4833,17 @@
         "filename": "mom2e-horrific-journeys-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.9
+    ]
   },
   {
     "id": 235,
-    "name": "Mansions of Madness: Second Edition – Path of the Serpent: Expansion",
+    "name": "Mansions of Madness: Second Edition \u2013 Path of the Serpent: Expansion",
     "url": "mom2e-path-serpent-rulebook.pdf",
     "image": "mom2e-path-serpent.jpg",
     "min_players": 1,
     "max_players": 5,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/283094/mansions-of-madness-second-edition-path-of-the-serpen",
     "parent_id": 229,
     "documents": [
@@ -5080,12 +4853,11 @@
         "filename": "mom2e-path-serpent-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.65
+    ]
   },
   {
     "id": 236,
-    "name": "Mansions of Madness: Second Edition – Beyond the Threshold: Expansion",
+    "name": "Mansions of Madness: Second Edition \u2013 Beyond the Threshold: Expansion",
     "url": "mom2e-beyond-threshold-rulebook.pdf",
     "image": "mom2e-beyond-threshold.jpg",
     "min_players": 1,
@@ -5101,8 +4873,7 @@
         "filename": "mom2e-beyond-threshold-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.1
+    ]
   },
   {
     "id": 237,
@@ -5112,39 +4883,36 @@
     "min_players": 1,
     "max_players": 5,
     "best_players": "4",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/437597/freedom-five-rubble-and-ruin",
     "parent_id": 67,
-    "documents": [],
-    "rating": 5.54
+    "documents": []
   },
   {
     "id": 238,
-    "name": "Freedom Five: Team Up Pack – Guise and Chrono-Ranger",
+    "name": "Freedom Five: Team Up Pack \u2013 Guise and Chrono-Ranger",
     "url": "",
     "image": "freedom-five-guise-chrono.jpg",
     "min_players": 1,
     "max_players": 5,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/437596/freedom-five-team-up-pack-guise-and-chrono-ran",
     "parent_id": 67,
-    "documents": [],
-    "rating": 5.53
+    "documents": []
   },
   {
     "id": 239,
-    "name": "Freedom Five: Team-Up Pack – Parse and The Scholar",
+    "name": "Freedom Five: Team-Up Pack \u2013 Parse and The Scholar",
     "url": "",
     "image": "freedom-five-parse-scholar.jpg",
     "min_players": 1,
     "max_players": 5,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/386900/freedom-five-team-up-pack-parse-and-the-scholar",
     "parent_id": 67,
-    "documents": [],
-    "rating": 5.55
+    "documents": []
   },
   {
     "id": 240,
@@ -5157,8 +4925,7 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/330623/freedom-five-cosmic-threats",
     "parent_id": 67,
-    "documents": [],
-    "rating": 5.55
+    "documents": []
   },
   {
     "id": 241,
@@ -5171,8 +4938,7 @@
     "complexity": 2.44,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/334767/its-a-wonderful-world-leisure-and-decadence",
     "parent_id": 139,
-    "documents": [],
-    "rating": 5.83
+    "documents": []
   },
   {
     "id": 242,
@@ -5192,8 +4958,7 @@
         "filename": "founders-of-gloomhaven-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.08
+    ]
   },
   {
     "id": 243,
@@ -5213,8 +4978,7 @@
         "filename": "arydia-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.1
+    ]
   },
   {
     "id": 244,
@@ -5234,8 +4998,7 @@
         "filename": "blood-on-clocktower-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.72
+    ]
   },
   {
     "id": 245,
@@ -5255,8 +5018,7 @@
         "filename": "evolution-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.78
+    ]
   },
   {
     "id": 246,
@@ -5276,8 +5038,7 @@
         "filename": "7-wonders-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.55
+    ]
   },
   {
     "id": 247,
@@ -5297,8 +5058,7 @@
         "filename": "catan-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.9
+    ]
   },
   {
     "id": 248,
@@ -5318,8 +5078,7 @@
         "filename": "azul-duel-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.31
+    ]
   },
   {
     "id": 249,
@@ -5345,8 +5104,7 @@
         "filename": "boss-monster-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.08
+    ]
   },
   {
     "id": 250,
@@ -5366,8 +5124,7 @@
         "filename": "machi-koro-bright-lights-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.08
+    ]
   },
   {
     "id": 251,
@@ -5387,8 +5144,7 @@
         "filename": "century-spice-road-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.1
+    ]
   },
   {
     "id": 252,
@@ -5408,8 +5164,7 @@
         "filename": "forbidden-island-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.64
+    ]
   },
   {
     "id": 253,
@@ -5429,8 +5184,7 @@
         "filename": "blokus-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.71
+    ]
   },
   {
     "id": 254,
@@ -5450,8 +5204,7 @@
         "filename": "century-golem-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.23
+    ]
   },
   {
     "id": 255,
@@ -5471,8 +5224,7 @@
         "filename": "hanabi-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.92
+    ]
   },
   {
     "id": 256,
@@ -5492,8 +5244,7 @@
         "filename": "foodies-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.72
+    ]
   },
   {
     "id": 257,
@@ -5513,8 +5264,7 @@
         "filename": "fabled-fruit-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.57
+    ]
   },
   {
     "id": 258,
@@ -5534,8 +5284,7 @@
         "filename": "little-prince-planet-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.35
+    ]
   },
   {
     "id": 259,
@@ -5555,8 +5304,7 @@
         "filename": "legacy-of-dragonholt-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.45
+    ]
   },
   {
     "id": 260,
@@ -5576,8 +5324,7 @@
         "filename": "dixit-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.06
+    ]
   },
   {
     "id": 261,
@@ -5590,8 +5337,7 @@
     "complexity": 1.19,
     "bgg_url": "https://boardgamegeek.com/boardgame/168584/love-letter-batman",
     "parent_id": null,
-    "documents": [],
-    "rating": 6.73
+    "documents": []
   },
   {
     "id": 262,
@@ -5611,8 +5357,7 @@
         "filename": "3-wishes-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.46
+    ]
   },
   {
     "id": 263,
@@ -5632,8 +5377,7 @@
         "filename": "dragomino-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.34
+    ]
   },
   {
     "id": 264,
@@ -5653,8 +5397,7 @@
         "filename": "flip-7-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7
+    ]
   },
   {
     "id": 265,
@@ -5674,8 +5417,7 @@
         "filename": "just-one-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.44
+    ]
   },
   {
     "id": 266,
@@ -5685,11 +5427,10 @@
     "min_players": 2,
     "max_players": 6,
     "best_players": "4",
-    "complexity": 1,
+    "complexity": 1.0,
     "bgg_url": "https://boardgamegeek.com/boardgame/353719/crabs-in-a-bucket",
     "parent_id": null,
-    "documents": [],
-    "rating": 5.55
+    "documents": []
   },
   {
     "id": 267,
@@ -5709,8 +5450,7 @@
         "filename": "clank-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.59
+    ]
   },
   {
     "id": 268,
@@ -5730,8 +5470,7 @@
         "filename": "clank-mummys-curse-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.76
+    ]
   },
   {
     "id": 269,
@@ -5751,8 +5490,7 @@
         "filename": "clank-sunken-treasures-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.1
+    ]
   },
   {
     "id": 270,
@@ -5772,8 +5510,7 @@
         "filename": "clank-gold-silk-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.59
+    ]
   },
   {
     "id": 271,
@@ -5799,12 +5536,11 @@
         "filename": "mc-core-learn-to-play.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.79
+    ]
   },
   {
     "id": 272,
-    "name": "Marvel Champions: The Card Game – Captain America Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Captain America Hero Pack",
     "url": "mc-captain-america-rulesheet.pdf",
     "image": "mc-captain-america.jpg",
     "min_players": 1,
@@ -5820,12 +5556,11 @@
         "filename": "mc-captain-america-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.85
+    ]
   },
   {
     "id": 273,
-    "name": "Marvel Champions: The Card Game – Ms. Marvel Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Ms. Marvel Hero Pack",
     "url": "mc-ms-marvel-rulesheet.pdf",
     "image": "mc-ms-marvel.jpg",
     "min_players": 1,
@@ -5841,18 +5576,17 @@
         "filename": "mc-ms-marvel-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.38
+    ]
   },
   {
     "id": 274,
-    "name": "Marvel Champions: The Card Game – Thor Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Thor Hero Pack",
     "url": "mc-thor-rulesheet.pdf",
     "image": "mc-thor.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/295782",
     "parent_id": 271,
     "documents": [
@@ -5862,12 +5596,11 @@
         "filename": "mc-thor-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.35
+    ]
   },
   {
     "id": 275,
-    "name": "Marvel Champions: The Card Game – Black Widow Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Black Widow Hero Pack",
     "url": "mc-black-widow-rulesheet.pdf",
     "image": "mc-black-widow.jpg",
     "min_players": 1,
@@ -5883,12 +5616,11 @@
         "filename": "mc-black-widow-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.5
+    ]
   },
   {
     "id": 276,
-    "name": "Marvel Champions: The Card Game – Doctor Strange Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Doctor Strange Hero Pack",
     "url": "mc-doctor-strange-rulesheet.pdf",
     "image": "mc-doctor-strange.jpg",
     "min_players": 1,
@@ -5904,12 +5636,11 @@
         "filename": "mc-doctor-strange-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.8
+    ]
   },
   {
     "id": 277,
-    "name": "Marvel Champions: The Card Game – Hulk Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Hulk Hero Pack",
     "url": "mc-hulk-rulesheet.pdf",
     "image": "mc-hulk.jpg",
     "min_players": 1,
@@ -5925,12 +5656,11 @@
         "filename": "mc-hulk-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.13
+    ]
   },
   {
     "id": 278,
-    "name": "Marvel Champions: The Card Game – The Rise of Red Skull",
+    "name": "Marvel Champions: The Card Game \u2013 The Rise of Red Skull",
     "url": "mc-rise-red-skull-rulebook.pdf",
     "image": "mc-rise-red-skull.jpg",
     "min_players": 1,
@@ -5946,12 +5676,11 @@
         "filename": "mc-rise-red-skull-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.9
+    ]
   },
   {
     "id": 279,
-    "name": "Marvel Champions: The Card Game – Ant-Man Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Ant-Man Hero Pack",
     "url": "mc-ant-man-rulesheet.pdf",
     "image": "mc-ant-man.jpg",
     "min_players": 1,
@@ -5967,12 +5696,11 @@
         "filename": "mc-ant-man-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.47
+    ]
   },
   {
     "id": 280,
-    "name": "Marvel Champions: The Card Game – Quicksilver Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Quicksilver Hero Pack",
     "url": "mc-quicksilver-rulesheet.pdf",
     "image": "mc-quicksilver.jpg",
     "min_players": 1,
@@ -5988,12 +5716,11 @@
         "filename": "mc-quicksilver-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.36
+    ]
   },
   {
     "id": 281,
-    "name": "Marvel Champions: The Card Game – Scarlet Witch Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Scarlet Witch Hero Pack",
     "url": "mc-scarlet-witch-rulesheet.pdf",
     "image": "mc-scarlet-witch.jpg",
     "min_players": 1,
@@ -6009,18 +5736,17 @@
         "filename": "mc-scarlet-witch-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.42
+    ]
   },
   {
     "id": 282,
-    "name": "Marvel Champions: The Card Game – Wasp Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Wasp Hero Pack",
     "url": "mc-wasp-rulesheet.pdf",
     "image": "mc-wasp.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316696",
     "parent_id": 271,
     "documents": [
@@ -6030,12 +5756,11 @@
         "filename": "mc-wasp-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.13
+    ]
   },
   {
     "id": 283,
-    "name": "Marvel Champions: The Card Game – The Galaxy's Most Wanted",
+    "name": "Marvel Champions: The Card Game \u2013 The Galaxy's Most Wanted",
     "url": "mc-galaxys-most-wanted-rulebook.pdf",
     "image": "mc-galaxys-most-wanted.jpg",
     "min_players": 1,
@@ -6051,18 +5776,17 @@
         "filename": "mc-galaxys-most-wanted-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.3
+    ]
   },
   {
     "id": 284,
-    "name": "Marvel Champions: The Card Game – Star-Lord Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Star-Lord Hero Pack",
     "url": "mc-star-lord-rulesheet.pdf",
     "image": "mc-star-lord.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/330615",
     "parent_id": 271,
     "documents": [
@@ -6072,12 +5796,11 @@
         "filename": "mc-star-lord-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.12
+    ]
   },
   {
     "id": 285,
-    "name": "Marvel Champions: The Card Game – Gamora Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Gamora Hero Pack",
     "url": "mc-gamora-rulesheet.pdf",
     "image": "mc-gamora.jpg",
     "min_players": 1,
@@ -6093,12 +5816,11 @@
         "filename": "mc-gamora-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.22
+    ]
   },
   {
     "id": 286,
-    "name": "Marvel Champions: The Card Game – Venom Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Venom Hero Pack",
     "url": "mc-venom-rulesheet.pdf",
     "image": "mc-venom.jpg",
     "min_players": 1,
@@ -6114,12 +5836,11 @@
         "filename": "mc-venom-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.25
+    ]
   },
   {
     "id": 287,
-    "name": "Marvel Champions: The Card Game – War Machine Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 War Machine Hero Pack",
     "url": "mc-war-machine-rulesheet.pdf",
     "image": "mc-war-machine.jpg",
     "min_players": 1,
@@ -6135,18 +5856,17 @@
         "filename": "mc-war-machine-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.03
+    ]
   },
   {
     "id": 288,
-    "name": "Marvel Champions: The Card Game – Valkyrie Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Valkyrie Hero Pack",
     "url": "mc-valkyrie-rulesheet.pdf",
     "image": "mc-valkyrie.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/345587",
     "parent_id": 271,
     "documents": [
@@ -6156,12 +5876,11 @@
         "filename": "mc-valkyrie-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.82
+    ]
   },
   {
     "id": 289,
-    "name": "Marvel Champions: The Card Game – The Mad Titan's Shadow",
+    "name": "Marvel Champions: The Card Game \u2013 The Mad Titan's Shadow",
     "url": "mc-mad-titans-shadow-rulebook.pdf",
     "image": "mc-mad-titans-shadow.jpg",
     "min_players": 1,
@@ -6177,12 +5896,11 @@
         "filename": "mc-mad-titans-shadow-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.47
+    ]
   },
   {
     "id": 290,
-    "name": "Marvel Champions: The Card Game – The Vision Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 The Vision Hero Pack",
     "url": "mc-vision-rulesheet.pdf",
     "image": "mc-vision.jpg",
     "min_players": 1,
@@ -6198,12 +5916,11 @@
         "filename": "mc-vision-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6
+    ]
   },
   {
     "id": 291,
-    "name": "Marvel Champions: The Card Game – Sinister Motives",
+    "name": "Marvel Champions: The Card Game \u2013 Sinister Motives",
     "url": "mc-sinister-motives-rulebook.pdf",
     "image": "mc-sinister-motives.jpg",
     "min_players": 1,
@@ -6219,12 +5936,11 @@
         "filename": "mc-sinister-motives-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.47
+    ]
   },
   {
     "id": 292,
-    "name": "Marvel Champions: The Card Game – Nova Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Nova Hero Pack",
     "url": "mc-nova-rulesheet.pdf",
     "image": "mc-nova.jpg",
     "min_players": 1,
@@ -6240,12 +5956,11 @@
         "filename": "mc-nova-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.93
+    ]
   },
   {
     "id": 293,
-    "name": "Marvel Champions: The Card Game – Ironheart Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Ironheart Hero Pack",
     "url": "mc-ironheart-rulesheet.pdf",
     "image": "mc-ironheart.jpg",
     "min_players": 1,
@@ -6261,18 +5976,17 @@
         "filename": "mc-ironheart-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.04
+    ]
   },
   {
     "id": 294,
-    "name": "Marvel Champions: The Card Game – Spider-Ham Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Spider-Ham Hero Pack",
     "url": "mc-spider-ham-rulesheet.pdf",
     "image": "mc-spider-ham.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/360060",
     "parent_id": 271,
     "documents": [
@@ -6282,12 +5996,11 @@
         "filename": "mc-spider-ham-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.96
+    ]
   },
   {
     "id": 295,
-    "name": "Marvel Champions: The Card Game – SP//dr Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 SP//dr Hero Pack",
     "url": "mc-spdr-rulesheet.pdf",
     "image": "mc-spdr.jpg",
     "min_players": 1,
@@ -6303,12 +6016,11 @@
         "filename": "mc-spdr-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.96
+    ]
   },
   {
     "id": 296,
-    "name": "Marvel Champions: The Card Game – Cyclops Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Cyclops Hero Pack",
     "url": "mc-cyclops-rulesheet.pdf",
     "image": "mc-cyclops.jpg",
     "min_players": 1,
@@ -6324,12 +6036,11 @@
         "filename": "mc-cyclops-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.01
+    ]
   },
   {
     "id": 297,
-    "name": "Marvel Champions: The Card Game – Phoenix Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Phoenix Hero Pack",
     "url": "mc-phoenix-rulesheet.pdf",
     "image": "mc-phoenix.jpg",
     "min_players": 1,
@@ -6345,18 +6056,17 @@
         "filename": "mc-phoenix-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.94
+    ]
   },
   {
     "id": 298,
-    "name": "Marvel Champions: The Card Game – Wolverine Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Wolverine Hero Pack",
     "url": "mc-wolverine-rulesheet.pdf",
     "image": "mc-wolverine.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/369039",
     "parent_id": 271,
     "documents": [
@@ -6366,18 +6076,17 @@
         "filename": "mc-wolverine-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.2
+    ]
   },
   {
     "id": 299,
-    "name": "Marvel Champions: The Card Game – Storm Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Storm Hero Pack",
     "url": "mc-storm-rulesheet.pdf",
     "image": "mc-storm.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/370237",
     "parent_id": 271,
     "documents": [
@@ -6387,12 +6096,11 @@
         "filename": "mc-storm-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.99
+    ]
   },
   {
     "id": 300,
-    "name": "Marvel Champions: The Card Game – Gambit Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Gambit Hero Pack",
     "url": "mc-gambit-rulesheet.pdf",
     "image": "mc-gambit.jpg",
     "min_players": 1,
@@ -6408,18 +6116,17 @@
         "filename": "mc-gambit-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.96
+    ]
   },
   {
     "id": 301,
-    "name": "Marvel Champions: The Card Game – Rogue Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Rogue Hero Pack",
     "url": "mc-rogue-rulesheet.pdf",
     "image": "mc-rogue.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/374986",
     "parent_id": 271,
     "documents": [
@@ -6429,12 +6136,11 @@
         "filename": "mc-rogue-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.87
+    ]
   },
   {
     "id": 302,
-    "name": "Marvel Champions: The Card Game – NeXt Evolution",
+    "name": "Marvel Champions: The Card Game \u2013 NeXt Evolution",
     "url": "mc-next-evolution-rulebook.pdf",
     "image": "mc-next-evolution.jpg",
     "min_players": 1,
@@ -6450,18 +6156,17 @@
         "filename": "mc-next-evolution-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.09
+    ]
   },
   {
     "id": 303,
-    "name": "Marvel Champions: The Card Game – Psylocke Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Psylocke Hero Pack",
     "url": "mc-psylocke-rulesheet.pdf",
     "image": "mc-psylocke.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/386959",
     "parent_id": 271,
     "documents": [
@@ -6471,18 +6176,17 @@
         "filename": "mc-psylocke-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.84
+    ]
   },
   {
     "id": 304,
-    "name": "Marvel Champions: The Card Game – Angel Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Angel Hero Pack",
     "url": "mc-angel-rulesheet.pdf",
     "image": "mc-angel.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/388330",
     "parent_id": 271,
     "documents": [
@@ -6492,18 +6196,17 @@
         "filename": "mc-angel-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.83
+    ]
   },
   {
     "id": 305,
-    "name": "Marvel Champions: The Card Game – X-23 Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 X-23 Hero Pack",
     "url": "mc-x23-rulesheet.pdf",
     "image": "mc-x23.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/391675",
     "parent_id": 271,
     "documents": [
@@ -6513,18 +6216,17 @@
         "filename": "mc-x23-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.86
+    ]
   },
   {
     "id": 306,
-    "name": "Marvel Champions: The Card Game – Deadpool Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Deadpool Hero Pack",
     "url": "mc-deadpool-rulesheet.pdf",
     "image": "mc-deadpool.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/398039",
     "parent_id": 271,
     "documents": [
@@ -6534,12 +6236,11 @@
         "filename": "mc-deadpool-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.86
+    ]
   },
   {
     "id": 307,
-    "name": "Marvel Champions: The Card Game – Age of Apocalypse",
+    "name": "Marvel Champions: The Card Game \u2013 Age of Apocalypse",
     "url": "mc-age-apocalypse-rulebook.pdf",
     "image": "mc-age-apocalypse.jpg",
     "min_players": 1,
@@ -6555,18 +6256,17 @@
         "filename": "mc-age-apocalypse-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.95
+    ]
   },
   {
     "id": 308,
-    "name": "Marvel Champions: The Card Game – Iceman Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Iceman Hero Pack",
     "url": "mc-iceman-rulesheet.pdf",
     "image": "mc-iceman.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/413236",
     "parent_id": 271,
     "documents": [
@@ -6576,18 +6276,17 @@
         "filename": "mc-iceman-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.76
+    ]
   },
   {
     "id": 309,
-    "name": "Marvel Champions: The Card Game – Jubilee Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Jubilee Hero Pack",
     "url": "mc-jubilee-rulesheet.pdf",
     "image": "mc-jubilee.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/417417",
     "parent_id": 271,
     "documents": [
@@ -6597,18 +6296,17 @@
         "filename": "mc-jubilee-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.71
+    ]
   },
   {
     "id": 310,
-    "name": "Marvel Champions: The Card Game – Nightcrawler Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Nightcrawler Hero Pack",
     "url": "mc-nightcrawler-rulesheet.pdf",
     "image": "mc-nightcrawler.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/422976",
     "parent_id": 271,
     "documents": [
@@ -6618,12 +6316,11 @@
         "filename": "mc-nightcrawler-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.8
+    ]
   },
   {
     "id": 311,
-    "name": "Marvel Champions: The Card Game – Magneto Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Magneto Hero Pack",
     "url": "mc-magneto-rulesheet.pdf",
     "image": "mc-magneto.jpg",
     "min_players": 1,
@@ -6639,18 +6336,17 @@
         "filename": "mc-magneto-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.79
+    ]
   },
   {
     "id": 312,
-    "name": "Marvel Champions: The Card Game – Agents of S.H.I.E.L.D.",
+    "name": "Marvel Champions: The Card Game \u2013 Agents of S.H.I.E.L.D.",
     "url": "mc-agents-shield-rulebook.pdf",
     "image": "mc-agents-shield.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/430260",
     "parent_id": 271,
     "documents": [
@@ -6660,18 +6356,17 @@
         "filename": "mc-agents-shield-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.8
+    ]
   },
   {
     "id": 313,
-    "name": "Marvel Champions: The Card Game – Black Panther Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Black Panther Hero Pack",
     "url": "mc-black-panther-rulesheet.pdf",
     "image": "mc-black-panther.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/438671",
     "parent_id": 271,
     "documents": [
@@ -6681,18 +6376,17 @@
         "filename": "mc-black-panther-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.68
+    ]
   },
   {
     "id": 314,
-    "name": "Marvel Champions: The Card Game – Falcon Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Falcon Hero Pack",
     "url": "mc-falcon-rulesheet.pdf",
     "image": "mc-falcon.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/446592",
     "parent_id": 271,
     "documents": [
@@ -6702,18 +6396,17 @@
         "filename": "mc-falcon-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 315,
-    "name": "Marvel Champions: The Card Game – Winter Soldier Hero Pack",
+    "name": "Marvel Champions: The Card Game \u2013 Winter Soldier Hero Pack",
     "url": "mc-winter-soldier-rulesheet.pdf",
     "image": "mc-winter-soldier.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/446593",
     "parent_id": 271,
     "documents": [
@@ -6723,18 +6416,17 @@
         "filename": "mc-winter-soldier-rulesheet.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.72
+    ]
   },
   {
     "id": 316,
-    "name": "Marvel Champions: The Card Game – Civil War",
+    "name": "Marvel Champions: The Card Game \u2013 Civil War",
     "url": "mc-civil-war-rulebook.pdf",
     "image": "mc-civil-war.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/448997",
     "parent_id": 271,
     "documents": [
@@ -6744,8 +6436,7 @@
         "filename": "mc-civil-war-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.66
+    ]
   },
   {
     "id": 317,
@@ -6771,12 +6462,11 @@
         "filename": "descent2e-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.31
+    ]
   },
   {
     "id": 318,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Lair of the Wyrm",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Lair of the Wyrm",
     "url": "descent2e-lair-wyrm-rulebook.pdf",
     "image": "descent2e-lair-wyrm.jpg",
     "min_players": 2,
@@ -6792,12 +6482,11 @@
         "filename": "descent2e-lair-wyrm-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.51
+    ]
   },
   {
     "id": 319,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Labyrinth of Ruin",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Labyrinth of Ruin",
     "url": "descent2e-labyrinth-ruin-rulebook.pdf",
     "image": "descent2e-labyrinth-ruin.jpg",
     "min_players": 2,
@@ -6813,12 +6502,11 @@
         "filename": "descent2e-labyrinth-ruin-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.47
+    ]
   },
   {
     "id": 320,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Splig Lieutenant Pack",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Splig Lieutenant Pack",
     "url": "descent2e-lieutenant-rulebook.pdf",
     "image": "descent2e-splig.jpg",
     "min_players": 2,
@@ -6834,12 +6522,11 @@
         "filename": "descent2e-lieutenant-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.78
+    ]
   },
   {
     "id": 321,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Eliza Farrow Lieutenant Pack",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Eliza Farrow Lieutenant Pack",
     "url": "descent2e-lieutenant-rulebook.pdf",
     "image": "descent2e-eliza-farrow.jpg",
     "min_players": 2,
@@ -6855,12 +6542,11 @@
         "filename": "descent2e-lieutenant-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.75
+    ]
   },
   {
     "id": 322,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Shadow of Nerekhall",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Shadow of Nerekhall",
     "url": "descent2e-shadow-nerekhall-rulebook.pdf",
     "image": "descent2e-shadow-nerekhall.jpg",
     "min_players": 2,
@@ -6876,12 +6562,11 @@
         "filename": "descent2e-shadow-nerekhall-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.5
+    ]
   },
   {
     "id": 323,
-    "name": "Descent: Journeys in the Dark (Second Edition) – The Chains That Rust",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 The Chains That Rust",
     "url": "descent2e-chains-rust-rulebook.pdf",
     "image": "descent2e-chains-rust.jpg",
     "min_players": 2,
@@ -6897,18 +6582,17 @@
         "filename": "descent2e-chains-rust-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.91
+    ]
   },
   {
     "id": 324,
-    "name": "Descent: Journeys in the Dark (Second Edition) – Road to Legend",
+    "name": "Descent: Journeys in the Dark (Second Edition) \u2013 Road to Legend",
     "url": "descent2e-road-legend-rulebook.pdf",
     "image": "descent2e-road-legend.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/200784/descent-journeys-in-the-dark-second-edition-road-to-le",
     "parent_id": 317,
     "documents": [
@@ -6918,12 +6602,11 @@
         "filename": "descent2e-road-legend-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.42
+    ]
   },
   {
     "id": 325,
-    "name": "Legendary: A Marvel Deck Building Game – Dark City",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Dark City",
     "url": "legendary-dark-city-rulebook.pdf",
     "image": "legendary-dark-city.jpg",
     "min_players": 1,
@@ -6939,12 +6622,11 @@
         "filename": "legendary-dark-city-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.33
+    ]
   },
   {
     "id": 326,
-    "name": "Legendary: A Marvel Deck Building Game – Paint the Town Red",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Paint the Town Red",
     "url": "legendary-paint-town-red-rulebook.pdf",
     "image": "legendary-paint-town-red.jpg",
     "min_players": 1,
@@ -6960,12 +6642,11 @@
         "filename": "legendary-paint-town-red-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.81
+    ]
   },
   {
     "id": 327,
-    "name": "Legendary: A Marvel Deck Building Game – Secret Wars, Volume 1",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Secret Wars, Volume 1",
     "url": "legendary-secret-wars-1-rulebook.pdf",
     "image": "legendary-secret-wars-1.jpg",
     "min_players": 1,
@@ -6981,12 +6662,11 @@
         "filename": "legendary-secret-wars-1-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.62
+    ]
   },
   {
     "id": 328,
-    "name": "Legendary: A Marvel Deck Building Game – Secret Wars, Volume 2",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Secret Wars, Volume 2",
     "url": "legendary-secret-wars-2-rulebook.pdf",
     "image": "legendary-secret-wars-2.jpg",
     "min_players": 1,
@@ -7002,12 +6682,11 @@
         "filename": "legendary-secret-wars-2-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.34
+    ]
   },
   {
     "id": 329,
-    "name": "Legendary: A Marvel Deck Building Game – Captain America 75th Anniversary",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Captain America 75th Anniversary",
     "url": "legendary-captain-america-75-rulebook.pdf",
     "image": "legendary-captain-america-75.jpg",
     "min_players": 1,
@@ -7023,12 +6702,11 @@
         "filename": "legendary-captain-america-75-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.31
+    ]
   },
   {
     "id": 330,
-    "name": "Legendary: A Marvel Deck Building Game – Civil War",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Civil War",
     "url": "legendary-civil-war-rulebook.pdf",
     "image": "legendary-civil-war.jpg",
     "min_players": 1,
@@ -7044,12 +6722,11 @@
         "filename": "legendary-civil-war-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.39
+    ]
   },
   {
     "id": 331,
-    "name": "Legendary: A Marvel Deck Building Game – Marvel Noir",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Marvel Noir",
     "url": "legendary-marvel-noir-rulebook.pdf",
     "image": "legendary-marvel-noir.jpg",
     "min_players": 1,
@@ -7065,12 +6742,11 @@
         "filename": "legendary-marvel-noir-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.15
+    ]
   },
   {
     "id": 332,
-    "name": "Legendary: A Marvel Deck Building Game – Spider-Man Homecoming",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Spider-Man Homecoming",
     "url": "legendary-spider-man-homecoming-rulebook.pdf",
     "image": "legendary-spider-man-homecoming.jpg",
     "min_players": 1,
@@ -7086,12 +6762,11 @@
         "filename": "legendary-spider-man-homecoming-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.73
+    ]
   },
   {
     "id": 333,
-    "name": "Legendary: A Marvel Deck Building Game – Champions",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Champions",
     "url": "legendary-champions-rulebook.pdf",
     "image": "legendary-champions.jpg",
     "min_players": 1,
@@ -7107,12 +6782,11 @@
         "filename": "legendary-champions-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.95
+    ]
   },
   {
     "id": 334,
-    "name": "Legendary: A Marvel Deck Building Game – Venom",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Venom",
     "url": "legendary-venom-rulebook.pdf",
     "image": "legendary-venom.jpg",
     "min_players": 1,
@@ -7128,18 +6802,17 @@
         "filename": "legendary-venom-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.89
+    ]
   },
   {
     "id": 335,
-    "name": "Legendary: A Marvel Deck Building Game – Dimensions",
+    "name": "Legendary: A Marvel Deck Building Game \u2013 Dimensions",
     "url": "legendary-dimensions-rulebook.pdf",
     "image": "legendary-dimensions.jpg",
     "min_players": 1,
     "max_players": 5,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/275726",
     "parent_id": 136,
     "documents": [
@@ -7149,8 +6822,7 @@
         "filename": "legendary-dimensions-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.82
+    ]
   },
   {
     "id": 336,
@@ -7188,12 +6860,11 @@
         "filename": "arkham-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.89
+    ]
   },
   {
     "id": 337,
-    "name": "Arkham Horror: The Card Game – The Dunwich Legacy: Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Dunwich Legacy: Expansion",
     "url": "arkham-dunwich-investigator.pdf",
     "image": "arkham-dunwich-legacy.jpg",
     "min_players": 1,
@@ -7215,12 +6886,11 @@
         "filename": "arkham-dunwich-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 7.28
+    ]
   },
   {
     "id": 338,
-    "name": "Arkham Horror: The Card Game – The Miskatonic Museum: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 The Miskatonic Museum: Mythos Pack",
     "url": "",
     "image": "arkham-miskatonic-museum.jpg",
     "min_players": 1,
@@ -7229,12 +6899,11 @@
     "complexity": 3.37,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/210025",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.55
+    "documents": []
   },
   {
     "id": 339,
-    "name": "Arkham Horror: The Card Game – The Essex County Express: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 The Essex County Express: Mythos Pack",
     "url": "",
     "image": "arkham-essex-county-express.jpg",
     "min_players": 1,
@@ -7243,12 +6912,11 @@
     "complexity": 3.74,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/212734",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.63
+    "documents": []
   },
   {
     "id": 340,
-    "name": "Arkham Horror: The Card Game – Blood on the Altar: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Blood on the Altar: Mythos Pack",
     "url": "",
     "image": "arkham-blood-on-altar.jpg",
     "min_players": 1,
@@ -7257,12 +6925,11 @@
     "complexity": 3.54,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/216556",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.5
+    "documents": []
   },
   {
     "id": 341,
-    "name": "Arkham Horror: The Card Game – Undimensioned and Unseen: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Undimensioned and Unseen: Mythos Pack",
     "url": "",
     "image": "arkham-undimensioned-unseen.jpg",
     "min_players": 1,
@@ -7271,12 +6938,11 @@
     "complexity": 3.69,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/219054",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.33
+    "documents": []
   },
   {
     "id": 342,
-    "name": "Arkham Horror: The Card Game – Where Doom Awaits: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Where Doom Awaits: Mythos Pack",
     "url": "",
     "image": "arkham-where-doom-awaits.jpg",
     "min_players": 1,
@@ -7285,12 +6951,11 @@
     "complexity": 3.6,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/221725",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.35
+    "documents": []
   },
   {
     "id": 343,
-    "name": "Arkham Horror: The Card Game – Lost in Time and Space: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Lost in Time and Space: Mythos Pack",
     "url": "",
     "image": "arkham-lost-time-space.jpg",
     "min_players": 1,
@@ -7299,12 +6964,11 @@
     "complexity": 3.42,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/224363",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.39
+    "documents": []
   },
   {
     "id": 344,
-    "name": "Arkham Horror: The Card Game – The Path to Carcosa: Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Path to Carcosa: Expansion",
     "url": "arkham-carcosa-investigator.pdf",
     "image": "arkham-path-carcosa.jpg",
     "min_players": 1,
@@ -7326,12 +6990,11 @@
         "filename": "arkham-carcosa-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.96
+    ]
   },
   {
     "id": 345,
-    "name": "Arkham Horror: The Card Game – Echoes of the Past: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Echoes of the Past: Mythos Pack",
     "url": "",
     "image": "arkham-echoes-past.jpg",
     "min_players": 1,
@@ -7340,12 +7003,11 @@
     "complexity": 3.69,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/228778",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.15
+    "documents": []
   },
   {
     "id": 346,
-    "name": "Arkham Horror: The Card Game – The Unspeakable Oath: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 The Unspeakable Oath: Mythos Pack",
     "url": "",
     "image": "arkham-unspeakable-oath.jpg",
     "min_players": 1,
@@ -7354,12 +7016,11 @@
     "complexity": 3.64,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/230510",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.22
+    "documents": []
   },
   {
     "id": 347,
-    "name": "Arkham Horror: The Card Game – A Phantom of Truth: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 A Phantom of Truth: Mythos Pack",
     "url": "",
     "image": "arkham-phantom-truth.jpg",
     "min_players": 1,
@@ -7368,12 +7029,11 @@
     "complexity": 3.67,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/235542",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.14
+    "documents": []
   },
   {
     "id": 348,
-    "name": "Arkham Horror: The Card Game – The Pallid Mask: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 The Pallid Mask: Mythos Pack",
     "url": "",
     "image": "arkham-pallid-mask.jpg",
     "min_players": 1,
@@ -7382,12 +7042,11 @@
     "complexity": 3.69,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/237234",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.17
+    "documents": []
   },
   {
     "id": 349,
-    "name": "Arkham Horror: The Card Game – Black Stars Rise: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Black Stars Rise: Mythos Pack",
     "url": "",
     "image": "arkham-black-stars-rise.jpg",
     "min_players": 1,
@@ -7396,12 +7055,11 @@
     "complexity": 3.77,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/239330",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.15
+    "documents": []
   },
   {
     "id": 350,
-    "name": "Arkham Horror: The Card Game – Dim Carcosa: Mythos Pack",
+    "name": "Arkham Horror: The Card Game \u2013 Dim Carcosa: Mythos Pack",
     "url": "",
     "image": "arkham-dim-carcosa.jpg",
     "min_players": 1,
@@ -7410,12 +7068,11 @@
     "complexity": 3.9,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/242088",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.14
+    "documents": []
   },
   {
     "id": 351,
-    "name": "Arkham Horror: The Card Game – Return to the Night of the Zealot",
+    "name": "Arkham Horror: The Card Game \u2013 Return to the Night of the Zealot",
     "url": "arkham-return-night-zealot-rulebook.pdf",
     "image": "arkham-return-night-zealot.jpg",
     "min_players": 1,
@@ -7431,12 +7088,11 @@
         "filename": "arkham-return-night-zealot-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.18
+    ]
   },
   {
     "id": 352,
-    "name": "Arkham Horror: The Card Game – The Circle Undone: Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Circle Undone: Expansion",
     "url": "arkham-circle-undone-investigator.pdf",
     "image": "arkham-circle-undone.jpg",
     "min_players": 1,
@@ -7458,12 +7114,11 @@
         "filename": "arkham-circle-undone-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.2
+    ]
   },
   {
     "id": 353,
-    "name": "Arkham Horror: The Card Game – Nathaniel Cho: Investigator Starter Deck",
+    "name": "Arkham Horror: The Card Game \u2013 Nathaniel Cho: Investigator Starter Deck",
     "url": "",
     "image": "arkham-nathaniel-cho.jpg",
     "min_players": 1,
@@ -7472,12 +7127,11 @@
     "complexity": 3.38,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305509",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.15
+    "documents": []
   },
   {
     "id": 354,
-    "name": "Arkham Horror: The Card Game – Harvey Walters: Investigator Starter Deck",
+    "name": "Arkham Horror: The Card Game \u2013 Harvey Walters: Investigator Starter Deck",
     "url": "",
     "image": "arkham-harvey-walters.jpg",
     "min_players": 1,
@@ -7486,12 +7140,11 @@
     "complexity": 3.56,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305512",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.07
+    "documents": []
   },
   {
     "id": 355,
-    "name": "Arkham Horror: The Card Game – Winifred Habbamock: Investigator Starter Deck",
+    "name": "Arkham Horror: The Card Game \u2013 Winifred Habbamock: Investigator Starter Deck",
     "url": "",
     "image": "arkham-winifred-habbamock.jpg",
     "min_players": 1,
@@ -7500,12 +7153,11 @@
     "complexity": 3.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305513",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.1
+    "documents": []
   },
   {
     "id": 356,
-    "name": "Arkham Horror: The Card Game – Jacqueline Fine: Investigator Starter Deck",
+    "name": "Arkham Horror: The Card Game \u2013 Jacqueline Fine: Investigator Starter Deck",
     "url": "",
     "image": "arkham-jacqueline-fine.jpg",
     "min_players": 1,
@@ -7514,12 +7166,11 @@
     "complexity": 3.56,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305517",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.13
+    "documents": []
   },
   {
     "id": 357,
-    "name": "Arkham Horror: The Card Game – Stella Clark: Investigator Starter Deck",
+    "name": "Arkham Horror: The Card Game \u2013 Stella Clark: Investigator Starter Deck",
     "url": "",
     "image": "arkham-stella-clark.jpg",
     "min_players": 1,
@@ -7528,12 +7179,11 @@
     "complexity": 3.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/305518",
     "parent_id": 336,
-    "documents": [],
-    "rating": 6.14
+    "documents": []
   },
   {
     "id": 358,
-    "name": "Arkham Horror: The Card Game – Edge of the Earth: Investigator Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 Edge of the Earth: Investigator Expansion",
     "url": "arkham-edge-earth-investigator.pdf",
     "image": "arkham-edge-earth.jpg",
     "min_players": 1,
@@ -7555,12 +7205,11 @@
         "filename": "arkham-edge-earth-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.24
+    ]
   },
   {
     "id": 359,
-    "name": "Arkham Horror: The Card Game – The Scarlet Keys: Campaign Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Scarlet Keys: Campaign Expansion",
     "url": "arkham-scarlet-keys-investigator.pdf",
     "image": "arkham-scarlet-keys.jpg",
     "min_players": 1,
@@ -7582,12 +7231,11 @@
         "filename": "arkham-scarlet-keys-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.01
+    ]
   },
   {
     "id": 360,
-    "name": "Arkham Horror: The Card Game – The Forgotten Age: Campaign Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Forgotten Age: Campaign Expansion",
     "url": "arkham-forgotten-age-investigator.pdf",
     "image": "arkham-forgotten-age.jpg",
     "min_players": 1,
@@ -7609,12 +7257,11 @@
         "filename": "arkham-forgotten-age-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.01
+    ]
   },
   {
     "id": 361,
-    "name": "Arkham Horror: The Card Game – The Feast of Hemlock Vale: Campaign Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Feast of Hemlock Vale: Campaign Expansion",
     "url": "arkham-hemlock-vale-investigator.pdf",
     "image": "arkham-feast-hemlock-vale.jpg",
     "min_players": 1,
@@ -7636,18 +7283,17 @@
         "filename": "arkham-hemlock-vale-campaign.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.02
+    ]
   },
   {
     "id": 362,
-    "name": "Arkham Horror: The Card Game – The Dream-Eaters: Investigator Expansion",
+    "name": "Arkham Horror: The Card Game \u2013 The Dream-Eaters: Investigator Expansion",
     "url": "arkham-dream-eaters-investigator.pdf",
     "image": "arkham-dream-eaters.jpg",
     "min_players": 1,
     "max_players": 4,
     "best_players": "2",
-    "complexity": 4,
+    "complexity": 4.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/414695",
     "parent_id": 336,
     "documents": [
@@ -7669,8 +7315,7 @@
         "filename": "arkham-dream-eaters-campaign-b.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 5.73
+    ]
   },
   {
     "id": 363,
@@ -7690,8 +7335,7 @@
         "filename": "flash-point-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.96
+    ]
   },
   {
     "id": 364,
@@ -7711,8 +7355,7 @@
         "filename": "firefly-the-game-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.98
+    ]
   },
   {
     "id": 365,
@@ -7732,8 +7375,7 @@
         "filename": "arcadia-quest-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.12
+    ]
   },
   {
     "id": 366,
@@ -7753,12 +7395,11 @@
         "filename": "arcadia-quest-inferno-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.62
+    ]
   },
   {
     "id": 367,
-    "name": "Flash Point: Fire Rescue – Urban Structures",
+    "name": "Flash Point: Fire Rescue \u2013 Urban Structures",
     "url": "",
     "image": "flash-point-urban-structures.jpg",
     "min_players": 2,
@@ -7767,12 +7408,11 @@
     "complexity": 2.23,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/110139/flash-point-fire-rescue-urban-structures",
     "parent_id": 363,
-    "documents": [],
-    "rating": 6.29
+    "documents": []
   },
   {
     "id": 368,
-    "name": "Firefly: The Game – Breakin' Atmo",
+    "name": "Firefly: The Game \u2013 Breakin' Atmo",
     "url": "",
     "image": "firefly-breakin-atmo.jpg",
     "min_players": 1,
@@ -7781,12 +7421,11 @@
     "complexity": 2.61,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/147736/firefly-the-game-breakin-atmo",
     "parent_id": 364,
-    "documents": [],
-    "rating": 6.44
+    "documents": []
   },
   {
     "id": 369,
-    "name": "Firefly: The Game – Pirates & Bounty Hunters",
+    "name": "Firefly: The Game \u2013 Pirates & Bounty Hunters",
     "url": "firefly-big-damn-rulebook.pdf",
     "image": "firefly-pirates-bounty-hunters.jpg",
     "min_players": 1,
@@ -7802,12 +7441,11 @@
         "filename": "firefly-big-damn-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.43
+    ]
   },
   {
     "id": 370,
-    "name": "Firefly: The Game – Jetwash",
+    "name": "Firefly: The Game \u2013 Jetwash",
     "url": "",
     "image": "firefly-jetwash.jpg",
     "min_players": 1,
@@ -7816,8 +7454,7 @@
     "complexity": 2.79,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177497/firefly-the-game-jetwash",
     "parent_id": 364,
-    "documents": [],
-    "rating": 6.03
+    "documents": []
   },
   {
     "id": 371,
@@ -7837,8 +7474,7 @@
         "filename": "arcadia-quest-beyond-grave-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.33
+    ]
   },
   {
     "id": 372,
@@ -7851,8 +7487,7 @@
     "complexity": 1.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/165217/arcadia-quest-nibbles",
     "parent_id": 365,
-    "documents": [],
-    "rating": 5.69
+    "documents": []
   },
   {
     "id": 373,
@@ -7865,8 +7500,7 @@
     "complexity": 1.67,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169244/arcadia-quest-mchammer",
     "parent_id": 365,
-    "documents": [],
-    "rating": 5.62
+    "documents": []
   },
   {
     "id": 374,
@@ -7876,15 +7510,14 @@
     "min_players": 2,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 1,
+    "complexity": 1.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/169415/arcadia-quest-leeroy",
     "parent_id": 365,
-    "documents": [],
-    "rating": 5.6
+    "documents": []
   },
   {
     "id": 375,
-    "name": "Arcadia Quest: Inferno – Kickstarter Exclusives",
+    "name": "Arcadia Quest: Inferno \u2013 Kickstarter Exclusives",
     "url": "",
     "image": "arcadia-quest-inferno-ks.jpg",
     "min_players": 2,
@@ -7893,8 +7526,7 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/188339/arcadia-quest-inferno-kickstarter-exclusives",
     "parent_id": 366,
-    "documents": [],
-    "rating": 5.9
+    "documents": []
   },
   {
     "id": 376,
@@ -7914,8 +7546,7 @@
         "filename": "arcadia-quest-pets-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.05
+    ]
   },
   {
     "id": 377,
@@ -7928,36 +7559,33 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189197/arcadia-quest-chaos-dragon",
     "parent_id": 365,
-    "documents": [],
-    "rating": 5.66
+    "documents": []
   },
   {
     "id": 378,
-    "name": "Arcadia Quest: Pets – Cerby",
+    "name": "Arcadia Quest: Pets \u2013 Cerby",
     "url": "",
     "image": "arcadia-quest-pets-cerby.jpg",
     "min_players": 2,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189262/arcadia-quest-pets-cerby",
     "parent_id": 365,
-    "documents": [],
-    "rating": 5.61
+    "documents": []
   },
   {
     "id": 379,
-    "name": "Arcadia Quest: Inferno – Whole Lotta Lava",
+    "name": "Arcadia Quest: Inferno \u2013 Whole Lotta Lava",
     "url": "",
     "image": "arcadia-quest-inferno-lava.jpg",
     "min_players": 2,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189273/arcadia-quest-inferno-whole-lotta-lava",
     "parent_id": 366,
-    "documents": [],
-    "rating": 5.76
+    "documents": []
   },
   {
     "id": 380,
@@ -7977,8 +7605,7 @@
         "filename": "arcadia-quest-riders-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.73
+    ]
   },
   {
     "id": 381,
@@ -8050,8 +7677,7 @@
     "complexity": 2.36,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/121007/thunderstone-avatars",
     "parent_id": 382,
-    "documents": [],
-    "rating": 5.67
+    "documents": []
   },
   {
     "id": 385,
@@ -8071,8 +7697,7 @@
         "filename": "thunderstone-advance-caverns-bane-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.16
+    ]
   },
   {
     "id": 386,
@@ -8092,8 +7717,7 @@
         "filename": "thunderstone-advance-root-corruption-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.02
+    ]
   },
   {
     "id": 387,
@@ -8106,8 +7730,7 @@
     "complexity": 2.79,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/158727/thunderstone-advance-into-the-abyss",
     "parent_id": 383,
-    "documents": [],
-    "rating": 5.78
+    "documents": []
   },
   {
     "id": 388,
@@ -8120,8 +7743,7 @@
     "complexity": 3.35,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/256610/thunderstone-quest-barricades-mode",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.94
+    "documents": []
   },
   {
     "id": 389,
@@ -8131,11 +7753,10 @@
     "min_players": 2,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/282348/thunderstone-quest-vengeful-sands",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.61
+    "documents": []
   },
   {
     "id": 390,
@@ -8145,11 +7766,10 @@
     "min_players": 2,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/282349/thunderstone-quest-clockwork-destiny",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.61
+    "documents": []
   },
   {
     "id": 391,
@@ -8159,11 +7779,10 @@
     "min_players": 2,
     "max_players": 4,
     "best_players": "4",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/295249/thunderstone-quest-4th-level-heroes",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.62
+    "documents": []
   },
   {
     "id": 392,
@@ -8176,8 +7795,7 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/356571/thunderstone-quest-enemies-among-us",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.58
+    "documents": []
   },
   {
     "id": 393,
@@ -8190,8 +7808,7 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/362998/thunderstone-quest-natures-wrath",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.55
+    "documents": []
   },
   {
     "id": 394,
@@ -8204,8 +7821,7 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/362999/thunderstone-quest-rotten-roots",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.54
+    "documents": []
   },
   {
     "id": 395,
@@ -8218,8 +7834,7 @@
     "complexity": 2.5,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/398179/thunderstone-quest-raging-seas",
     "parent_id": 381,
-    "documents": [],
-    "rating": 5.53
+    "documents": []
   },
   {
     "id": 396,
@@ -8298,8 +7913,7 @@
         "filename": "mechs-vs-minions-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.62
+    ]
   },
   {
     "id": 401,
@@ -8479,8 +8093,7 @@
         "filename": "dinosaur-island-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.22
+    ]
   },
   {
     "id": 410,
@@ -8520,8 +8133,7 @@
         "filename": "massive-darkness-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.44
+    ]
   },
   {
     "id": 413,
@@ -8553,106 +8165,98 @@
         "filename": "homm3-faq.pdf",
         "is_primary": false
       }
-    ],
-    "rating": 6.37
+    ]
   },
   {
     "id": 414,
-    "name": "Massive Darkness: Heroes & Monster Set – Noble Warriors vs The Cockatrix",
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Noble Warriors vs The Cockatrix",
     "url": "",
     "image": "md-noble-warriors.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/201748",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.78
+    "documents": []
   },
   {
     "id": 415,
-    "name": "Massive Darkness: Enemy Box – Troglodytes",
+    "name": "Massive Darkness: Enemy Box \u2013 Troglodytes",
     "url": "",
     "image": "md-troglodytes.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202305",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.78
+    "documents": []
   },
   {
     "id": 416,
-    "name": "Massive Darkness: Enemy Box – Ratlings",
+    "name": "Massive Darkness: Enemy Box \u2013 Ratlings",
     "url": "",
     "image": "md-ratlings.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202827",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.69
+    "documents": []
   },
   {
     "id": 417,
-    "name": "Massive Darkness: Heroes & Monster Set – Bloodmoon Assassins vs The Hellephant",
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Bloodmoon Assassins vs The Hellephant",
     "url": "",
     "image": "md-bloodmoon.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203011",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.71
+    "documents": []
   },
   {
     "id": 418,
-    "name": "Massive Darkness: Heroes & Monster Set – Warrior Priests vs The Spearmaiden Cyclops",
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Warrior Priests vs The Spearmaiden Cyclops",
     "url": "",
     "image": "md-warrior-priests.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203015",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.71
+    "documents": []
   },
   {
     "id": 419,
-    "name": "Massive Darkness: Heroes & Monster Set – Sorcerers vs Lord Tusk",
+    "name": "Massive Darkness: Heroes & Monster Set \u2013 Sorcerers vs Lord Tusk",
     "url": "",
     "image": "md-sorcerers.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203124",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.79
+    "documents": []
   },
   {
     "id": 420,
-    "name": "Massive Darkness: Enemy Box – Reptisaurians",
+    "name": "Massive Darkness: Enemy Box \u2013 Reptisaurians",
     "url": "",
     "image": "md-reptisaurians.jpg",
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/203423",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.71
+    "documents": []
   },
   {
     "id": 421,
@@ -8662,11 +8266,10 @@
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/232977",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.72
+    "documents": []
   },
   {
     "id": 422,
@@ -8676,15 +8279,14 @@
     "min_players": 1,
     "max_players": 6,
     "best_players": "5",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/234672",
     "parent_id": 411,
-    "documents": [],
-    "rating": 5.79
+    "documents": []
   },
   {
     "id": 423,
-    "name": "Heroes of Might and Magic III: The Board Game – Tower Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Tower Expansion",
     "url": "homm3-tower-content-guide.pdf",
     "image": "homm3-tower.jpg",
     "min_players": 1,
@@ -8700,12 +8302,11 @@
         "filename": "homm3-tower-content-guide.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.7
+    ]
   },
   {
     "id": 424,
-    "name": "Heroes of Might and Magic III: The Board Game – Fortress Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Fortress Expansion",
     "url": "homm3-fortress-mission.pdf",
     "image": "homm3-fortress.jpg",
     "min_players": 1,
@@ -8721,12 +8322,11 @@
         "filename": "homm3-fortress-mission.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.69
+    ]
   },
   {
     "id": 425,
-    "name": "Heroes of Might and Magic III: The Board Game – Rampart Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Rampart Expansion",
     "url": "homm3-rampart-mission.pdf",
     "image": "homm3-rampart.jpg",
     "min_players": 1,
@@ -8742,18 +8342,17 @@
         "filename": "homm3-rampart-mission.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.7
+    ]
   },
   {
     "id": 426,
-    "name": "Heroes of Might and Magic III: The Board Game – Inferno Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Inferno Expansion",
     "url": "homm3-inferno-mission.pdf",
     "image": "homm3-inferno.jpg",
     "min_players": 1,
     "max_players": 3,
     "best_players": "3",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/412073",
     "parent_id": 413,
     "documents": [
@@ -8763,12 +8362,11 @@
         "filename": "homm3-inferno-mission.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 427,
-    "name": "Heroes of Might and Magic III: The Board Game – Battlefield Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Battlefield Expansion",
     "url": "homm3-battlefield-rulebook.pdf",
     "image": "homm3-battlefield.jpg",
     "min_players": 1,
@@ -8784,18 +8382,17 @@
         "filename": "homm3-battlefield-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.67
+    ]
   },
   {
     "id": 428,
-    "name": "Heroes of Might and Magic III: The Board Game – Stronghold Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Stronghold Expansion",
     "url": "homm3-stronghold-mission.pdf",
     "image": "homm3-stronghold.jpg",
     "min_players": 1,
     "max_players": 3,
     "best_players": "3",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/423894",
     "parent_id": 413,
     "documents": [
@@ -8805,18 +8402,17 @@
         "filename": "homm3-stronghold-mission.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.57
+    ]
   },
   {
     "id": 429,
-    "name": "Heroes of Might and Magic III: The Board Game – Conflux Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Conflux Expansion",
     "url": "homm3-conflux-mission.pdf",
     "image": "homm3-conflux.jpg",
     "min_players": 1,
     "max_players": 3,
     "best_players": "3",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/423895",
     "parent_id": 413,
     "documents": [
@@ -8826,18 +8422,17 @@
         "filename": "homm3-conflux-mission.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.55
+    ]
   },
   {
     "id": 430,
-    "name": "Heroes of Might and Magic III: The Board Game – Cove Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Cove Expansion",
     "url": "homm3-cove-mission.pdf",
     "image": "homm3-cove.jpg",
     "min_players": 1,
     "max_players": 3,
     "best_players": "3",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/423897",
     "parent_id": 413,
     "documents": [
@@ -8847,26 +8442,24 @@
         "filename": "homm3-cove-mission.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 5.55
+    ]
   },
   {
     "id": 431,
-    "name": "Heroes of Might and Magic III: The Board Game – Big Box Expansion",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Big Box Expansion",
     "url": "",
     "image": "homm3-big-box.jpg",
     "min_players": 1,
     "max_players": 3,
     "best_players": "3",
-    "complexity": 4,
+    "complexity": 4.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/430981",
     "parent_id": 413,
-    "documents": [],
-    "rating": 5.54
+    "documents": []
   },
   {
     "id": 432,
-    "name": "Heroes of Might and Magic III: The Board Game – Stretch Goals Regular",
+    "name": "Heroes of Might and Magic III: The Board Game \u2013 Stretch Goals Regular",
     "url": "",
     "image": "homm3-stretch-goals.jpg",
     "min_players": 1,
@@ -8968,8 +8561,7 @@
     "complexity": 2.31,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/157427",
     "parent_id": 433,
-    "documents": [],
-    "rating": 6.32
+    "documents": []
   },
   {
     "id": 438,
@@ -9039,7 +8631,7 @@
     "min_players": 2,
     "max_players": 4,
     "best_players": "3",
-    "complexity": 2,
+    "complexity": 2.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/177802",
     "parent_id": 433,
     "documents": [
@@ -9089,8 +8681,7 @@
         "filename": "memoir44-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.33
+    ]
   },
   {
     "id": 444,
@@ -9114,7 +8705,7 @@
   },
   {
     "id": 445,
-    "name": "Ticket to Ride: Märklin",
+    "name": "Ticket to Ride: M\u00e4rklin",
     "url": "ticket-to-ride-marklin-rulebook.pdf",
     "image": "ticket-to-ride-marklin.jpg",
     "min_players": 1,
@@ -9460,7 +9051,7 @@
   },
   {
     "id": 463,
-    "name": "Pathfinder Adventure Card Game: Skull & Shackles – Base Set",
+    "name": "Pathfinder Adventure Card Game: Skull & Shackles \u2013 Base Set",
     "url": "pathfinder-skull-shackles-rulebook.pdf",
     "image": "pathfinder-skull-shackles.jpg",
     "min_players": 1,
@@ -9496,8 +9087,7 @@
         "filename": "medieval-academy-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.41
+    ]
   },
   {
     "id": 465,
@@ -9699,7 +9289,7 @@
   },
   {
     "id": 474,
-    "name": "Orléans",
+    "name": "Orl\u00e9ans",
     "url": "orleans-rulebook.pdf",
     "image": "orleans.jpg",
     "min_players": 1,
@@ -9815,8 +9405,7 @@
         "filename": "flick-em-up-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 6.55
+    ]
   },
   {
     "id": 480,
@@ -9880,7 +9469,7 @@
   },
   {
     "id": 483,
-    "name": "Pathfinder Adventure Card Game: Skull & Shackles – Character Add-On Deck",
+    "name": "Pathfinder Adventure Card Game: Skull & Shackles \u2013 Character Add-On Deck",
     "url": "",
     "image": "pathfinder-ss-character-addon.jpg",
     "min_players": 1,
@@ -9889,12 +9478,11 @@
     "complexity": 2.69,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/151008",
     "parent_id": 463,
-    "documents": [],
-    "rating": 5.79
+    "documents": []
   },
   {
     "id": 484,
-    "name": "Pathfinder Adventure Card Game: Skull & Shackles Adventure Deck 2 – Raiders of the Fever Sea",
+    "name": "Pathfinder Adventure Card Game: Skull & Shackles Adventure Deck 2 \u2013 Raiders of the Fever Sea",
     "url": "",
     "image": "pathfinder-ss-deck2.jpg",
     "min_players": 1,
@@ -9903,12 +9491,11 @@
     "complexity": 2.64,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/157991",
     "parent_id": 463,
-    "documents": [],
-    "rating": 5.73
+    "documents": []
   },
   {
     "id": 485,
-    "name": "Orléans: Invasion",
+    "name": "Orl\u00e9ans: Invasion",
     "url": "orleans-invasion-rulebook.pdf",
     "image": "orleans-invasion.jpg",
     "min_players": 1,
@@ -9924,8 +9511,7 @@
         "filename": "orleans-invasion-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.18
+    ]
   },
   {
     "id": 486,
@@ -9958,8 +9544,7 @@
         "filename": "spirit-island-branch-claw-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 8.12
+    ]
   },
   {
     "id": 488,
@@ -9979,8 +9564,7 @@
         "filename": "xia-embers-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.22
+    ]
   },
   {
     "id": 489,
@@ -10000,12 +9584,11 @@
         "filename": "roll-player-monsters-minions-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.16
+    ]
   },
   {
     "id": 490,
-    "name": "Nations: The Dice Game – Unrest",
+    "name": "Nations: The Dice Game \u2013 Unrest",
     "url": "",
     "image": "nations-dice-unrest.jpg",
     "min_players": 1,
@@ -10014,8 +9597,7 @@
     "complexity": 2.38,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/213531",
     "parent_id": 467,
-    "documents": [],
-    "rating": 6.08
+    "documents": []
   },
   {
     "id": 491,
@@ -10028,22 +9610,20 @@
     "complexity": 2.92,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/226297",
     "parent_id": 478,
-    "documents": [],
-    "rating": 6.25
+    "documents": []
   },
   {
     "id": 492,
-    "name": "Star Wars: Imperial Assault – Emperor Palpatine Villain Pack",
+    "name": "Star Wars: Imperial Assault \u2013 Emperor Palpatine Villain Pack",
     "url": "",
     "image": "swia-palpatine.jpg",
     "min_players": 1,
     "max_players": 5,
     "best_players": "",
-    "complexity": 3,
+    "complexity": 3.0,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/226837",
     "parent_id": 473,
-    "documents": [],
-    "rating": 5.81
+    "documents": []
   },
   {
     "id": 493,
@@ -10056,8 +9636,7 @@
     "complexity": 3.07,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/230241",
     "parent_id": 478,
-    "documents": [],
-    "rating": 6.36
+    "documents": []
   },
   {
     "id": 494,
@@ -10077,8 +9656,7 @@
         "filename": "tm-venus-next-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 7.09
+    ]
   },
   {
     "id": 495,
@@ -10091,8 +9669,7 @@
     "complexity": 4.24,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/232394",
     "parent_id": 470,
-    "documents": [],
-    "rating": 6.89
+    "documents": []
   },
   {
     "id": 496,
@@ -10105,8 +9682,7 @@
     "complexity": 2.93,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/244564",
     "parent_id": 456,
-    "documents": [],
-    "rating": 6.45
+    "documents": []
   },
   {
     "id": 497,
@@ -10126,8 +9702,7 @@
         "filename": "tm-prelude-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 8.41
+    ]
   },
   {
     "id": 498,
@@ -10147,8 +9722,7 @@
         "filename": "spirit-island-jagged-earth-rulebook.pdf",
         "is_primary": true
       }
-    ],
-    "rating": 8.21
+    ]
   },
   {
     "id": 499,
@@ -10161,7 +9735,1847 @@
     "complexity": 4.32,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/263778",
     "parent_id": 470,
-    "documents": [],
-    "rating": 6.57
+    "documents": []
+  },
+  {
+    "id": 500,
+    "name": "Saboteur",
+    "url": "saboteur-rulebook.pdf",
+    "image": "saboteur.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.32,
+    "bgg_url": "https://boardgamegeek.com/boardgame/9220",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "saboteur-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 501,
+    "name": "Rampage",
+    "url": "rampage-rulebook.pdf",
+    "image": "rampage.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.48,
+    "bgg_url": "https://boardgamegeek.com/boardgame/97903",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "rampage-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 502,
+    "name": "Puerto Rico",
+    "url": "puerto-rico-rulebook.pdf",
+    "image": "puerto-rico.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.22,
+    "bgg_url": "https://boardgamegeek.com/boardgame/108687",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "puerto-rico-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 503,
+    "name": "Captain Sonar",
+    "url": "captain-sonar-rulebook.pdf",
+    "image": "captain-sonar.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.2,
+    "bgg_url": "https://boardgamegeek.com/boardgame/171131",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "captain-sonar-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 504,
+    "name": "Outfoxed!",
+    "url": "outfoxed-rulebook.pdf",
+    "image": "outfoxed.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.1,
+    "bgg_url": "https://boardgamegeek.com/boardgame/172931",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "outfoxed-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 505,
+    "name": "7 Wonders Duel",
+    "url": "7-wonders-duel-rulebook.pdf",
+    "image": "7-wonders-duel.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.23,
+    "bgg_url": "https://boardgamegeek.com/boardgame/173346",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "7-wonders-duel-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 506,
+    "name": "Stronghold: 2nd Edition",
+    "url": "stronghold-2e-rulebook.pdf",
+    "image": "stronghold-2e.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.71,
+    "bgg_url": "https://boardgamegeek.com/boardgame/179460",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "stronghold-2e-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 507,
+    "name": "Mysterium",
+    "url": "mysterium-rulebook.pdf",
+    "image": "mysterium.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.89,
+    "bgg_url": "https://boardgamegeek.com/boardgame/181304",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mysterium-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 508,
+    "name": "Runebound (Third Edition)",
+    "url": "runebound-3e-rulebook.pdf",
+    "image": "runebound-3e.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.72,
+    "bgg_url": "https://boardgamegeek.com/boardgame/181530",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Learn to Play",
+        "category": "core",
+        "filename": "runebound-3e-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 509,
+    "name": "Viticulture Essential Edition",
+    "url": "viticulture-ee-rulebook.pdf",
+    "image": "viticulture-ee.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.9,
+    "bgg_url": "https://boardgamegeek.com/boardgame/183394",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "viticulture-ee-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 510,
+    "name": "On Mars",
+    "url": "on-mars-rulebook.pdf",
+    "image": "on-mars.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 4.62,
+    "bgg_url": "https://boardgamegeek.com/boardgame/184267",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "on-mars-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 511,
+    "name": "Star Wars: Rebellion",
+    "url": "star-wars-rebellion-rulebook.pdf",
+    "image": "star-wars-rebellion.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.75,
+    "bgg_url": "https://boardgamegeek.com/boardgame/187645",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "core",
+        "filename": "star-wars-rebellion-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Learn to Play",
+        "category": "core",
+        "filename": "star-wars-rebellion-learn-to-play.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 512,
+    "name": "Tyrants of the Underdark",
+    "url": "tyrants-underdark-rulebook.pdf",
+    "image": "tyrants-of-the-underdark.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.56,
+    "bgg_url": "https://boardgamegeek.com/boardgame/189932",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "tyrants-underdark-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 513,
+    "name": "Whitehall Mystery",
+    "url": "whitehall-mystery-rulebook.pdf",
+    "image": "whitehall-mystery.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.13,
+    "bgg_url": "https://boardgamegeek.com/boardgame/190082",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "whitehall-mystery-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 514,
+    "name": "My First Stone Age",
+    "url": "my-first-stone-age-rulebook.pdf",
+    "image": "my-first-stone-age.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.15,
+    "bgg_url": "https://boardgamegeek.com/boardgame/191004",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "my-first-stone-age-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 515,
+    "name": "Ulm",
+    "url": "ulm-rulebook.pdf",
+    "image": "ulm.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.7,
+    "bgg_url": "https://boardgamegeek.com/boardgame/191876",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "ulm-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 516,
+    "name": "Multiuniversum",
+    "url": "",
+    "image": "multiuniversum.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.89,
+    "bgg_url": "https://boardgamegeek.com/boardgame/192638",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Multiuniversum_Rulebook.pdf",
+        "category": "core",
+        "filename": "multiuniversum_rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 517,
+    "name": "Rick and Morty: Total Rickall Card Game",
+    "url": "rick-morty-total-rickall-rulebook.pdf",
+    "image": "rick-morty-total-rickall.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.51,
+    "bgg_url": "https://boardgamegeek.com/boardgame/194232",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "rick-morty-total-rickall-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 518,
+    "name": "Santorini",
+    "url": "santorini-rulebook.pdf",
+    "image": "santorini.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.72,
+    "bgg_url": "https://boardgamegeek.com/boardgame/194655",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "santorini-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 519,
+    "name": "Viral",
+    "url": "viral-rulebook.pdf",
+    "image": "viral.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.59,
+    "bgg_url": "https://boardgamegeek.com/boardgame/194690",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "viral-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 520,
+    "name": "Not Alone",
+    "url": "not-alone-rulebook.pdf",
+    "image": "not-alone.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgame/194879",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "not-alone-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 521,
+    "name": "Near and Far",
+    "url": "near-and-far-rulebook.pdf",
+    "image": "near-and-far.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.9,
+    "bgg_url": "https://boardgamegeek.com/boardgame/195421",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "near-and-far-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 522,
+    "name": "Sagrada",
+    "url": "sagrada-rulebook.pdf",
+    "image": "sagrada.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.92,
+    "bgg_url": "https://boardgamegeek.com/boardgame/199561",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "sagrada-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 523,
+    "name": "Western Legends",
+    "url": "western-legends-rulebook.pdf",
+    "image": "western-legends.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.85,
+    "bgg_url": "https://boardgamegeek.com/boardgame/232405",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "western-legends-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 524,
+    "name": "The Rise of Queensdale",
+    "url": "rise-of-queensdale-rulebook.pdf",
+    "image": "rise-of-queensdale.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.79,
+    "bgg_url": "https://boardgamegeek.com/boardgame/238546",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "rise-of-queensdale-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 525,
+    "name": "Space Base",
+    "url": "space-base-rulebook.pdf",
+    "image": "space-base.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.14,
+    "bgg_url": "https://boardgamegeek.com/boardgame/242302",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "space-base-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 526,
+    "name": "Shards of Infinity",
+    "url": "shards-of-infinity-rulebook.pdf",
+    "image": "shards-of-infinity.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.09,
+    "bgg_url": "https://boardgamegeek.com/boardgame/244115",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "shards-of-infinity-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 527,
+    "name": "That's Pretty Clever!",
+    "url": "thats-pretty-clever-rulebook.pdf",
+    "image": "thats-pretty-clever.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.85,
+    "bgg_url": "https://boardgamegeek.com/boardgame/244522",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "thats-pretty-clever-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 528,
+    "name": "The Mind",
+    "url": "the-mind-rulebook.pdf",
+    "image": "the-mind.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.07,
+    "bgg_url": "https://boardgamegeek.com/boardgame/244992",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "the-mind-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 529,
+    "name": "Underwater Cities",
+    "url": "underwater-cities-rulebook.pdf",
+    "image": "underwater-cities.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.59,
+    "bgg_url": "https://boardgamegeek.com/boardgame/247763",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "underwater-cities-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 530,
+    "name": "Monumental",
+    "url": "monumental-rulebook.pdf",
+    "image": "monumental.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.85,
+    "bgg_url": "https://boardgamegeek.com/boardgame/248125",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "monumental-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 531,
+    "name": "Oathsworn: Into the Deepwood",
+    "url": "oathsworn-rulebook.pdf",
+    "image": "oathsworn.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.69,
+    "bgg_url": "https://boardgamegeek.com/boardgame/251661",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Story Rulebook",
+        "category": "core",
+        "filename": "oathsworn-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 532,
+    "name": "Sleeping Gods",
+    "url": "sleeping-gods-rulebook.pdf",
+    "image": "sleeping-gods.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.26,
+    "bgg_url": "https://boardgamegeek.com/boardgame/255984",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "sleeping-gods-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 533,
+    "name": "Pipeline",
+    "url": "",
+    "image": "pipeline.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.91,
+    "bgg_url": "https://boardgamegeek.com/boardgame/256730",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Pipeline_rules_web.pdf",
+        "category": "core",
+        "filename": "pipeline_rules_web.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 534,
+    "name": "Project: ELITE",
+    "url": "project-elite-rulebook.pdf",
+    "image": "project-elite.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.46,
+    "bgg_url": "https://boardgamegeek.com/boardgame/256999",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "project-elite-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 535,
+    "name": "Starcadia Quest",
+    "url": "starcadia-quest-rulebook.pdf",
+    "image": "starcadia-quest.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.67,
+    "bgg_url": "https://boardgamegeek.com/boardgame/257193",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "starcadia-quest-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 536,
+    "name": "Res Arcana",
+    "url": "res-arcana-rulebook.pdf",
+    "image": "res-arcana.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.66,
+    "bgg_url": "https://boardgamegeek.com/boardgame/262712",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "res-arcana-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 537,
+    "name": "Tainted Grail: The Fall of Avalon",
+    "url": "tainted-grail-rulebook.pdf",
+    "image": "tainted-grail.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.37,
+    "bgg_url": "https://boardgamegeek.com/boardgame/264220",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "tainted-grail-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 538,
+    "name": "Tiny Towns",
+    "url": "tiny-towns-rulebook.pdf",
+    "image": "tiny-towns.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.06,
+    "bgg_url": "https://boardgamegeek.com/boardgame/265736",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "tiny-towns-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 539,
+    "name": "Trudvang Legends",
+    "url": "trudvang-legends-rulebook.pdf",
+    "image": "trudvang-legends.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.47,
+    "bgg_url": "https://boardgamegeek.com/boardgame/266064",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "trudvang-legends-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 540,
+    "name": "Wingspan",
+    "url": "wingspan-rulebook.pdf",
+    "image": "wingspan.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.48,
+    "bgg_url": "https://boardgamegeek.com/boardgame/266192",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "wingspan-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 541,
+    "name": "Paladins of the West Kingdom",
+    "url": "paladins-west-kingdom-rulebook.pdf",
+    "image": "paladins-west-kingdom.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.7,
+    "bgg_url": "https://boardgamegeek.com/boardgame/266810",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "paladins-west-kingdom-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 542,
+    "name": "Undaunted: Normandy",
+    "url": "undaunted-normandy-rulebook.pdf",
+    "image": "undaunted-normandy.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.27,
+    "bgg_url": "https://boardgamegeek.com/boardgame/268864",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "undaunted-normandy-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 543,
+    "name": "Viticulture: Tuscany Essential Edition",
+    "url": "viticulture-tuscany-ee-rulebook.pdf",
+    "image": "viticulture-tuscany-ee.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.25,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202174",
+    "parent_id": 509,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "viticulture-tuscany-ee-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 544,
+    "name": "Sagrada: 5-6 Player Expansion",
+    "url": "sagrada-5-6p-rulebook.pdf",
+    "image": "sagrada-5-6p.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.11,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/244262",
+    "parent_id": 522,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "sagrada-5-6p-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 545,
+    "name": "Project: ELITE \u2013 Deathmaw Valley",
+    "url": "",
+    "image": "project-elite-deathmaw.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.46,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/264811",
+    "parent_id": 534,
+    "documents": []
+  },
+  {
+    "id": 546,
+    "name": "Project: ELITE \u2013 Ammo Pack",
+    "url": "",
+    "image": "project-elite-ammo-pack.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.46,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/265058",
+    "parent_id": 534,
+    "documents": []
+  },
+  {
+    "id": 547,
+    "name": "Monumental: Lost Kingdoms",
+    "url": "monumental-lost-kingdoms-rulebook.pdf",
+    "image": "monumental-lost-kingdoms.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/266939",
+    "parent_id": 530,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "monumental-lost-kingdoms-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 548,
+    "name": "Western Legends: Ante Up",
+    "url": "western-legends-ante-up-rulebook.pdf",
+    "image": "western-legends-ante-up.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.29,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/267545",
+    "parent_id": 523,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "western-legends-ante-up-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 549,
+    "name": "Western Legends: Blood Money",
+    "url": "western-legends-blood-money-rulebook.pdf",
+    "image": "western-legends-blood-money.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.17,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/295026",
+    "parent_id": 523,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "western-legends-blood-money-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 550,
+    "name": "Tiny Towns: Villagers",
+    "url": "tiny-towns-villagers-rulebook.pdf",
+    "image": "tiny-towns-villagers.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/311441",
+    "parent_id": 538,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "tiny-towns-villagers-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 551,
+    "name": "Monumental: African Empires",
+    "url": "monumental-african-empires-rulebook.pdf",
+    "image": "monumental-african-empires.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.5,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/311825",
+    "parent_id": 530,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "monumental-african-empires-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 552,
+    "name": "Star Wars: Outer Rim",
+    "url": "star-wars-outer-rim-rulebook.pdf",
+    "image": "star-wars-outer-rim.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.6,
+    "bgg_url": "https://boardgamegeek.com/boardgame/271896",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rules Reference",
+        "category": "core",
+        "filename": "star-wars-outer-rim-rulebook.pdf",
+        "is_primary": true
+      },
+      {
+        "title": "Learn to Play",
+        "category": "core",
+        "filename": "star-wars-outer-rim-learn-to-play.pdf",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "id": 553,
+    "name": "The Search for Planet X",
+    "url": "search-for-planet-x-rulebook.pdf",
+    "image": "search-for-planet-x.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.43,
+    "bgg_url": "https://boardgamegeek.com/boardgame/279537",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "search-for-planet-x-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 554,
+    "name": "Undaunted: North Africa",
+    "url": "undaunted-north-africa-rulebook.pdf",
+    "image": "undaunted-north-africa.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.35,
+    "bgg_url": "https://boardgamegeek.com/boardgame/290359",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "undaunted-north-africa-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 555,
+    "name": "Oath",
+    "url": "oath-rulebook.pdf",
+    "image": "oath.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.13,
+    "bgg_url": "https://boardgamegeek.com/boardgame/291572",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Law of Oath",
+        "category": "core",
+        "filename": "oath-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 556,
+    "name": "The Thing: The Boardgame",
+    "url": "the-thing-rulebook.pdf",
+    "image": "the-thing-boardgame.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.96,
+    "bgg_url": "https://boardgamegeek.com/boardgame/295293",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "the-thing-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 557,
+    "name": "My City",
+    "url": "my-city-rulebook.pdf",
+    "image": "my-city.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.99,
+    "bgg_url": "https://boardgamegeek.com/boardgame/295486",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "my-city-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 558,
+    "name": "Frosthaven",
+    "url": "frosthaven-rulebook.pdf",
+    "image": "frosthaven.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.41,
+    "bgg_url": "https://boardgamegeek.com/boardgame/295770",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "frosthaven-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 559,
+    "name": "Viscounts of the West Kingdom",
+    "url": "viscounts-west-kingdom-rulebook.pdf",
+    "image": "viscounts-west-kingdom.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.46,
+    "bgg_url": "https://boardgamegeek.com/boardgame/296151",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "viscounts-west-kingdom-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 560,
+    "name": "Sheriff of Nottingham: 2nd Edition",
+    "url": "sheriff-nottingham-2e-rulebook.pdf",
+    "image": "sheriff-nottingham-2e.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.71,
+    "bgg_url": "https://boardgamegeek.com/boardgame/298638",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "sheriff-nottingham-2e-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 561,
+    "name": "Under Falling Skies",
+    "url": "under-falling-skies-rulebook.pdf",
+    "image": "under-falling-skies.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.39,
+    "bgg_url": "https://boardgamegeek.com/boardgame/306735",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "under-falling-skies-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 562,
+    "name": "My Father's Work",
+    "url": "my-fathers-work-rulebook.pdf",
+    "image": "my-fathers-work.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.14,
+    "bgg_url": "https://boardgamegeek.com/boardgame/328866",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "my-fathers-work-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 563,
+    "name": "Radlands",
+    "url": "radlands-rulebook.pdf",
+    "image": "radlands.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.27,
+    "bgg_url": "https://boardgamegeek.com/boardgame/329082",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "radlands-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 564,
+    "name": "Revive",
+    "url": "revive-rulebook.pdf",
+    "image": "revive.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.46,
+    "bgg_url": "https://boardgamegeek.com/boardgame/332772",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "revive-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 565,
+    "name": "Robinson Crusoe: Adventures on the Cursed Island \u2013 Collector's Edition (Gamefound Edition)",
+    "url": "robinson-crusoe-collectors-rulebook.pdf",
+    "image": "robinson-crusoe-collectors.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.71,
+    "bgg_url": "https://boardgamegeek.com/boardgame/334931",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "robinson-crusoe-collectors-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 566,
+    "name": "Solar 175",
+    "url": "solar-175-rulebook.pdf",
+    "image": "solar-175.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgame/349179",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "solar-175-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 567,
+    "name": "The Old King's Crown",
+    "url": "old-kings-crown-rulebook.pdf",
+    "image": "old-kings-crown.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.7,
+    "bgg_url": "https://boardgamegeek.com/boardgame/357873",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "old-kings-crown-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 568,
+    "name": "Tainted Grail: Kings of Ruin",
+    "url": "tainted-grail-kor-rulebook.pdf",
+    "image": "tainted-grail-kings-of-ruin.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.31,
+    "bgg_url": "https://boardgamegeek.com/boardgame/360366",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "tainted-grail-kor-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 569,
+    "name": "Twilight Inscription",
+    "url": "twilight-inscription-rulebook.pdf",
+    "image": "twilight-inscription.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.23,
+    "bgg_url": "https://boardgamegeek.com/boardgame/361545",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "twilight-inscription-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 570,
+    "name": "Kinfire Chronicles: Night's Fall (English edition, second printing)",
+    "url": "kinfire-chronicles-rulebook.pdf",
+    "image": "kinfire-chronicles.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.68,
+    "bgg_url": "https://boardgamegeek.com/boardgame/364655",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Rulebook 1: Getting Started",
+        "category": "core",
+        "filename": "kinfire-chronicles-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 571,
+    "name": "Sea Salt & Paper",
+    "url": "sea-salt-paper-rulebook.pdf",
+    "image": "sea-salt-paper.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.49,
+    "bgg_url": "https://boardgamegeek.com/boardgame/367220",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "sea-salt-paper-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 572,
+    "name": "Stomp the Plank",
+    "url": "",
+    "image": "stomp-the-plank.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.0,
+    "bgg_url": "https://boardgamegeek.com/boardgame/367771",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 573,
+    "name": "Wanderlust: Discover the World",
+    "url": "wanderlust-rulebook.pdf",
+    "image": "wanderlust.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.13,
+    "bgg_url": "https://boardgamegeek.com/boardgame/369353",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "wanderlust-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 574,
+    "name": "Noobs in Space",
+    "url": "noobs-in-space-rulebook.pdf",
+    "image": "noobs-in-space.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.64,
+    "bgg_url": "https://boardgamegeek.com/boardgame/376472",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "noobs-in-space-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 575,
+    "name": "Shipyard (Second Edition)",
+    "url": "",
+    "image": "shipyard-2e.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.25,
+    "bgg_url": "https://boardgamegeek.com/boardgame/393179",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 576,
+    "name": "Nucleum",
+    "url": "nucleum-rulebook.pdf",
+    "image": "nucleum.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.19,
+    "bgg_url": "https://boardgamegeek.com/boardgame/396790",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "nucleum-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 577,
+    "name": "Rebirth",
+    "url": "rebirth-rulebook.pdf",
+    "image": "rebirth.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.97,
+    "bgg_url": "https://boardgamegeek.com/boardgame/417197",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "rebirth-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 578,
+    "name": "Vantage",
+    "url": "vantage-rulebook.pdf",
+    "image": "vantage.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.34,
+    "bgg_url": "https://boardgamegeek.com/boardgame/420033",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "vantage-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 579,
+    "name": "Unstoppable (English edition)",
+    "url": "unstoppable-rulebook.pdf",
+    "image": "unstoppable.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.96,
+    "bgg_url": "https://boardgamegeek.com/boardgame/420498",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "unstoppable-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 580,
+    "name": "Star Trek: Captain's Chair",
+    "url": "",
+    "image": "star-trek-captains-chair.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.07,
+    "bgg_url": "https://boardgamegeek.com/boardgame/422541",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 581,
+    "name": "Mistborn: The Deckbuilding Game",
+    "url": "mistborn-rulebook.pdf",
+    "image": "mistborn.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.68,
+    "bgg_url": "https://boardgamegeek.com/boardgame/422780",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mistborn-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 582,
+    "name": "Kinfire Chronicles: Night's Fall \u2013 Upgrade Kit (English edition)",
+    "url": "",
+    "image": "kinfire-chronicles-upgrade-kit.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.68,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/402243",
+    "parent_id": 570,
+    "documents": []
+  },
+  {
+    "id": 583,
+    "name": "Nucleum: Australia",
+    "url": "nucleum-australia-rulebook.pdf",
+    "image": "nucleum-australia.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.33,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/408223",
+    "parent_id": 576,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "nucleum-australia-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 584,
+    "name": "Marvel United",
+    "url": "marvel-united-rulebook.pdf",
+    "image": "marvel-united.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.85,
+    "bgg_url": "https://boardgamegeek.com/boardgame/298047",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "marvel-united-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 585,
+    "name": "Marvel United: X-Men",
+    "url": "marvel-united-xmen-rulebook.pdf",
+    "image": "marvel-united-xmen.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.01,
+    "bgg_url": "https://boardgamegeek.com/boardgame/336382",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "marvel-united-xmen-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 586,
+    "name": "Marvel United: Spider-Geddon",
+    "url": "marvel-united-spider-geddon-rulebook.pdf",
+    "image": "marvel-united-spider-geddon.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.82,
+    "bgg_url": "https://boardgamegeek.com/boardgame/379908",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "marvel-united-spider-geddon-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 587,
+    "name": "Marvel United: Guardians of the Galaxy Remix",
+    "url": "",
+    "image": "marvel-united-gotg-remix.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.07,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/302670",
+    "parent_id": 584,
+    "documents": []
+  },
+  {
+    "id": 588,
+    "name": "Marvel United: Guardians of the Galaxy Remix \u2013 Kickstarter Edition",
+    "url": "",
+    "image": "marvel-united-gotg-remix-ks.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.2,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/321775",
+    "parent_id": 584,
+    "documents": []
+  },
+  {
+    "id": 589,
+    "name": "Marvel United: X-Men \u2013 Gold Team",
+    "url": "",
+    "image": "marvel-united-xmen-gold-team.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.83,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339128",
+    "parent_id": 585,
+    "documents": []
+  },
+  {
+    "id": 590,
+    "name": "Marvel United: X-Men \u2013 Blue Team",
+    "url": "",
+    "image": "marvel-united-xmen-blue-team.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339129",
+    "parent_id": 585,
+    "documents": []
+  },
+  {
+    "id": 591,
+    "name": "Marvel United: Deadpool",
+    "url": "",
+    "image": "marvel-united-deadpool.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.8,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/339131",
+    "parent_id": 584,
+    "documents": []
+  },
+  {
+    "id": 592,
+    "name": "Marvel United: Civil War",
+    "url": "marvel-united-civil-war-rulebook.pdf",
+    "image": "marvel-united-civil-war.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/379755",
+    "parent_id": 584,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "marvel-united-civil-war-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 593,
+    "name": "Hero Realms: Character Pack \u2013 Cleric",
+    "url": "",
+    "image": "hero-realms-character-pack-cleric.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.82,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/202103",
+    "parent_id": 141,
+    "documents": []
+  },
+  {
+    "id": 594,
+    "name": "Everdell: Pearlbrook",
+    "url": "everdell-pearlbrook-rulebook.pdf",
+    "image": "everdell-pearlbrook.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.88,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/259996",
+    "parent_id": 90,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "everdell-pearlbrook-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 595,
+    "name": "Path of Light and Shadow: Solstice",
+    "url": "",
+    "image": "path-light-shadow-solstice.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/336958",
+    "parent_id": 404,
+    "documents": []
   }
 ]

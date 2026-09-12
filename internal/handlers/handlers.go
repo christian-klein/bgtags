@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"unicode"
 
 	"context"
 
@@ -48,6 +49,10 @@ type PageData struct {
 	Message     string
 	Error       string
 
+	// Sections for quick jump rail and in-grid grouping
+	Sections      []QuickJumpSection
+	SectionGroups []SectionGroup
+
 	// PDF Optimization
 	OptTotal      int
 	OptLinearized int
@@ -71,6 +76,18 @@ type GameView struct {
 	Documents       []database.GameDocument
 	Expansions      []database.Game
 	ParentGame      *database.Game
+}
+
+type QuickJumpSection struct {
+	Key   string
+	Label string
+	Title string
+	Count int
+}
+
+type SectionGroup struct {
+	Section QuickJumpSection
+	Games   []GameView
 }
 
 func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) {
@@ -151,6 +168,106 @@ func (h *Handler) toGameViews(games []database.Game, baseURL string) []GameView 
 	return views
 }
 
+func buildQuickJumpSections(games []GameView, sortBy, sortOrder string) ([]QuickJumpSection, []SectionGroup) {
+	if len(games) == 0 {
+		return nil, nil
+	}
+
+	getSectionInfo := func(g *GameView) (key, label, title string) {
+		switch sortBy {
+		case "rating":
+			if g.Rating >= 8.0 {
+				return "sec-rate-8", "8+", "⭐ 8.0 – 10.0 Rating"
+			} else if g.Rating >= 7.0 {
+				return "sec-rate-7", "7+", "⭐ 7.0 – 7.9 Rating"
+			} else if g.Rating >= 6.0 {
+				return "sec-rate-6", "6+", "⭐ 6.0 – 6.9 Rating"
+			} else if g.Rating > 0.0 {
+				return "sec-rate-sub6", "<6", "⭐ Under 6.0 Rating"
+			}
+			return "sec-rate-nr", "NR", "⭐ Not Rated"
+
+		case "complexity":
+			if g.Complexity >= 4.0 {
+				return "sec-comp-4", "4+", "🧠 4.0 – 5.0 (Heavy)"
+			} else if g.Complexity >= 3.0 {
+				return "sec-comp-3", "3+", "🧠 3.0 – 3.9 (Medium-Heavy)"
+			} else if g.Complexity >= 2.0 {
+				return "sec-comp-2", "2+", "🧠 2.0 – 2.9 (Medium)"
+			} else if g.Complexity >= 1.0 {
+				return "sec-comp-1", "1+", "🧠 1.0 – 1.9 (Light)"
+			}
+			return "sec-comp-0", "<1", "🧠 Under 1.0 / Unrated"
+
+		case "min_players":
+			p := g.MinPlayers
+			if p <= 0 {
+				return "sec-min-any", "Any", "👥 Any Player Count"
+			} else if p >= 6 {
+				return "sec-min-6plus", "6+", "👥 6+ Players Minimum"
+			}
+			suf := "s"
+			if p == 1 {
+				suf = ""
+			}
+			return fmt.Sprintf("sec-min-%d", p), fmt.Sprintf("%dP", p), fmt.Sprintf("👥 %d Player%s Minimum", p, suf)
+
+		case "max_players":
+			p := g.MaxPlayers
+			if p <= 0 {
+				return "sec-max-any", "Any", "👥 Any Player Count"
+			} else if p >= 8 {
+				return "sec-max-8plus", "8+", "👥 Up to 8+ Players"
+			}
+			return fmt.Sprintf("sec-max-%d", p), fmt.Sprintf("%dP", p), fmt.Sprintf("👥 Up to %d Players", p)
+
+		default: // "name"
+			trimmed := strings.TrimSpace(g.Name)
+			if len(trimmed) == 0 {
+				return "sec-num", "#", "# (Numbers & Symbols)"
+			}
+			firstRune := []rune(trimmed)[0]
+			upper := unicode.ToUpper(firstRune)
+			if unicode.IsLetter(upper) {
+				s := string(upper)
+				return "sec-" + strings.ToLower(s), s, s
+			}
+			return "sec-num", "#", "# (Numbers & Symbols)"
+		}
+	}
+
+	var groups []SectionGroup
+	groupMap := make(map[string]int)
+
+	for _, g := range games {
+		k, lbl, ttl := getSectionInfo(&g)
+		idx, exists := groupMap[k]
+		if !exists {
+			idx = len(groups)
+			groupMap[k] = idx
+			sec := QuickJumpSection{
+				Key:   k,
+				Label: lbl,
+				Title: ttl,
+				Count: 0,
+			}
+			groups = append(groups, SectionGroup{
+				Section: sec,
+				Games:   nil,
+			})
+		}
+		groups[idx].Games = append(groups[idx].Games, g)
+		groups[idx].Section.Count++
+	}
+
+	sections := make([]QuickJumpSection, len(groups))
+	for i, grp := range groups {
+		sections[i] = grp.Section
+	}
+
+	return sections, groups
+}
+
 func (h *Handler) populateAuthData(r *http.Request, data *PageData) {
 	data.OIDCEnabled = h.cfg.OIDCEnabled
 	data.IsAuthenticated = middleware.IsAuthenticated(r, h.cfg)
@@ -201,9 +318,14 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 	}
 
 	baseURL := h.getBaseURL(r)
+	gameViews := h.toGameViews(games, baseURL)
+	sections, sectionGroups := buildQuickJumpSections(gameViews, sortBy, sortOrder)
+
 	data := PageData{
 		Title:           "Board Game Rule Tags",
-		Games:           h.toGameViews(games, baseURL),
+		Games:           gameViews,
+		Sections:        sections,
+		SectionGroups:   sectionGroups,
 		TotalCount:      len(games),
 		TotalGames:      totalGames,
 		TotalExpansions: totalExpansions,
@@ -330,8 +452,13 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 	}
 
 	baseURL := h.getBaseURL(r)
+	gameViews := h.toGameViews(games, baseURL)
+	sections, sectionGroups := buildQuickJumpSections(gameViews, sortBy, sortOrder)
+
 	data := PageData{
-		Games:         h.toGameViews(games, baseURL),
+		Games:         gameViews,
+		Sections:      sections,
+		SectionGroups: sectionGroups,
 		TotalCount:    len(games),
 		SearchQuery:   q,
 		PlayerCount:   players,

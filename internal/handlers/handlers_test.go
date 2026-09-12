@@ -643,3 +643,162 @@ func TestBackToTopButton(t *testing.T) {
 		t.Errorf("expected back-to-top-icon in layout")
 	}
 }
+
+func TestQuickJumpSections(t *testing.T) {
+	// 1. Alphabetical sorting
+	gamesAlpha := []GameView{
+		{Game: database.Game{Name: "3 Wishes"}},
+		{Game: database.Game{Name: "7 Wonders"}},
+		{Game: database.Game{Name: "Agricola"}},
+		{Game: database.Game{Name: "Blood Rage"}},
+		{Game: database.Game{Name: "Brass: Birmingham"}},
+		{Game: database.Game{Name: "Codenames"}},
+	}
+	secsAlpha, groupsAlpha := buildQuickJumpSections(gamesAlpha, "name", "asc")
+	if len(secsAlpha) != 4 {
+		t.Fatalf("expected 4 sections (#, A, B, C), got %d", len(secsAlpha))
+	}
+	if secsAlpha[0].Label != "#" || secsAlpha[0].Count != 2 {
+		t.Errorf("expected # section with 2 games, got label=%s, count=%d", secsAlpha[0].Label, secsAlpha[0].Count)
+	}
+	if secsAlpha[1].Label != "A" || secsAlpha[1].Count != 1 {
+		t.Errorf("expected A section with 1 game, got label=%s, count=%d", secsAlpha[1].Label, secsAlpha[1].Count)
+	}
+	if secsAlpha[2].Label != "B" || secsAlpha[2].Count != 2 {
+		t.Errorf("expected B section with 2 games, got label=%s, count=%d", secsAlpha[2].Label, secsAlpha[2].Count)
+	}
+	if len(groupsAlpha) != 4 {
+		t.Fatalf("expected 4 groups, got %d", len(groupsAlpha))
+	}
+
+	// 2. Rating sorting
+	gamesRating := []GameView{
+		{Game: database.Game{Name: "Gloomhaven", Rating: 8.7}},
+		{Game: database.Game{Name: "Blood Rage", Rating: 8.0}},
+		{Game: database.Game{Name: "Agricola", Rating: 7.9}},
+		{Game: database.Game{Name: "Codenames", Rating: 6.8}},
+		{Game: database.Game{Name: "Uno", Rating: 5.4}},
+		{Game: database.Game{Name: "Unrated Game", Rating: 0.0}},
+	}
+	secsRating, _ := buildQuickJumpSections(gamesRating, "rating", "desc")
+	if len(secsRating) != 5 { // 8+, 7+, 6+, <6, NR
+		t.Fatalf("expected 5 rating sections (8+, 7+, 6+, <6, NR), got %d", len(secsRating))
+	}
+	if secsRating[0].Label != "8+" || secsRating[0].Count != 2 {
+		t.Errorf("expected 8+ section with 2 games, got label=%s count=%d", secsRating[0].Label, secsRating[0].Count)
+	}
+	if secsRating[4].Label != "NR" || secsRating[4].Count != 1 {
+		t.Errorf("expected NR section with 1 game, got label=%s count=%d", secsRating[4].Label, secsRating[4].Count)
+	}
+
+	// 3. Complexity sorting
+	gamesComp := []GameView{
+		{Game: database.Game{Name: "Heavy Game", Complexity: 4.2}},
+		{Game: database.Game{Name: "Med Heavy", Complexity: 3.5}},
+		{Game: database.Game{Name: "Medium", Complexity: 2.3}},
+		{Game: database.Game{Name: "Light", Complexity: 1.4}},
+		{Game: database.Game{Name: "Very Light", Complexity: 0.8}},
+	}
+	secsComp, _ := buildQuickJumpSections(gamesComp, "complexity", "desc")
+	if len(secsComp) != 5 {
+		t.Fatalf("expected 5 complexity sections, got %d", len(secsComp))
+	}
+	if secsComp[0].Label != "4+" || secsComp[1].Label != "3+" || secsComp[2].Label != "2+" || secsComp[3].Label != "1+" || secsComp[4].Label != "<1" {
+		t.Errorf("unexpected complexity labels: %+v", secsComp)
+	}
+
+	// 4. Player count sorting
+	gamesPlayers := []GameView{
+		{Game: database.Game{Name: "Solo", MinPlayers: 1, MaxPlayers: 1}},
+		{Game: database.Game{Name: "Duo", MinPlayers: 2, MaxPlayers: 4}},
+		{Game: database.Game{Name: "Party", MinPlayers: 6, MaxPlayers: 12}},
+	}
+	secsMin, _ := buildQuickJumpSections(gamesPlayers, "min_players", "asc")
+	if len(secsMin) != 3 {
+		t.Fatalf("expected 3 min_player sections, got %d", len(secsMin))
+	}
+	if secsMin[0].Label != "1P" || secsMin[1].Label != "2P" || secsMin[2].Label != "6+" {
+		t.Errorf("unexpected min_player labels: %+v", secsMin)
+	}
+
+	secsMax, _ := buildQuickJumpSections(gamesPlayers, "max_players", "asc")
+	if len(secsMax) != 3 {
+		t.Fatalf("expected 3 max_player sections, got %d", len(secsMax))
+	}
+	if secsMax[0].Label != "1P" || secsMax[1].Label != "4P" || secsMax[2].Label != "8+" {
+		t.Errorf("unexpected max_player labels: %+v", secsMax)
+	}
+}
+
+func TestQuickJumpGridRendering(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test_jump_ui.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	cfg := &config.Config{
+		Port:      "8081",
+		StaticDir: "../../static",
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	// Create games spanning multiple letters
+	games := []*database.Game{
+		{Name: "7 Wonders", URL: "7w.pdf", Rating: 7.7, Complexity: 2.3, MinPlayers: 2, MaxPlayers: 7},
+		{Name: "Agricola", URL: "agricola.pdf", Rating: 7.9, Complexity: 3.6, MinPlayers: 1, MaxPlayers: 4},
+		{Name: "Blood Rage", URL: "bloodrage.pdf", Rating: 8.0, Complexity: 2.8, MinPlayers: 2, MaxPlayers: 4},
+		{Name: "Codenames", URL: "codenames.pdf", Rating: 7.5, Complexity: 1.2, MinPlayers: 2, MaxPlayers: 8},
+	}
+	for _, g := range games {
+		if err := db.CreateGame(g); err != nil {
+			t.Fatalf("failed to create game: %v", err)
+		}
+	}
+
+	// 1. Check / rendering includes section headers and quick jump rail
+	wIndex := httptest.NewRecorder()
+	rIndex := httptest.NewRequest("GET", "/", nil)
+	h.HandleIndex(wIndex, rIndex)
+	if wIndex.Code != http.StatusOK {
+		t.Fatalf("expected 200 for index, got %d", wIndex.Code)
+	}
+	bodyIndex := wIndex.Body.String()
+	if !strings.Contains(bodyIndex, "grid-section-header") {
+		t.Errorf("expected grid-section-header in index page")
+	}
+	if !strings.Contains(bodyIndex, "quick-jump-rail") {
+		t.Errorf("expected quick-jump-rail in index page")
+	}
+	if !strings.Contains(bodyIndex, "quick-jump-item") {
+		t.Errorf("expected quick-jump-item in index page")
+	}
+	if !strings.Contains(bodyIndex, "data-jump-target=\"sec-a\"") {
+		t.Errorf("expected jump target for letter A in index page")
+	}
+
+	// 2. Check /games partial response includes quick-jump rail
+	wGames := httptest.NewRecorder()
+	rGames := httptest.NewRequest("GET", "/games?sort_by=rating&sort_order=desc", nil)
+	h.HandleGames(wGames, rGames)
+	if wGames.Code != http.StatusOK {
+		t.Fatalf("expected 200 for games, got %d", wGames.Code)
+	}
+	bodyGames := wGames.Body.String()
+	if !strings.Contains(bodyGames, "grid-section-header") {
+		t.Errorf("expected grid-section-header in games partial")
+	}
+	if !strings.Contains(bodyGames, "quick-jump-rail") {
+		t.Errorf("expected quick-jump-rail in games partial")
+	}
+	if !strings.Contains(bodyGames, "data-jump-target=\"sec-rate-8\"") {
+		t.Errorf("expected rating 8+ section in rating sorted partial")
+	}
+}
+
