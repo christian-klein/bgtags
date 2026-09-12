@@ -11577,5 +11577,530 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/336958",
     "parent_id": 404,
     "documents": []
+  },
+  {
+    "id": 596,
+    "name": "Betrayal at House on the Hill",
+    "url": "betrayal-at-house-on-the-hill-rulebook.pdf",
+    "image": "betrayal-at-house-on-the-hill.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.4,
+    "bgg_url": "https://boardgamegeek.com/boardgame/10547",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "betrayal-at-house-on-the-hill-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 597,
+    "name": "Formula D",
+    "url": "formula-d-rulebook.pdf",
+    "image": "formula-d.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.96,
+    "bgg_url": "https://boardgamegeek.com/boardgame/37904",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "formula-d-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 598,
+    "name": "T.I.M.E Stories",
+    "url": "time-stories-rulebook.pdf",
+    "image": "time-stories.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.58,
+    "bgg_url": "https://boardgamegeek.com/boardgame/146508",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "time-stories-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 599,
+    "name": "Gloomhaven",
+    "url": "gloomhaven-rulebook.pdf",
+    "image": "gloomhaven.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.92,
+    "bgg_url": "https://boardgamegeek.com/boardgame/174430",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "gloomhaven-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 600,
+    "name": "Codenames",
+    "url": "codenames-rulebook.pdf",
+    "image": "codenames.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.25,
+    "bgg_url": "https://boardgamegeek.com/boardgame/178900",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "codenames-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 601,
+    "name": "Potion Explosion",
+    "url": "potion-explosion-rulebook.pdf",
+    "image": "potion-explosion.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.78,
+    "bgg_url": "https://boardgamegeek.com/boardgame/180974",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "potion-explosion-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 602,
+    "name": "Through the Ages: A New Story of Civilization",
+    "url": "through-the-ages-rulebook.pdf",
+    "image": "through-the-ages.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.44,
+    "bgg_url": "https://boardgamegeek.com/boardgame/182028",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "through-the-ages-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 603,
+    "name": "Too Many Bones",
+    "url": "too-many-bones-rulebook.pdf",
+    "image": "too-many-bones.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.87,
+    "bgg_url": "https://boardgamegeek.com/boardgame/192135",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "too-many-bones-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 604,
+    "name": "Sushi Go Party!",
+    "url": "sushi-go-party-rulebook.pdf",
+    "image": "sushi-go-party.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.33,
+    "bgg_url": "https://boardgamegeek.com/boardgame/192291",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "sushi-go-party-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 605,
+    "name": "Happy Salmon",
+    "url": "happy-salmon-rulebook.pdf",
+    "image": "happy-salmon.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.06,
+    "bgg_url": "https://boardgamegeek.com/boardgame/194626",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "happy-salmon-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 606,
+    "name": "Betrayal Legacy",
+    "url": "betrayal-legacy-rulebook.pdf",
+    "image": "betrayal-legacy.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.92,
+    "bgg_url": "https://boardgamegeek.com/boardgame/240196",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "betrayal-legacy-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 607,
+    "name": "The Quacks of Quedlinburg",
+    "url": "quacks-of-quedlinburg-rulebook.pdf",
+    "image": "quacks-of-quedlinburg.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.94,
+    "bgg_url": "https://boardgamegeek.com/boardgame/244521",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "quacks-of-quedlinburg-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 608,
+    "name": "Rick and Morty: The Pickle Rick Game",
+    "url": "",
+    "image": "pickle-rick-game.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.64,
+    "bgg_url": "https://boardgamegeek.com/boardgame/246532",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 609,
+    "name": "Roll Player Adventures",
+    "url": "roll-player-adventures-rulebook.pdf",
+    "image": "roll-player-adventures.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.34,
+    "bgg_url": "https://boardgamegeek.com/boardgame/254708",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "roll-player-adventures-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 610,
+    "name": "UNO Flip!",
+    "url": "uno-flip-rulebook.pdf",
+    "image": "uno-flip.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.23,
+    "bgg_url": "https://boardgamegeek.com/boardgame/271460",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "uno-flip-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 611,
+    "name": "Mind MGMT: The Psychic Espionage \u201cGame.\u201d",
+    "url": "mind-mgmt-rulebook.pdf",
+    "image": "mind-mgmt.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.89,
+    "bgg_url": "https://boardgamegeek.com/boardgame/284653",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mind-mgmt-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 612,
+    "name": "Tapestry",
+    "url": "tapestry-rulebook.pdf",
+    "image": "tapestry.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.98,
+    "bgg_url": "https://boardgamegeek.com/boardgame/286096",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "tapestry-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 613,
+    "name": "Back to the Future: Back in Time",
+    "url": "back-to-the-future-rulebook.pdf",
+    "image": "back-to-the-future-back-in-time.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.42,
+    "bgg_url": "https://boardgamegeek.com/boardgame/302388",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "back-to-the-future-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 614,
+    "name": "Disney: The Haunted Mansion \u2013 Call of the Spirits Game",
+    "url": "haunted-mansion-rulebook.pdf",
+    "image": "haunted-mansion-call-of-the-spirits.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.92,
+    "bgg_url": "https://boardgamegeek.com/boardgame/309129",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "haunted-mansion-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 615,
+    "name": "Unconscious Mind",
+    "url": "unconscious-mind-rulebook.pdf",
+    "image": "unconscious-mind.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.02,
+    "bgg_url": "https://boardgamegeek.com/boardgame/329500",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "unconscious-mind-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 616,
+    "name": "Rear Window",
+    "url": "",
+    "image": "rear-window.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 1.72,
+    "bgg_url": "https://boardgamegeek.com/boardgame/358816",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 617,
+    "name": "Disney Lorcana",
+    "url": "",
+    "image": "disney-lorcana.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.12,
+    "bgg_url": "https://boardgamegeek.com/boardgame/369646",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 618,
+    "name": "Too Many Bones: Undertow",
+    "url": "too-many-bones-undertow-rulebook.pdf",
+    "image": "too-many-bones-undertow.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 4.03,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/235802",
+    "parent_id": 603,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "too-many-bones-undertow-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 619,
+    "name": "The Quest for El Dorado: The Golden Temples",
+    "url": "quest-el-dorado-golden-temples-rulebook.pdf",
+    "image": "quest-for-el-dorado-golden-temples.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.05,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/271615",
+    "parent_id": 403,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "quest-el-dorado-golden-temples-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 620,
+    "name": "Terraforming Mars: Ares Expedition",
+    "url": "tm-ares-expedition-rulebook.pdf",
+    "image": "tm-ares-expedition.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.93,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/328871",
+    "parent_id": 478,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "expansion",
+        "filename": "tm-ares-expedition-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 621,
+    "name": "T.I.M.E Stories: The Marcy Case",
+    "url": "",
+    "image": "time-stories-marcy-case.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.67,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/180585",
+    "parent_id": 598,
+    "documents": []
+  },
+  {
+    "id": 622,
+    "name": "T.I.M.E Stories: A Prophecy of Dragons",
+    "url": "",
+    "image": "time-stories-prophecy-of-dragons.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 2.64,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/189035",
+    "parent_id": 598,
+    "documents": []
+  },
+  {
+    "id": 623,
+    "name": "Eldritch Horror: Signs of Carcosa",
+    "url": "eldritch-horror-signs-of-carcosa-rulebook.pdf",
+    "image": "eldritch-horror-signs-of-carcosa.jpg",
+    "min_players": 1,
+    "max_players": 8,
+    "best_players": "",
+    "complexity": 3.13,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/197586",
+    "parent_id": 50,
+    "documents": [
+      {
+        "title": "Expansion Rules",
+        "category": "expansion",
+        "filename": "eldritch-horror-signs-of-carcosa-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
   }
 ]
