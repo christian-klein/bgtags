@@ -1039,7 +1039,7 @@
     "best_players": "4",
     "complexity": 3.41,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/248591/dinosaur-island-totally-liquid",
-    "parent_id": null,
+    "parent_id": 409,
     "documents": [
       {
         "title": "Totally Liquid Rules",
@@ -2360,7 +2360,14 @@
     "complexity": 2.2,
     "bgg_url": "https://boardgamegeek.com/boardgame/462192/the-crew-journey-to-the-ends-of-the-earth",
     "parent_id": null,
-    "documents": []
+    "documents": [
+      {
+        "title": "Crew_3_Rulebook.pdf",
+        "category": "core",
+        "filename": "691866_crew_3_rulebook.pdf",
+        "is_primary": true
+      }
+    ]
   },
   {
     "id": 111,
@@ -7635,7 +7642,7 @@
   },
   {
     "id": 382,
-    "name": "Thunderstone Advance: Towers of Ruin",
+    "name": "Thunderstone Advance",
     "url": "thunderstone-advance-towers-ruin-rulebook.pdf",
     "image": "thunderstone-advance-towers-ruin.jpg",
     "min_players": 1,
@@ -7663,7 +7670,7 @@
     "best_players": "3",
     "complexity": 2.8,
     "bgg_url": "https://boardgamegeek.com/boardgame/152765/thunderstone-advance-worlds-collide",
-    "parent_id": null,
+    "parent_id": 382,
     "documents": []
   },
   {
@@ -7729,7 +7736,7 @@
     "best_players": "3",
     "complexity": 2.79,
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/158727/thunderstone-advance-into-the-abyss",
-    "parent_id": 383,
+    "parent_id": 382,
     "documents": []
   },
   {
@@ -7937,7 +7944,7 @@
   },
   {
     "id": 402,
-    "name": "Traveller Customizable Card Game: Two Player Starter Set",
+    "name": "Traveller Customizable Card Game",
     "url": "traveller-ccg-rulebook.pdf",
     "image": "traveller-ccg.jpg",
     "min_players": 2,
@@ -8950,26 +8957,6 @@
     ]
   },
   {
-    "id": 458,
-    "name": "Robinson Crusoe: Adventures on the Cursed Island",
-    "url": "robinson-crusoe-rulebook.pdf",
-    "image": "robinson-crusoe.jpg",
-    "min_players": 1,
-    "max_players": 5,
-    "best_players": "",
-    "complexity": 3.83,
-    "bgg_url": "https://boardgamegeek.com/boardgame/121921",
-    "parent_id": null,
-    "documents": [
-      {
-        "title": "Core Rulebook",
-        "category": "core",
-        "filename": "robinson-crusoe-rulebook.pdf",
-        "is_primary": true
-      }
-    ]
-  },
-  {
     "id": 459,
     "name": "Mice and Mystics",
     "url": "mice-and-mystics-rulebook.pdf",
@@ -8985,26 +8972,6 @@
         "title": "Core Rulebook",
         "category": "core",
         "filename": "mice-and-mystics-rulebook.pdf",
-        "is_primary": true
-      }
-    ]
-  },
-  {
-    "id": 460,
-    "name": "Sushi Go!",
-    "url": "sushi-go-rulebook.pdf",
-    "image": "sushi-go.jpg",
-    "min_players": 1,
-    "max_players": 5,
-    "best_players": "",
-    "complexity": 1.16,
-    "bgg_url": "https://boardgamegeek.com/boardgame/133473",
-    "parent_id": null,
-    "documents": [
-      {
-        "title": "Core Rulebook",
-        "category": "core",
-        "filename": "sushi-go-rulebook.pdf",
         "is_primary": true
       }
     ]
@@ -11037,9 +11004,9 @@
   },
   {
     "id": 565,
-    "name": "Robinson Crusoe: Adventures on the Cursed Island \u2013 Collector's Edition (Gamefound Edition)",
+    "name": "Robinson Crusoe: Adventures on the Cursed Island \u2013 Collector\u2019s Edition",
     "url": "robinson-crusoe-collectors-rulebook.pdf",
-    "image": "robinson-crusoe-collectors.jpg",
+    "image": "robinson-crusoe.jpg",
     "min_players": 1,
     "max_players": 8,
     "best_players": "",
@@ -11417,7 +11384,7 @@
     "best_players": "",
     "complexity": 2.01,
     "bgg_url": "https://boardgamegeek.com/boardgame/336382",
-    "parent_id": null,
+    "parent_id": 584,
     "documents": [
       {
         "title": "Core Rulebook",
@@ -11437,7 +11404,7 @@
     "best_players": "",
     "complexity": 1.82,
     "bgg_url": "https://boardgamegeek.com/boardgame/379908",
-    "parent_id": null,
+    "parent_id": 584,
     "documents": [
       {
         "title": "Core Rulebook",
