@@ -5,11 +5,14 @@ import (
 	"net/http/httptest"
 	"path/filepath"
 	"testing"
+	"context"
 	"fmt"
 	"strings"
 
+	"github.com/christian-klein/bgtags/internal/auth"
 	"github.com/christian-klein/bgtags/internal/config"
 	"github.com/christian-klein/bgtags/internal/database"
+	"github.com/christian-klein/bgtags/internal/middleware"
 )
 
 func TestQRAndHealthHandlers(t *testing.T) {
@@ -799,6 +802,77 @@ func TestQuickJumpGridRendering(t *testing.T) {
 	}
 	if !strings.Contains(bodyGames, "data-jump-target=\"sec-rate-8\"") {
 		t.Errorf("expected rating 8+ section in rating sorted partial")
+	}
+}
+
+func TestResolveCollectionUser(t *testing.T) {
+	tmpDir := t.TempDir()
+	dbPath := filepath.Join(tmpDir, "test.db")
+	db, err := database.Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to initialize db: %v", err)
+	}
+	defer db.Close()
+
+	cfg := &config.Config{
+		DefaultOwner: "admin_user",
+		LocalDevMode: false,
+	}
+
+	h, err := New(db, cfg, "../../templates")
+	if err != nil {
+		t.Fatalf("failed to create handler: %v", err)
+	}
+
+	// Create games
+	g1 := &database.Game{Name: "Game 1", URL: "game-1.pdf"}
+	_ = db.CreateGame(g1)
+
+	// User "alice" has a collection
+	_ = db.AddGameToUserCollection("alice", g1.ID)
+
+	// Admin setting is "all"
+	_ = db.SetSetting("default_collection", "all")
+
+	// 1. User without collection (or anonymous) -> gets admin setting "all"
+	rAnon := httptest.NewRequest("GET", "/", nil)
+	selected, user := h.resolveCollectionUser(rAnon)
+	if selected != "all" || user != "" {
+		t.Errorf("expected (all, ''), got (%s, %s)", selected, user)
+	}
+
+	// 2. User "bob" (logged in, but has NO collection) -> gets admin setting "all"
+	rBob := httptest.NewRequest("GET", "/", nil)
+	ctxBob := context.WithValue(rBob.Context(), middleware.UserContextKey, &auth.SessionData{Username: "bob"})
+	rBob = rBob.WithContext(ctxBob)
+	selected, user = h.resolveCollectionUser(rBob)
+	if selected != "all" || user != "" {
+		t.Errorf("expected (all, ''), got (%s, %s)", selected, user)
+	}
+
+	// 3. User "alice" (logged in, HAS collection) -> defaults to "alice"
+	rAlice := httptest.NewRequest("GET", "/", nil)
+	ctxAlice := context.WithValue(rAlice.Context(), middleware.UserContextKey, &auth.SessionData{Username: "alice"})
+	rAlice = rAlice.WithContext(ctxAlice)
+	selected, user = h.resolveCollectionUser(rAlice)
+	if selected != "alice" || user != "alice" {
+		t.Errorf("expected (alice, alice), got (%s, %s)", selected, user)
+	}
+
+	// 4. User "alice" explicitly requests "all" via query param -> respects "all"
+	rAliceAll := httptest.NewRequest("GET", "/?collection=all", nil)
+	rAliceAll = rAliceAll.WithContext(ctxAlice)
+	selected, user = h.resolveCollectionUser(rAliceAll)
+	if selected != "all" || user != "" {
+		t.Errorf("expected (all, ''), got (%s, %s)", selected, user)
+	}
+
+	// 5. User "alice" explicitly requests another user's collection -> respects choice
+	rAliceOther := httptest.NewRequest("GET", "/?collection=carol", nil)
+	rAliceOther = rAliceOther.WithContext(ctxAlice)
+	selected, user = h.resolveCollectionUser(rAliceOther)
+	if selected != "carol" || user != "carol" {
+		t.Errorf("expected (carol, carol), got (%s, %s)", selected, user)
 	}
 }
 

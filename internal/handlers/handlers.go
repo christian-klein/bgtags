@@ -292,13 +292,18 @@ func (h *Handler) populateAuthData(r *http.Request, data *PageData) {
 func (h *Handler) resolveCollectionUser(r *http.Request) (string, string) {
 	val := strings.TrimSpace(r.URL.Query().Get("collection"))
 	if val == "" {
-		settings := h.db.GetAdminSettings()
-		if settings.DefaultCollection != "" {
-			val = settings.DefaultCollection
-		} else if h.cfg.DefaultOwner != "" {
-			val = h.cfg.DefaultOwner
+		currentUserID := middleware.CurrentUserID(r, h.cfg)
+		if currentUserID != "" && h.db.UserHasCollection(currentUserID) {
+			val = currentUserID
 		} else {
-			val = "all"
+			settings := h.db.GetAdminSettings()
+			if settings.DefaultCollection != "" {
+				val = settings.DefaultCollection
+			} else if h.cfg.DefaultOwner != "" {
+				val = h.cfg.DefaultOwner
+			} else {
+				val = "all"
+			}
 		}
 	}
 	if val == "all" || val == "library" || val == "*" {

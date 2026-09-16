@@ -793,6 +793,21 @@ func (db *DB) ListAllCollections() ([]CollectionOption, error) {
 	return colls, rows.Err()
 }
 
+// UserHasCollection returns true if the user has any games in user_games or configured a collection
+func (db *DB) UserHasCollection(userID string) bool {
+	userID = strings.TrimSpace(userID)
+	if userID == "" {
+		return false
+	}
+	var exists int
+	err := db.QueryRow(`
+		SELECT 1 WHERE 
+			EXISTS (SELECT 1 FROM user_games WHERE user_id = ?)
+			OR EXISTS (SELECT 1 FROM user_collections WHERE user_id = ?)
+	`, userID, userID).Scan(&exists)
+	return err == nil && exists == 1
+}
+
 // GetGameSharedUserCount checks which other users have this game in their collection
 func (db *DB) GetGameSharedUserCount(gameID int64, excludeUserID string) (int, []string, error) {
 	rows, err := db.Query("SELECT DISTINCT user_id FROM user_games WHERE game_id = ? AND user_id != ?", gameID, excludeUserID)
