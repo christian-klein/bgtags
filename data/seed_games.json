@@ -3177,26 +3177,6 @@
     ]
   },
   {
-    "id": 151,
-    "name": "The Gang",
-    "url": "the-gang-rulebook.pdf",
-    "image": "the-gang.jpg",
-    "min_players": 3,
-    "max_players": 6,
-    "best_players": "5",
-    "complexity": 1.6,
-    "bgg_url": "https://boardgamegeek.com/boardgame/411567/the-gang",
-    "parent_id": null,
-    "documents": [
-      {
-        "title": "Core Rulebook",
-        "category": "core",
-        "filename": "the-gang-rulebook.pdf",
-        "is_primary": true
-      }
-    ]
-  },
-  {
     "id": 152,
     "name": "Deception: Murder in Hong Kong",
     "url": "deception-rulebook.pdf",
@@ -12290,5 +12270,25 @@
     "bgg_url": "https://boardgamegeek.com/boardgameexpansion/207480/yanks-asl-module-3a",
     "parent_id": 21,
     "documents": []
+  },
+  {
+    "id": 637,
+    "name": "The Gang: Deluxe Edition",
+    "url": "the-gang-rulebook.pdf",
+    "image": "the-gang-deluxe-edition.jpg",
+    "min_players": 3,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgame/462191/the-gang-deluxe-edition",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "the-gang-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
   }
 ]
