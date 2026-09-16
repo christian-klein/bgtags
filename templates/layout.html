@@ -11,7 +11,13 @@
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="apple-touch-icon" href="/static/img/bgtags-icon.png">
     <link rel="icon" type="image/png" href="/static/favicon.png">
-    <link rel="stylesheet" href="/static/css/styles.css?v=20260911-quick-jump">
+    <link rel="stylesheet" href="/static/css/styles.css?v=20260915-v3">
+    <style>
+        @keyframes bgtags-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
     <script src="/static/js/htmx.min.js"></script>
 </head>
 <body>
@@ -25,6 +31,9 @@
                 <nav class="nav-links">
                     <a href="/" class="nav-item {{if eq .ActiveNav "catalog"}}active{{end}}">Catalog</a>
                     <a href="/stickers" class="nav-item {{if eq .ActiveNav "stickers"}}active{{end}}">🏷️ Print Stickers</a>
+                    {{if .CanManageCollection}}
+                    <a href="/collection" class="nav-item {{if eq .ActiveNav "collection"}}active{{end}}">📦 My Collection</a>
+                    {{end}}
                     {{if .IsAdmin}}
                     <a href="/admin" class="nav-item {{if eq .ActiveNav "admin"}}active{{end}}">⚙️ Admin</a>
                     {{end}}
@@ -32,6 +41,16 @@
             </div>
             
             <div class="nav-auth-section">
+                {{if .LocalDevMode}}
+                <div class="dev-persona-switcher" title="Testing persona switcher (Local Dev Mode only)" style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 6px; border: 1px dashed var(--accent-primary);">
+                    <span style="color: var(--accent-primary); font-weight: 700; font-size: 0.75rem;">DEV PERSONA:</span>
+                    <select onchange="document.cookie='bgtags_dev_user=' + this.value + '; path=/; max-age=86400'; window.location.reload();" style="background: transparent; color: white; border: none; font-size: 0.8rem; cursor: pointer; font-weight: 500; outline: none;">
+                        <option value="cdk2128" {{if eq .DevUser "cdk2128"}}selected{{end}} style="background:#1e293b; color:white;">cdk2128 (Admin + Collector)</option>
+                        <option value="collector_user" {{if eq .DevUser "collector_user"}}selected{{end}} style="background:#1e293b; color:white;">collector_user (Collector only)</option>
+                        <option value="viewer_user" {{if eq .DevUser "viewer_user"}}selected{{end}} style="background:#1e293b; color:white;">viewer_user (Standard Viewer)</option>
+                    </select>
+                </div>
+                {{end}}
                 {{if .IsAuthenticated}}
                     <span class="nav-user" title="{{if .User}}{{.User.Email}}{{end}}">
                         👤 {{if .User}}{{if .User.Username}}{{.User.Username}}{{else if .User.Name}}{{.User.Name}}{{else}}User{{end}}{{else}}User{{end}}
@@ -151,6 +170,41 @@
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function bggSearchOnInput(el) {
+            var val = el.value.trim();
+            var results = document.getElementById('bgg-search-results');
+            if (!results) return;
+            if (val.length >= 2) {
+                var safeVal = val.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                results.innerHTML = `
+                        <svg style="width: 2.75rem; height: 2.75rem; animation: bgtags-spin 0.8s linear infinite; margin: 0 auto 1.25rem auto; display: block;" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="rgba(99,102,241,0.25)" stroke-width="3"></circle>
+                            <path d="M12 2a10 10 0 0 1 10 10" stroke="#818cf8" stroke-width="3" stroke-linecap="round"></path>
+                        </svg>
+                        <div style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem;">
+                            Searching BoardGameGeek...
+                        </div>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Querying BGG XMLAPI2 database for &ldquo;<span style="color: var(--accent-primary); font-weight: 600;">` + safeVal + `</span>&rdquo;
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.65rem;">
+                            Deduplicating against existing library titles
+                        </div>
+                    </div>
+                `;
+            } else if (val.length === 0) {
+                results.innerHTML = `
+                    <div class="bgg-search-placeholder" style="text-align: center; padding: 2.5rem 1rem; color: var(--text-muted);">
+                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0.7;">🎲</div>
+                        <div style="font-size: 1.05rem; font-weight: 500; color: var(--text-secondary);">Search BoardGameGeek Database</div>
+                        <div style="font-size: 0.85rem; margin-top: 4px; max-width: 380px; margin-inline: auto;">
+                            Start typing any game name above to see matching games, release years, and library status.
+                        </div>
+                    </div>
+                `;
+            }
         }
     </script>
 

@@ -1,0 +1,49 @@
+<div class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-dialog" style="max-width: 640px; max-height: 90vh; display: flex; flex-direction: column;">
+        <div class="modal-header" style="padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color);">
+            <div>
+                <h3 class="modal-title" style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+                    ➕ Add Game to My Collection
+                </h3>
+                <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
+                    Search BoardGameGeek to import new titles or link existing games from the library.
+                </p>
+            </div>
+            <button type="button" class="modal-close" onclick="closeModal()" title="Close">✕</button>
+        </div>
+
+        <div class="modal-body" id="bgg-modal-body" style="padding: 1.25rem; overflow-y: auto;">
+            <div style="margin-bottom: 1rem;">
+                <div class="search-box" style="width: 100%; position: relative;">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" 
+                           id="bgg-search-input"
+                           name="q" 
+                           placeholder="Type board game name (e.g. Wingspan, Root, Catan)..." 
+                           class="search-input"
+                           style="width: 100%; font-size: 1rem; padding: 0.75rem 1rem 0.75rem 2.5rem; border-radius: var(--radius-md);"
+                           autofocus
+                           hx-get="/collection/search-bgg" 
+                           hx-trigger="keyup changed delay:350ms, search" 
+                           hx-target="#bgg-search-results"
+                           oninput="bggSearchOnInput(this)"
+                           onsearch="bggSearchOnInput(this)">
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; display: flex; justify-content: space-between;">
+                    <span>⚡ Automatically deduplicates against existing games in the library</span>
+                    <span>Powered by BGG XMLAPI2</span>
+                </div>
+            </div>
+
+            <div id="bgg-search-results" style="position: relative; min-height: 180px;">
+                <div class="bgg-search-placeholder" style="text-align: center; padding: 2.5rem 1rem; color: var(--text-muted);">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0.7;">🎲</div>
+                    <div style="font-size: 1.05rem; font-weight: 500; color: var(--text-secondary);">Search BoardGameGeek Database</div>
+                    <div style="font-size: 0.85rem; margin-top: 4px; max-width: 380px; margin-inline: auto;">
+                        Start typing any game name above to see matching games, release years, and library status.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

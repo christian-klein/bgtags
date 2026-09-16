@@ -77,6 +77,17 @@ func main() {
 	mux.HandleFunc("/backups/create", middleware.RequireAdmin(cfg, h.HandleCreateBackup))
 	mux.HandleFunc("/backups/restore", middleware.RequireAdmin(cfg, h.HandleRestoreBackup))
 
+	// My Collection endpoints (Collector RBAC protected)
+	mux.HandleFunc("/collection", middleware.RequireCollector(cfg, h.HandleCollection))
+	mux.HandleFunc("/collection/modal", middleware.RequireCollector(cfg, h.HandleCollectionModal))
+	mux.HandleFunc("/collection/search-bgg", middleware.RequireCollector(cfg, h.HandleCollectionSearchBGG))
+	mux.HandleFunc("/collection/select-bgg", middleware.RequireCollector(cfg, h.HandleCollectionSelectBGG))
+	mux.HandleFunc("/collection/add-existing", middleware.RequireCollector(cfg, h.HandleCollectionAddExisting))
+	mux.HandleFunc("/collection/import", middleware.RequireCollector(cfg, h.HandleCollectionImport))
+	mux.HandleFunc("/collection/rename-modal", middleware.RequireCollector(cfg, h.HandleCollectionRenameModal))
+	mux.HandleFunc("/collection/rename", middleware.RequireCollector(cfg, h.HandleCollectionRename))
+	mux.HandleFunc("/collection/games/", middleware.RequireCollector(cfg, h.HandleCollectionGameRoute))
+
 	// Static assets
 	staticDir := cfg.StaticDir
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir(staticDir))))

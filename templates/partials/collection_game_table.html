@@ -1,0 +1,130 @@
+{{define "collection_game_table.html"}}
+<table class="admin-table">
+    <thead>
+        <tr>
+            <th style="width: 52px;">Art</th>
+            <th>Game & Expansions</th>
+            <th>Players</th>
+            <th>Complexity</th>
+            <th>Score</th>
+            <th>Library Status</th>
+            <th style="text-align: right;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{range .Games}}
+        <tr id="game-row-{{.ID}}">
+            <td>
+                {{if .Image}}
+                <img src="/img/{{.Image}}" alt="{{.Name}}" class="admin-thumb" loading="lazy" onerror="this.src='/static/img/placeholder.svg'">
+                {{else}}
+                <div class="admin-thumb" style="display:flex;align-items:center;justify-content:center;color:#64748b;">🎲</div>
+                {{end}}
+            </td>
+            <td>
+                <div style="display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;">
+                    <a href="{{.RulesHubURL}}" class="admin-game-title" style="color: var(--text-primary); text-decoration: none;" hover="text-decoration: underline;">
+                        {{.Name}}
+                    </a>
+                    {{if .BggURL}}
+                    <a href="{{.BggURL}}" target="_blank" rel="noopener" class="admin-bgg-link" style="font-size: 0.75rem;">BGG ↗</a>
+                    {{end}}
+                </div>
+
+                {{if .Expansions}}
+                <div style="margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                    {{range .Expansions}}
+                    <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-secondary); padding-left: 0.5rem; border-left: 2px solid var(--accent-primary);">
+                        <span>🧩</span>
+                        <a href="/games/{{.ID}}/rules" style="color: var(--text-secondary); text-decoration: none;">{{.Name}}</a>
+                        <button type="button"
+                                class="btn btn-sm"
+                                style="padding: 1px 6px; font-size: 0.75rem; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color);"
+                                hx-get="/collection/games/{{.ID}}/reparent-modal"
+                                hx-target="#modal-container"
+                                title="Reparent expansion">
+                            ⇄ Move
+                        </button>
+                    </div>
+                    {{end}}
+                </div>
+                {{end}}
+
+                {{if .Documents}}
+                <div style="margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted);">
+                    📄 {{len .Documents}} companion file{{if ne (len .Documents) 1}}s{{end}} attached
+                </div>
+                {{end}}
+            </td>
+            <td>
+                {{if and .MinPlayers .MaxPlayers}}
+                    {{if eq .MinPlayers .MaxPlayers}}{{.MinPlayers}}p{{else}}{{.MinPlayers}}–{{.MaxPlayers}}p{{end}}
+                    {{if .BestPlayers}}<div style="font-size:0.75rem;color:var(--text-muted);">Best: {{.BestPlayers}}</div>{{end}}
+                {{else}}
+                    <span style="color:var(--text-muted);">-</span>
+                {{end}}
+            </td>
+            <td>
+                {{if .Complexity}}
+                <span style="font-weight:600;">{{printf "%.2f" .Complexity}}</span><span style="font-size:0.75rem;color:var(--text-muted);">/5</span>
+                {{else}}
+                <span style="color:var(--text-muted);">-</span>
+                {{end}}
+            </td>
+            <td>
+                {{if gt .Rating 0.0}}
+                <span style="font-weight:600; color: #f59e0b;">★ {{printf "%.1f" .Rating}}</span>
+                {{else}}
+                <span style="color:var(--text-muted);">-</span>
+                {{end}}
+            </td>
+            <td>
+                {{if gt .SharedCount 0}}
+                <span class="badge" 
+                      style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 500;"
+                      title="Also owned by: {{range $idx, $u := .SharedUsers}}{{if $idx}}, {{end}}{{$u}}{{end}}">
+                    👥 Shared ({{.SharedCount}})
+                </span>
+                {{else}}
+                <span class="badge" style="background: rgba(100, 116, 139, 0.15); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.3); padding: 3px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 500;">
+                    🔒 Only in your collection
+                </span>
+                {{end}}
+            </td>
+            <td style="text-align: right;">
+                <div class="admin-actions-cell" style="justify-content: flex-end; gap: 0.35rem;">
+                    <button class="btn btn-sm btn-secondary"
+                            hx-get="/collection/games/{{.ID}}/reparent-modal"
+                            hx-target="#modal-container"
+                            title="Make Expansion / Move Game Position">
+                        ⇄ Move
+                    </button>
+                    <button class="btn btn-sm btn-secondary"
+                            hx-get="/admin/games/{{.ID}}/document-modal"
+                            hx-target="#modal-container"
+                            title="Add Companion PDF or Player Aid">
+                        ➕ Docs
+                    </button>
+                    <button class="btn btn-sm btn-danger"
+                            hx-post="/collection/games/{{.ID}}/remove"
+                            hx-target="#collection-games-container"
+                            hx-confirm="Remove '{{.Name}}' from your collection? (It will remain in the master library)">
+                        ✕ Remove
+                    </button>
+                </div>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td colspan="7" class="empty-cell" style="text-align: center; padding: 3rem 1rem;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📦</div>
+                <div style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">No games in this collection yet.</div>
+                <p style="color: var(--text-secondary); margin-top: 0.25rem; font-size: 0.9rem;">
+                    Click <strong>"+ Add Game to Collection"</strong> above to search BGG and add your favorite games!
+                </p>
+            </td>
+        </tr>
+        {{end}}
+    </tbody>
+</table>
+{{end}}

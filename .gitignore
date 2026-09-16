@@ -134,6 +134,8 @@ bin/
 *.db-shm
 *.tmp
 backups/
+local-dev/
 .env
 .omo/
-
+games_todo_working.txt
+lotr_lcg.txt

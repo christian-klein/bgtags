@@ -172,7 +172,7 @@ func TestListBaseGames(t *testing.T) {
 		t.Fatalf("failed to create standalone: %v", err)
 	}
 
-	bases, err := db.ListBaseGames("", 0, 0, 5, "", "")
+	bases, err := db.ListBaseGames("", 0, 0, 5, "", "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames failed: %v", err)
 	}
@@ -181,7 +181,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Search by expansion name must surface the parent
-	byExp, err := db.ListBaseGames("Rise of Ix", 0, 0, 5, "", "")
+	byExp, err := db.ListBaseGames("Rise of Ix", 0, 0, 5, "", "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames search failed: %v", err)
 	}
@@ -190,7 +190,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Player filter applies to base games only
-	byPlayers, err := db.ListBaseGames("", 5, 0, 5, "", "")
+	byPlayers, err := db.ListBaseGames("", 5, 0, 5, "", "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames player filter failed: %v", err)
 	}
@@ -199,7 +199,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Complexity filter: high complexity only (>= 3.0)
-	byHighComp, err := db.ListBaseGames("", 0, 3.0, 5.0, "", "")
+	byHighComp, err := db.ListBaseGames("", 0, 3.0, 5.0, "", "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames high complexity failed: %v", err)
 	}
@@ -208,7 +208,7 @@ func TestListBaseGames(t *testing.T) {
 	}
 
 	// Complexity filter: medium complexity only (2.0 to 3.0)
-	byMedComp, err := db.ListBaseGames("", 0, 2.0, 3.0, "", "")
+	byMedComp, err := db.ListBaseGames("", 0, 2.0, 3.0, "", "", "")
 	if err != nil {
 		t.Fatalf("ListBaseGames medium complexity failed: %v", err)
 	}
@@ -239,7 +239,7 @@ func TestListBaseGamesSorting(t *testing.T) {
 	}
 
 	// 1. Sort by Name Asc
-	byNameAsc, err := db.ListBaseGames("", 0, 0, 5, "name", "asc")
+	byNameAsc, err := db.ListBaseGames("", 0, 0, 5, "name", "asc", "")
 	if err != nil {
 		t.Fatalf("failed to list by name asc: %v", err)
 	}
@@ -248,7 +248,7 @@ func TestListBaseGamesSorting(t *testing.T) {
 	}
 
 	// 2. Sort by Name Desc
-	byNameDesc, err := db.ListBaseGames("", 0, 0, 5, "name", "desc")
+	byNameDesc, err := db.ListBaseGames("", 0, 0, 5, "name", "desc", "")
 	if err != nil {
 		t.Fatalf("failed to list by name desc: %v", err)
 	}
@@ -257,7 +257,7 @@ func TestListBaseGamesSorting(t *testing.T) {
 	}
 
 	// 3. Sort by Rating Desc (0.0 unrated goes to end)
-	byRatingDesc, err := db.ListBaseGames("", 0, 0, 5, "rating", "desc")
+	byRatingDesc, err := db.ListBaseGames("", 0, 0, 5, "rating", "desc", "")
 	if err != nil {
 		t.Fatalf("failed to list by rating desc: %v", err)
 	}
@@ -266,7 +266,7 @@ func TestListBaseGamesSorting(t *testing.T) {
 	}
 
 	// 4. Sort by Complexity Desc
-	byCompDesc, err := db.ListBaseGames("", 0, 0, 5, "complexity", "desc")
+	byCompDesc, err := db.ListBaseGames("", 0, 0, 5, "complexity", "desc", "")
 	if err != nil {
 		t.Fatalf("failed to list by complexity desc: %v", err)
 	}
@@ -275,7 +275,7 @@ func TestListBaseGamesSorting(t *testing.T) {
 	}
 
 	// 5. Sort by Min Players Asc
-	byMinAsc, err := db.ListBaseGames("", 0, 0, 5, "min_players", "asc")
+	byMinAsc, err := db.ListBaseGames("", 0, 0, 5, "min_players", "asc", "")
 	if err != nil {
 		t.Fatalf("failed to list by min players asc: %v", err)
 	}
@@ -284,7 +284,7 @@ func TestListBaseGamesSorting(t *testing.T) {
 	}
 
 	// 6. Sort by Max Players Desc
-	byMaxDesc, err := db.ListBaseGames("", 0, 0, 5, "max_players", "desc")
+	byMaxDesc, err := db.ListBaseGames("", 0, 0, 5, "max_players", "desc", "")
 	if err != nil {
 		t.Fatalf("failed to list by max players desc: %v", err)
 	}
@@ -481,7 +481,7 @@ func TestCountGamesAndExpansions(t *testing.T) {
 	defer db.Close()
 
 	// Empty DB
-	games, expansions, err := db.CountGamesAndExpansions()
+	games, expansions, err := db.CountGamesAndExpansions("")
 	if err != nil {
 		t.Fatalf("CountGamesAndExpansions failed on empty db: %v", err)
 	}
@@ -499,7 +499,7 @@ func TestCountGamesAndExpansions(t *testing.T) {
 		t.Fatalf("CreateGame base2 failed: %v", err)
 	}
 
-	games, expansions, err = db.CountGamesAndExpansions()
+	games, expansions, err = db.CountGamesAndExpansions("")
 	if err != nil || games != 2 || expansions != 0 {
 		t.Fatalf("expected 2 games, 0 expansions, got %d games, %d expansions (err: %v)", games, expansions, err)
 	}
@@ -511,7 +511,7 @@ func TestCountGamesAndExpansions(t *testing.T) {
 		t.Fatalf("CreateGame exp1 failed: %v", err)
 	}
 
-	games, expansions, err = db.CountGamesAndExpansions()
+	games, expansions, err = db.CountGamesAndExpansions("")
 	if err != nil || games != 2 || expansions != 1 {
 		t.Fatalf("expected 2 games, 1 expansion, got %d games, %d expansions (err: %v)", games, expansions, err)
 	}
@@ -567,4 +567,190 @@ func TestGameRating(t *testing.T) {
 	}
 }
 
+func TestUserCollectionsAndDeduplication(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "collection_test.db")
+	db, err := Open(dbPath, "cdk2128")
+	if err != nil {
+		t.Fatalf("Open failed: %v", err)
+	}
+	defer db.Close()
 
+	// 1. Create a game with BggID
+	bggID := 12345
+	g1 := &Game{
+		Name:   "Catan",
+		URL:    "catan.pdf",
+		BggID:  &bggID,
+		BggURL: "https://boardgamegeek.com/boardgame/12345/catan",
+	}
+	if err := db.CreateGame(g1); err != nil {
+		t.Fatalf("CreateGame failed: %v", err)
+	}
+
+	// Deduplication lookup
+	found, err := db.FindGameByBggID(12345)
+	if err != nil || found == nil {
+		t.Fatalf("FindGameByBggID failed: %v, found: %+v", err, found)
+	}
+	if found.Name != "Catan" {
+		t.Errorf("expected found game name Catan, got %s", found.Name)
+	}
+
+	// 2. Manage user collections
+	userAlice := "alice"
+	userBob := "bob"
+
+	// Add to Alice
+	if err := db.AddGameToUserCollection(userAlice, g1.ID); err != nil {
+		t.Fatalf("AddGameToUserCollection alice failed: %v", err)
+	}
+	inAlice, err := db.IsGameInUserCollection(userAlice, g1.ID)
+	if err != nil || !inAlice {
+		t.Errorf("expected game in alice's collection, got %v (err: %v)", inAlice, err)
+	}
+
+	// Add to Bob
+	if err := db.AddGameToUserCollection(userBob, g1.ID); err != nil {
+		t.Fatalf("AddGameToUserCollection bob failed: %v", err)
+	}
+
+	// Shared user count check (excluding empty string, so all users)
+	sharedCount, users, err := db.GetGameSharedUserCount(g1.ID, "")
+	if err != nil || sharedCount != 2 {
+		t.Errorf("expected sharedCount 2, got %d (err: %v)", sharedCount, err)
+	}
+	if len(users) != 2 {
+		t.Errorf("expected 2 users, got %d", len(users))
+	}
+
+	// Shared user count excluding Alice
+	sharedExcludingAlice, otherUsers, err := db.GetGameSharedUserCount(g1.ID, userAlice)
+	if err != nil || sharedExcludingAlice != 1 || len(otherUsers) != 1 || otherUsers[0] != userBob {
+		t.Errorf("expected 1 shared excluding alice (bob), got %d (%v)", sharedExcludingAlice, otherUsers)
+	}
+
+	// List collections
+	collections, err := db.ListAllCollections()
+	if err != nil {
+		t.Fatalf("ListAllCollections failed: %v", err)
+	}
+	if len(collections) != 2 {
+		t.Errorf("expected 2 collections, got %d", len(collections))
+	}
+
+	// Filter base games by collection
+	aliceGames, err := db.ListBaseGames("", 0, 0, 0, "name", "ASC", userAlice)
+	if err != nil || len(aliceGames) != 1 {
+		t.Errorf("expected 1 game in alice's base games, got %d", len(aliceGames))
+	}
+
+	// Remove from Alice
+	if err := db.RemoveGameFromUserCollection(userAlice, g1.ID); err != nil {
+		t.Fatalf("RemoveGameFromUserCollection failed: %v", err)
+	}
+	inAliceAfter, _ := db.IsGameInUserCollection(userAlice, g1.ID)
+	if inAliceAfter {
+		t.Errorf("expected game removed from alice's collection")
+	}
+
+	// Shared count should now be 1
+	sharedCountAfter, _, _ := db.GetGameSharedUserCount(g1.ID, "")
+	if sharedCountAfter != 1 {
+		t.Errorf("expected sharedCount 1, got %d", sharedCountAfter)
+	}
+}
+
+func TestGameReparenting(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "reparent_test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("Open failed: %v", err)
+	}
+	defer db.Close()
+
+	// Base Game A (e.g. Smash Up)
+	base := &Game{Name: "Smash Up", URL: "smashup.pdf"}
+	if err := db.CreateGame(base); err != nil {
+		t.Fatalf("CreateGame base failed: %v", err)
+	}
+
+	// Game B originally root (e.g. Smash Up: Awesome Level 9000)
+	expCandidate := &Game{Name: "Smash Up: Awesome Level 9000", URL: "awesome9000.pdf"}
+	if err := db.CreateGame(expCandidate); err != nil {
+		t.Fatalf("CreateGame expCandidate failed: %v", err)
+	}
+
+	// 1. Reparent expCandidate under base
+	if err := db.UpdateGameParent(expCandidate.ID, &base.ID); err != nil {
+		t.Fatalf("UpdateGameParent failed: %v", err)
+	}
+
+	updated, err := db.GetGame(expCandidate.ID)
+	if err != nil || updated.ParentID == nil || *updated.ParentID != base.ID {
+		t.Fatalf("expected ParentID %d, got %v", base.ID, updated.ParentID)
+	}
+
+	// Expansions of base should list expCandidate
+	exps, err := db.ListExpansions(base.ID)
+	if err != nil || len(exps) != 1 {
+		t.Fatalf("expected 1 expansion under base, got %d", len(exps))
+	}
+
+	// 2. Unparent back to root
+	if err := db.UpdateGameParent(expCandidate.ID, nil); err != nil {
+		t.Fatalf("UpdateGameParent to nil failed: %v", err)
+	}
+	updatedRoot, _ := db.GetGame(expCandidate.ID)
+	if updatedRoot.ParentID != nil {
+		t.Fatalf("expected nil ParentID, got %v", updatedRoot.ParentID)
+	}
+}
+
+func TestUserCollectionCustomNames(t *testing.T) {
+	tempDir := t.TempDir()
+	dbPath := filepath.Join(tempDir, "test.db")
+	db, err := Open(dbPath, "")
+	if err != nil {
+		t.Fatalf("failed to open test db: %v", err)
+	}
+	defer db.Close()
+
+	// Default when unset should be username
+	name, err := db.GetCollectionName("user1")
+	if err != nil {
+		t.Fatalf("GetCollectionName failed: %v", err)
+	}
+	if name != "user1" {
+		t.Errorf("expected default name 'user1', got '%s'", name)
+	}
+
+	// Set custom name within limit
+	if err := db.SetCollectionName("user1", "My Board Games"); err != nil {
+		t.Fatalf("SetCollectionName failed: %v", err)
+	}
+	name, _ = db.GetCollectionName("user1")
+	if name != "My Board Games" {
+		t.Errorf("expected 'My Board Games', got '%s'", name)
+	}
+
+	// Name over 30 characters should be truncated to 30
+	longName := "12345678901234567890123456789012345"
+	if err := db.SetCollectionName("user1", longName); err != nil {
+		t.Fatalf("SetCollectionName longName failed: %v", err)
+	}
+	name, _ = db.GetCollectionName("user1")
+	if len([]rune(name)) != 30 {
+		t.Errorf("expected name length 30, got %d ('%s')", len([]rune(name)), name)
+	}
+
+	// Setting to empty or username clears it
+	if err := db.SetCollectionName("user1", ""); err != nil {
+		t.Fatalf("SetCollectionName empty failed: %v", err)
+	}
+	name, _ = db.GetCollectionName("user1")
+	if name != "user1" {
+		t.Errorf("expected reset to 'user1', got '%s'", name)
+	}
+}

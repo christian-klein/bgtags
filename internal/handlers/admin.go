@@ -13,6 +13,7 @@ import (
 	"strings"
 
 	"github.com/christian-klein/bgtags/internal/backup"
+	"github.com/christian-klein/bgtags/internal/bgg"
 	"github.com/christian-klein/bgtags/internal/database"
 	"github.com/christian-klein/bgtags/internal/pdf"
 )
@@ -51,19 +52,21 @@ func (h *Handler) HandleAdmin(w http.ResponseWriter, r *http.Request) {
 	}
 
 	totalOpt, linOpt, pendingOpt, _ := h.db.GetOptimizationStats()
+	allCollections, _ := h.db.ListAllCollections()
 
 	baseURL := h.getBaseURL(r)
 	data := PageData{
-		Title:         "Admin Control Panel",
-		Games:         games,
-		TotalCount:    len(games),
-		Backups:       backups,
-		OptTotal:      totalOpt,
-		OptLinearized: linOpt,
-		OptPending:    pendingOpt,
-		Settings:      h.db.GetAdminSettings(),
-		BaseURL:       baseURL,
-		ActiveNav:     "admin",
+		Title:                "Admin Control Panel",
+		Games:                games,
+		TotalCount:           len(games),
+		Backups:              backups,
+		OptTotal:             totalOpt,
+		OptLinearized:        linOpt,
+		OptPending:           pendingOpt,
+		Settings:             h.db.GetAdminSettings(),
+		AvailableCollections: allCollections,
+		BaseURL:              baseURL,
+		ActiveNav:            "admin",
 	}
 	h.populateAuthData(r, &data)
 
@@ -451,19 +454,68 @@ func (h *Handler) HandleAdminSettings(w http.ResponseWriter, r *http.Request) {
 	hideExp := hideVal == "true" || hideVal == "on" || hideVal == "1"
 	if err := h.db.SetSettingBool("hide_game_title_in_expansions", hideExp); err != nil {
 		log.Printf("Error saving admin settings: %v", err)
-		if r.Header.Get("HX-Request") != "" {
-			w.Header().Set("Content-Type", "text/html; charset=utf-8")
-			w.WriteHeader(http.StatusInternalServerError)
-			fmt.Fprintf(w, `<div class="alert alert-danger" style="margin-bottom: 1rem;">Failed to save settings: %s</div>`, err.Error())
-			return
-		}
-		http.Error(w, "Failed to save settings", http.StatusInternalServerError)
+		h.renderSettingsFeedback(w, r, false, "Failed to save expansion display setting: "+err.Error())
 		return
 	}
 
+	defaultColl := strings.TrimSpace(r.FormValue("default_collection"))
+	if err := h.db.SetSetting("default_collection", defaultColl); err != nil {
+		log.Printf("Error saving default_collection setting: %v", err)
+		h.renderSettingsFeedback(w, r, false, "Failed to save default collection: "+err.Error())
+		return
+	}
+
+	restrictVal := r.FormValue("restrict_shared_game_moves")
+	restrictMoves := restrictVal == "true" || restrictVal == "on" || restrictVal == "1"
+	if err := h.db.SetSettingBool("restrict_shared_game_moves", restrictMoves); err != nil {
+		log.Printf("Error saving restrict_shared_game_moves setting: %v", err)
+		h.renderSettingsFeedback(w, r, false, "Failed to save game move policy: "+err.Error())
+		return
+	}
+
+	// Sanitize BGG token (strips v1:, Bearer, whitespace)
+	bggToken := bgg.SanitizeToken(r.FormValue("bgg_api_token"))
+	if err := h.db.SetSetting("bgg_api_token", bggToken); err != nil {
+		log.Printf("Error saving bgg_api_token setting: %v", err)
+		h.renderSettingsFeedback(w, r, false, "Failed to save BGG API token: "+err.Error())
+		return
+	}
+
+	h.renderSettingsFeedback(w, r, true, "Settings saved successfully.")
+}
+
+func (h *Handler) renderSettingsFeedback(w http.ResponseWriter, r *http.Request, success bool, msg string) {
 	if r.Header.Get("HX-Request") != "" {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		w.Write([]byte(`<div class="alert alert-success" style="margin-bottom: 1rem; animation: fadeIn 0.3s ease;">✓ Settings saved successfully.</div>`))
+		if success {
+			fmt.Fprintf(w, `<span id="settings-save-feedback" class="alert alert-success" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.85rem; margin: 0; font-size: 0.875rem; border-radius: 6px; animation: fadeIn 0.3s ease;">
+				<span>✓</span> %s
+			</span>
+			<script>
+				setTimeout(function() {
+					var el = document.getElementById('settings-save-feedback');
+					if (el) {
+						el.style.transition = 'opacity 0.5s ease';
+						el.style.opacity = '0';
+						setTimeout(function() { if (el && el.parentNode) el.remove(); }, 500);
+					}
+				}, 3000);
+			</script>`, templateEscape(msg))
+		} else {
+			fmt.Fprintf(w, `<span id="settings-save-feedback" class="alert alert-danger" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.85rem; margin: 0; font-size: 0.875rem; border-radius: 6px; animation: fadeIn 0.3s ease;">
+				<span>✗</span> %s
+			</span>
+			<script>
+				setTimeout(function() {
+					var el = document.getElementById('settings-save-feedback');
+					if (el) {
+						el.style.transition = 'opacity 0.5s ease';
+						el.style.opacity = '0';
+						setTimeout(function() { if (el && el.parentNode) el.remove(); }, 500);
+					}
+				}, 6000);
+			</script>`, templateEscape(msg))
+		}
 		return
 	}
 

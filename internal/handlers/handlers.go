@@ -61,6 +61,15 @@ type PageData struct {
 	// Settings
 	Settings database.AdminSettings
 
+	// Collections
+	AvailableCollections  []database.CollectionOption
+	CollectionDisplayName string
+	SelectedCollection    string
+	CanManageCollection   bool
+	CurrentCollectionUser string
+	LocalDevMode         bool
+	DevUser              string
+
 	// Auth & RBAC
 	OIDCEnabled     bool
 	IsAuthenticated bool
@@ -76,6 +85,8 @@ type GameView struct {
 	Documents       []database.GameDocument
 	Expansions      []database.Game
 	ParentGame      *database.Game
+	SharedCount     int
+	SharedUsers     []string
 }
 
 type QuickJumpSection struct {
@@ -108,7 +119,7 @@ func New(db *database.DB, cfg *config.Config, tmplDir string) (*Handler, error) 
 	}
 
 	pages := make(map[string]*template.Template)
-	for _, pageName := range []string{"index.html", "stickers.html", "rules_hub.html", "admin.html"} {
+	for _, pageName := range []string{"index.html", "stickers.html", "rules_hub.html", "admin.html", "collection.html"} {
 		pagePath := filepath.Join(tmplDir, pageName)
 		files := append([]string{layoutPath, pagePath}, partialFiles...)
 		t, err := template.New("layout.html").Funcs(funcMap).ParseFiles(files...)
@@ -273,6 +284,27 @@ func (h *Handler) populateAuthData(r *http.Request, data *PageData) {
 	data.IsAuthenticated = middleware.IsAuthenticated(r, h.cfg)
 	data.IsAdmin = middleware.IsAdmin(r, h.cfg)
 	data.User = middleware.UserFromContext(r.Context())
+	data.CanManageCollection = middleware.CanManageCollection(r, h.cfg)
+	data.LocalDevMode = h.cfg.LocalDevMode
+	data.DevUser = middleware.CurrentUserID(r, h.cfg)
+}
+
+func (h *Handler) resolveCollectionUser(r *http.Request) (string, string) {
+	val := strings.TrimSpace(r.URL.Query().Get("collection"))
+	if val == "" {
+		settings := h.db.GetAdminSettings()
+		if settings.DefaultCollection != "" {
+			val = settings.DefaultCollection
+		} else if h.cfg.DefaultOwner != "" {
+			val = h.cfg.DefaultOwner
+		} else {
+			val = "all"
+		}
+	}
+	if val == "all" || val == "library" || val == "*" {
+		return "all", ""
+	}
+	return val, val
 }
 
 func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
@@ -305,16 +337,23 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 		sortOrder = "asc"
 	}
 
-	games, err := h.db.ListBaseGames(q, players, minComp, maxComp, sortBy, sortOrder)
+	selectedColl, collectionUser := h.resolveCollectionUser(r)
+
+	games, err := h.db.ListBaseGames(q, players, minComp, maxComp, sortBy, sortOrder, collectionUser)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to load games", http.StatusInternalServerError)
 		return
 	}
 
-	totalGames, totalExpansions, err := h.db.CountGamesAndExpansions()
+	totalGames, totalExpansions, err := h.db.CountGamesAndExpansions(collectionUser)
 	if err != nil {
 		log.Printf("Error counting collection: %v", err)
+	}
+
+	allCollections, err := h.db.ListAllCollections()
+	if err != nil {
+		log.Printf("Error listing collections: %v", err)
 	}
 
 	baseURL := h.getBaseURL(r)
@@ -322,21 +361,25 @@ func (h *Handler) HandleIndex(w http.ResponseWriter, r *http.Request) {
 	sections, sectionGroups := buildQuickJumpSections(gameViews, sortBy, sortOrder)
 
 	data := PageData{
-		Title:           "Board Game Rule Tags",
-		Games:           gameViews,
-		Sections:        sections,
-		SectionGroups:   sectionGroups,
-		TotalCount:      len(games),
-		TotalGames:      totalGames,
-		TotalExpansions: totalExpansions,
-		SearchQuery:     q,
-		PlayerCount:     players,
-		MinComplexity:   minComp,
-		MaxComplexity:   maxComp,
-		SortBy:          sortBy,
-		SortOrder:       sortOrder,
-		BaseURL:         baseURL,
-		ActiveNav:       "catalog",
+		Title:                 "Board Game Rule Tags",
+		Games:                 gameViews,
+		Sections:              sections,
+		SectionGroups:         sectionGroups,
+		TotalCount:            len(games),
+		TotalGames:            totalGames,
+		TotalExpansions:       totalExpansions,
+		AvailableCollections:  allCollections,
+		CollectionDisplayName: collDisplayName(collectionUser, allCollections),
+		SelectedCollection:    selectedColl,
+		CurrentCollectionUser: collectionUser,
+		SearchQuery:           q,
+		PlayerCount:           players,
+		MinComplexity:         minComp,
+		MaxComplexity:         maxComp,
+		SortBy:                sortBy,
+		SortOrder:             sortOrder,
+		BaseURL:               baseURL,
+		ActiveNav:             "catalog",
 	}
 	h.populateAuthData(r, &data)
 
@@ -444,7 +487,9 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 		sortOrder = "asc"
 	}
 
-	games, err := h.db.ListBaseGames(q, players, minComp, maxComp, sortBy, sortOrder)
+	selectedColl, collectionUser := h.resolveCollectionUser(r)
+
+	games, err := h.db.ListBaseGames(q, players, minComp, maxComp, sortBy, sortOrder, collectionUser)
 	if err != nil {
 		log.Printf("Error listing games: %v", err)
 		http.Error(w, "Failed to filter games", http.StatusInternalServerError)
@@ -456,17 +501,19 @@ func (h *Handler) HandleGames(w http.ResponseWriter, r *http.Request) {
 	sections, sectionGroups := buildQuickJumpSections(gameViews, sortBy, sortOrder)
 
 	data := PageData{
-		Games:         gameViews,
-		Sections:      sections,
-		SectionGroups: sectionGroups,
-		TotalCount:    len(games),
-		SearchQuery:   q,
-		PlayerCount:   players,
-		MinComplexity: minComp,
-		MaxComplexity: maxComp,
-		SortBy:        sortBy,
-		SortOrder:     sortOrder,
-		BaseURL:       baseURL,
+		Games:                 gameViews,
+		Sections:              sections,
+		SectionGroups:         sectionGroups,
+		TotalCount:            len(games),
+		SelectedCollection:    selectedColl,
+		CurrentCollectionUser: collectionUser,
+		SearchQuery:           q,
+		PlayerCount:           players,
+		MinComplexity:         minComp,
+		MaxComplexity:         maxComp,
+		SortBy:                sortBy,
+		SortOrder:             sortOrder,
+		BaseURL:               baseURL,
 	}
 
 	if err := h.partials.ExecuteTemplate(w, "game_grid.html", data); err != nil {
@@ -604,5 +651,17 @@ func (h *Handler) HandleServiceWorker(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/javascript")
 	w.Header().Set("Service-Worker-Allowed", "/")
 	http.ServeFile(w, r, filepath.Join(h.cfg.StaticDir, "js", "sw.js"))
+}
+
+func collDisplayName(userID string, colls []database.CollectionOption) string {
+	if userID == "" || userID == "all" {
+		return ""
+	}
+	for _, c := range colls {
+		if c.UserID == userID {
+			return c.DisplayName
+		}
+	}
+	return userID
 }
 

@@ -40,6 +40,9 @@ func UserFromContext(ctx context.Context) *auth.SessionData {
 
 // IsAdmin checks if the current user has admin privileges
 func IsAdmin(r *http.Request, cfg *config.Config) bool {
+	if cfg.LocalDevMode {
+		return CurrentUserID(r, cfg) == "cdk2128"
+	}
 	if !cfg.OIDCEnabled {
 		return true // In local dev mode without OIDC, treat as admin
 	}
@@ -64,6 +67,15 @@ func IsAuthenticated(r *http.Request, cfg *config.Config) bool {
 // RequireAdmin middleware blocks requests unless the user is an admin
 func RequireAdmin(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		if cfg.LocalDevMode {
+			if !IsAdmin(r, cfg) {
+				http.Error(w, "Forbidden: Administrator role required", http.StatusForbidden)
+				return
+			}
+			next(w, r)
+			return
+		}
+
 		if !cfg.OIDCEnabled {
 			next(w, r)
 			return
@@ -76,7 +88,7 @@ func RequireAdmin(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
 			return
 		}
 
-		if cfg.OIDCAdminGroup != "" && !session.HasGroup(cfg.OIDCAdminGroup) {
+		if !IsAdmin(r, cfg) {
 			http.Error(w, "Forbidden: Administrator role required", http.StatusForbidden)
 			return
 		}
@@ -85,11 +97,16 @@ func RequireAdmin(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
-// RequireReader middleware enforces authentication/group for reading if OIDC_USERS_GROUP is set
+// RequireReader middleware blocks requests unless the user belongs to the authorized group
 func RequireReader(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// If OIDC is disabled or no users group is configured, public access is permitted
-		if !cfg.OIDCEnabled || cfg.OIDCUsersGroup == "" {
+		if !cfg.OIDCEnabled {
+			next(w, r)
+			return
+		}
+
+		// If no users group configured, access is public
+		if cfg.OIDCUsersGroup == "" {
 			next(w, r)
 			return
 		}
@@ -118,4 +135,89 @@ func RequireReader(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
 
 		next(w, r)
 	}
+}
+
+// CanManageCollection checks if current user is allowed to manage a collection
+func CanManageCollection(r *http.Request, cfg *config.Config) bool {
+	if cfg.LocalDevMode {
+		u := CurrentUserID(r, cfg)
+		return u == "cdk2128" || u == "collector_user"
+	}
+	if !cfg.OIDCEnabled {
+		return true // In local dev mode, active user can manage
+	}
+	session := UserFromContext(r.Context())
+	if session == nil {
+		return false
+	}
+	if IsAdmin(r, cfg) {
+		return true
+	}
+	if cfg.OIDCCollectionGroup == "" || cfg.OIDCCollectionGroup == "*" || strings.EqualFold(cfg.OIDCCollectionGroup, "any") {
+		return true
+	}
+	return session.HasGroup(cfg.OIDCCollectionGroup)
+}
+
+// RequireCollector middleware blocks access unless user can manage collection
+func RequireCollector(cfg *config.Config, next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if cfg.LocalDevMode {
+			if !CanManageCollection(r, cfg) {
+				http.Error(w, "Forbidden: Collector role required to manage collection", http.StatusForbidden)
+				return
+			}
+			next(w, r)
+			return
+		}
+
+		if !cfg.OIDCEnabled {
+			next(w, r)
+			return
+		}
+
+		session := UserFromContext(r.Context())
+		if session == nil {
+			returnTo := url.QueryEscape(r.URL.RequestURI())
+			http.Redirect(w, r, "/login?return_to="+returnTo, http.StatusFound)
+			return
+		}
+
+		if !CanManageCollection(r, cfg) {
+			http.Error(w, "Forbidden: Collector role required to manage collection", http.StatusForbidden)
+			return
+		}
+
+		next(w, r)
+	}
+}
+
+// CurrentUserID returns the active user identifier (username or sub) or fallback
+func CurrentUserID(r *http.Request, cfg *config.Config) string {
+	if cfg.LocalDevMode {
+		if devUser := r.URL.Query().Get("dev_user"); devUser != "" {
+			return devUser
+		}
+		if cookie, err := r.Cookie("bgtags_dev_user"); err == nil && cookie.Value != "" {
+			return cookie.Value
+		}
+	}
+
+	session := UserFromContext(r.Context())
+	if session != nil {
+		if session.Username != "" {
+			return session.Username
+		}
+		if session.Email != "" {
+			return strings.Split(session.Email, "@")[0]
+		}
+		if session.Name != "" {
+			return strings.ToLower(strings.ReplaceAll(session.Name, " ", "_"))
+		}
+	}
+
+	if cfg.DefaultOwner != "" {
+		return cfg.DefaultOwner
+	}
+	return "cdk2128"
 }

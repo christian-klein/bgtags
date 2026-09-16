@@ -1,0 +1,46 @@
+services:
+  bgtags-local:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bgtags-local
+    restart: "no"
+    ports:
+      - "8085:8080"
+    environment:
+      - PORT=8080
+      - DB_PATH=/app/data/bgtags.db
+      - STATIC_DIR=/app/static
+      - DATA_DIR=/app/data
+      - BACKUP_ENABLED=false
+      - OIDC_ENABLED=false
+      - LOCAL_DEV_MODE=true
+      - DEFAULT_OWNER=cdk2128
+      - OIDC_ADMIN_GROUP=bgtags-admins
+      - OIDC_COLLECTION_GROUP=bgtags-collectors
+      - BGG_API_TOKEN=${BGG_API_TOKEN:-}
+    volumes:
+      - ./local-dev/data:/app/data
+      - bgtags-rules-ro:/app/static/rules:ro
+      - bgtags-img-ro:/app/static/img:ro
+      - ./local-dev/scratch:/app/static/scratch
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 3s
+      start_period: 5s
+      retries: 3
+
+volumes:
+  bgtags-rules-ro:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: "addr=10.0.0.11,ro,nfsvers=4,rsize=1048576,wsize=1048576,hard,intr,tcp"
+      device: ":/volume1/docker/bgtags/rules"
+  bgtags-img-ro:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: "addr=10.0.0.11,ro,nfsvers=4,rsize=1048576,wsize=1048576,hard,intr,tcp"
+      device: ":/volume1/docker/bgtags/img"

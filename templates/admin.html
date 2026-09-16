@@ -153,8 +153,6 @@
                 <p class="backup-info">Configure application preferences and display options.</p>
             </div>
 
-            <div id="settings-status-box"></div>
-
             <form hx-post="/admin/settings" 
                   hx-target="#settings-status-box" 
                   hx-indicator="#settings-spinner"
@@ -178,13 +176,68 @@
                             </span>
                         </div>
                     </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; padding: 1.25rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                        <label for="default_collection" style="font-weight: 600; color: var(--text-primary); font-size: 1rem;">
+                            Default Collection for Visitors & Main Catalog
+                        </label>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.4; display: block;">
+                            Controls which game collection is displayed by default when visitors or users browse the main catalog page without selecting another collection.
+                        </span>
+                        <div style="margin-top: 0.25rem; max-width: 360px;">
+                            <select id="default_collection" name="default_collection" class="form-select" style="width: 100%;">
+                                <option value="all" {{if eq .Settings.DefaultCollection "all"}}selected{{end}}>📚 All Library Games (Global)</option>
+                                {{range .AvailableCollections}}
+                                <option value="{{.UserID}}" {{if eq $.Settings.DefaultCollection .UserID}}selected{{end}}>👤 {{.TruncatedName}}</option>
+                                {{end}}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                        <div style="padding-top: 0.15rem;">
+                            <input type="checkbox" 
+                                   id="restrict_shared_game_moves" 
+                                   name="restrict_shared_game_moves" 
+                                   value="true" 
+                                   {{if .Settings.RestrictSharedGameMoves}}checked{{end}}
+                                   style="width: 1.25rem; height: 1.25rem; cursor: pointer; accent-color: var(--accent-primary);">
+                        </div>
+                        <div>
+                            <label for="restrict_shared_game_moves" style="font-weight: 600; cursor: pointer; color: var(--text-primary); display: block; margin-bottom: 0.25rem; font-size: 1rem;">
+                                Restrict Moving Shared Games to Admins Only
+                            </label>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.4; display: block;">
+                                When enabled, regular collectors cannot reparent or change expansion status of games that belong to multiple user collections. Only administrators can alter shared game relationships.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; padding: 1.25rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                        <label for="bgg_api_token" style="font-weight: 600; color: var(--text-primary); font-size: 1rem;">
+                            BoardGameGeek API Token (Bearer Token)
+                        </label>
+                        <span style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.4; display: block;">
+                            Optional BGG API key passed as an Authorization Bearer header to BGG XMLAPI2. You can set this here or via the <code>BGG_API_TOKEN</code> environment variable.
+                        </span>
+                        <div style="margin-top: 0.25rem; max-width: 480px;">
+                            <input type="password" 
+                                   id="bgg_api_token" 
+                                   name="bgg_api_token" 
+                                   value="{{.Settings.BGGApiToken}}" 
+                                   placeholder="Paste your BGG API token..." 
+                                   class="form-input" 
+                                   style="width: 100%;">
+                        </div>
+                    </div>
                 </div>
 
-                <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
                     <button type="submit" class="btn btn-primary">
                         💾 Save Settings
                     </button>
                     <span id="settings-spinner" class="htmx-indicator" style="font-size: 0.9rem; color: var(--accent-primary);">Saving settings...</span>
+                    <div id="settings-status-box" style="display: inline-flex; align-items: center;"></div>
                 </div>
             </form>
         </div>

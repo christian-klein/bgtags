@@ -99,13 +99,29 @@ func (db *DB) migrate() error {
 		key TEXT PRIMARY KEY,
 		value TEXT NOT NULL
 	);
+
+	CREATE TABLE IF NOT EXISTS user_games (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id TEXT NOT NULL,
+		game_id INTEGER NOT NULL REFERENCES games(id) ON DELETE CASCADE,
+		added_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+		UNIQUE(user_id, game_id)
+	);
+	CREATE INDEX IF NOT EXISTS idx_user_games_user ON user_games(user_id);
+	CREATE INDEX IF NOT EXISTS idx_user_games_game ON user_games(game_id);
+
+	CREATE TABLE IF NOT EXISTS user_collections (
+		user_id TEXT PRIMARY KEY,
+		custom_name TEXT NOT NULL,
+		updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+	);
 	`
 	if _, err := db.Exec(schema); err != nil {
 		return err
 	}
 
 	// Dynamic column migrations for existing SQLite databases
-	var hasBestPlayers, hasComplexity, hasRating, hasParentID bool
+	var hasBestPlayers, hasComplexity, hasRating, hasParentID, hasBggID bool
 	rows, err := db.Query("PRAGMA table_info(games);")
 	if err != nil {
 		return err
@@ -130,6 +146,9 @@ func (db *DB) migrate() error {
 			if name == "parent_id" {
 				hasParentID = true
 			}
+			if name == "bgg_id" {
+				hasBggID = true
+			}
 		}
 	}
 
@@ -145,7 +164,14 @@ func (db *DB) migrate() error {
 	if !hasParentID {
 		_, _ = db.Exec("ALTER TABLE games ADD COLUMN parent_id INTEGER REFERENCES games(id) ON DELETE SET NULL;")
 	}
+	if !hasBggID {
+		_, _ = db.Exec("ALTER TABLE games ADD COLUMN bgg_id INTEGER;")
+	}
 	_, _ = db.Exec("CREATE INDEX IF NOT EXISTS idx_games_parent_id ON games(parent_id);")
+	_, _ = db.Exec("CREATE UNIQUE INDEX IF NOT EXISTS idx_games_bgg_id ON games(bgg_id) WHERE bgg_id IS NOT NULL;")
+
+	// Backfill bgg_id from existing bgg_url if bgg_id IS NULL
+	db.backfillBggIDs()
 
 	// Backfill game_documents from existing games.url if empty
 	backfill := `
@@ -157,7 +183,78 @@ func (db *DB) migrate() error {
 	);`
 	_, _ = db.Exec(backfill)
 
+	// Backfill user_games for default owner ('cdk2128') if user_games is empty but games exist
+	db.backfillDefaultOwner("cdk2128")
+
 	return nil
+}
+
+func (db *DB) backfillBggIDs() {
+	rows, err := db.Query("SELECT id, bgg_url FROM games WHERE bgg_id IS NULL AND bgg_url != ''")
+	if err != nil {
+		return
+	}
+	defer rows.Close()
+
+	var updates []struct {
+		id    int64
+		bggID int
+	}
+	for rows.Next() {
+		var id int64
+		var rawURL string
+		if err := rows.Scan(&id, &rawURL); err == nil {
+			if bggID, ok := extractBggID(rawURL); ok {
+				updates = append(updates, struct {
+					id    int64
+					bggID int
+				}{id, bggID})
+			}
+		}
+	}
+
+	for _, u := range updates {
+		// Use INSERT OR IGNORE / try-update so duplicate BGG IDs don't violate unique constraint
+		_, _ = db.Exec("UPDATE games SET bgg_id = ? WHERE id = ? AND NOT EXISTS (SELECT 1 FROM games g2 WHERE g2.bgg_id = ? AND g2.id != ?)",
+			u.bggID, u.id, u.bggID, u.id)
+	}
+}
+
+func extractBggID(raw string) (int, bool) {
+	raw = strings.TrimSpace(raw)
+	if raw == "" {
+		return 0, false
+	}
+	markers := []string{"/boardgame/", "/boardgameexpansion/"}
+	lower := strings.ToLower(raw)
+	for _, marker := range markers {
+		if idx := strings.Index(lower, marker); idx != -1 {
+			rest := raw[idx+len(marker):]
+			parts := strings.Split(rest, "/")
+			if len(parts) > 0 {
+				var id int
+				if _, err := fmt.Sscanf(parts[0], "%d", &id); err == nil && id > 0 {
+					return id, true
+				}
+			}
+		}
+	}
+	var id int
+	if _, err := fmt.Sscanf(raw, "%d", &id); err == nil && id > 0 {
+		return id, true
+	}
+	return 0, false
+}
+
+func (db *DB) backfillDefaultOwner(defaultOwner string) {
+	if defaultOwner == "" {
+		defaultOwner = "cdk2128"
+	}
+	var ugCount int
+	_ = db.QueryRow("SELECT COUNT(*) FROM user_games").Scan(&ugCount)
+	if ugCount == 0 {
+		_, _ = db.Exec("INSERT OR IGNORE INTO user_games (user_id, game_id) SELECT ?, id FROM games", defaultOwner)
+	}
 }
 
 func (db *DB) seedIfEmpty(seedPath string) error {
@@ -246,7 +343,7 @@ func (db *DB) seedIfEmpty(seedPath string) error {
 }
 
 func (db *DB) ListGames(search string, players int) ([]Game, error) {
-	query := "SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE 1=1"
+	query := "SELECT id, bgg_id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE 1=1"
 	var args []interface{}
 
 	search = strings.TrimSpace(search)
@@ -271,9 +368,14 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 	var games []Game
 	for rows.Next() {
 		var g Game
+		var bggID sql.NullInt64
 		var parentID sql.NullInt64
-		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+		if err := rows.Scan(&g.ID, &bggID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
 			return nil, err
+		}
+		if bggID.Valid {
+			bid := int(bggID.Int64)
+			g.BggID = &bid
 		}
 		if parentID.Valid {
 			pid := parentID.Int64
@@ -285,14 +387,18 @@ func (db *DB) ListGames(search string, players int) ([]Game, error) {
 	return games, rows.Err()
 }
 
-// ListBaseGames returns only base games (parent_id IS NULL). A base game is
-// included when it matches the search/player filter on its own fields OR when
-// one of its expansions matches, so searching for an expansion surfaces its
-// parent entry. Expansions themselves are grouped under parents by the handler.
-func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComplexity float64, sortBy, sortOrder string) ([]Game, error) {
-	query := `SELECT g.id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.rating, g.bgg_url, g.created_at, g.updated_at
+// ListBaseGames returns only base games (parent_id IS NULL), optionally filtered by a specific collectionUser.
+// If collectionUser is empty, or "all", it searches across all library games.
+func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComplexity float64, sortBy, sortOrder, collectionUser string) ([]Game, error) {
+	query := `SELECT g.id, g.bgg_id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.rating, g.bgg_url, g.created_at, g.updated_at
 		FROM games g WHERE g.parent_id IS NULL`
 	var args []interface{}
+
+	collectionUser = strings.TrimSpace(collectionUser)
+	if collectionUser != "" && !strings.EqualFold(collectionUser, "all") {
+		query += ` AND EXISTS (SELECT 1 FROM user_games ug WHERE ug.game_id = g.id AND ug.user_id = ?)`
+		args = append(args, collectionUser)
+	}
 
 	search = strings.TrimSpace(search)
 	if search != "" {
@@ -356,9 +462,18 @@ func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComple
 	var games []Game
 	for rows.Next() {
 		var g Game
+		var bggID sql.NullInt64
 		var parentID sql.NullInt64
-		if err := rows.Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+		if err := rows.Scan(&g.ID, &bggID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
 			return nil, err
+		}
+		if bggID.Valid {
+			bid := int(bggID.Int64)
+			g.BggID = &bid
+		}
+		if parentID.Valid {
+			pid := parentID.Int64
+			g.ParentID = &pid
 		}
 		games = append(games, g)
 	}
@@ -367,15 +482,23 @@ func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComple
 }
 
 // CountGamesAndExpansions returns the total count of base games (parent_id IS NULL)
-// and expansions (parent_id IS NOT NULL) in the collection.
-func (db *DB) CountGamesAndExpansions() (int, int, error) {
-	var games, expansions int
-	err := db.QueryRow(`
+// and expansions (parent_id IS NOT NULL) in the library or specific collection.
+func (db *DB) CountGamesAndExpansions(collectionUser string) (int, int, error) {
+	collectionUser = strings.TrimSpace(collectionUser)
+	query := `
 		SELECT 
-			COALESCE(SUM(CASE WHEN parent_id IS NULL THEN 1 ELSE 0 END), 0),
-			COALESCE(SUM(CASE WHEN parent_id IS NOT NULL THEN 1 ELSE 0 END), 0)
-		FROM games
-	`).Scan(&games, &expansions)
+			COALESCE(SUM(CASE WHEN g.parent_id IS NULL THEN 1 ELSE 0 END), 0),
+			COALESCE(SUM(CASE WHEN g.parent_id IS NOT NULL THEN 1 ELSE 0 END), 0)
+		FROM games g`
+	var args []interface{}
+
+	if collectionUser != "" && !strings.EqualFold(collectionUser, "all") {
+		query += ` WHERE EXISTS (SELECT 1 FROM user_games ug WHERE ug.game_id = g.id AND ug.user_id = ?)`
+		args = append(args, collectionUser)
+	}
+
+	var games, expansions int
+	err := db.QueryRow(query, args...).Scan(&games, &expansions)
 	if err != nil {
 		return 0, 0, err
 	}
@@ -384,14 +507,46 @@ func (db *DB) CountGamesAndExpansions() (int, int, error) {
 
 func (db *DB) GetGame(id int64) (*Game, error) {
 	var g Game
+	var bggID sql.NullInt64
 	var parentID sql.NullInt64
-	err := db.QueryRow("SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE id = ?", id).
-		Scan(&g.ID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt)
+	err := db.QueryRow("SELECT id, bgg_id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE id = ?", id).
+		Scan(&g.ID, &bggID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
 		}
 		return nil, err
+	}
+	if bggID.Valid {
+		bid := int(bggID.Int64)
+		g.BggID = &bid
+	}
+	if parentID.Valid {
+		pid := parentID.Int64
+		g.ParentID = &pid
+	}
+	return &g, nil
+}
+
+// FindGameByBggID finds a game in the master library by its BoardGameGeek ID
+func (db *DB) FindGameByBggID(bggID int) (*Game, error) {
+	if bggID <= 0 {
+		return nil, nil
+	}
+	var g Game
+	var bID sql.NullInt64
+	var parentID sql.NullInt64
+	err := db.QueryRow("SELECT id, bgg_id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE bgg_id = ?", bggID).
+		Scan(&g.ID, &bID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+	if bID.Valid {
+		bid := int(bID.Int64)
+		g.BggID = &bid
 	}
 	if parentID.Valid {
 		pid := parentID.Int64
@@ -440,7 +595,7 @@ func (db *DB) DeleteDocument(id int64) error {
 }
 
 func (db *DB) ListExpansions(parentID int64) ([]Game, error) {
-	rows, err := db.Query(`SELECT id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at 
+	rows, err := db.Query(`SELECT id, bgg_id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at 
 		FROM games WHERE parent_id = ? ORDER BY name COLLATE NOCASE ASC`, parentID)
 	if err != nil {
 		return nil, err
@@ -450,9 +605,14 @@ func (db *DB) ListExpansions(parentID int64) ([]Game, error) {
 	var expansions []Game
 	for rows.Next() {
 		var g Game
+		var bggID sql.NullInt64
 		var pID sql.NullInt64
-		if err := rows.Scan(&g.ID, &pID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+		if err := rows.Scan(&g.ID, &bggID, &pID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
 			return nil, err
+		}
+		if bggID.Valid {
+			bid := int(bggID.Int64)
+			g.BggID = &bid
 		}
 		if pID.Valid {
 			pid := pID.Int64
@@ -484,9 +644,9 @@ func (db *DB) GetGameWithDetails(id int64) (*Game, []GameDocument, []Game, error
 
 func (db *DB) CreateGame(g *Game) error {
 	now := time.Now().UTC()
-	res, err := db.Exec(`INSERT INTO games (parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-		g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, now)
+	res, err := db.Exec(`INSERT INTO games (bgg_id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at) 
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		g.BggID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, now)
 	if err != nil {
 		return err
 	}
@@ -513,8 +673,8 @@ func (db *DB) CreateGame(g *Game) error {
 
 func (db *DB) UpdateGame(g *Game) error {
 	now := time.Now().UTC()
-	_, err := db.Exec(`UPDATE games SET parent_id = ?, name = ?, url = ?, image = ?, min_players = ?, max_players = ?, best_players = ?, complexity = ?, rating = ?, bgg_url = ?, updated_at = ? WHERE id = ?`,
-		g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, g.ID)
+	_, err := db.Exec(`UPDATE games SET bgg_id = ?, parent_id = ?, name = ?, url = ?, image = ?, min_players = ?, max_players = ?, best_players = ?, complexity = ?, rating = ?, bgg_url = ?, updated_at = ? WHERE id = ?`,
+		g.BggID, g.ParentID, g.Name, g.URL, g.Image, g.MinPlayers, g.MaxPlayers, g.BestPlayers, g.Complexity, g.Rating, g.BggURL, now, g.ID)
 	if err == nil {
 		g.UpdatedAt = now
 	}
@@ -525,6 +685,139 @@ func (db *DB) DeleteGame(id int64) error {
 	_, err := db.Exec("DELETE FROM games WHERE id = ?", id)
 	return err
 }
+
+// User Collection Management
+
+func (db *DB) AddGameToUserCollection(userID string, gameID int64) error {
+	userID = strings.TrimSpace(userID)
+	if userID == "" || gameID <= 0 {
+		return errors.New("invalid user ID or game ID")
+	}
+	_, err := db.Exec("INSERT OR IGNORE INTO user_games (user_id, game_id) VALUES (?, ?)", userID, gameID)
+	return err
+}
+
+func (db *DB) RemoveGameFromUserCollection(userID string, gameID int64) error {
+	userID = strings.TrimSpace(userID)
+	if userID == "" || gameID <= 0 {
+		return errors.New("invalid user ID or game ID")
+	}
+	_, err := db.Exec("DELETE FROM user_games WHERE user_id = ? AND game_id = ?", userID, gameID)
+	return err
+}
+
+func (db *DB) IsGameInUserCollection(userID string, gameID int64) (bool, error) {
+	var exists int
+	err := db.QueryRow("SELECT 1 FROM user_games WHERE user_id = ? AND game_id = ?", userID, gameID).Scan(&exists)
+	if errors.Is(err, sql.ErrNoRows) {
+		return false, nil
+	}
+	return exists == 1, err
+}
+
+func truncateName(name string, maxLen int) string {
+	runes := []rune(name)
+	if len(runes) <= maxLen {
+		return name
+	}
+	if maxLen <= 3 {
+		return string(runes[:maxLen])
+	}
+	return string(runes[:maxLen-3]) + "..."
+}
+
+// GetCollectionName returns the custom name of the user's collection, or their userID if not set
+func (db *DB) GetCollectionName(userID string) (string, error) {
+	if userID == "" {
+		return "", nil
+	}
+	var customName string
+	err := db.QueryRow("SELECT custom_name FROM user_collections WHERE user_id = ?", userID).Scan(&customName)
+	if errors.Is(err, sql.ErrNoRows) || customName == "" {
+		return userID, nil
+	}
+	return customName, err
+}
+
+// SetCollectionName updates or clears a custom name for a user's collection (max 30 characters)
+func (db *DB) SetCollectionName(userID, customName string) error {
+	if userID == "" {
+		return fmt.Errorf("user ID cannot be empty")
+	}
+	customName = strings.TrimSpace(customName)
+	runes := []rune(customName)
+	if len(runes) > 30 {
+		customName = string(runes[:30])
+	}
+
+	if customName == "" || customName == userID {
+		_, err := db.Exec("DELETE FROM user_collections WHERE user_id = ?", userID)
+		return err
+	}
+
+	_, err := db.Exec(`
+		INSERT INTO user_collections (user_id, custom_name, updated_at)
+		VALUES (?, ?, CURRENT_TIMESTAMP)
+		ON CONFLICT(user_id) DO UPDATE SET custom_name=excluded.custom_name, updated_at=CURRENT_TIMESTAMP
+	`, userID, customName)
+	return err
+}
+
+func (db *DB) ListAllCollections() ([]CollectionOption, error) {
+	rows, err := db.Query(`
+		SELECT DISTINCT u.user_id, COALESCE(c.custom_name, '')
+		FROM user_games u
+		LEFT JOIN user_collections c ON u.user_id = c.user_id
+		ORDER BY u.user_id ASC
+	`)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var colls []CollectionOption
+	for rows.Next() {
+		var u, custom string
+		if err := rows.Scan(&u, &custom); err == nil && u != "" {
+			displayName := strings.TrimSpace(custom)
+			if displayName == "" {
+				displayName = u
+			}
+			colls = append(colls, CollectionOption{
+				UserID:        u,
+				DisplayName:   displayName,
+				TruncatedName: truncateName(displayName, 19),
+			})
+		}
+	}
+	return colls, rows.Err()
+}
+
+// GetGameSharedUserCount checks which other users have this game in their collection
+func (db *DB) GetGameSharedUserCount(gameID int64, excludeUserID string) (int, []string, error) {
+	rows, err := db.Query("SELECT DISTINCT user_id FROM user_games WHERE game_id = ? AND user_id != ?", gameID, excludeUserID)
+	if err != nil {
+		return 0, nil, err
+	}
+	defer rows.Close()
+
+	var users []string
+	for rows.Next() {
+		var u string
+		if err := rows.Scan(&u); err == nil && u != "" {
+			users = append(users, u)
+		}
+	}
+	return len(users), users, rows.Err()
+}
+
+// UpdateGameParent moves a game under a new parent or promotes it to root (newParentID == nil)
+func (db *DB) UpdateGameParent(gameID int64, newParentID *int64) error {
+	now := time.Now().UTC()
+	_, err := db.Exec("UPDATE games SET parent_id = ?, updated_at = ? WHERE id = ?", newParentID, now, gameID)
+	return err
+}
+
 
 type PDFOptimization struct {
 	Filename     string    `json:"filename"`
@@ -615,8 +908,13 @@ func (db *DB) SetSettingBool(key string, value bool) error {
 }
 
 func (db *DB) GetAdminSettings() AdminSettings {
+	defColl, _ := db.GetSetting("default_collection", "")
+	bggToken, _ := db.GetSetting("bgg_api_token", "")
 	return AdminSettings{
 		HideGameTitleInExpansions: db.GetSettingBool("hide_game_title_in_expansions", false),
+		DefaultCollection:         defColl,
+		RestrictSharedGameMoves:   db.GetSettingBool("restrict_shared_game_moves", false),
+		BGGApiToken:               bggToken,
 	}
 }
 

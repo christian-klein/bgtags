@@ -17,14 +17,20 @@ type Config struct {
 	BackupRetention int
 
 	// OIDC & RBAC Configuration
-	OIDCEnabled      bool
-	OIDCIssuerURL    string
-	OIDCClientID     string
-	OIDCClientSecret string
-	OIDCRedirectURL  string
-	OIDCAdminGroup   string
-	OIDCUsersGroup   string
-	SessionSecret    string
+	OIDCEnabled         bool
+	OIDCIssuerURL       string
+	OIDCClientID        string
+	OIDCClientSecret    string
+	OIDCRedirectURL     string
+	OIDCAdminGroup      string
+	OIDCUsersGroup      string
+	OIDCCollectionGroup string
+	SessionSecret       string
+
+	// Collection & BGG Configuration
+	BGGApiToken  string
+	DefaultOwner string
+	LocalDevMode bool
 }
 
 func Load() *Config {
@@ -40,14 +46,20 @@ func Load() *Config {
 		BackupRetention: getEnvInt("BACKUP_RETENTION", 30),
 
 		// OIDC & RBAC
-		OIDCEnabled:      getEnvBool("OIDC_ENABLED", false),
-		OIDCIssuerURL:    getEnv("OIDC_ISSUER_URL", ""),
-		OIDCClientID:     getEnv("OIDC_CLIENT_ID", ""),
-		OIDCClientSecret: getEnv("OIDC_CLIENT_SECRET", ""),
-		OIDCRedirectURL:  getEnv("OIDC_REDIRECT_URL", ""),
-		OIDCAdminGroup:   getEnv("OIDC_ADMIN_GROUP", getEnv("ADMIN_GROUP", "bgtags-admins")),
-		OIDCUsersGroup:   getEnv("OIDC_USERS_GROUP", getEnv("USER_GROUP", "")),
-		SessionSecret:    getEnv("SESSION_SECRET", "bgtags-default-session-secret-key-32b"),
+		OIDCEnabled:         getEnvBool("OIDC_ENABLED", false),
+		OIDCIssuerURL:       getEnv("OIDC_ISSUER_URL", ""),
+		OIDCClientID:        getEnv("OIDC_CLIENT_ID", ""),
+		OIDCClientSecret:    getEnv("OIDC_CLIENT_SECRET", ""),
+		OIDCRedirectURL:     getEnv("OIDC_REDIRECT_URL", ""),
+		OIDCAdminGroup:      getEnv("OIDC_ADMIN_GROUP", getEnv("ADMIN_GROUP", "bgtags-admins")),
+		OIDCUsersGroup:      getEnv("OIDC_USERS_GROUP", getEnv("USER_GROUP", "")),
+		OIDCCollectionGroup: getEnv("OIDC_COLLECTION_GROUP", "bgtags-collectors"),
+		SessionSecret:       getEnv("SESSION_SECRET", "bgtags-default-session-secret-key-32b"),
+
+		// Collection & BGG
+		BGGApiToken:  getEnv("BGG_API_TOKEN", ""),
+		DefaultOwner: getEnv("DEFAULT_OWNER", "cdk2128"),
+		LocalDevMode: getEnvBool("LOCAL_DEV_MODE", false),
 	}
 }
 

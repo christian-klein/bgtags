@@ -328,6 +328,12 @@
         "is_primary": true
       },
       {
+        "title": "Stationfall_rulebook_launch_manual.pdf",
+        "category": "core",
+        "filename": "stationfall_rulebook_launch_manual-2022-05-16.pdf",
+        "is_primary": true
+      },
+      {
         "title": "Ultimate Character Guide",
         "category": "reference",
         "filename": "stationfall-character-guide.pdf",
@@ -337,6 +343,24 @@
         "title": "How to Play Teaching Aid",
         "category": "reference",
         "filename": "stationfall-teaching-aid.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Stationfall_Reference_Flyer_1.1.pdf",
+        "category": "reference",
+        "filename": "stationfall_reference_flyer_1-1_-letter.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Stationfall_PlayerAids_2.pdf",
+        "category": "reference",
+        "filename": "stationfall_playeraids_2.pdf",
+        "is_primary": false
+      },
+      {
+        "title": "Stationfall_rulebook_character_dossier.pdf",
+        "category": "reference",
+        "filename": "stationfall_rulebook_character_dossier-2022-05-24.pdf",
         "is_primary": false
       }
     ]
@@ -12069,5 +12093,202 @@
         "is_primary": true
       }
     ]
+  },
+  {
+    "id": 624,
+    "name": "Mage Wars Arena",
+    "url": "mage-wars-arena-rulebook.pdf",
+    "image": "mage-wars-arena.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 3.68,
+    "bgg_url": "https://boardgamegeek.com/boardgame/101721",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mage-wars-arena-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 625,
+    "name": "Mage Knight: Ultimate Edition",
+    "url": "mage-knight-ultimate-rulebook.pdf",
+    "image": "mage-knight-ultimate-edition.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 4.66,
+    "bgg_url": "https://boardgamegeek.com/boardgame/248562",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mage-knight-ultimate-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 626,
+    "name": "Fighters of the Pacific",
+    "url": "fighters-of-the-pacific-rulebook.pdf",
+    "image": "fighters-of-the-pacific.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 2.16,
+    "bgg_url": "https://boardgamegeek.com/boardgame/322476",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "fighters-of-the-pacific-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 627,
+    "name": "Fighters of Europe",
+    "url": "fighters-of-europe-rulebook.pdf",
+    "image": "fighters-of-europe.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 1.6,
+    "bgg_url": "https://boardgamegeek.com/boardgame/379995",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "fighters-of-europe-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 628,
+    "name": "Fighters of the Pacific: Battle of Midway",
+    "url": "",
+    "image": "fighters-pacific-midway.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 2.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/344168",
+    "parent_id": 626,
+    "documents": []
+  },
+  {
+    "id": 629,
+    "name": "Fighters of the Pacific: Battle of the Coral Sea",
+    "url": "",
+    "image": "fighters-pacific-coral-sea.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 2.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/344169",
+    "parent_id": 626,
+    "documents": []
+  },
+  {
+    "id": 630,
+    "name": "Fighters of the Pacific: Leaders of Midway",
+    "url": "",
+    "image": "fighters-pacific-leaders-midway.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 2.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/344170",
+    "parent_id": 626,
+    "documents": []
+  },
+  {
+    "id": 631,
+    "name": "Fighters of the Pacific: Stretch Goals Pack",
+    "url": "",
+    "image": "fighters-pacific-stretch-goals.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 2.16,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/378700",
+    "parent_id": 626,
+    "documents": []
+  },
+  {
+    "id": 632,
+    "name": "Fighters of Europe: Stretch Goals",
+    "url": "",
+    "image": "fighters-europe-stretch-goals.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 1.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/453628",
+    "parent_id": 627,
+    "documents": []
+  },
+  {
+    "id": 633,
+    "name": "Fighters of Europe: Theater Expansion \u2013 Battle of France",
+    "url": "",
+    "image": "fighters-europe-battle-of-france.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 1.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/453629",
+    "parent_id": 627,
+    "documents": []
+  },
+  {
+    "id": 634,
+    "name": "Fighters of Europe: Theater Expansion \u2013 Defense of the Reich",
+    "url": "",
+    "image": "fighters-europe-defense-of-the-reich.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 1.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/453630",
+    "parent_id": 627,
+    "documents": []
+  },
+  {
+    "id": 635,
+    "name": "Fighters of Europe: Aces & Leaders",
+    "url": "",
+    "image": "fighters-europe-aces-leaders.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 1.6,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/457136",
+    "parent_id": 627,
+    "documents": []
+  },
+  {
+    "id": 636,
+    "name": "Yanks: ASL Module 3a",
+    "url": "",
+    "image": "yanks-asl-module-3a.jpg",
+    "min_players": 1,
+    "max_players": 4,
+    "best_players": "",
+    "complexity": 4.22,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/207480/yanks-asl-module-3a",
+    "parent_id": 21,
+    "documents": []
   }
 ]

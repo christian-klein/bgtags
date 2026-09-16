@@ -6,7 +6,7 @@
     </div>
 
     <div class="filters-bar">
-        <div class="search-box">
+        <div class="search-box" style="position: relative;">
             <span class="search-icon">🔍</span>
             <input type="search" 
                    name="q" 
@@ -15,8 +15,28 @@
                    class="search-input"
                    hx-get="/games" 
                    hx-trigger="keyup changed delay:250ms, search" 
-                   hx-target="#game-grid"
-                   hx-include="[name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+                   hx-target="#game-grid" 
+                   hx-indicator="#catalog-search-spinner"
+                   hx-include="[name='collection'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+            <span id="catalog-search-spinner" class="htmx-indicator" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+                <span class="spinner-icon" style="width: 0.85rem; height: 0.85rem;"></span>
+            </span>
+        </div>
+
+        <div class="filter-group">
+            <label for="collection-select" class="filter-label">📚 Collection:</label>
+            <select id="collection-select" 
+                    name="collection" 
+                    class="filter-select"
+                    hx-get="/games" 
+                    hx-trigger="change" 
+                    hx-target="#game-grid" 
+                    hx-include="[name='q'], [name='collection'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+                {{range .AvailableCollections}}
+                <option value="{{.UserID}}" {{if eq $.SelectedCollection .UserID}}selected{{end}}>{{.TruncatedName}}</option>
+                {{end}}
+                <option value="all" {{if eq $.SelectedCollection "all"}}selected{{end}}>📚 All Library Games</option>
+            </select>
         </div>
 
         <div class="filter-group">
@@ -27,7 +47,7 @@
                     hx-get="/games" 
                     hx-trigger="change" 
                     hx-target="#game-grid" 
-                    hx-include="[name='q'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+                    hx-include="[name='q'], [name='collection'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
                 <option value="0" {{if eq .PlayerCount 0}}selected{{end}}>Any count</option>
                 <option value="1" {{if eq .PlayerCount 1}}selected{{end}}>1 Player (Solo)</option>
                 <option value="2" {{if eq .PlayerCount 2}}selected{{end}}>2 Players</option>
@@ -60,7 +80,7 @@
                        hx-get="/games" 
                        hx-trigger="change" 
                        hx-target="#game-grid" 
-                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+                       hx-include="[name='q'], [name='collection'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
                 <input type="range" 
                        id="max-complexity" 
                        name="max_complexity" 
@@ -73,7 +93,7 @@
                        hx-get="/games" 
                        hx-trigger="change" 
                        hx-target="#game-grid" 
-                       hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+                       hx-include="[name='q'], [name='collection'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
             </div>
         </div>
 
@@ -135,7 +155,7 @@
                    hx-get="/games" 
                    hx-trigger="change" 
                    hx-target="#game-grid" 
-                   hx-include="[name='q'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
+                   hx-include="[name='q'], [name='collection'], [name='players'], [name='min_complexity'], [name='max_complexity'], [name='sort_by'], [name='sort_order']">
             <input type="hidden" 
                    name="sort_order" 
                    id="sort-order-input" 
