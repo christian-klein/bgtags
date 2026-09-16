@@ -58,7 +58,7 @@ func Load() *Config {
 
 		// Collection & BGG
 		BGGApiToken:  getEnv("BGG_API_TOKEN", ""),
-		DefaultOwner: getEnv("DEFAULT_OWNER", "cdk2128"),
+		DefaultOwner: getEnv("DEFAULT_OWNER", "cklein70@gmail.com"),
 		LocalDevMode: getEnvBool("LOCAL_DEV_MODE", false),
 	}
 }

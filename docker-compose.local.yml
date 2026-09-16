@@ -15,7 +15,7 @@ services:
       - BACKUP_ENABLED=false
       - OIDC_ENABLED=false
       - LOCAL_DEV_MODE=true
-      - DEFAULT_OWNER=cdk2128
+      - DEFAULT_OWNER=cklein70@gmail.com
       - OIDC_ADMIN_GROUP=bgtags-admins
       - OIDC_COLLECTION_GROUP=bgtags-collectors
       - BGG_API_TOKEN=${BGG_API_TOKEN:-}
