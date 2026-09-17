@@ -70,11 +70,20 @@ type PageData struct {
 	LocalDevMode         bool
 	DevUser              string
 
+	// Expansion Files
+	ExpansionFiles []ExpansionFilesView
+
 	// Auth & RBAC
 	OIDCEnabled     bool
 	IsAuthenticated bool
 	IsAdmin         bool
 	User            *auth.SessionData
+}
+
+type ExpansionFilesView struct {
+	Expansion   database.Game
+	DisplayName string
+	Documents   []database.GameDocument
 }
 
 type GameView struct {
@@ -450,14 +459,40 @@ func (h *Handler) HandleGameRoute(w http.ResponseWriter, r *http.Request) {
 		ParentGame:      parentGame,
 	}
 
+	// Populate expansion documents for games that have expansions
+	var expFiles []ExpansionFilesView
+	for _, exp := range expansions {
+		eDocs, err := h.db.ListDocuments(exp.ID)
+		if err != nil {
+			log.Printf("Error loading documents for expansion %d: %v", exp.ID, err)
+		}
+		if len(eDocs) == 0 && exp.URL != "" {
+			eDocs = []database.GameDocument{
+				{
+					GameID:    exp.ID,
+					Title:     "Rulebook",
+					Category:  "expansion",
+					Filename:  exp.URL,
+					IsPrimary: true,
+				},
+			}
+		}
+		expFiles = append(expFiles, ExpansionFilesView{
+			Expansion:   exp,
+			DisplayName: exp.DisplayName,
+			Documents:   eDocs,
+		})
+	}
+
 	data := PageData{
-		Title:      fmt.Sprintf("%s - Rules & Docs", game.Name),
-		Game:       &gv,
-		ParentGame: parentGame,
-		Documents:  docs,
-		Expansions: expansions,
-		BaseURL:    baseURL,
-		ActiveNav:  "rules",
+		Title:          fmt.Sprintf("%s - Rules & Docs", game.Name),
+		Game:           &gv,
+		ParentGame:     parentGame,
+		Documents:      docs,
+		Expansions:     expansions,
+		ExpansionFiles: expFiles,
+		BaseURL:        baseURL,
+		ActiveNav:      "rules",
 	}
 	h.populateAuthData(r, &data)
 

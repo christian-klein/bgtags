@@ -312,6 +312,23 @@ func TestRulesHubRender(t *testing.T) {
 	if strings.Contains(bodyClean, "<h4 class=\"exp-title\">Eclipse: Worlds Afar</h4>") {
 		t.Errorf("expected parent title to be stripped from expansion title header")
 	}
+
+	// 6. Test Expansion Files Toggle:
+	// Base game with expansions should include the toggle button and expansion files section
+	if !strings.Contains(bodyClean, "id=\"toggle-expansion-files-btn\"") {
+		t.Errorf("expected toggle button 'toggle-expansion-files-btn' for game with expansions")
+	}
+	if !strings.Contains(bodyClean, "id=\"expansion-files-container\"") {
+		t.Errorf("expected expansion files container 'expansion-files-container'")
+	}
+	if !strings.Contains(bodyClean, "eclipse-worlds-afar.pdf") {
+		t.Errorf("expected expansion rulebook 'eclipse-worlds-afar.pdf' in expansion files container")
+	}
+
+	// Standalone expansion without expansions of its own should NOT have toggle button
+	if strings.Contains(expBody, "id=\"toggle-expansion-files-btn\"") {
+		t.Errorf("did not expect toggle button on expansion without children")
+	}
 }
 
 func TestPWAEndpoints(t *testing.T) {

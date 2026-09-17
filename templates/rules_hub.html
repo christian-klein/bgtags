@@ -43,7 +43,21 @@
         </div>
 
         <div class="rules-section">
-            <h2 class="rules-section-title">📚 Rules & Docs</h2>
+            <div class="rules-section-header">
+                <h2 class="rules-section-title">📚 Rules & Docs</h2>
+                {{if .ExpansionFiles}}
+                <button type="button" 
+                        id="toggle-expansion-files-btn" 
+                        class="btn-toggle-expansions no-print"
+                        onclick="toggleExpansionFiles()"
+                        title="Toggle showing rules for all expansions">
+                    <span id="toggle-expansion-icon">🧩</span>
+                    <span id="toggle-expansion-text">Show All Expansion Rules</span>
+                </button>
+                {{end}}
+            </div>
+
+            <!-- Parent game direct documents -->
             <div class="doc-cards-list">
                 {{range .Documents}}
                 <div class="doc-card {{if .IsPrimary}}doc-card-primary{{end}}">
@@ -97,6 +111,63 @@
                 </div>
                 {{end}}
             </div>
+
+            <!-- Expansion documents (toggled on/off) -->
+            {{if .ExpansionFiles}}
+            <div id="expansion-files-container" class="expansion-files-container" style="display: none;">
+                <div class="expansion-files-divider">
+                    <span class="expansion-files-divider-text">🧩 Expansion Rules & Materials</span>
+                    <div class="expansion-files-divider-line"></div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    {{range .ExpansionFiles}}
+                    <div class="expansion-files-group">
+                        <div class="expansion-files-group-label">
+                            <h3 class="expansion-files-title">
+                                <span>🧩</span>
+                                <span>{{if .DisplayName}}{{.DisplayName}}{{else}}{{.Expansion.Name}}{{end}}</span>
+                            </h3>
+                            <a href="/games/{{.Expansion.ID}}/rules" class="btn btn-sm btn-outline" style="padding: 2px 8px; font-size: 0.75rem; text-decoration: none;" title="Open standalone expansion rules hub">
+                                Hub ↗
+                            </a>
+                        </div>
+                        <div class="doc-cards-list">
+                            {{range .Documents}}
+                            <div class="doc-card {{if .IsPrimary}}doc-card-primary{{end}}">
+                                <div class="doc-icon-col">
+                                    <span class="doc-type-icon">
+                                        {{if eq .Category "glossary"}}🔍
+                                        {{else if eq .Category "expansion"}}🧩
+                                        {{else if eq .Category "faq"}}❓
+                                        {{else if eq .Category "reference"}}📋
+                                        {{else}}📖{{end}}
+                                    </span>
+                                </div>
+                                <div class="doc-info-col">
+                                    <div class="doc-name-row">
+                                        <h3 class="doc-title">{{.Title}}</h3>
+                                        {{if .IsPrimary}}<span class="doc-primary-tag">Primary Rules</span>{{end}}
+                                    </div>
+                                    <span class="doc-filename">{{.Filename}}</span>
+                                </div>
+                                <div class="doc-action-col">
+                                    <a href="/rules/{{.Filename}}" target="_blank" rel="noopener noreferrer" class="btn {{if .IsPrimary}}btn-primary{{else}}btn-outline{{end}} doc-open-btn">
+                                        Open PDF ↗
+                                    </a>
+                                </div>
+                            </div>
+                            {{else}}
+                            <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; padding: 0.25rem 0.5rem;">
+                                No separate rule files attached to this expansion.
+                            </div>
+                            {{end}}
+                        </div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+            {{end}}
         </div>
 
         {{if .Expansions}}
@@ -137,4 +208,30 @@
         </div>
     </div>
 </div>
+<script>
+function toggleExpansionFiles() {
+    var container = document.getElementById('expansion-files-container');
+    var btn = document.getElementById('toggle-expansion-files-btn');
+    var text = document.getElementById('toggle-expansion-text');
+    if (!container || !btn || !text) return;
+
+    var isHidden = container.style.display === 'none';
+    if (isHidden) {
+        container.style.display = 'flex';
+        btn.classList.add('active');
+        text.textContent = 'Hide Expansion Rules';
+    } else {
+        container.style.display = 'none';
+        btn.classList.remove('active');
+        text.textContent = 'Show All Expansion Rules';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('all_files') === 'true' || params.get('all_rules') === 'true' || params.get('expansions') === 'true') {
+        toggleExpansionFiles();
+    }
+});
+</script>
 {{end}}
