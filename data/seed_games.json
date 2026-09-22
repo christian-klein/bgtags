@@ -12290,5 +12290,452 @@
         "is_primary": true
       }
     ]
+  },
+  {
+    "id": 638,
+    "name": "Fantasy Realms",
+    "url": "fantasy-realms-rulebook.pdf",
+    "image": "fantasy-realms.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.82,
+    "bgg_url": "https://boardgamegeek.com/boardgame/223040",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "fantasy-realms-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 639,
+    "name": "Vindication",
+    "url": "vindication-rulebook.pdf",
+    "image": "vindication.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.11,
+    "bgg_url": "https://boardgamegeek.com/boardgame/224783",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "vindication-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 640,
+    "name": "Parks",
+    "url": "parks-rulebook.pdf",
+    "image": "parks.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.13,
+    "bgg_url": "https://boardgamegeek.com/boardgame/266524",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "parks-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 641,
+    "name": "Obscurio",
+    "url": "obscurio-rulebook.pdf",
+    "image": "obscurio.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.9,
+    "bgg_url": "https://boardgamegeek.com/boardgame/273477",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "obscurio-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 642,
+    "name": "SCOUT",
+    "url": "scout-rulebook.pdf",
+    "image": "scout.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.4,
+    "bgg_url": "https://boardgamegeek.com/boardgame/291453",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "scout-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 643,
+    "name": "Mosaic: A Story of Civilization",
+    "url": "mosaic-rulebook.pdf",
+    "image": "mosaic.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.05,
+    "bgg_url": "https://boardgamegeek.com/boardgame/329551",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "mosaic-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 644,
+    "name": "My Gold Mine",
+    "url": "",
+    "image": "my-gold-mine.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.08,
+    "bgg_url": "https://boardgamegeek.com/boardgame/331571",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 645,
+    "name": "Tales of the Arthurian Knights",
+    "url": "tales-of-the-arthurian-knights-rulebook.pdf",
+    "image": "tales-of-the-arthurian-knights.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.05,
+    "bgg_url": "https://boardgamegeek.com/boardgame/377704",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "tales-of-the-arthurian-knights-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 646,
+    "name": "Clank! Legacy 2: Acquisitions Incorporated \u2013 Darkest Magic",
+    "url": "clank-legacy-2-rulebook.pdf",
+    "image": "clank-legacy-2.jpg",
+    "min_players": 2,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.75,
+    "bgg_url": "https://boardgamegeek.com/boardgame/383010",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "clank-legacy-2-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 647,
+    "name": "Vindication: Promo Pack",
+    "url": "",
+    "image": "vindication-promo-pack.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/266766",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 648,
+    "name": "Vindication: Leaders & Alliances",
+    "url": "",
+    "image": "vindication-leaders-alliances.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.25,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/268819",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 649,
+    "name": "Vindication: Community Promo Pack",
+    "url": "",
+    "image": "vindication-community-promo-pack.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/279821",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 650,
+    "name": "Vindication: Board Game Spotlight Promo Cards",
+    "url": "",
+    "image": "vindication-board-game-spotlight-promo.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/286426",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 651,
+    "name": "Vindication: Dice Tower 2019 Promo Cards",
+    "url": "",
+    "image": "vindication-dice-tower-2019-promo.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/286427",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 652,
+    "name": "Vindication: Man Vs. Meeple 2019 Promo Cards",
+    "url": "",
+    "image": "vindication-man-vs-meeple-2019-promo.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.11,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/308480",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 653,
+    "name": "Vindication: World Box Odyssey Bundle",
+    "url": "",
+    "image": "vindication-world-box-odyssey-bundle.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/316028",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 654,
+    "name": "Vindication: Wintertide Promo Pack",
+    "url": "",
+    "image": "vindication-wintertide-promo-pack.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.11,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/325402",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 655,
+    "name": "Vindication: Chronicles",
+    "url": "",
+    "image": "vindication-chronicles.jpg",
+    "min_players": 1,
+    "max_players": 5,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/326390",
+    "parent_id": 639,
+    "documents": []
+  },
+  {
+    "id": 656,
+    "name": "Roll Player Adventures: Nefras's Judgement",
+    "url": "",
+    "image": "rpa-nefras-judgement.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.57,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/312235",
+    "parent_id": 609,
+    "documents": []
+  },
+  {
+    "id": 657,
+    "name": "Roll Player Adventures: Gulpax's Secret",
+    "url": "",
+    "image": "rpa-gulpax-secret.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.0,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/372105",
+    "parent_id": 609,
+    "documents": []
+  },
+  {
+    "id": 658,
+    "name": "Aventuria: Chalices of Power",
+    "url": "aventuria-chalices-of-power-rulebook.pdf",
+    "image": "aventuria-chalices-of-power.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.91,
+    "bgg_url": "https://boardgamegeek.com/boardgame/426322",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "aventuria-chalices-of-power-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
+  },
+  {
+    "id": 659,
+    "name": "Aventuria: Curse of the Desert",
+    "url": "",
+    "image": "aventuria-curse-of-the-desert.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.0,
+    "bgg_url": "https://boardgamegeek.com/boardgame/426342",
+    "parent_id": null,
+    "documents": []
+  },
+  {
+    "id": 660,
+    "name": "Aventuria: Summoner of the Elements",
+    "url": "",
+    "image": "aventuria-summoner-of-the-elements.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.59,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/426344",
+    "parent_id": 85,
+    "documents": []
+  },
+  {
+    "id": 661,
+    "name": "Aventuria: Champion of Mischief",
+    "url": "",
+    "image": "aventuria-champion-of-mischief.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.59,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/426345",
+    "parent_id": 85,
+    "documents": []
+  },
+  {
+    "id": 662,
+    "name": "Aventuria: Island of the Mummy Lords Team Challenge",
+    "url": "",
+    "image": "aventuria-island-of-the-mummy-lords.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.59,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/446483",
+    "parent_id": 85,
+    "documents": []
+  },
+  {
+    "id": 663,
+    "name": "Aventuria: Tsulu Team Challenge",
+    "url": "",
+    "image": "aventuria-tsulu-team-challenge.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.59,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/446484",
+    "parent_id": 85,
+    "documents": []
+  },
+  {
+    "id": 664,
+    "name": "Fantasy Realms: The Cursed Hoard",
+    "url": "",
+    "image": "fantasy-realms-cursed-hoard.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 1.89,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/315200",
+    "parent_id": 638,
+    "documents": []
+  },
+  {
+    "id": 665,
+    "name": "Tyrants of the Underdark: Expansion Decks \u2013 Aberrations & Undead",
+    "url": "",
+    "image": "tyrants-of-the-underdark-aberrations-undead.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 2.56,
+    "bgg_url": "https://boardgamegeek.com/boardgameexpansion/213437",
+    "parent_id": 512,
+    "documents": []
+  },
+  {
+    "id": 666,
+    "name": "Total War: ROME \u2013 The Board Game",
+    "url": "total-war-rome-rulebook.pdf",
+    "image": "total-war-rome.jpg",
+    "min_players": 1,
+    "max_players": 6,
+    "best_players": "",
+    "complexity": 3.4,
+    "bgg_url": "https://boardgamegeek.com/boardgame/344332",
+    "parent_id": null,
+    "documents": [
+      {
+        "title": "Core Rulebook",
+        "category": "core",
+        "filename": "total-war-rome-rulebook.pdf",
+        "is_primary": true
+      }
+    ]
   }
 ]
