@@ -6,6 +6,7 @@ import (
 	"log"
 	"mime/multipart"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -483,6 +484,57 @@ func (h *Handler) HandleAdminSettings(w http.ResponseWriter, r *http.Request) {
 	}
 
 	h.renderSettingsFeedback(w, r, true, "Settings saved successfully.")
+}
+
+// HandleAdminBGLists saves the bglists integration: when enabled, the
+// header links to the given bglists URL.
+func (h *Handler) HandleAdminBGLists(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, "Invalid form data", http.StatusBadRequest)
+		return
+	}
+
+	enabledVal := r.FormValue("bglists_enabled")
+	enabled := enabledVal == "true" || enabledVal == "on" || enabledVal == "1"
+	bglistsURL, err := normalizeAppURL(r.FormValue("bglists_url"))
+	if err != nil {
+		h.renderSettingsFeedback(w, r, false, err.Error())
+		return
+	}
+	if enabled && bglistsURL == "" {
+		h.renderSettingsFeedback(w, r, false, "Enter the bglists URL to enable the integration.")
+		return
+	}
+
+	if err := h.db.SetSetting("bglists_url", bglistsURL); err != nil {
+		log.Printf("Error saving bglists_url setting: %v", err)
+		h.renderSettingsFeedback(w, r, false, "Failed to save bglists URL: "+err.Error())
+		return
+	}
+	if err := h.db.SetSettingBool("bglists_enabled", enabled); err != nil {
+		log.Printf("Error saving bglists_enabled setting: %v", err)
+		h.renderSettingsFeedback(w, r, false, "Failed to save bglists integration: "+err.Error())
+		return
+	}
+	h.renderSettingsFeedback(w, r, true, "bglists integration saved. Reload to update the header.")
+}
+
+// normalizeAppURL accepts an empty string or an absolute http(s) URL and
+// returns it without a trailing slash.
+func normalizeAppURL(raw string) (string, error) {
+	raw = strings.TrimRight(strings.TrimSpace(raw), "/")
+	if raw == "" {
+		return "", nil
+	}
+	u, err := url.Parse(raw)
+	if err != nil || (u.Scheme != "http" && u.Scheme != "https") || u.Host == "" {
+		return "", fmt.Errorf("The bglists URL must start with http:// or https://")
+	}
+	return raw, nil
 }
 
 func (h *Handler) renderSettingsFeedback(w http.ResponseWriter, r *http.Request, success bool, msg string) {

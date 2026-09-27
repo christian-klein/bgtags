@@ -46,6 +46,18 @@ type AdminSettings struct {
 	RestrictSharedGameMoves   bool   `json:"restrict_shared_game_moves"`
 	BGGApiToken               string `json:"bgg_api_token"`
 	APIToken                  string `json:"-"`
+	// BGListsEnabled and BGListsURL configure the header link to bglists.
+	BGListsEnabled bool   `json:"bglists_enabled"`
+	BGListsURL     string `json:"bglists_url"`
+}
+
+// BGListsLink returns the bglists URL for the header, or "" when the
+// integration is off or has no URL.
+func (s AdminSettings) BGListsLink() string {
+	if !s.BGListsEnabled {
+		return ""
+	}
+	return s.BGListsURL
 }
 
 // MaskedAPIToken returns the stored JSON API token with all but the last 4

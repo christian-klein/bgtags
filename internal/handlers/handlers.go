@@ -79,6 +79,9 @@ type PageData struct {
 	IsAuthenticated bool
 	IsAdmin         bool
 	User            *auth.SessionData
+
+	// BGListsURL is the header link to bglists; empty hides it.
+	BGListsURL string
 }
 
 type ExpansionFilesView struct {
@@ -297,6 +300,17 @@ func (h *Handler) populateAuthData(r *http.Request, data *PageData) {
 	data.CanManageCollection = middleware.CanManageCollection(r, h.cfg)
 	data.LocalDevMode = h.cfg.LocalDevMode
 	data.DevUser = middleware.CurrentUserID(r, h.cfg)
+	data.BGListsURL = h.bglistsLink()
+}
+
+// bglistsLink returns the bglists URL for the header when an admin has
+// enabled the bglists integration, otherwise "".
+func (h *Handler) bglistsLink() string {
+	if !h.db.GetSettingBool("bglists_enabled", false) {
+		return ""
+	}
+	u, _ := h.db.GetSetting("bglists_url", "")
+	return u
 }
 
 func (h *Handler) resolveCollectionUser(r *http.Request) (string, string) {

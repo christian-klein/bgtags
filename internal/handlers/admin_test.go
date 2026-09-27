@@ -202,3 +202,53 @@ func TestAdminSettingsHandler(t *testing.T) {
 		t.Errorf("expected hide_game_title_in_expansions to be false in DB")
 	}
 }
+
+func TestAdminBGListsIntegration(t *testing.T) {
+	h, db, _ := setupTestHandler(t)
+	defer db.Close()
+
+	post := func(form string) *httptest.ResponseRecorder {
+		rec := httptest.NewRecorder()
+		req := httptest.NewRequest("POST", "/admin/settings/bglists", strings.NewReader(form))
+		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+		req.Header.Set("HX-Request", "true")
+		h.HandleAdminBGLists(rec, req)
+		return rec
+	}
+	adminPage := func() string {
+		rec := httptest.NewRecorder()
+		h.HandleAdmin(rec, httptest.NewRequest("GET", "/admin", nil))
+		return rec.Body.String()
+	}
+
+	if body := adminPage(); !strings.Contains(body, "Enable bglists integration") || strings.Contains(body, "Open bglists") {
+		t.Fatalf("expected bglists setting and no header link by default")
+	}
+
+	if rec := post("bglists_enabled=true&bglists_url=javascript:alert(1)"); !strings.Contains(rec.Body.String(), "must start with http") {
+		t.Errorf("expected invalid URL to be rejected: %s", rec.Body.String())
+	}
+	if rec := post("bglists_enabled=true"); !strings.Contains(rec.Body.String(), "Enter the bglists URL") {
+		t.Errorf("expected missing URL to be rejected: %s", rec.Body.String())
+	}
+	if db.GetSettingBool("bglists_enabled", false) {
+		t.Fatalf("rejected saves must not enable the integration")
+	}
+
+	if rec := post("bglists_enabled=true&bglists_url=https://bglists.example.com/"); !strings.Contains(rec.Body.String(), "saved") {
+		t.Fatalf("expected success: %s", rec.Body.String())
+	}
+	if body := adminPage(); !strings.Contains(body, `href="https://bglists.example.com"`) {
+		t.Errorf("expected header link to bglists once enabled")
+	}
+
+	// Disabling keeps the URL but hides the link.
+	post("bglists_url=https://bglists.example.com")
+	body := adminPage()
+	if strings.Contains(body, "Open bglists") {
+		t.Errorf("expected header link hidden when disabled")
+	}
+	if !strings.Contains(body, `value="https://bglists.example.com"`) {
+		t.Errorf("expected stored URL to stay in the form")
+	}
+}

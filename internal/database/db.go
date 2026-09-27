@@ -1014,12 +1014,15 @@ func (db *DB) GetAdminSettings() AdminSettings {
 	defColl, _ := db.GetSetting("default_collection", "")
 	bggToken, _ := db.GetSetting("bgg_api_token", "")
 	apiToken, _ := db.GetSetting("api_token", "")
+	bglistsURL, _ := db.GetSetting("bglists_url", "")
 	return AdminSettings{
 		HideGameTitleInExpansions: db.GetSettingBool("hide_game_title_in_expansions", false),
 		DefaultCollection:         defColl,
 		RestrictSharedGameMoves:   db.GetSettingBool("restrict_shared_game_moves", false),
 		BGGApiToken:               bggToken,
 		APIToken:                  apiToken,
+		BGListsEnabled:            db.GetSettingBool("bglists_enabled", false),
+		BGListsURL:                bglistsURL,
 	}
 }
 

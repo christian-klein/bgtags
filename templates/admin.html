@@ -283,6 +283,42 @@
             </div>
             <div id="api-token-status-box" style="margin-top: 1rem;"></div>
         </div>
+        <div class="admin-card" style="margin-top: 1.5rem;">
+            <div style="margin-bottom: 1rem;">
+                <h3 style="font-size:1.1rem;margin-bottom:0.25rem;">bglists Integration</h3>
+                <p class="backup-info">
+                    When enabled, the header shows a link to your bglists app.
+                </p>
+            </div>
+            <form hx-post="/admin/settings/bglists" hx-target="#bglists-status-box" class="settings-form">
+                <div style="display: flex; flex-direction: column; gap: 1rem; padding: 1.25rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                    <label for="bglists_enabled" style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 1rem;">
+                        <input type="checkbox"
+                               id="bglists_enabled"
+                               name="bglists_enabled"
+                               value="true"
+                               {{if .Settings.BGListsEnabled}}checked{{end}}
+                               onchange="document.getElementById('bglists-fields').hidden = !this.checked"
+                               style="width: 1.25rem; height: 1.25rem; cursor: pointer; accent-color: var(--accent-primary);">
+                        Enable bglists integration
+                    </label>
+                    <div id="bglists-fields" {{if not .Settings.BGListsEnabled}}hidden{{end}}>
+                        <label for="bglists_url" style="display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">bglists URL</label>
+                        <input type="url"
+                               id="bglists_url"
+                               name="bglists_url"
+                               value="{{.Settings.BGListsURL}}"
+                               placeholder="https://bglists.example.com"
+                               class="form-input"
+                               style="width: 100%; max-width: 480px;">
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <button type="submit" class="btn btn-primary">💾 Save</button>
+                    <div id="bglists-status-box" style="display: inline-flex; align-items: center;"></div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
