@@ -59,7 +59,8 @@ type PageData struct {
 	OptPending    int
 
 	// Settings
-	Settings database.AdminSettings
+	Settings        database.AdminSettings
+	APITokenFromEnv bool
 
 	// Collections
 	AvailableCollections  []database.CollectionOption

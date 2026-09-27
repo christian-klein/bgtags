@@ -51,6 +51,18 @@ Configurations can be supplied via environment variables or `.env`:
 | `BACKUP_DIR` | `backups` | Directory where JSON backup dumps are written |
 | `BACKUP_TIME` | `00:00` | UTC time (HH:MM) to run automated backups |
 | `BACKUP_RETENTION` | `30` | Number of daily backups to keep |
+| `API_TOKEN` | *(empty)* | Bearer token for the read-only JSON API; overrides the token generated in Admin → Settings. API is disabled (404) when neither is set |
+
+## Read-Only JSON API
+Server-to-server JSON API (bearer token auth, `GET` only):
+
+| Endpoint | Returns |
+|---|---|
+| `GET /api/v1/collections` | All user collections (`id`, `name`) |
+| `GET /api/v1/games?q=&collection=&limit=` | Games (base + expansions) matching a name search, optionally within one collection |
+| `GET /api/v1/games/lookup?bgg_id=1,2&id=3` | Games by BGG id and/or bgtags id |
+
+See [AI_AGENT_GUIDE.md](AI_AGENT_GUIDE.md#11-read-only-json-api-apiv1) for auth rules and the game object schema.
 
 ## Box Sticker Printing
 Navigate to `/stickers` or click **"🏷️ Print Stickers"** in the navigation bar to preview and print box labels. Use your browser's Print dialog with:

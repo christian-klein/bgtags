@@ -65,6 +65,7 @@ The application is configured via environment variables (passed in Docker Compos
 | `OIDC_REDIRECT_URL`| Yes (for SSO) | — | Absolute OAuth callback URL (e.g. `https://bgtags.example.com/auth/callback`) |
 | `ADMIN_GROUP` | No | `bgtags-admins` | Authentik group name required for `/admin` access |
 | `USER_GROUP` / `OIDC_USERS_GROUP` | No | `""` (empty) | If set to `*` or `any`, any authenticated user in Authentik has reader access. If set to a group name, membership is enforced; if empty `""`, public access is enabled |
+| `API_TOKEN` | No | `""` (empty) | Bearer token for the read-only JSON API (`/api/v1`). Overrides the `api_token` admin setting. If neither is set, the API is disabled (404). See [Section 11](#11-read-only-json-api-apiv1) |
 
 ---
 
@@ -136,6 +137,8 @@ The Admin Control Panel allows authorized administrators (members of `ADMIN_GROU
 - **Hide Game Title in Expansion Names**:
   - When enabled, automatically strips the base game's title and separator prefix (e.g. ` – `, `: `, ` - `) from expansion display names in the *Available Expansions* section of game rule hubs.
   - Settings are persisted in the SQLite `settings` table.
+- **JSON API Access Token**:
+  - **Generate** creates a random 32-byte URL-safe token, stores it in the `settings` table under `api_token`, and shows it in full **once**; afterwards it is only displayed masked (last 4 characters). **Clear** removes it (API disabled unless `API_TOKEN` is set). Generating a new token revokes the previous one immediately.
 
 ---
 
@@ -314,3 +317,53 @@ All operational automation is located under `scripts/`:
    - Ensure `OIDC_REDIRECT_URL` in the environment exactly matches the Redirect URI configured in the Authentik Provider.
 5. **Authentik Admin Group**:
    - Verify the logged-in user is a member of the group specified in `ADMIN_GROUP` (e.g. `bgtags-admins`). In Authentik, ensure the default group property mapping is enabled on the OIDC provider.
+
+---
+
+## 11. Read-Only JSON API (`/api/v1`)
+
+A small read-only JSON API for trusted server-to-server integrations (e.g. `bglists`). It is **not** behind OIDC/`RequireReader`; the bearer token is the only auth.
+
+### 11.1 Authentication & General Rules
+- Every request needs `Authorization: Bearer <token>`.
+- Token source: env `API_TOKEN` if set, otherwise the `api_token` admin setting (Admin → Settings → *JSON API Access Token* → **Generate**). Compared in constant time.
+- No token configured → every `/api/v1/*` request returns **404** (API disabled).
+- Missing/wrong token → **401** `{"error":"unauthorized"}`.
+- Only `GET` is allowed (**405** otherwise). Unknown endpoints → 404. Errors are JSON `{"error":"..."}`.
+- Responses: `Content-Type: application/json`, `Cache-Control: no-store`.
+
+### 11.2 Endpoints
+| Endpoint | Description |
+| :--- | :--- |
+| `GET /api/v1/collections` | `{"collections":[{"id":"<user_id>","name":"<display name>"}]}` — every user collection (custom name, or the user id when none is set). |
+| `GET /api/v1/games?q=<text>&collection=<user_id>&limit=<n>` | `{"games":[Game...]}` — case-insensitive *name contains* match on `q` (optional); `collection` restricts to one user's collection (omitted = whole library); base games **and** expansions; sorted by name; `limit` defaults to 50, max 200 (400 if not a positive integer). |
+| `GET /api/v1/games/lookup?bgg_id=1,2,3&id=4,5` | `{"games":[Game...]}` — games matching any listed BGG id or bgtags id, sorted by name. Values may be comma-separated and/or repeated. Non-numeric ids are ignored; at most 200 ids total are used; **400** if no valid id is given. |
+
+### 11.3 Game Object
+```json
+{
+  "id": 42,
+  "bgg_id": 230802,
+  "name": "Azul",
+  "image_url": "https://bgtags.example.com/img/azul.jpg",
+  "min_players": 2,
+  "max_players": 4,
+  "best_players": "2",
+  "complexity": 1.76,
+  "rating": 7.7,
+  "bgg_url": "https://boardgamegeek.com/boardgame/230802/azul",
+  "rules_url": "https://bgtags.example.com/games/42/rules",
+  "qr_url": "https://bgtags.example.com/qr?url=https%3A%2F%2Fbgtags.example.com%2Fgames%2F42%2Frules"
+}
+```
+- `bgg_id` is `null` when unknown; `image_url` is `""` when the game has no box art.
+- All URLs are absolute, built from `BASE_URL` (trailing slash trimmed). Set `BASE_URL` in production: without it the host is derived from the incoming request, which for server-to-server calls is the internal address the caller used.
+- `rules_url` is the same rules hub URL used by game cards and stickers; `qr_url` renders a PNG QR code for it (public endpoint).
+
+### 11.4 Example
+```bash
+curl -s -H "Authorization: Bearer $BGTAGS_API_TOKEN" \
+  "https://bgtags.example.com/api/v1/games?q=catan&collection=alice&limit=20"
+```
+
+Implementation: `internal/handlers/api.go` (handlers), `internal/database/db.go` (`SearchGames`, `LookupGames`), tests in `internal/handlers/api_test.go`.

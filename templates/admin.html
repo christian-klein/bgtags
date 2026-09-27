@@ -241,6 +241,48 @@
                 </div>
             </form>
         </div>
+
+        <div class="admin-card" style="margin-top: 1.5rem;">
+            <div style="margin-bottom: 1rem;">
+                <h3 style="font-size:1.1rem;margin-bottom:0.25rem;">JSON API Access Token</h3>
+                <p class="backup-info">
+                    Bearer token for the read-only JSON API at <code>/api/v1/</code>, used by trusted server-to-server integrations.
+                    The API is disabled (404) while no token is configured. The <code>API_TOKEN</code> environment variable, if set, overrides the token stored here.
+                </p>
+            </div>
+            {{if .APITokenFromEnv}}
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                ℹ️ <code>API_TOKEN</code> is set in the environment and is currently in effect; the stored token below is ignored.
+            </p>
+            {{end}}
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                <span style="font-weight: 600; color: var(--text-primary);">Stored token:</span>
+                {{if .Settings.APIToken}}
+                <code id="api-token-masked">{{.Settings.MaskedAPIToken}}</code>
+                {{else}}
+                <span id="api-token-masked" style="color: var(--text-secondary);">Not set (API disabled unless <code>API_TOKEN</code> is set)</span>
+                {{end}}
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button type="button" class="btn btn-primary"
+                        hx-post="/admin/settings/api-token"
+                        hx-vals='{"action": "generate"}'
+                        hx-target="#api-token-status-box"
+                        {{if .Settings.APIToken}}hx-confirm="Generate a new API token? The current token will stop working immediately."{{end}}>
+                    🔑 Generate
+                </button>
+                {{if .Settings.APIToken}}
+                <button type="button" class="btn btn-danger"
+                        hx-post="/admin/settings/api-token"
+                        hx-vals='{"action": "clear"}'
+                        hx-target="#api-token-status-box"
+                        hx-confirm="Clear the stored API token? Integrations using it will lose access.">
+                    Clear
+                </button>
+                {{end}}
+            </div>
+            <div id="api-token-status-box" style="margin-top: 1rem;"></div>
+        </div>
     </div>
 </div>
 

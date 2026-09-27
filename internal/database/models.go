@@ -1,6 +1,9 @@
 package database
 
-import "time"
+import (
+	"strings"
+	"time"
+)
 
 type Game struct {
 	ID          int64     `json:"id"`
@@ -42,6 +45,19 @@ type AdminSettings struct {
 	DefaultCollection         string `json:"default_collection"`
 	RestrictSharedGameMoves   bool   `json:"restrict_shared_game_moves"`
 	BGGApiToken               string `json:"bgg_api_token"`
+	APIToken                  string `json:"-"`
+}
+
+// MaskedAPIToken returns the stored JSON API token with all but the last 4
+// characters hidden, or "" when no token is saved.
+func (s AdminSettings) MaskedAPIToken() string {
+	if s.APIToken == "" {
+		return ""
+	}
+	if len(s.APIToken) <= 4 {
+		return strings.Repeat("•", len(s.APIToken))
+	}
+	return strings.Repeat("•", 12) + s.APIToken[len(s.APIToken)-4:]
 }
 
 type CollectionOption struct {
