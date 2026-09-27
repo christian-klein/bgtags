@@ -833,7 +833,6 @@ func (db *DB) UpdateGameParent(gameID int64, newParentID *int64) error {
 	return err
 }
 
-
 type PDFOptimization struct {
 	Filename     string    `json:"filename"`
 	FileSize     int64     `json:"file_size"`
@@ -966,4 +965,3 @@ func FormatExpansionName(expansionName, parentName string) string {
 
 	return expansionName
 }
-

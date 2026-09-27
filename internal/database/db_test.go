@@ -133,7 +133,7 @@ func TestDocumentsAndExpansions(t *testing.T) {
 func TestMigrationFromOldSchema(t *testing.T) {
 	tempDir := t.TempDir()
 	dbPath := filepath.Join(tempDir, "old_schema.db")
-	
+
 	// Create an old SQLite database without parent_id
 	rawDB, err := Open(dbPath, "")
 	if err != nil {

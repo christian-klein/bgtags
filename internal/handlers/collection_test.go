@@ -25,13 +25,13 @@ func TestCollectionHandlers(t *testing.T) {
 	defer db.Close()
 
 	cfg := &config.Config{
-		Port:               "8081",
-		StaticDir:          filepath.Join(tempDir, "static"),
-		BackupDir:          filepath.Join(tempDir, "backups"),
-		DefaultOwner:       "cdk2128",
+		Port:                "8081",
+		StaticDir:           filepath.Join(tempDir, "static"),
+		BackupDir:           filepath.Join(tempDir, "backups"),
+		DefaultOwner:        "cdk2128",
 		OIDCCollectionGroup: "bgtags-collectors",
-		OIDCAdminGroup:     "bgtags-admins",
-		LocalDevMode:       true,
+		OIDCAdminGroup:      "bgtags-admins",
+		LocalDevMode:        true,
 	}
 
 	h, err := New(db, cfg, "../../templates")

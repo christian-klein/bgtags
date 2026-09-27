@@ -39,13 +39,13 @@ type BGGSearchResultView struct {
 }
 
 type ReparentModalData struct {
-	Game         *database.Game
+	Game          *database.Game
 	CurrentParent *database.Game
-	Candidates   []database.Game
-	SharedCount  int
-	SharedUsers  []string
-	IsRestricted bool
-	IsAdmin      bool
+	Candidates    []database.Game
+	SharedCount   int
+	SharedUsers   []string
+	IsRestricted  bool
+	IsAdmin       bool
 }
 
 // HandleCollection renders the My Collection page for collectors
