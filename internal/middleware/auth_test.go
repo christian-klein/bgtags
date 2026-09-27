@@ -173,4 +173,3 @@ func TestAuthMiddleware(t *testing.T) {
 		}
 	})
 }
-

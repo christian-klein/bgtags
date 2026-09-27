@@ -133,7 +133,7 @@ func TestDocumentsAndExpansions(t *testing.T) {
 func TestMigrationFromOldSchema(t *testing.T) {
 	tempDir := t.TempDir()
 	dbPath := filepath.Join(tempDir, "old_schema.db")
-	
+
 	// Create an old SQLite database without parent_id
 	rawDB, err := Open(dbPath, "")
 	if err != nil {
@@ -752,5 +752,70 @@ func TestUserCollectionCustomNames(t *testing.T) {
 	name, _ = db.GetCollectionName("user1")
 	if name != "user1" {
 		t.Errorf("expected reset to 'user1', got '%s'", name)
+	}
+}
+
+func TestSearchAndLookupGames(t *testing.T) {
+	db, err := Open(filepath.Join(t.TempDir(), "test.db"), "")
+	if err != nil {
+		t.Fatalf("failed to open db: %v", err)
+	}
+	defer db.Close()
+
+	bgg := func(n int) *int { return &n }
+	base := &Game{Name: "Catan", BggID: bgg(13)}
+	other := &Game{Name: "azul", BggID: bgg(230802)}
+	under := &Game{Name: "Under_score"}
+	for _, g := range []*Game{base, other, under} {
+		if err := db.CreateGame(g); err != nil {
+			t.Fatalf("CreateGame: %v", err)
+		}
+	}
+	exp := &Game{Name: "Catan: Seafarers", ParentID: &base.ID}
+	if err := db.CreateGame(exp); err != nil {
+		t.Fatalf("CreateGame: %v", err)
+	}
+	_ = db.AddGameToUserCollection("alice", exp.ID)
+	_ = db.AddGameToUserCollection("alice", other.ID)
+
+	names := func(gs []Game) []string {
+		var out []string
+		for _, g := range gs {
+			out = append(out, g.Name)
+		}
+		return out
+	}
+
+	all, err := db.SearchGames("", "", 50)
+	if err != nil || len(all) != 4 || all[0].Name != "azul" || all[3].Name != "Under_score" {
+		t.Fatalf("SearchGames all: %v %v", names(all), err)
+	}
+	res, _ := db.SearchGames("catan", "", 50)
+	if len(res) != 2 {
+		t.Errorf("expected base game and expansion, got %v", names(res))
+	}
+	res, _ = db.SearchGames("", "alice", 50)
+	if len(res) != 2 || res[0].Name != "azul" || res[1].Name != "Catan: Seafarers" {
+		t.Errorf("unexpected collection search: %v", names(res))
+	}
+	res, _ = db.SearchGames("_", "", 50)
+	if len(res) != 1 || res[0].Name != "Under_score" {
+		t.Errorf("expected literal underscore match, got %v", names(res))
+	}
+	res, _ = db.SearchGames("", "", 1)
+	if len(res) != 1 {
+		t.Errorf("expected limit 1, got %v", names(res))
+	}
+
+	res, err = db.LookupGames([]int{13, 999}, []int64{exp.ID})
+	if err != nil || len(res) != 2 || res[0].Name != "Catan" || res[1].Name != "Catan: Seafarers" {
+		t.Errorf("LookupGames: %v %v", names(res), err)
+	}
+	if res[0].BggID == nil || *res[0].BggID != 13 || res[1].ParentID == nil || *res[1].ParentID != base.ID {
+		t.Errorf("LookupGames did not scan nullable ids: %+v", res)
+	}
+	res, err = db.LookupGames(nil, nil)
+	if err != nil || len(res) != 0 {
+		t.Errorf("expected empty lookup, got %v %v", names(res), err)
 	}
 }

@@ -1,13 +1,13 @@
 package handlers
 
 import (
+	"context"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"path/filepath"
-	"testing"
-	"context"
-	"fmt"
 	"strings"
+	"testing"
 
 	"github.com/christian-klein/bgtags/internal/auth"
 	"github.com/christian-klein/bgtags/internal/config"
@@ -527,8 +527,8 @@ func TestSortMenuAndFiltering(t *testing.T) {
 
 	bodyRating := wRatingDesc.Body.String()
 	idxBloodRage := strings.Index(bodyRating, "Blood Rage") // 8.0
-	idxAgricola := strings.Index(bodyRating, "Agricola")   // 7.9
-	idxCodenames := strings.Index(bodyRating, "Codenames") // 7.5
+	idxAgricola := strings.Index(bodyRating, "Agricola")    // 7.9
+	idxCodenames := strings.Index(bodyRating, "Codenames")  // 7.5
 
 	if idxBloodRage == -1 || idxAgricola == -1 || idxCodenames == -1 {
 		t.Fatalf("missing expected games in rating sorted grid")
@@ -543,9 +543,9 @@ func TestSortMenuAndFiltering(t *testing.T) {
 	h.HandleGames(wCompAsc, rCompAsc)
 
 	bodyComp := wCompAsc.Body.String()
-	idxCodenamesComp := strings.Index(bodyComp, "Codenames") // 1.2
+	idxCodenamesComp := strings.Index(bodyComp, "Codenames")  // 1.2
 	idxBloodRageComp := strings.Index(bodyComp, "Blood Rage") // 2.8
-	idxAgricolaComp := strings.Index(bodyComp, "Agricola")   // 3.6
+	idxAgricolaComp := strings.Index(bodyComp, "Agricola")    // 3.6
 
 	if !(idxCodenamesComp < idxBloodRageComp && idxBloodRageComp < idxAgricolaComp) {
 		t.Errorf("expected complexity asc order: Codenames (1.2), Blood Rage (2.8), Agricola (3.6)")
@@ -892,4 +892,3 @@ func TestResolveCollectionUser(t *testing.T) {
 		t.Errorf("expected (carol, carol), got (%s, %s)", selected, user)
 	}
 }
-

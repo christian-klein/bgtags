@@ -65,6 +65,9 @@ func main() {
 	mux.HandleFunc("/manifest.webmanifest", h.HandleManifest)
 	mux.HandleFunc("/sw.js", h.HandleServiceWorker)
 
+	// Read-only JSON API (bearer token auth, not OIDC; disabled when no token is configured)
+	mux.HandleFunc("/api/v1/", h.HandleAPI)
+
 	// Admin endpoints (RBAC protected)
 	mux.HandleFunc("/admin", middleware.RequireAdmin(cfg, h.HandleAdmin))
 	mux.HandleFunc("/admin/games", middleware.RequireAdmin(cfg, h.HandleAdminGames))
@@ -74,6 +77,7 @@ func main() {
 	mux.HandleFunc("/admin/documents/", middleware.RequireAdmin(cfg, h.HandleAdminDocumentRoute))
 	mux.HandleFunc("/admin/optimize", middleware.RequireAdmin(cfg, h.HandleAdminOptimize))
 	mux.HandleFunc("/admin/settings", middleware.RequireAdmin(cfg, h.HandleAdminSettings))
+	mux.HandleFunc("/admin/settings/api-token", middleware.RequireAdmin(cfg, h.HandleAdminAPIToken))
 	mux.HandleFunc("/backups/create", middleware.RequireAdmin(cfg, h.HandleCreateBackup))
 	mux.HandleFunc("/backups/restore", middleware.RequireAdmin(cfg, h.HandleRestoreBackup))
 

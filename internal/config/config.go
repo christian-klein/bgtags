@@ -31,6 +31,9 @@ type Config struct {
 	BGGApiToken  string
 	DefaultOwner string
 	LocalDevMode bool
+
+	// JSON API (/api/v1) bearer token; overrides the api_token admin setting
+	APIToken string
 }
 
 func Load() *Config {
@@ -60,6 +63,9 @@ func Load() *Config {
 		BGGApiToken:  getEnv("BGG_API_TOKEN", ""),
 		DefaultOwner: getEnv("DEFAULT_OWNER", "cklein70@gmail.com"),
 		LocalDevMode: getEnvBool("LOCAL_DEV_MODE", false),
+
+		// JSON API
+		APIToken: getEnv("API_TOKEN", ""),
 	}
 }
 

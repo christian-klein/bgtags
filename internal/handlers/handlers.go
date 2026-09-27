@@ -28,26 +28,26 @@ type Handler struct {
 }
 
 type PageData struct {
-	Title       string
-	Games       []GameView
-	Game        *GameView
-	ParentGame  *database.Game
-	Documents   []database.GameDocument
-	Expansions  []database.Game
+	Title           string
+	Games           []GameView
+	Game            *GameView
+	ParentGame      *database.Game
+	Documents       []database.GameDocument
+	Expansions      []database.Game
 	TotalCount      int
 	TotalGames      int
 	TotalExpansions int
 	SearchQuery     string
-	PlayerCount   int
-	MinComplexity float64
-	MaxComplexity float64
-	SortBy        string
-	SortOrder     string
-	BaseURL       string
-	ActiveNav     string
-	Backups       []*backup.BackupFileMeta
-	Message     string
-	Error       string
+	PlayerCount     int
+	MinComplexity   float64
+	MaxComplexity   float64
+	SortBy          string
+	SortOrder       string
+	BaseURL         string
+	ActiveNav       string
+	Backups         []*backup.BackupFileMeta
+	Message         string
+	Error           string
 
 	// Sections for quick jump rail and in-grid grouping
 	Sections      []QuickJumpSection
@@ -59,7 +59,8 @@ type PageData struct {
 	OptPending    int
 
 	// Settings
-	Settings database.AdminSettings
+	Settings        database.AdminSettings
+	APITokenFromEnv bool
 
 	// Collections
 	AvailableCollections  []database.CollectionOption
@@ -67,8 +68,8 @@ type PageData struct {
 	SelectedCollection    string
 	CanManageCollection   bool
 	CurrentCollectionUser string
-	LocalDevMode         bool
-	DevUser              string
+	LocalDevMode          bool
+	DevUser               string
 
 	// Expansion Files
 	ExpansionFiles []ExpansionFilesView
@@ -704,4 +705,3 @@ func collDisplayName(userID string, colls []database.CollectionOption) string {
 	}
 	return userID
 }
-

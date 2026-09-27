@@ -19,6 +19,9 @@ services:
       - OIDC_ADMIN_GROUP=bgtags-admins
       - OIDC_COLLECTION_GROUP=bgtags-collectors
       - BGG_API_TOKEN=${BGG_API_TOKEN:-}
+      # JSON API (/api/v1) for local bglists testing; links are built from BASE_URL.
+      - BASE_URL=${BASE_URL:-http://localhost:8085}
+      - API_TOKEN=${API_TOKEN:-}
     volumes:
       - ./local-dev/data:/app/data
       - bgtags-rules-ro:/app/static/rules:ro

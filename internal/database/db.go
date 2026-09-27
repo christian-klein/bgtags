@@ -481,6 +481,95 @@ func (db *DB) ListBaseGames(search string, players int, minComplexity, maxComple
 	return games, rows.Err()
 }
 
+// SearchGames returns base games and expansions whose name contains search
+// (case-insensitive), optionally restricted to a user's collection, sorted by
+// name and capped at limit rows. It backs the read-only JSON API.
+func (db *DB) SearchGames(search, collectionUser string, limit int) ([]Game, error) {
+	query := `SELECT g.id, g.bgg_id, g.parent_id, g.name, g.url, g.image, g.min_players, g.max_players, g.best_players, g.complexity, g.rating, g.bgg_url, g.created_at, g.updated_at
+		FROM games g WHERE 1=1`
+	var args []interface{}
+
+	collectionUser = strings.TrimSpace(collectionUser)
+	if collectionUser != "" {
+		query += ` AND EXISTS (SELECT 1 FROM user_games ug WHERE ug.game_id = g.id AND ug.user_id = ?)`
+		args = append(args, collectionUser)
+	}
+
+	search = strings.TrimSpace(search)
+	if search != "" {
+		query += ` AND g.name LIKE ? ESCAPE '\'`
+		args = append(args, "%"+escapeLike(search)+"%")
+	}
+
+	query += " ORDER BY g.name COLLATE NOCASE ASC, g.id ASC LIMIT ?"
+	args = append(args, limit)
+
+	rows, err := db.Query(query, args...)
+	if err != nil {
+		return nil, err
+	}
+	return scanGameRows(rows)
+}
+
+// LookupGames returns games whose bgg_id is in bggIDs or whose id is in ids,
+// sorted by name.
+func (db *DB) LookupGames(bggIDs []int, ids []int64) ([]Game, error) {
+	if len(bggIDs) == 0 && len(ids) == 0 {
+		return nil, nil
+	}
+	var conds []string
+	var args []interface{}
+	if len(bggIDs) > 0 {
+		conds = append(conds, "bgg_id IN (?"+strings.Repeat(",?", len(bggIDs)-1)+")")
+		for _, id := range bggIDs {
+			args = append(args, id)
+		}
+	}
+	if len(ids) > 0 {
+		conds = append(conds, "id IN (?"+strings.Repeat(",?", len(ids)-1)+")")
+		for _, id := range ids {
+			args = append(args, id)
+		}
+	}
+	query := "SELECT id, bgg_id, parent_id, name, url, image, min_players, max_players, best_players, complexity, rating, bgg_url, created_at, updated_at FROM games WHERE " +
+		strings.Join(conds, " OR ") + " ORDER BY name COLLATE NOCASE ASC, id ASC"
+
+	rows, err := db.Query(query, args...)
+	if err != nil {
+		return nil, err
+	}
+	return scanGameRows(rows)
+}
+
+// escapeLike escapes LIKE wildcards so user input matches literally (ESCAPE '\').
+func escapeLike(s string) string {
+	return strings.NewReplacer(`\`, `\\`, "%", `\%`, "_", `\_`).Replace(s)
+}
+
+// scanGameRows scans the standard 14-column game projection and closes rows.
+func scanGameRows(rows *sql.Rows) ([]Game, error) {
+	defer rows.Close()
+	var games []Game
+	for rows.Next() {
+		var g Game
+		var bggID sql.NullInt64
+		var parentID sql.NullInt64
+		if err := rows.Scan(&g.ID, &bggID, &parentID, &g.Name, &g.URL, &g.Image, &g.MinPlayers, &g.MaxPlayers, &g.BestPlayers, &g.Complexity, &g.Rating, &g.BggURL, &g.CreatedAt, &g.UpdatedAt); err != nil {
+			return nil, err
+		}
+		if bggID.Valid {
+			bid := int(bggID.Int64)
+			g.BggID = &bid
+		}
+		if parentID.Valid {
+			pid := parentID.Int64
+			g.ParentID = &pid
+		}
+		games = append(games, g)
+	}
+	return games, rows.Err()
+}
+
 // CountGamesAndExpansions returns the total count of base games (parent_id IS NULL)
 // and expansions (parent_id IS NOT NULL) in the library or specific collection.
 func (db *DB) CountGamesAndExpansions(collectionUser string) (int, int, error) {
@@ -833,7 +922,6 @@ func (db *DB) UpdateGameParent(gameID int64, newParentID *int64) error {
 	return err
 }
 
-
 type PDFOptimization struct {
 	Filename     string    `json:"filename"`
 	FileSize     int64     `json:"file_size"`
@@ -925,11 +1013,13 @@ func (db *DB) SetSettingBool(key string, value bool) error {
 func (db *DB) GetAdminSettings() AdminSettings {
 	defColl, _ := db.GetSetting("default_collection", "")
 	bggToken, _ := db.GetSetting("bgg_api_token", "")
+	apiToken, _ := db.GetSetting("api_token", "")
 	return AdminSettings{
 		HideGameTitleInExpansions: db.GetSettingBool("hide_game_title_in_expansions", false),
 		DefaultCollection:         defColl,
 		RestrictSharedGameMoves:   db.GetSettingBool("restrict_shared_game_moves", false),
 		BGGApiToken:               bggToken,
+		APIToken:                  apiToken,
 	}
 }
 
@@ -966,4 +1056,3 @@ func FormatExpansionName(expansionName, parentName string) string {
 
 	return expansionName
 }
-

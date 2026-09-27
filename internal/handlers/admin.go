@@ -64,6 +64,7 @@ func (h *Handler) HandleAdmin(w http.ResponseWriter, r *http.Request) {
 		OptLinearized:        linOpt,
 		OptPending:           pendingOpt,
 		Settings:             h.db.GetAdminSettings(),
+		APITokenFromEnv:      h.cfg.APIToken != "",
 		AvailableCollections: allCollections,
 		BaseURL:              baseURL,
 		ActiveNav:            "admin",
@@ -521,5 +522,3 @@ func (h *Handler) renderSettingsFeedback(w http.ResponseWriter, r *http.Request,
 
 	http.Redirect(w, r, "/admin?tab=settings", http.StatusSeeOther)
 }
-
-
