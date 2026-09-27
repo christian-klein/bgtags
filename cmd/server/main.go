@@ -78,6 +78,7 @@ func main() {
 	mux.HandleFunc("/admin/optimize", middleware.RequireAdmin(cfg, h.HandleAdminOptimize))
 	mux.HandleFunc("/admin/settings", middleware.RequireAdmin(cfg, h.HandleAdminSettings))
 	mux.HandleFunc("/admin/settings/api-token", middleware.RequireAdmin(cfg, h.HandleAdminAPIToken))
+	mux.HandleFunc("/admin/settings/bglists", middleware.RequireAdmin(cfg, h.HandleAdminBGLists))
 	mux.HandleFunc("/backups/create", middleware.RequireAdmin(cfg, h.HandleCreateBackup))
 	mux.HandleFunc("/backups/restore", middleware.RequireAdmin(cfg, h.HandleRestoreBackup))
 

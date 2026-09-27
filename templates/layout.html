@@ -34,6 +34,9 @@
                     {{if .CanManageCollection}}
                     <a href="/collection" class="nav-item {{if eq .ActiveNav "collection"}}active{{end}}">📦 My Collection</a>
                     {{end}}
+                    {{if .BGListsURL}}
+                    <a href="{{.BGListsURL}}" class="nav-item" title="Open bglists">🎲 bglists</a>
+                    {{end}}
                     {{if .IsAdmin}}
                     <a href="/admin" class="nav-item {{if eq .ActiveNav "admin"}}active{{end}}">⚙️ Admin</a>
                     {{end}}
